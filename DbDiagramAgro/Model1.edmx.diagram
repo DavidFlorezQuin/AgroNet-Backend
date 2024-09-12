@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1da13cdc07a6479d924c5e54b7b57522" Name="Diagram1" ZoomLevel="28">
+        <EntityTypeShape EntityType="DBModel.Alert" Width="1.5" PointX="16.125" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Animal" Width="1.5" PointX="18.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.City" Width="1.5" PointX="7.25" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Continent" Width="1.5" PointX="0.5" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Country" Width="1.5" PointX="2.625" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Farm" Width="1.5" PointX="14" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Health_History" Width="1.5" PointX="23.25" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Inventory" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Inventory_History" Width="1.5" PointX="10.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Lot" Width="1.5" PointX="16" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Medicine" Width="1.5" PointX="8" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Module" Width="1.5" PointX="22.625" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Municipality" Width="1.5" PointX="4.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Observation" Width="1.5" PointX="25.5" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Person" Width="1.5" PointX="9.875" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Production" Width="1.5" PointX="23.25" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Role" Width="1.5" PointX="16" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Role_View" Width="1.5" PointX="18.125" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Supply" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Treatment" Width="1.5" PointX="25.5" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.UserAccount" Width="1.5" PointX="12.125" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.UserRole" Width="1.5" PointX="13.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Vaccination" Width="1.5" PointX="19.875" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.View" Width="1.5" PointX="20.5" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="DBModel.FK__Alert__animal_id__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK__Animal__lot_id__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK__Health_Hi__anima__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK__Productio__anima__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK__Vaccinati__anima__6D0D32F4" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK__City__municipali__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK__Person__city_id__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK__Country__contine__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK__Farm__user_id__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK__Lot__farm_id__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK__Treatment__histo__74AE54BC" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK__Inventory__inven__7C4F7684" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK__Inventory__suppl__797309D9" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK__View__module_id__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK__Observati__produ__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK__UserAccou__perso__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK__Vaccinati__vacci__6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK__Role_View__role___534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK__UserRole__role_i__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK__Role_View__view___5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK__UserRole__user_i__571DF1D5" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

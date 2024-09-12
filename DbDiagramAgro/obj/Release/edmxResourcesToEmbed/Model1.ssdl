@@ -1,0 +1,825 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Alert">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="description" Type="text" />
+    <Property Name="date" Type="datetime2" Precision="6" />
+    <Property Name="state" Type="bit" />
+    <Property Name="animal_id" Type="int" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Animal">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="gender" Type="varchar" MaxLength="50" />
+    <Property Name="weight" Type="float" />
+    <Property Name="photo" Type="varchar(max)" />
+    <Property Name="race" Type="varchar" MaxLength="50" />
+    <Property Name="purpose" Type="varchar" MaxLength="50" />
+    <Property Name="state" Type="bit" />
+    <Property Name="birthDay" Type="datetime2" Precision="6" />
+    <Property Name="dateRegister" Type="datetime2" Precision="6" />
+    <Property Name="lot_id" Type="int" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="municipality_id" Type="int" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="state" Type="bit" Nullable="false" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Continent">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="state" Type="bit" Nullable="false" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="state" Type="bit" Nullable="false" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+    <Property Name="continent_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="state" Type="bit" Nullable="false" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+    <Property Name="country_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Farm">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="dimension" Type="int" />
+    <Property Name="location" Type="varchar" MaxLength="255" />
+    <Property Name="country" Type="varchar" MaxLength="255" />
+    <Property Name="municipality" Type="varchar" MaxLength="255" />
+    <Property Name="village" Type="varchar" MaxLength="255" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="state" Type="bit" Nullable="false" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Health_History">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="date" Type="datetime2" Precision="6" />
+    <Property Name="description" Type="text" />
+    <Property Name="animal_id" Type="int" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="state" Type="bit" Nullable="false" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Inventory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="admission_date" Type="date" />
+    <Property Name="stock" Type="varchar" MaxLength="255" />
+    <Property Name="supply_id" Type="int" />
+    <Property Name="expiration_date" Type="date" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="state" Type="bit" Nullable="false" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Inventory_History">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="inventory_id" Type="int" />
+    <Property Name="date" Type="date" />
+    <Property Name="amount" Type="varchar" MaxLength="255" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="state" Type="bit" Nullable="false" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Lot">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="production_system" Type="varchar" MaxLength="50" />
+    <Property Name="farm_id" Type="int" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="state" Type="bit" Nullable="false" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Medicine">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="description" Type="text" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="state" Type="bit" Nullable="false" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Module">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="description" Type="varchar(max)" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="state" Type="bit" Nullable="false" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Municipality">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="department_id" Type="int" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="state" Type="bit" Nullable="false" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Observation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="production_id" Type="int" />
+    <Property Name="date" Type="datetime2" Precision="6" />
+    <Property Name="description" Type="text" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="state" Type="bit" Nullable="false" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="number_document" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="birth_date" Type="date" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="first_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="gender" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="last_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="type_document" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="state" Type="bit" Nullable="false" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+    <Property Name="city_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Production">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="date" Type="datetime2" Precision="6" />
+    <Property Name="type_production" Type="varchar" MaxLength="50" />
+    <Property Name="quantity" Type="float" />
+    <Property Name="measurement" Type="varchar" MaxLength="50" />
+    <Property Name="observation" Type="varchar(max)" />
+    <Property Name="animal_id" Type="int" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="state" Type="bit" Nullable="false" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Role" Type="varchar" MaxLength="255" />
+    <Property Name="description" Type="varchar(max)" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="state" Type="bit" Nullable="false" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Role_View">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="role_id" Type="int" />
+    <Property Name="view_id" Type="int" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="state" Type="bit" Nullable="false" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Supply">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="description" Type="text" />
+    <Property Name="amount" Type="float" />
+    <Property Name="input_type" Type="varchar" MaxLength="50" />
+    <Property Name="date" Type="date" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="state" Type="bit" Nullable="false" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Treatment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="medicines" Type="varchar(max)" />
+    <Property Name="history_id" Type="int" />
+    <Property Name="date" Type="datetime2" Precision="6" />
+    <Property Name="description" Type="text" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="state" Type="bit" Nullable="false" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="UserAccount">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="255" />
+    <Property Name="password" Type="varchar" MaxLength="255" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="state" Type="bit" Nullable="false" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+    <Property Name="person_id" Type="int" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="role_id" Type="int" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="state" Type="bit" Nullable="false" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Vaccination">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="date" Type="datetime2" Precision="6" />
+    <Property Name="description" Type="text" />
+    <Property Name="vaccinator_id" Type="int" />
+    <Property Name="animal_id" Type="int" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="state" Type="bit" Nullable="false" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="View">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="description" Type="varchar(max)" />
+    <Property Name="route" Type="varchar" MaxLength="255" />
+    <Property Name="module_id" Type="int" />
+    <Property Name="created_at" Type="datetime2" Precision="6" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="deleted_at" Type="datetime2" Precision="6" />
+    <Property Name="deleted_by" Type="int" />
+    <Property Name="state" Type="bit" Nullable="false" />
+    <Property Name="updated_at" Type="datetime2" Precision="6" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <Association Name="FK__Alert__animal_id__6383C8BA">
+    <End Role="Animal" Type="Self.Animal" Multiplicity="0..1" />
+    <End Role="Alert" Type="Self.Alert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Animal">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Alert">
+        <PropertyRef Name="animal_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Animal__lot_id__60A75C0F">
+    <End Role="Lot" Type="Self.Lot" Multiplicity="0..1" />
+    <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lot">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Animal">
+        <PropertyRef Name="lot_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__City__municipali__45F365D3">
+    <End Role="Municipality" Type="Self.Municipality" Multiplicity="0..1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Municipality">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="municipality_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Country__contine__3D5E1FD2">
+    <End Role="Continent" Type="Self.Continent" Multiplicity="0..1" />
+    <End Role="Country" Type="Self.Country" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Continent">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Country">
+        <PropertyRef Name="continent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Departmen__count__403A8C7D">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Department" Type="Self.Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Department">
+        <PropertyRef Name="country_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Farm__user_id__5AEE82B9">
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="0..1" />
+    <End Role="Farm" Type="Self.Farm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Farm">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Health_Hi__anima__6FE99F9F">
+    <End Role="Animal" Type="Self.Animal" Multiplicity="0..1" />
+    <End Role="Health_History" Type="Self.Health_History" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Animal">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Health_History">
+        <PropertyRef Name="animal_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Inventory__inven__7C4F7684">
+    <End Role="Inventory" Type="Self.Inventory" Multiplicity="0..1" />
+    <End Role="Inventory_History" Type="Self.Inventory_History" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Inventory_History">
+        <PropertyRef Name="inventory_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Inventory__suppl__797309D9">
+    <End Role="Supply" Type="Self.Supply" Multiplicity="0..1" />
+    <End Role="Inventory" Type="Self.Inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supply">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Inventory">
+        <PropertyRef Name="supply_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Lot__farm_id__5DCAEF64">
+    <End Role="Farm" Type="Self.Farm" Multiplicity="0..1" />
+    <End Role="Lot" Type="Self.Lot" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Farm">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Lot">
+        <PropertyRef Name="farm_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Municipal__depar__4316F928">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="Municipality" Type="Self.Municipality" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Municipality">
+        <PropertyRef Name="department_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Observati__produ__693CA210">
+    <End Role="Production" Type="Self.Production" Multiplicity="0..1" />
+    <End Role="Observation" Type="Self.Observation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Production">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Observation">
+        <PropertyRef Name="production_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Person__city_id__4AB81AF0">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Person" Type="Self.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="city_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Productio__anima__66603565">
+    <End Role="Animal" Type="Self.Animal" Multiplicity="0..1" />
+    <End Role="Production" Type="Self.Production" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Animal">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Production">
+        <PropertyRef Name="animal_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Role_View__role___534D60F1">
+    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="Role_View" Type="Self.Role_View" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Role_View">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Role_View__view___5441852A">
+    <End Role="View" Type="Self.View" Multiplicity="0..1" />
+    <End Role="Role_View" Type="Self.Role_View" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="View">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Role_View">
+        <PropertyRef Name="view_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Treatment__histo__74AE54BC">
+    <End Role="Health_History" Type="Self.Health_History" Multiplicity="0..1" />
+    <End Role="Treatment" Type="Self.Treatment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Health_History">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Treatment">
+        <PropertyRef Name="history_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserAccou__perso__4D94879B">
+    <End Role="Person" Type="Self.Person" Multiplicity="0..1" />
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="UserAccount">
+        <PropertyRef Name="person_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserRole__role_i__5812160E">
+    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserRole__user_i__571DF1D5">
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="0..1" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vaccinati__anima__6D0D32F4">
+    <End Role="Animal" Type="Self.Animal" Multiplicity="0..1" />
+    <End Role="Vaccination" Type="Self.Vaccination" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Animal">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Vaccination">
+        <PropertyRef Name="animal_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vaccinati__vacci__6C190EBB">
+    <End Role="Person" Type="Self.Person" Multiplicity="0..1" />
+    <End Role="Vaccination" Type="Self.Vaccination" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Vaccination">
+        <PropertyRef Name="vaccinator_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__View__module_id__5070F446">
+    <End Role="Module" Type="Self.Module" Multiplicity="0..1" />
+    <End Role="View" Type="Self.View" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Module">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="View">
+        <PropertyRef Name="module_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBModelStoreContainer">
+    <EntitySet Name="Alert" EntityType="Self.Alert" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Animal" EntityType="Self.Animal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Continent" EntityType="Self.Continent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Farm" EntityType="Self.Farm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Health_History" EntityType="Self.Health_History" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory_History" EntityType="Self.Inventory_History" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lot" EntityType="Self.Lot" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Medicine" EntityType="Self.Medicine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Module" EntityType="Self.Module" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Municipality" EntityType="Self.Municipality" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Observation" EntityType="Self.Observation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Production" EntityType="Self.Production" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role_View" EntityType="Self.Role_View" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supply" EntityType="Self.Supply" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Treatment" EntityType="Self.Treatment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vaccination" EntityType="Self.Vaccination" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="View" EntityType="Self.View" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Alert__animal_id__6383C8BA" Association="Self.FK__Alert__animal_id__6383C8BA">
+      <End Role="Animal" EntitySet="Animal" />
+      <End Role="Alert" EntitySet="Alert" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Animal__lot_id__60A75C0F" Association="Self.FK__Animal__lot_id__60A75C0F">
+      <End Role="Lot" EntitySet="Lot" />
+      <End Role="Animal" EntitySet="Animal" />
+    </AssociationSet>
+    <AssociationSet Name="FK__City__municipali__45F365D3" Association="Self.FK__City__municipali__45F365D3">
+      <End Role="Municipality" EntitySet="Municipality" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Country__contine__3D5E1FD2" Association="Self.FK__Country__contine__3D5E1FD2">
+      <End Role="Continent" EntitySet="Continent" />
+      <End Role="Country" EntitySet="Country" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Departmen__count__403A8C7D" Association="Self.FK__Departmen__count__403A8C7D">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Department" EntitySet="Department" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Farm__user_id__5AEE82B9" Association="Self.FK__Farm__user_id__5AEE82B9">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="Farm" EntitySet="Farm" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Health_Hi__anima__6FE99F9F" Association="Self.FK__Health_Hi__anima__6FE99F9F">
+      <End Role="Animal" EntitySet="Animal" />
+      <End Role="Health_History" EntitySet="Health_History" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Inventory__inven__7C4F7684" Association="Self.FK__Inventory__inven__7C4F7684">
+      <End Role="Inventory" EntitySet="Inventory" />
+      <End Role="Inventory_History" EntitySet="Inventory_History" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Inventory__suppl__797309D9" Association="Self.FK__Inventory__suppl__797309D9">
+      <End Role="Supply" EntitySet="Supply" />
+      <End Role="Inventory" EntitySet="Inventory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Lot__farm_id__5DCAEF64" Association="Self.FK__Lot__farm_id__5DCAEF64">
+      <End Role="Farm" EntitySet="Farm" />
+      <End Role="Lot" EntitySet="Lot" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Municipal__depar__4316F928" Association="Self.FK__Municipal__depar__4316F928">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Municipality" EntitySet="Municipality" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Observati__produ__693CA210" Association="Self.FK__Observati__produ__693CA210">
+      <End Role="Production" EntitySet="Production" />
+      <End Role="Observation" EntitySet="Observation" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Person__city_id__4AB81AF0" Association="Self.FK__Person__city_id__4AB81AF0">
+      <End Role="City" EntitySet="City" />
+      <End Role="Person" EntitySet="Person" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Productio__anima__66603565" Association="Self.FK__Productio__anima__66603565">
+      <End Role="Animal" EntitySet="Animal" />
+      <End Role="Production" EntitySet="Production" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Role_View__role___534D60F1" Association="Self.FK__Role_View__role___534D60F1">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="Role_View" EntitySet="Role_View" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Role_View__view___5441852A" Association="Self.FK__Role_View__view___5441852A">
+      <End Role="View" EntitySet="View" />
+      <End Role="Role_View" EntitySet="Role_View" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Treatment__histo__74AE54BC" Association="Self.FK__Treatment__histo__74AE54BC">
+      <End Role="Health_History" EntitySet="Health_History" />
+      <End Role="Treatment" EntitySet="Treatment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserAccou__perso__4D94879B" Association="Self.FK__UserAccou__perso__4D94879B">
+      <End Role="Person" EntitySet="Person" />
+      <End Role="UserAccount" EntitySet="UserAccount" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserRole__role_i__5812160E" Association="Self.FK__UserRole__role_i__5812160E">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserRole__user_i__571DF1D5" Association="Self.FK__UserRole__user_i__571DF1D5">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vaccinati__anima__6D0D32F4" Association="Self.FK__Vaccinati__anima__6D0D32F4">
+      <End Role="Animal" EntitySet="Animal" />
+      <End Role="Vaccination" EntitySet="Vaccination" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vaccinati__vacci__6C190EBB" Association="Self.FK__Vaccinati__vacci__6C190EBB">
+      <End Role="Person" EntitySet="Person" />
+      <End Role="Vaccination" EntitySet="Vaccination" />
+    </AssociationSet>
+    <AssociationSet Name="FK__View__module_id__5070F446" Association="Self.FK__View__module_id__5070F446">
+      <End Role="Module" EntitySet="Module" />
+      <End Role="View" EntitySet="View" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
