@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entity.Model.Parameter
 {
-    public class CategoryAnimal : ABaseModel
+    public class CategoryMedicines : ABaseModel
     {
-        public String Name { get; set; }
-        public String Description { get; set; }
-
+        public string Name {  get; set; }
+        public string Description { get; set; }
     }
 }

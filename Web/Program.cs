@@ -7,11 +7,8 @@ using Data.Localitation.Interface;
 using Data.Security.Implementation;
 using Data.Security.Interfaces;
 using Entity.Context;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using Web;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,6 +33,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Agregar los servicios antes de construir la aplicación
+
+//SERVICE
 
 builder.Services.AddScoped<IPersonBusiness, PersonBusiness>();
 builder.Services.AddScoped<IPersonData, PersonData>();
@@ -66,6 +65,10 @@ builder.Services.AddScoped<ICountryData, CountryData>();
 
 builder.Services.AddScoped<ICityBusiness, CityBusiness>();
 builder.Services.AddScoped<ICityData, CityData>();
+
+//PARAMETER
+
+
 
 var app = builder.Build();
 

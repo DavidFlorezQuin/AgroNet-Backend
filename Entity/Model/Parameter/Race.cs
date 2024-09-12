@@ -10,8 +10,5 @@ namespace Entity.Model.Parameter
     {
         public string Name { get; set; }
         public string Description { get; set; }
-
-        public int CategoryAnimalId { get; set; }
-        public CategoryAnimal CategoryAnimal { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace Entity.Model.Parameter
         public string Name { get; set; }
         public string MedicationAdministration { get; set; }
         public string UnitMeasure { get; set; }
-        public TypeMedicines TypeMedicinesId { get; set; }
+        public CategoryMedicines TypeMedicinesId { get; set; }
 
     }
 }

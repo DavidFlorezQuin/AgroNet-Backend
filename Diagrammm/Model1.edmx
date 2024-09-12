@@ -46,7 +46,6 @@
           </AssociationSet>
           <EntitySet Name="FarmSet" EntityType="Model1.Farm" />
           <EntitySet Name="InventorySet" EntityType="Model1.Inventory" />
-          <EntitySet Name="vacunationSet" EntityType="Model1.vacunation" />
           <EntitySet Name="AnimalSet" EntityType="Model1.Animal" />
           <EntitySet Name="AlertSet" EntityType="Model1.Alert" />
           <EntitySet Name="ProductionSet" EntityType="Model1.Production" />
@@ -64,10 +63,6 @@
             <End Role="Country" EntitySet="CountrySet" />
             <End Role="Continent" EntitySet="ContinentSet" />
           </AssociationSet>
-          <AssociationSet Name="DepartmentCity" Association="Model1.DepartmentCity">
-            <End Role="Department" EntitySet="DepartmentSet" />
-            <End Role="City" EntitySet="CitySet" />
-          </AssociationSet>
           <AssociationSet Name="inventory_supliesSupplies" Association="Model1.inventory_supliesSupplies">
             <End Role="inventory_suplies" EntitySet="inventory_supliesSet" />
             <End Role="Supplies" EntitySet="SuppliesSet" />
@@ -75,10 +70,6 @@
           <AssociationSet Name="inventory_supliesInventory" Association="Model1.inventory_supliesInventory">
             <End Role="inventory_suplies" EntitySet="inventory_supliesSet" />
             <End Role="Inventory" EntitySet="InventorySet" />
-          </AssociationSet>
-          <AssociationSet Name="vacunationusuario" Association="Model1.vacunationusuario">
-            <End Role="vacunation" EntitySet="vacunationSet" />
-            <End Role="usuario" EntitySet="usuarioSet" />
           </AssociationSet>
           <AssociationSet Name="LotFarm" Association="Model1.LotFarm">
             <End Role="Lot" EntitySet="LotSet" />
@@ -133,10 +124,6 @@
             <End Role="Treatments" EntitySet="TreatmentsSet" />
             <End Role="Health" EntitySet="HealthSet" />
           </AssociationSet>
-          <AssociationSet Name="Animalvacunation" Association="Model1.Animalvacunation">
-            <End Role="Animal" EntitySet="AnimalSet" />
-            <End Role="vacunation" EntitySet="vacunationSet" />
-          </AssociationSet>
           <AssociationSet Name="ProductionSale" Association="Model1.ProductionSale">
             <End Role="Production" EntitySet="ProductionSet" />
             <End Role="Sale" EntitySet="SaleSet" />
@@ -181,16 +168,7 @@
             <End Role="category_alert" EntitySet="category_alertSet" />
             <End Role="Alert" EntitySet="AlertSet" />
           </AssociationSet>
-          <EntitySet Name="type_productionSet" EntityType="Model1.type_production" />
           <EntitySet Name="type_animalSet" EntityType="Model1.type_animal" />
-          <AssociationSet Name="type_animaltype_production" Association="Model1.type_animaltype_production">
-            <End Role="type_animal" EntitySet="type_animalSet" />
-            <End Role="type_production" EntitySet="type_productionSet" />
-          </AssociationSet>
-          <AssociationSet Name="type_productionProduction" Association="Model1.type_productionProduction">
-            <End Role="type_production" EntitySet="type_productionSet" />
-            <End Role="Production" EntitySet="ProductionSet" />
-          </AssociationSet>
           <AssociationSet Name="type_animalAnimal" Association="Model1.type_animalAnimal">
             <End Role="type_animal" EntitySet="type_animalSet" />
             <End Role="Animal" EntitySet="AnimalSet" />
@@ -204,22 +182,21 @@
             <End Role="Alert" EntitySet="AlertSet" />
           </AssociationSet>
           <EntitySet Name="ANIMAL_CLASSIFICATIONSet" EntityType="Model1.ANIMAL_CLASSIFICATION" />
-          <EntitySet Name="category_animalSet" EntityType="Model1.category_animal" />
-          <AssociationSet Name="category_animalANIMAL_CLASSIFICATION" Association="Model1.category_animalANIMAL_CLASSIFICATION">
-            <End Role="category_animal" EntitySet="category_animalSet" />
-            <End Role="ANIMAL_CLASSIFICATION" EntitySet="ANIMAL_CLASSIFICATIONSet" />
-          </AssociationSet>
-          <AssociationSet Name="category_animalAnimal" Association="Model1.category_animalAnimal">
-            <End Role="category_animal" EntitySet="category_animalSet" />
-            <End Role="Animal" EntitySet="AnimalSet" />
-          </AssociationSet>
           <AssociationSet Name="ANIMAL_CLASSIFICATIONAnimal" Association="Model1.ANIMAL_CLASSIFICATIONAnimal">
             <End Role="ANIMAL_CLASSIFICATION" EntitySet="ANIMAL_CLASSIFICATIONSet" />
             <End Role="Animal" EntitySet="AnimalSet" />
           </AssociationSet>
-          <AssociationSet Name="category_animaltype_production" Association="Model1.category_animaltype_production">
-            <End Role="category_animal" EntitySet="category_animalSet" />
-            <End Role="type_production" EntitySet="type_productionSet" />
+          <AssociationSet Name="Inseminationbirth" Association="Model1.Inseminationbirth">
+            <End Role="Insemination" EntitySet="InseminationSet" />
+            <End Role="birth" EntitySet="birthSet" />
+          </AssociationSet>
+          <AssociationSet Name="DepartmentCity" Association="Model1.DepartmentCity">
+            <End Role="Department" EntitySet="DepartmentSet" />
+            <End Role="City" EntitySet="CitySet" />
+          </AssociationSet>
+          <AssociationSet Name="usuarioHealth" Association="Model1.usuarioHealth">
+            <End Role="usuario" EntitySet="usuarioSet" />
+            <End Role="Health" EntitySet="HealthSet" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="rol">
@@ -334,17 +311,6 @@
           <NavigationProperty Name="Farm_id" Relationship="Model1.InventoryFarm" FromRole="Inventory" ToRole="Farm" />
           <Property Name="name" Type="String" Nullable="false" />
         </EntityType>
-        <EntityType Name="vacunation">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" />
-          <Property Name="date" Type="String" Nullable="false" />
-          <Property Name="observation" Type="String" Nullable="false" />
-          <NavigationProperty Name="usuario_id" Relationship="Model1.vacunationusuario" FromRole="vacunation" ToRole="usuario" />
-          <NavigationProperty Name="Animal_id" Relationship="Model1.Animalvacunation" FromRole="vacunation" ToRole="Animal" />
-        </EntityType>
         <EntityType Name="Animal">
           <Key>
             <PropertyRef Name="Id" />
@@ -359,11 +325,6 @@
           <NavigationProperty Name="race_id" Relationship="Model1.raceAnimal" FromRole="Animal" ToRole="race" />
           <Property Name="raceId" Type="Int32" Nullable="false" />
           <Property Name="type_productionId" Type="Int32" Nullable="false" />
-          <Property Name="type_animalId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="category_animal_id" Relationship="Model1.category_animalAnimal" FromRole="Animal" ToRole="category_animal" />
-          <Property Name="category_animalId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ANIMAL_CLASSIFICATION_id" Relationship="Model1.ANIMAL_CLASSIFICATIONAnimal" FromRole="Animal" ToRole="ANIMAL_CLASSIFICATION" />
-          <Property Name="ANIMAL_CLASSIFICATIONId" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Alert">
           <Key>
@@ -374,7 +335,6 @@
           <Property Name="descripcion" Type="String" Nullable="false" />
           <Property Name="date" Type="String" Nullable="false" />
           <NavigationProperty Name="category_alert_id" Relationship="Model1.category_alertAlert" FromRole="Alert" ToRole="category_alert" />
-          <Property Name="category_alertId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="usuario_id" Relationship="Model1.Alertusuario" FromRole="Alert" ToRole="usuario" />
           <NavigationProperty Name="Animal_id" Relationship="Model1.AnimalAlert" FromRole="Alert" ToRole="Animal" />
           <Property Name="is_read" Type="String" Nullable="false" />
@@ -385,13 +345,12 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="date" Type="String" Nullable="false" />
-          <Property Name="type_production" Type="String" Nullable="false" />
+          <Property Name="type_production" Nullable="false" Type="String" />
           <Property Name="quantity" Type="String" Nullable="false" />
           <Property Name="measurement" Type="String" Nullable="false" />
           <Property Name="observation" Type="String" Nullable="false" />
           <NavigationProperty Name="Animal_id" Relationship="Model1.AnimalProduction" FromRole="Production" ToRole="Animal" />
           <Property Name="quantity_total" Type="String" Nullable="false" />
-          <NavigationProperty Name="type_production_id" Relationship="Model1.type_productionProduction" FromRole="Production" ToRole="type_production" />
           <Property Name="type_productionId" Type="Int32" Nullable="false" />
           <Property Name="expirate_date" Type="String" Nullable="false" />
         </EntityType>
@@ -429,7 +388,8 @@
           <Property Name="date" Type="String" Nullable="false" />
           <Property Name="state" Type="String" Nullable="false" />
           <NavigationProperty Name="Animal_id" Relationship="Model1.Animalhealth_history" FromRole="health_history" ToRole="Animal" />
-          <Property Name="AnimalId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="usuario_Id" Relationship="Model1.usuarioHealth" FromRole="Health" ToRole="usuario" />
+          <Property Name="type_health" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Lot">
           <Key>
@@ -477,7 +437,7 @@
           <Property Name="code" Type="String" Nullable="false" />
           <Property Name="description" Type="String" Nullable="false" />
           <Property Name="name" Type="String" Nullable="false" />
-          <NavigationProperty Name="Department" Relationship="Model1.DepartmentCity" FromRole="City" ToRole="Department" />
+          <NavigationProperty Name="Department_id" Relationship="Model1.DepartmentCity" FromRole="City" ToRole="Department" />
         </EntityType>
         <EntityType Name="Supplies">
           <Key>
@@ -505,18 +465,6 @@
           <End Type="Model1.Country" Role="Country" Multiplicity="*" />
           <End Type="Model1.Continent" Role="Continent" Multiplicity="1" />
         </Association>
-        <Association Name="DepartmentCity">
-          <End Type="Model1.Department" Role="Department" Multiplicity="1" />
-          <End Type="Model1.City" Role="City" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Department">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="City">
-              <PropertyRef Name="DepartmentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="inventory_supliesSupplies">
           <End Type="Model1.inventory_suplies" Role="inventory_suplies" Multiplicity="*" />
           <End Type="Model1.Supplies" Role="Supplies" Multiplicity="1" />
@@ -524,10 +472,6 @@
         <Association Name="inventory_supliesInventory">
           <End Type="Model1.inventory_suplies" Role="inventory_suplies" Multiplicity="*" />
           <End Type="Model1.Inventory" Role="Inventory" Multiplicity="1" />
-        </Association>
-        <Association Name="vacunationusuario">
-          <End Type="Model1.vacunation" Role="vacunation" Multiplicity="*" />
-          <End Type="Model1.usuario" Role="usuario" Multiplicity="1" />
         </Association>
         <Association Name="LotFarm">
           <End Type="Model1.Lot" Role="Lot" Multiplicity="*" />
@@ -624,9 +568,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Periocity" Type="String" Nullable="false" />
           <NavigationProperty Name="Treatments_id" Relationship="Model1.TreatmentsTreatments_Medicines" FromRole="Treatments_Medicines" ToRole="Treatments" />
-          <Property Name="TreatmentsId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Medicines_id" Relationship="Model1.Treatments_MedicinesMedicines1" FromRole="Treatments_Medicines" ToRole="Medicines" />
-          <Property Name="MedicinesId" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="TreatmentsTreatments_Medicines">
           <End Type="Model1.Treatments" Role="Treatments" Multiplicity="1" />
@@ -679,18 +621,6 @@
         <Association Name="TreatmentsHealth">
           <End Type="Model1.Treatments" Role="Treatments" Multiplicity="*" />
           <End Type="Model1.Health" Role="Health" Multiplicity="1" />
-        </Association>
-        <Association Name="Animalvacunation">
-          <End Type="Model1.Animal" Role="Animal" Multiplicity="1" />
-          <End Type="Model1.vacunation" Role="vacunation" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Animal">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="vacunation">
-              <PropertyRef Name="AnimalId2" />
-            </Dependent>
-          </ReferentialConstraint>
         </Association>
         <Association Name="ProductionSale">
           <End Type="Model1.Production" Role="Production" Multiplicity="1" />
@@ -749,8 +679,8 @@
           <Property Name="assistance" Type="String" Nullable="false" />
           <Property Name="birth_weight" Type="String" Nullable="false" />
           <Property Name="observation" Type="String" Nullable="false" />
-          <NavigationProperty Name="Insemination_id" Relationship="Model1.birthInsemination" FromRole="birth" ToRole="Insemination" />
           <NavigationProperty Name="Animal_id" Relationship="Model1.Animalbirth" FromRole="birth" ToRole="Animal" />
+          <NavigationProperty Name="Insemination_Id" Relationship="Model1.Inseminationbirth" FromRole="birth" ToRole="Insemination" />
         </EntityType>
         <Association Name="birthInsemination">
           <End Type="Model1.birth" Role="birth" Multiplicity="1" />
@@ -817,15 +747,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="type_production">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" />
-          <NavigationProperty Name="category_animal_id" Relationship="Model1.category_animaltype_production" FromRole="type_production" ToRole="category_animal" />
-          <Property Name="category_animalId" Type="Int32" Nullable="false" />
-        </EntityType>
         <EntityType Name="type_animal">
           <Key>
             <PropertyRef Name="Id" />
@@ -834,30 +755,6 @@
           <Property Name="name" Type="String" Nullable="false" />
           <Property Name="description" Type="String" Nullable="false" />
         </EntityType>
-        <Association Name="type_animaltype_production">
-          <End Type="Model1.type_animal" Role="type_animal" Multiplicity="1" />
-          <End Type="Model1.type_production" Role="type_production" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="type_animal">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="type_production">
-              <PropertyRef Name="type_animalId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="type_productionProduction">
-          <End Type="Model1.type_production" Role="type_production" Multiplicity="1" />
-          <End Type="Model1.Production" Role="Production" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="type_production">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Production">
-              <PropertyRef Name="type_productionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="type_animalAnimal">
           <End Type="Model1.type_animal" Role="type_animal" Multiplicity="1" />
           <End Type="Model1.Animal" Role="Animal" Multiplicity="*" />
@@ -892,41 +789,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="type" Type="String" Nullable="false" />
-          <NavigationProperty Name="category_animal_id" Relationship="Model1.category_animalANIMAL_CLASSIFICATION" FromRole="ANIMAL_CLASSIFICATION" ToRole="category_animal" />
         </EntityType>
-        <EntityType Name="category_animal">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" />
-          <Property Name="description" Type="String" Nullable="false" />
-          <Property Name="state" Type="String" Nullable="false" />
-        </EntityType>
-        <Association Name="category_animalANIMAL_CLASSIFICATION">
-          <End Type="Model1.category_animal" Role="category_animal" Multiplicity="1" />
-          <End Type="Model1.ANIMAL_CLASSIFICATION" Role="ANIMAL_CLASSIFICATION" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="category_animal">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ANIMAL_CLASSIFICATION">
-              <PropertyRef Name="category_animalId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="category_animalAnimal">
-          <End Type="Model1.category_animal" Role="category_animal" Multiplicity="1" />
-          <End Type="Model1.Animal" Role="Animal" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="category_animal">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Animal">
-              <PropertyRef Name="category_animalId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="ANIMAL_CLASSIFICATIONAnimal">
           <End Type="Model1.ANIMAL_CLASSIFICATION" Role="ANIMAL_CLASSIFICATION" Multiplicity="1" />
           <End Type="Model1.Animal" Role="Animal" Multiplicity="*" />
@@ -939,17 +802,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="category_animaltype_production">
-          <End Type="Model1.category_animal" Role="category_animal" Multiplicity="1" />
-          <End Type="Model1.type_production" Role="type_production" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="category_animal">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="type_production">
-              <PropertyRef Name="category_animalId" />
-            </Dependent>
-          </ReferentialConstraint>
+        <Association Name="Inseminationbirth">
+          <End Type="Model1.Insemination" Role="Insemination" Multiplicity="1" />
+          <End Type="Model1.birth" Role="birth" Multiplicity="*" />
+        </Association>
+        <Association Name="DepartmentCity">
+          <End Type="Model1.Department" Role="Department" Multiplicity="1" />
+          <End Type="Model1.City" Role="City" Multiplicity="*" />
+        </Association>
+        <Association Name="usuarioHealth">
+          <End Type="Model1.usuario" Role="usuario" Multiplicity="1" />
+          <End Type="Model1.Health" Role="Health" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>

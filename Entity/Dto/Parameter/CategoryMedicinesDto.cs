@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entity.Model.Parameter
+namespace Entity.Dto.Parameter
 {
-    public class TypeMedicines : ABaseModel
+    public class CategoryMedicinesDto
     {
-        public string Name {  get; set; }
+        public string Name { get; set; }
         public string Description { get; set; }
     }
 }

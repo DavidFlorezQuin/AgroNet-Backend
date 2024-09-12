@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using Entity.Model.Localitation;
+using Entity.Model.Parameter;
 using Entity.Model.Security;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -100,6 +101,15 @@ namespace Entity.Context
         public DbSet<City> City => Set<City>();
         public DbSet<Continent> Continent => Set<Continent>();
         public DbSet<Country> Country => Set<Country>();
+
+        /*PARAMETER*/
+        public DbSet<CategoryAlert> CategoryAlert => Set<CategoryAlert>();
+        public DbSet<CategoryMedicines> CategoryMedicines => Set<CategoryMedicines>();
+        public DbSet<CategorySupplies> CategorySupplies => Set<CategorySupplies>();
+        public DbSet<Race> Race => Set<Race>();
+        public DbSet<Medicines> Medicines => Set<Medicines>();
+
+
 
     }
 

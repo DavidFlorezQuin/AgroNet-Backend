@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="43f4f3d1d8ce43d49d59ff768567a30e" Name="Diagram1" ZoomLevel="95" >
+      <Diagram DiagramId="43f4f3d1d8ce43d49d59ff768567a30e" Name="Diagram1" ZoomLevel="28" >
         <EntityTypeShape EntityType="Model1.rol" Width="1.5" PointX="4.75" PointY="9.125" />
         <EntityTypeShape EntityType="Model1.vista" Width="1.5" PointX="0.625" PointY="9" />
         <EntityTypeShape EntityType="Model1.modulo" Width="1.5" PointX="0.5" PointY="11.625" />
@@ -20,38 +20,34 @@
         <AssociationConnector Association="Model1.vistamodulo" />
         <EntityTypeShape EntityType="Model1.Farm" Width="1.5" PointX="14.875" PointY="7" />
         <EntityTypeShape EntityType="Model1.Inventory" Width="2.125" PointX="15.125" PointY="11.375" />
-        <EntityTypeShape EntityType="Model1.vacunation" Width="1.5" PointX="26.625" PointY="5.375" />
-        <EntityTypeShape EntityType="Model1.Animal" Width="1.5" PointX="23.875" PointY="2.375" />
-        <EntityTypeShape EntityType="Model1.Alert" Width="1.5" PointX="20.25" PointY="1.625" />
+        <EntityTypeShape EntityType="Model1.Animal" Width="1.5" PointX="23.875" PointY="0.75" />
+        <EntityTypeShape EntityType="Model1.Alert" Width="1.5" PointX="21.625" PointY="0.5" />
         <EntityTypeShape EntityType="Model1.Production" Width="1.5" PointX="25.125" PointY="9.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model1.Sale" Width="1.5" PointX="27.375" PointY="9.625" />
-        <EntityTypeShape EntityType="Model1.Insemination" Width="1.5" PointX="21.25" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model1.Health" Width="1.5" PointX="27.5" PointY="2.25" />
+        <EntityTypeShape EntityType="Model1.Insemination" Width="1.5" PointX="21.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.Health" Width="1.5" PointX="26.625" PointY="1.25" />
         <EntityTypeShape EntityType="Model1.Lot" Width="1.5" PointX="16.875" PointY="7.375" />
         <EntityTypeShape EntityType="Model1.Department" Width="1.5" PointX="5.375" PointY="3.25" />
-        <EntityTypeShape EntityType="Model1.Continent" Width="1.5" PointX="1.625" PointY="3.5" />
+        <EntityTypeShape EntityType="Model1.Continent" Width="1.5" PointX="1.25" PointY="3.375" />
         <EntityTypeShape EntityType="Model1.Country" Width="1.5" PointX="3.5" PointY="3.375" />
         <EntityTypeShape EntityType="Model1.City" Width="1.5" PointX="7.75" PointY="3.375" />
         <EntityTypeShape EntityType="Model1.Supplies" Width="1.5" PointX="20.125" PointY="11.375" />
         <EntityTypeShape EntityType="Model1.inventory_suplies" Width="1.75" PointX="17.625" PointY="11.5" />
         <AssociationConnector Association="Model1.CountryContinent" />
-        <AssociationConnector Association="Model1.DepartmentCity" />
         <AssociationConnector Association="Model1.inventory_supliesSupplies" />
         <AssociationConnector Association="Model1.inventory_supliesInventory" />
-        <AssociationConnector Association="Model1.vacunationusuario" />
         <AssociationConnector Association="Model1.LotFarm" />
         <AssociationConnector Association="Model1.Animalhealth_history" />
         <AssociationConnector Association="Model1.AnimalProduction" />
         <EntityTypeShape EntityType="Model1.CategorySupplies" Width="1.75" PointX="22.375" PointY="11.625" />
-        <EntityTypeShape EntityType="Model1.Treatments" Width="1.5" PointX="29.125" PointY="2.25" />
-        <EntityTypeShape EntityType="Model1.Medicines" Width="2.25" PointX="31.125" PointY="4.75" />
-        <EntityTypeShape EntityType="Model1.Treatments_Medicines" Width="2" PointX="31.125" PointY="2.25" />
+        <EntityTypeShape EntityType="Model1.Treatments" Width="1.5" PointX="28.625" PointY="1.25" />
+        <EntityTypeShape EntityType="Model1.Medicines" Width="2" PointX="30.375" PointY="4.125" />
+        <EntityTypeShape EntityType="Model1.Treatments_Medicines" Width="2" PointX="30.875" PointY="1.25" />
         <AssociationConnector Association="Model1.TreatmentsTreatments_Medicines" />
         <AssociationConnector Association="Model1.Treatments_MedicinesMedicines1" />
         <AssociationConnector Association="Model1.DepartmentCountry" />
         <AssociationConnector Association="Model1.personaCity" />
         <AssociationConnector Association="Model1.TreatmentsHealth" />
-        <AssociationConnector Association="Model1.Animalvacunation" />
         <AssociationConnector Association="Model1.ProductionSale" />
         <AssociationConnector Association="Model1.InventoryFarm" />
         <AssociationConnector Association="Model1.CategorySuppliesSupplies" />
@@ -61,10 +57,6 @@
         <AssociationConnector Association="Model1.CityFarm" />
         <EntityTypeShape EntityType="Model1.category_alert" Width="1.5" PointX="17.875" PointY="2.625" />
         <AssociationConnector Association="Model1.category_alertAlert" />
-        <EntityTypeShape EntityType="Model1.type_production" Width="1.5" PointX="30.625" PointY="11" />
-        <EntityTypeShape EntityType="Model1.category_animal" Width="2.125" PointX="28.75" PointY="7.625" />
-        <AssociationConnector Association="Model1.type_animaltype_production" />
-        <AssociationConnector Association="Model1.type_productionProduction" />
         <AssociationConnector Association="Model1.type_animalAnimal" />
         <EntityTypeShape EntityType="Model1.Type_Medicines" Width="1.5" PointX="29" PointY="5.375" />
         <AssociationConnector Association="Model1.Type_MedicinesMedicines" />
@@ -78,12 +70,12 @@
         <AssociationConnector Association="Model1.AnimalInsemination" />
         <AssociationConnector Association="Model1.Alertusuario" />
         <AssociationConnector Association="Model1.AnimalAlert" />
-        <AssociationConnector Association="Model1.category_animalAnimal" />
-        <AssociationConnector Association="Model1.category_animaltype_production" />
         <AssociationConnector Association="Model1.LotAnimal" />
         <AssociationConnector Association="Model1.category_animalRace" />
         <AssociationConnector Association="Model1.RaceAnimal" />
         <AssociationConnector Association="Model1.type_productionAnimal" />
+        <AssociationConnector Association="Model1.DepartmentCity" />
+        <AssociationConnector Association="Model1.usuarioHealth" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
