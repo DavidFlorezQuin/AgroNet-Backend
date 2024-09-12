@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bCn05596VxY=",
+  "dgSpecHash": "uGnQzqnFaYg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Entity.csproj",
+  "projectFilePath": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Entity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\david\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\david\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

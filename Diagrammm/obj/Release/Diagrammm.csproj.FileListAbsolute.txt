@@ -1,0 +1,7 @@
+C:\Users\ASUS\OneDrive\Documentos\Visual Studio 2022\Projects\SecurytiApp\Diagrammm\bin\Release\Diagrammm.dll.config
+C:\Users\ASUS\OneDrive\Documentos\Visual Studio 2022\Projects\SecurytiApp\Diagrammm\bin\Release\Diagrammm.dll
+C:\Users\ASUS\OneDrive\Documentos\Visual Studio 2022\Projects\SecurytiApp\Diagrammm\bin\Release\Diagrammm.pdb
+C:\Users\ASUS\OneDrive\Documentos\Visual Studio 2022\Projects\SecurytiApp\Diagrammm\obj\Release\Diagrammm.csproj.AssemblyReference.cache
+C:\Users\ASUS\OneDrive\Documentos\Visual Studio 2022\Projects\SecurytiApp\Diagrammm\obj\Release\Diagrammm.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\OneDrive\Documentos\Visual Studio 2022\Projects\SecurytiApp\Diagrammm\obj\Release\Diagrammm.dll
+C:\Users\ASUS\OneDrive\Documentos\Visual Studio 2022\Projects\SecurytiApp\Diagrammm\obj\Release\Diagrammm.pdb

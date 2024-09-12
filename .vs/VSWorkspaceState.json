@@ -1,14 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Entity",
-    "\\Entity\\bin",
     "\\Entity\\bin\\Debug",
     "\\Entity\\bin\\Release",
     "\\Entity\\Model",
-    "\\Entity\\Model\\Context",
     "\\Entity\\Model\\Security"
   ],
-  "SelectedNode": "\\Entity\\Model\\Context\\AplicationDbContext.cs",
+  "SelectedNode": "\\Entity",
   "PreviewInSolutionExplorer": false
 }

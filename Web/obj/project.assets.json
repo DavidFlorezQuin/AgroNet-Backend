@@ -4042,11 +4042,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Web\\Web.csproj",
+      "projectUniqueName": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Web\\Web.csproj",
       "projectName": "Web",
-      "projectPath": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Web\\Web.csproj",
+      "projectPath": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Web\\Web.csproj",
       "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Web\\obj\\",
+      "outputPath": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4064,8 +4064,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Business\\Business.csproj": {
-              "projectPath": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Business\\Business.csproj"
+            "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Business\\Business.csproj": {
+              "projectPath": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Business\\Business.csproj"
             }
           }
         }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Utilities\\Utilities.csproj": {}
+    "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Utilities\\Utilities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Utilities\\Utilities.csproj": {
+    "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Utilities\\Utilities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Utilities\\Utilities.csproj",
+        "projectUniqueName": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Utilities\\Utilities.csproj",
         "projectName": "Utilities",
-        "projectPath": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Utilities\\Utilities.csproj",
+        "projectPath": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Utilities\\Utilities.csproj",
         "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Utilities\\obj\\",
+        "outputPath": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Utilities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config",

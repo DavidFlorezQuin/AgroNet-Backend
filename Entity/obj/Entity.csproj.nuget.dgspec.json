@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Entity.csproj": {}
+    "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Entity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Entity.csproj": {
+    "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Entity.csproj",
+        "projectUniqueName": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Entity.csproj",
+        "projectPath": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Entity.csproj",
         "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\obj\\",
+        "outputPath": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config",

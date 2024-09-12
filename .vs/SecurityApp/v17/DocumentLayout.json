@@ -1,254 +1,256 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\",
+  "WorkspaceRootPath": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4CC25322-7081-4F06-B17B-A45158CF442D}|DbDiagramAgro\\DbDiagramAgro.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\dbdiagramagro\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{4CC25322-7081-4F06-B17B-A45158CF442D}|DbDiagramAgro\\DbDiagramAgro.csproj|solutionrelative:dbdiagramagro\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{7B122C59-5A7A-4BCA-AA42-5BA42144BE3E}|Business\\Business.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\business\\business.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7B122C59-5A7A-4BCA-AA42-5BA42144BE3E}|Business\\Business.csproj|solutionrelative:business\\business.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4CC25322-7081-4F06-B17B-A45158CF442D}|DbDiagramAgro\\DbDiagramAgro.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\dbdiagramagro\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{4CC25322-7081-4F06-B17B-A45158CF442D}|DbDiagramAgro\\DbDiagramAgro.csproj|solutionrelative:dbdiagramagro\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\DbDiagramAgro\\Model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DbDiagramAgro\\Model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4CC25322-7081-4F06-B17B-A45158CF442D}|DbDiagramAgro\\DbDiagramAgro.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\dbdiagramagro\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4CC25322-7081-4F06-B17B-A45158CF442D}|DbDiagramAgro\\DbDiagramAgro.csproj|solutionrelative:dbdiagramagro\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4CC25322-7081-4F06-B17B-A45158CF442D}|DbDiagramAgro\\DbDiagramAgro.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\dbdiagramagro\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
-      "RelativeMoniker": "D:0:0:{4CC25322-7081-4F06-B17B-A45158CF442D}|DbDiagramAgro\\DbDiagramAgro.csproj|solutionrelative:dbdiagramagro\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\model\\parameter\\typeproduction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\model\\parameter\\typeproduction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\model\\parameter\\typeproduction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\dto\\parameter\\categorysuppliesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\dto\\parameter\\categorysuppliesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\dto\\parameter\\categorysuppliesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\dto\\parameter\\racedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\dto\\parameter\\racedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\dto\\parameter\\racedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\model\\parameter\\typemedicines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\model\\parameter\\typemedicines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\model\\parameter\\typemedicines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\model\\parameter\\race.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\model\\parameter\\race.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\model\\parameter\\race.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\dto\\parameter\\medicinesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\dto\\parameter\\medicinesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\dto\\parameter\\medicinesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\dto\\security\\rolemenudto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\dto\\security\\rolemenudto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\dto\\security\\rolemenudto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\dto\\security\\roledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\dto\\security\\roledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\dto\\security\\roledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\model\\parameter\\medicines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\model\\parameter\\medicines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\model\\parameter\\medicines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\dto\\parameter\\categoryalertdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\dto\\parameter\\categoryalertdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\dto\\parameter\\categoryalertdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\model\\parameter\\categoryanimal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\model\\parameter\\categoryanimal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\model\\parameter\\categoryanimal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\model\\parameter\\categorysupplies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\model\\parameter\\categorysupplies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\model\\parameter\\categorysupplies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\model\\parameter\\categoryalert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\model\\parameter\\categoryalert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\model\\parameter\\categoryalert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\data\\security\\implementation\\roleviewdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\data\\security\\implementation\\roleviewdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|solutionrelative:data\\security\\implementation\\roleviewdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\data\\security\\implementation\\roledata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\data\\security\\implementation\\roledata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|solutionrelative:data\\security\\implementation\\roledata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\model\\security\\roleview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\model\\security\\roleview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\model\\security\\roleview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{518A3F36-37F3-417F-A789-BF7BCB67BD41}|Web\\Web.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\web\\controllers\\security\\implementation\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{518A3F36-37F3-417F-A789-BF7BCB67BD41}|Web\\Web.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\web\\controllers\\security\\implementation\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{518A3F36-37F3-417F-A789-BF7BCB67BD41}|Web\\Web.csproj|solutionrelative:web\\controllers\\security\\implementation\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\model\\abasemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\model\\abasemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\model\\abasemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{518A3F36-37F3-417F-A789-BF7BCB67BD41}|Web\\Web.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\web\\controllers\\security\\implementation\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{518A3F36-37F3-417F-A789-BF7BCB67BD41}|Web\\Web.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\web\\controllers\\security\\implementation\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{518A3F36-37F3-417F-A789-BF7BCB67BD41}|Web\\Web.csproj|solutionrelative:web\\controllers\\security\\implementation\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{518A3F36-37F3-417F-A789-BF7BCB67BD41}|Web\\Web.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\web\\controllers\\security\\implementation\\userrolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{518A3F36-37F3-417F-A789-BF7BCB67BD41}|Web\\Web.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\web\\controllers\\security\\implementation\\userrolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{518A3F36-37F3-417F-A789-BF7BCB67BD41}|Web\\Web.csproj|solutionrelative:web\\controllers\\security\\implementation\\userrolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\data\\security\\implementation\\userdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\data\\security\\implementation\\userdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|solutionrelative:data\\security\\implementation\\userdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\model\\localitation\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\model\\localitation\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\model\\localitation\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\model\\localitation\\continent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\model\\localitation\\continent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\model\\localitation\\continent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\model\\localitation\\country.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\model\\localitation\\country.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\model\\localitation\\country.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\data\\security\\implementation\\persondata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\data\\security\\implementation\\persondata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|solutionrelative:data\\security\\implementation\\persondata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{518A3F36-37F3-417F-A789-BF7BCB67BD41}|Web\\Web.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{518A3F36-37F3-417F-A789-BF7BCB67BD41}|Web\\Web.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{518A3F36-37F3-417F-A789-BF7BCB67BD41}|Web\\Web.csproj|solutionrelative:web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\migrations\\aplicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\migrations\\aplicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\migrations\\aplicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\dto\\basedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\dto\\basedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\dto\\basedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\model\\genericconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\model\\genericconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\model\\genericconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\data\\security\\implementation\\viewdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\data\\security\\implementation\\viewdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|solutionrelative:data\\security\\implementation\\viewdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\model\\security\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\model\\security\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\model\\security\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\model\\security\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\model\\security\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\model\\security\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{518A3F36-37F3-417F-A789-BF7BCB67BD41}|Web\\Web.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{518A3F36-37F3-417F-A789-BF7BCB67BD41}|Web\\Web.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{518A3F36-37F3-417F-A789-BF7BCB67BD41}|Web\\Web.csproj|solutionrelative:web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\context\\aplicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\context\\aplicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\context\\aplicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\dto\\security\\userroledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\dto\\security\\userroledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\dto\\security\\userroledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\dto\\security\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\dto\\security\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\dto\\security\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\data\\security\\implementation\\userroledata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\data\\security\\implementation\\userroledata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|solutionrelative:data\\security\\implementation\\userroledata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B122C59-5A7A-4BCA-AA42-5BA42144BE3E}|Business\\Business.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\business\\security\\implementation\\userrolebusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7B122C59-5A7A-4BCA-AA42-5BA42144BE3E}|Business\\Business.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\business\\security\\implementation\\userrolebusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B122C59-5A7A-4BCA-AA42-5BA42144BE3E}|Business\\Business.csproj|solutionrelative:business\\security\\implementation\\userrolebusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{518A3F36-37F3-417F-A789-BF7BCB67BD41}|Web\\Web.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\web\\controllers\\security\\interface\\iuserrolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{518A3F36-37F3-417F-A789-BF7BCB67BD41}|Web\\Web.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\web\\controllers\\security\\interface\\iuserrolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{518A3F36-37F3-417F-A789-BF7BCB67BD41}|Web\\Web.csproj|solutionrelative:web\\controllers\\security\\interface\\iuserrolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Migrations\\20240903025853_new-change.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Entity\\Migrations\\20240903025853_new-change.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Migrations\\20240903025853_new-change.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B122C59-5A7A-4BCA-AA42-5BA42144BE3E}|Business\\Business.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\business\\security\\implementation\\userbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7B122C59-5A7A-4BCA-AA42-5BA42144BE3E}|Business\\Business.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\business\\security\\implementation\\userbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B122C59-5A7A-4BCA-AA42-5BA42144BE3E}|Business\\Business.csproj|solutionrelative:business\\security\\implementation\\userbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B122C59-5A7A-4BCA-AA42-5BA42144BE3E}|Business\\Business.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\business\\security\\implementation\\roleviewbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7B122C59-5A7A-4BCA-AA42-5BA42144BE3E}|Business\\Business.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\business\\security\\implementation\\roleviewbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B122C59-5A7A-4BCA-AA42-5BA42144BE3E}|Business\\Business.csproj|solutionrelative:business\\security\\implementation\\roleviewbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Migrations\\20240903014859_new-changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Entity\\Migrations\\20240903014859_new-changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Migrations\\20240903014859_new-changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\data\\localitation\\implementation\\citydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\data\\localitation\\implementation\\citydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|solutionrelative:data\\localitation\\implementation\\citydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\data\\localitation\\implementation\\continentdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\data\\localitation\\implementation\\continentdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|solutionrelative:data\\localitation\\implementation\\continentdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\data\\localitation\\implementation\\countrydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\data\\localitation\\implementation\\countrydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|solutionrelative:data\\localitation\\implementation\\countrydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\data\\localitation\\interface\\icitydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\data\\localitation\\interface\\icitydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|solutionrelative:data\\localitation\\interface\\icitydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\dto\\security\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\dto\\security\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\dto\\security\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B122C59-5A7A-4BCA-AA42-5BA42144BE3E}|Business\\Business.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\business\\security\\implementation\\rolebusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7B122C59-5A7A-4BCA-AA42-5BA42144BE3E}|Business\\Business.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\business\\security\\implementation\\rolebusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B122C59-5A7A-4BCA-AA42-5BA42144BE3E}|Business\\Business.csproj|solutionrelative:business\\security\\implementation\\rolebusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\dto\\security\\menudto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\dto\\security\\menudto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\dto\\security\\menudto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\model\\security\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\model\\security\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\model\\security\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\model\\security\\modulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\model\\security\\modulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\model\\security\\modulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\model\\security\\views.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\model\\security\\views.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\model\\security\\views.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{518A3F36-37F3-417F-A789-BF7BCB67BD41}|Web\\Web.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\web\\controllers\\security\\implementation\\modulocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{518A3F36-37F3-417F-A789-BF7BCB67BD41}|Web\\Web.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\web\\controllers\\security\\implementation\\modulocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{518A3F36-37F3-417F-A789-BF7BCB67BD41}|Web\\Web.csproj|solutionrelative:web\\controllers\\security\\implementation\\modulocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\model\\security\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\model\\security\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\model\\security\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\data\\security\\implementation\\moduledata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\data\\security\\implementation\\moduledata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CA4676D1-29D2-4885-976D-5DF809BA87CF}|Data\\Data.csproj|solutionrelative:data\\security\\implementation\\moduledata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B122C59-5A7A-4BCA-AA42-5BA42144BE3E}|Business\\Business.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\business\\security\\implementation\\viewbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7B122C59-5A7A-4BCA-AA42-5BA42144BE3E}|Business\\Business.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\business\\security\\implementation\\viewbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B122C59-5A7A-4BCA-AA42-5BA42144BE3E}|Business\\Business.csproj|solutionrelative:business\\security\\implementation\\viewbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\securityapp\\securityapp\\entity\\migrations\\20240903035521_new-changsds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|c:\\users\\david\\source\\repos\\agronetbackend\\entity\\migrations\\20240903035521_new-changsds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9444293D-2AF4-4145-AA16-CC40637CCEF5}|Entity\\Entity.csproj|solutionrelative:entity\\migrations\\20240903035521_new-changsds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\DbDiagramAgro\\App.Config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DbDiagramAgro\\App.Config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\dbdiagramagro\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:dbdiagramagro\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\DbDiagramAgro\\Properties\\AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DbDiagramAgro\\Properties\\AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -263,49 +265,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Business",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Business\\Business.csproj",
+              "RelativeDocumentMoniker": "Business\\Business.csproj",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Business\\Business.csproj",
+              "RelativeToolTip": "Business\\Business.csproj",
+              "ViewState": "AQIAAJgAAAAAAAAAAAAgwLkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-12T09:08:58.143Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
               "Title": "App.Config",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\DbDiagramAgro\\App.Config",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\DbDiagramAgro\\App.Config",
               "RelativeDocumentMoniker": "DbDiagramAgro\\App.Config",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\DbDiagramAgro\\App.Config",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\DbDiagramAgro\\App.Config",
               "RelativeToolTip": "DbDiagramAgro\\App.Config",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-09-12T08:43:10.56Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-12T08:43:10.56Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\DbDiagramAgro\\Properties\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "DbDiagramAgro\\Properties\\AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\DbDiagramAgro\\Properties\\AssemblyInfo.cs",
+              "RelativeToolTip": "DbDiagramAgro\\Properties\\AssemblyInfo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T08:42:57.604Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "packages.config",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\DbDiagramAgro\\packages.config",
-              "RelativeDocumentMoniker": "DbDiagramAgro\\packages.config",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\DbDiagramAgro\\packages.config",
-              "RelativeToolTip": "DbDiagramAgro\\packages.config",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-09-12T08:43:07.593Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AssemblyInfo.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\DbDiagramAgro\\Properties\\AssemblyInfo.cs",
-              "RelativeDocumentMoniker": "DbDiagramAgro\\Properties\\AssemblyInfo.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\DbDiagramAgro\\Properties\\AssemblyInfo.cs",
-              "RelativeToolTip": "DbDiagramAgro\\Properties\\AssemblyInfo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T08:42:57.604Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Model1.edmx [Diagram1]",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\DbDiagramAgro\\Model1.edmx",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\DbDiagramAgro\\Model1.edmx",
               "RelativeDocumentMoniker": "DbDiagramAgro\\Model1.edmx",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\DbDiagramAgro\\Model1.edmx [Diagram1]",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\DbDiagramAgro\\Model1.edmx [Diagram1]",
               "RelativeToolTip": "DbDiagramAgro\\Model1.edmx [Diagram1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
               "WhenOpened": "2024-09-12T08:42:07.957Z",
@@ -313,193 +317,179 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "RaceDto.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Dto\\Parameter\\RaceDto.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Dto\\Parameter\\RaceDto.cs",
               "RelativeDocumentMoniker": "Entity\\Dto\\Parameter\\RaceDto.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Dto\\Parameter\\RaceDto.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Dto\\Parameter\\RaceDto.cs",
               "RelativeToolTip": "Entity\\Dto\\Parameter\\RaceDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T06:31:34.07Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MedicinesDto.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Dto\\Parameter\\MedicinesDto.cs",
-              "RelativeDocumentMoniker": "Entity\\Dto\\Parameter\\MedicinesDto.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Dto\\Parameter\\MedicinesDto.cs",
-              "RelativeToolTip": "Entity\\Dto\\Parameter\\MedicinesDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T06:17:45.874Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CategorySuppliesDto.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Dto\\Parameter\\CategorySuppliesDto.cs",
-              "RelativeDocumentMoniker": "Entity\\Dto\\Parameter\\CategorySuppliesDto.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Dto\\Parameter\\CategorySuppliesDto.cs",
-              "RelativeToolTip": "Entity\\Dto\\Parameter\\CategorySuppliesDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T06:16:56.423Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Race.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Parameter\\Race.cs",
-              "RelativeDocumentMoniker": "Entity\\Model\\Parameter\\Race.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Parameter\\Race.cs",
-              "RelativeToolTip": "Entity\\Model\\Parameter\\Race.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T01:16:44.396Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-12T06:31:34.07Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "TypeMedicines.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Parameter\\TypeMedicines.cs",
-              "RelativeDocumentMoniker": "Entity\\Model\\Parameter\\TypeMedicines.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Parameter\\TypeMedicines.cs",
-              "RelativeToolTip": "Entity\\Model\\Parameter\\TypeMedicines.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Title": "MedicinesDto.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Dto\\Parameter\\MedicinesDto.cs",
+              "RelativeDocumentMoniker": "Entity\\Dto\\Parameter\\MedicinesDto.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Dto\\Parameter\\MedicinesDto.cs",
+              "RelativeToolTip": "Entity\\Dto\\Parameter\\MedicinesDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T01:58:43.244Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-12T06:17:45.874Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
+              "Title": "CategorySuppliesDto.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Dto\\Parameter\\CategorySuppliesDto.cs",
+              "RelativeDocumentMoniker": "Entity\\Dto\\Parameter\\CategorySuppliesDto.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Dto\\Parameter\\CategorySuppliesDto.cs",
+              "RelativeToolTip": "Entity\\Dto\\Parameter\\CategorySuppliesDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T06:16:56.423Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Race.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Parameter\\Race.cs",
+              "RelativeDocumentMoniker": "Entity\\Model\\Parameter\\Race.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Parameter\\Race.cs",
+              "RelativeToolTip": "Entity\\Model\\Parameter\\Race.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T01:16:44.396Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TypeMedicines.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Parameter\\TypeMedicines.cs",
+              "RelativeDocumentMoniker": "Entity\\Model\\Parameter\\TypeMedicines.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Parameter\\TypeMedicines.cs",
+              "RelativeToolTip": "Entity\\Model\\Parameter\\TypeMedicines.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T01:58:43.244Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "TypeProduction.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Parameter\\TypeProduction.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Parameter\\TypeProduction.cs",
               "RelativeDocumentMoniker": "Entity\\Model\\Parameter\\TypeProduction.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Parameter\\TypeProduction.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Parameter\\TypeProduction.cs",
               "RelativeToolTip": "Entity\\Model\\Parameter\\TypeProduction.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T01:20:21.331Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-10T01:20:21.331Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RoleDto.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Dto\\Security\\RoleDto.cs",
+              "RelativeDocumentMoniker": "Entity\\Dto\\Security\\RoleDto.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Dto\\Security\\RoleDto.cs",
+              "RelativeToolTip": "Entity\\Dto\\Security\\RoleDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T06:28:46.337Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "RoleDto.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Dto\\Security\\RoleDto.cs",
-              "RelativeDocumentMoniker": "Entity\\Dto\\Security\\RoleDto.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Dto\\Security\\RoleDto.cs",
-              "RelativeToolTip": "Entity\\Dto\\Security\\RoleDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "CategoryAlertDto.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Dto\\Parameter\\CategoryAlertDto.cs",
+              "RelativeDocumentMoniker": "Entity\\Dto\\Parameter\\CategoryAlertDto.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Dto\\Parameter\\CategoryAlertDto.cs",
+              "RelativeToolTip": "Entity\\Dto\\Parameter\\CategoryAlertDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T06:28:46.337Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-12T05:59:01.794Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RoleMenuDto.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Dto\\Security\\RoleMenuDto.cs",
+              "RelativeDocumentMoniker": "Entity\\Dto\\Security\\RoleMenuDto.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Dto\\Security\\RoleMenuDto.cs",
+              "RelativeToolTip": "Entity\\Dto\\Security\\RoleMenuDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-01T20:00:31.589Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "CategoryAlertDto.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Dto\\Parameter\\CategoryAlertDto.cs",
-              "RelativeDocumentMoniker": "Entity\\Dto\\Parameter\\CategoryAlertDto.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Dto\\Parameter\\CategoryAlertDto.cs",
-              "RelativeToolTip": "Entity\\Dto\\Parameter\\CategoryAlertDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAvAAAA",
+              "Title": "CategorySupplies.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Parameter\\CategorySupplies.cs",
+              "RelativeDocumentMoniker": "Entity\\Model\\Parameter\\CategorySupplies.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Parameter\\CategorySupplies.cs",
+              "RelativeToolTip": "Entity\\Model\\Parameter\\CategorySupplies.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T05:59:01.794Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-12T05:55:16.535Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "RoleMenuDto.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Dto\\Security\\RoleMenuDto.cs",
-              "RelativeDocumentMoniker": "Entity\\Dto\\Security\\RoleMenuDto.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Dto\\Security\\RoleMenuDto.cs",
-              "RelativeToolTip": "Entity\\Dto\\Security\\RoleMenuDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAlAAAA",
+              "Title": "Medicines.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Parameter\\Medicines.cs",
+              "RelativeDocumentMoniker": "Entity\\Model\\Parameter\\Medicines.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Parameter\\Medicines.cs",
+              "RelativeToolTip": "Entity\\Model\\Parameter\\Medicines.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T20:00:31.589Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "CategorySupplies.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Parameter\\CategorySupplies.cs",
-              "RelativeDocumentMoniker": "Entity\\Model\\Parameter\\CategorySupplies.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Parameter\\CategorySupplies.cs",
-              "RelativeToolTip": "Entity\\Model\\Parameter\\CategorySupplies.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T05:55:16.535Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-10T01:49:54.658Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "Medicines.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Parameter\\Medicines.cs",
-              "RelativeDocumentMoniker": "Entity\\Model\\Parameter\\Medicines.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Parameter\\Medicines.cs",
-              "RelativeToolTip": "Entity\\Model\\Parameter\\Medicines.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Title": "CategoryAnimal.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Parameter\\CategoryAnimal.cs",
+              "RelativeDocumentMoniker": "Entity\\Model\\Parameter\\CategoryAnimal.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Parameter\\CategoryAnimal.cs",
+              "RelativeToolTip": "Entity\\Model\\Parameter\\CategoryAnimal.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T01:49:54.658Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-10T00:52:16.725Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "CategoryAnimal.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Parameter\\CategoryAnimal.cs",
-              "RelativeDocumentMoniker": "Entity\\Model\\Parameter\\CategoryAnimal.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Parameter\\CategoryAnimal.cs",
-              "RelativeToolTip": "Entity\\Model\\Parameter\\CategoryAnimal.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAvAAAA",
+              "Title": "CategoryAlert.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Parameter\\CategoryAlert.cs",
+              "RelativeDocumentMoniker": "Entity\\Model\\Parameter\\CategoryAlert.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Parameter\\CategoryAlert.cs",
+              "RelativeToolTip": "Entity\\Model\\Parameter\\CategoryAlert.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T00:52:16.725Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-10T01:14:09.025Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "RoleViewData.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Security\\Implementation\\RoleViewData.cs",
+              "RelativeDocumentMoniker": "Data\\Security\\Implementation\\RoleViewData.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Security\\Implementation\\RoleViewData.cs",
+              "RelativeToolTip": "Data\\Security\\Implementation\\RoleViewData.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAAjwDwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T20:52:28.038Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "CategoryAlert.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Parameter\\CategoryAlert.cs",
-              "RelativeDocumentMoniker": "Entity\\Model\\Parameter\\CategoryAlert.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Parameter\\CategoryAlert.cs",
-              "RelativeToolTip": "Entity\\Model\\Parameter\\CategoryAlert.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T01:14:09.025Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "RoleViewData.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\Security\\Implementation\\RoleViewData.cs",
-              "RelativeDocumentMoniker": "Data\\Security\\Implementation\\RoleViewData.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\Security\\Implementation\\RoleViewData.cs",
-              "RelativeToolTip": "Data\\Security\\Implementation\\RoleViewData.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAAjwDwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T20:52:28.038Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
               "Title": "RoleData.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\Security\\Implementation\\RoleData.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Security\\Implementation\\RoleData.cs",
               "RelativeDocumentMoniker": "Data\\Security\\Implementation\\RoleData.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\Security\\Implementation\\RoleData.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Security\\Implementation\\RoleData.cs",
               "RelativeToolTip": "Data\\Security\\Implementation\\RoleData.cs",
               "ViewState": "AQIAAC0AAAAAAAAAAAAcwEIAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -507,11 +497,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 18,
               "Title": "RoleController.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Web\\Controllers\\Security\\Implementation\\RoleController.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Web\\Controllers\\Security\\Implementation\\RoleController.cs",
               "RelativeDocumentMoniker": "Web\\Controllers\\Security\\Implementation\\RoleController.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Web\\Controllers\\Security\\Implementation\\RoleController.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Web\\Controllers\\Security\\Implementation\\RoleController.cs",
               "RelativeToolTip": "Web\\Controllers\\Security\\Implementation\\RoleController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -519,11 +509,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 20,
               "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Web\\Controllers\\Security\\Implementation\\UserController.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Web\\Controllers\\Security\\Implementation\\UserController.cs",
               "RelativeDocumentMoniker": "Web\\Controllers\\Security\\Implementation\\UserController.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Web\\Controllers\\Security\\Implementation\\UserController.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Web\\Controllers\\Security\\Implementation\\UserController.cs",
               "RelativeToolTip": "Web\\Controllers\\Security\\Implementation\\UserController.cs",
               "ViewState": "AQIAAEgAAAAAAAAAAAAcwAQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -531,11 +521,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 17,
               "Title": "RoleView.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Security\\RoleView.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Security\\RoleView.cs",
               "RelativeDocumentMoniker": "Entity\\Model\\Security\\RoleView.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Security\\RoleView.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Security\\RoleView.cs",
               "RelativeToolTip": "Entity\\Model\\Security\\RoleView.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -543,11 +533,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 21,
               "Title": "UserRoleController.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Web\\Controllers\\Security\\Implementation\\UserRoleController.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Web\\Controllers\\Security\\Implementation\\UserRoleController.cs",
               "RelativeDocumentMoniker": "Web\\Controllers\\Security\\Implementation\\UserRoleController.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Web\\Controllers\\Security\\Implementation\\UserRoleController.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Web\\Controllers\\Security\\Implementation\\UserRoleController.cs",
               "RelativeToolTip": "Web\\Controllers\\Security\\Implementation\\UserRoleController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -555,11 +545,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 26,
               "Title": "PersonData.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\Security\\Implementation\\PersonData.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Security\\Implementation\\PersonData.cs",
               "RelativeDocumentMoniker": "Data\\Security\\Implementation\\PersonData.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\Security\\Implementation\\PersonData.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Security\\Implementation\\PersonData.cs",
               "RelativeToolTip": "Data\\Security\\Implementation\\PersonData.cs",
               "ViewState": "AQIAABwAAAAAAAAAAAAIwCoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -567,11 +557,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 19,
               "Title": "ABaseModel.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\ABaseModel.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\ABaseModel.cs",
               "RelativeDocumentMoniker": "Entity\\Model\\ABaseModel.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\ABaseModel.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\ABaseModel.cs",
               "RelativeToolTip": "Entity\\Model\\ABaseModel.cs",
               "ViewState": "AQIAAAIAAAAAAAAAAAAqwA0AAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -579,11 +569,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 27,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Web\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Web\\appsettings.json",
               "RelativeDocumentMoniker": "Web\\appsettings.json",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Web\\appsettings.json",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Web\\appsettings.json",
               "RelativeToolTip": "Web\\appsettings.json",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAQAAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -591,11 +581,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 25,
               "Title": "Country.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Localitation\\Country.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Localitation\\Country.cs",
               "RelativeDocumentMoniker": "Entity\\Model\\Localitation\\Country.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Localitation\\Country.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Localitation\\Country.cs",
               "RelativeToolTip": "Entity\\Model\\Localitation\\Country.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -603,11 +593,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 23,
               "Title": "City.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Localitation\\City.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Localitation\\City.cs",
               "RelativeDocumentMoniker": "Entity\\Model\\Localitation\\City.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Localitation\\City.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Localitation\\City.cs",
               "RelativeToolTip": "Entity\\Model\\Localitation\\City.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -615,11 +605,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 22,
               "Title": "UserData.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\Security\\Implementation\\UserData.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Security\\Implementation\\UserData.cs",
               "RelativeDocumentMoniker": "Data\\Security\\Implementation\\UserData.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\Security\\Implementation\\UserData.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Security\\Implementation\\UserData.cs",
               "RelativeToolTip": "Data\\Security\\Implementation\\UserData.cs",
               "ViewState": "AQIAACUAAAAAAAAAAADwvygAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -627,11 +617,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 24,
               "Title": "Continent.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Localitation\\Continent.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Localitation\\Continent.cs",
               "RelativeDocumentMoniker": "Entity\\Model\\Localitation\\Continent.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Localitation\\Continent.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Localitation\\Continent.cs",
               "RelativeToolTip": "Entity\\Model\\Localitation\\Continent.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -639,11 +629,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 28,
               "Title": "AplicationDbContextModelSnapshot.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Migrations\\AplicationDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Migrations\\AplicationDbContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "Entity\\Migrations\\AplicationDbContextModelSnapshot.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Migrations\\AplicationDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Migrations\\AplicationDbContextModelSnapshot.cs",
               "RelativeToolTip": "Entity\\Migrations\\AplicationDbContextModelSnapshot.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAFUCAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -651,11 +641,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 59,
               "Title": "20240903035521_new-changsds.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Migrations\\20240903035521_new-changsds.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Migrations\\20240903035521_new-changsds.cs",
               "RelativeDocumentMoniker": "Entity\\Migrations\\20240903035521_new-changsds.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Migrations\\20240903035521_new-changsds.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Migrations\\20240903035521_new-changsds.cs",
               "RelativeToolTip": "Entity\\Migrations\\20240903035521_new-changsds.cs",
               "ViewState": "AQIAAA4BAAAAAAAAAAAEwPwAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -663,11 +653,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 29,
               "Title": "BaseDto.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Dto\\BaseDto.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Dto\\BaseDto.cs",
               "RelativeDocumentMoniker": "Entity\\Dto\\BaseDto.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Dto\\BaseDto.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Dto\\BaseDto.cs",
               "RelativeToolTip": "Entity\\Dto\\BaseDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -675,11 +665,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 30,
               "Title": "GenericConfig.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\GenericConfig.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\GenericConfig.cs",
               "RelativeDocumentMoniker": "Entity\\Model\\GenericConfig.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\GenericConfig.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\GenericConfig.cs",
               "RelativeToolTip": "Entity\\Model\\GenericConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -687,11 +677,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 33,
               "Title": "UserRole.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Security\\UserRole.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Security\\UserRole.cs",
               "RelativeDocumentMoniker": "Entity\\Model\\Security\\UserRole.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Security\\UserRole.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Security\\UserRole.cs",
               "RelativeToolTip": "Entity\\Model\\Security\\UserRole.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -699,11 +689,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 31,
               "Title": "ViewData.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\Security\\Implementation\\ViewData.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Security\\Implementation\\ViewData.cs",
               "RelativeDocumentMoniker": "Data\\Security\\Implementation\\ViewData.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\Security\\Implementation\\ViewData.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Security\\Implementation\\ViewData.cs",
               "RelativeToolTip": "Data\\Security\\Implementation\\ViewData.cs",
               "ViewState": "AQIAADcAAAAAAAAAAAAIwEYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -711,11 +701,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 32,
               "Title": "Person.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Security\\Person.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Security\\Person.cs",
               "RelativeDocumentMoniker": "Entity\\Model\\Security\\Person.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Security\\Person.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Security\\Person.cs",
               "RelativeToolTip": "Entity\\Model\\Security\\Person.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -723,11 +713,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 34,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Web\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Web\\Program.cs",
               "RelativeDocumentMoniker": "Web\\Program.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Web\\Program.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Web\\Program.cs",
               "RelativeToolTip": "Web\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -735,11 +725,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 36,
               "Title": "UserRoleDto.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Dto\\Security\\UserRoleDto.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Dto\\Security\\UserRoleDto.cs",
               "RelativeDocumentMoniker": "Entity\\Dto\\Security\\UserRoleDto.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Dto\\Security\\UserRoleDto.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Dto\\Security\\UserRoleDto.cs",
               "RelativeToolTip": "Entity\\Dto\\Security\\UserRoleDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -747,11 +737,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 40,
               "Title": "IUserRoleController.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Web\\Controllers\\Security\\Interface\\IUserRoleController.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Web\\Controllers\\Security\\Interface\\IUserRoleController.cs",
               "RelativeDocumentMoniker": "Web\\Controllers\\Security\\Interface\\IUserRoleController.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Web\\Controllers\\Security\\Interface\\IUserRoleController.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Web\\Controllers\\Security\\Interface\\IUserRoleController.cs",
               "RelativeToolTip": "Web\\Controllers\\Security\\Interface\\IUserRoleController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -759,11 +749,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 37,
               "Title": "UserDto.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Dto\\Security\\UserDto.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Dto\\Security\\UserDto.cs",
               "RelativeDocumentMoniker": "Entity\\Dto\\Security\\UserDto.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Dto\\Security\\UserDto.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Dto\\Security\\UserDto.cs",
               "RelativeToolTip": "Entity\\Dto\\Security\\UserDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -771,11 +761,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 35,
               "Title": "AplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Context\\AplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Context\\AplicationDbContext.cs",
               "RelativeDocumentMoniker": "Entity\\Context\\AplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Context\\AplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Context\\AplicationDbContext.cs",
               "RelativeToolTip": "Entity\\Context\\AplicationDbContext.cs",
               "ViewState": "AQIAAFUAAAAAAAAAAAAYwGAAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -783,11 +773,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 39,
               "Title": "UserRoleBusiness.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Business\\Security\\Implementation\\UserRoleBusiness.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Business\\Security\\Implementation\\UserRoleBusiness.cs",
               "RelativeDocumentMoniker": "Business\\Security\\Implementation\\UserRoleBusiness.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Business\\Security\\Implementation\\UserRoleBusiness.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Business\\Security\\Implementation\\UserRoleBusiness.cs",
               "RelativeToolTip": "Business\\Security\\Implementation\\UserRoleBusiness.cs",
               "ViewState": "AQIAAD8AAAAAAAAAAAAwwFIAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -795,11 +785,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 38,
               "Title": "UserRoleData.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\Security\\Implementation\\UserRoleData.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Security\\Implementation\\UserRoleData.cs",
               "RelativeDocumentMoniker": "Data\\Security\\Implementation\\UserRoleData.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\Security\\Implementation\\UserRoleData.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Security\\Implementation\\UserRoleData.cs",
               "RelativeToolTip": "Data\\Security\\Implementation\\UserRoleData.cs",
               "ViewState": "AQIAACkAAAAAAAAAAAAIwDMAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -807,23 +797,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 41,
               "Title": "20240903025853_new-change.cs",
               "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Migrations\\20240903025853_new-change.cs",
-              "RelativeDocumentMoniker": "Entity\\Migrations\\20240903025853_new-change.cs",
+              "RelativeDocumentMoniker": "..\\SecurityApp\\SecurityApp\\Entity\\Migrations\\20240903025853_new-change.cs",
               "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Migrations\\20240903025853_new-change.cs",
-              "RelativeToolTip": "Entity\\Migrations\\20240903025853_new-change.cs",
+              "RelativeToolTip": "..\\SecurityApp\\SecurityApp\\Entity\\Migrations\\20240903025853_new-change.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-03T02:58:54.114Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 42,
               "Title": "UserBusiness.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Business\\Security\\Implementation\\UserBusiness.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Business\\Security\\Implementation\\UserBusiness.cs",
               "RelativeDocumentMoniker": "Business\\Security\\Implementation\\UserBusiness.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Business\\Security\\Implementation\\UserBusiness.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Business\\Security\\Implementation\\UserBusiness.cs",
               "RelativeToolTip": "Business\\Security\\Implementation\\UserBusiness.cs",
               "ViewState": "AQIAAE4AAAAAAAAAAAAcwGAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -831,11 +821,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 43,
               "Title": "RoleViewBusiness.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Business\\Security\\Implementation\\RoleViewBusiness.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Business\\Security\\Implementation\\RoleViewBusiness.cs",
               "RelativeDocumentMoniker": "Business\\Security\\Implementation\\RoleViewBusiness.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Business\\Security\\Implementation\\RoleViewBusiness.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Business\\Security\\Implementation\\RoleViewBusiness.cs",
               "RelativeToolTip": "Business\\Security\\Implementation\\RoleViewBusiness.cs",
               "ViewState": "AQIAABsAAAAAAAAAAAA9wCoAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -843,11 +833,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 46,
               "Title": "ContinentData.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\Localitation\\Implementation\\ContinentData.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Localitation\\Implementation\\ContinentData.cs",
               "RelativeDocumentMoniker": "Data\\Localitation\\Implementation\\ContinentData.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\Localitation\\Implementation\\ContinentData.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Localitation\\Implementation\\ContinentData.cs",
               "RelativeToolTip": "Data\\Localitation\\Implementation\\ContinentData.cs",
               "ViewState": "AQIAABMAAAAAAAAAAAA1wC4AAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -855,11 +845,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 45,
               "Title": "CityData.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\Localitation\\Implementation\\CityData.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Localitation\\Implementation\\CityData.cs",
               "RelativeDocumentMoniker": "Data\\Localitation\\Implementation\\CityData.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\Localitation\\Implementation\\CityData.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Localitation\\Implementation\\CityData.cs",
               "RelativeToolTip": "Data\\Localitation\\Implementation\\CityData.cs",
               "ViewState": "AQIAACkAAAAAAAAAAAAwwDYAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -867,23 +857,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 44,
               "Title": "20240903014859_new-changes.cs",
               "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Migrations\\20240903014859_new-changes.cs",
-              "RelativeDocumentMoniker": "Entity\\Migrations\\20240903014859_new-changes.cs",
+              "RelativeDocumentMoniker": "..\\SecurityApp\\SecurityApp\\Entity\\Migrations\\20240903014859_new-changes.cs",
               "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Migrations\\20240903014859_new-changes.cs",
-              "RelativeToolTip": "Entity\\Migrations\\20240903014859_new-changes.cs",
+              "RelativeToolTip": "..\\SecurityApp\\SecurityApp\\Entity\\Migrations\\20240903014859_new-changes.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-03T01:49:00.115Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 47,
               "Title": "CountryData.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\Localitation\\Implementation\\CountryData.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Localitation\\Implementation\\CountryData.cs",
               "RelativeDocumentMoniker": "Data\\Localitation\\Implementation\\CountryData.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\Localitation\\Implementation\\CountryData.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Localitation\\Implementation\\CountryData.cs",
               "RelativeToolTip": "Data\\Localitation\\Implementation\\CountryData.cs",
               "ViewState": "AQIAACEAAAAAAAAAAAAowDcAAABKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -891,11 +881,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 48,
               "Title": "ICityData.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\Localitation\\Interface\\ICityData.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Localitation\\Interface\\ICityData.cs",
               "RelativeDocumentMoniker": "Data\\Localitation\\Interface\\ICityData.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\Localitation\\Interface\\ICityData.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Localitation\\Interface\\ICityData.cs",
               "RelativeToolTip": "Data\\Localitation\\Interface\\ICityData.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -903,11 +893,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 49,
               "Title": "LoginDto.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Dto\\Security\\LoginDto.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Dto\\Security\\LoginDto.cs",
               "RelativeDocumentMoniker": "Entity\\Dto\\Security\\LoginDto.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Dto\\Security\\LoginDto.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Dto\\Security\\LoginDto.cs",
               "RelativeToolTip": "Entity\\Dto\\Security\\LoginDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -915,11 +905,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 51,
               "Title": "menuDto.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Dto\\Security\\menuDto.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Dto\\Security\\menuDto.cs",
               "RelativeDocumentMoniker": "Entity\\Dto\\Security\\menuDto.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Dto\\Security\\menuDto.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Dto\\Security\\menuDto.cs",
               "RelativeToolTip": "Entity\\Dto\\Security\\menuDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -927,11 +917,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 50,
               "Title": "RoleBusiness.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Business\\Security\\Implementation\\RoleBusiness.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Business\\Security\\Implementation\\RoleBusiness.cs",
               "RelativeDocumentMoniker": "Business\\Security\\Implementation\\RoleBusiness.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Business\\Security\\Implementation\\RoleBusiness.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Business\\Security\\Implementation\\RoleBusiness.cs",
               "RelativeToolTip": "Business\\Security\\Implementation\\RoleBusiness.cs",
               "ViewState": "AQIAAE8AAAAAAAAAAAAowFwAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -939,11 +929,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 53,
               "Title": "Modulo.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Security\\Modulo.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Security\\Modulo.cs",
               "RelativeDocumentMoniker": "Entity\\Model\\Security\\Modulo.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Security\\Modulo.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Security\\Modulo.cs",
               "RelativeToolTip": "Entity\\Model\\Security\\Modulo.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -951,11 +941,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 54,
               "Title": "Views.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Security\\Views.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Security\\Views.cs",
               "RelativeDocumentMoniker": "Entity\\Model\\Security\\Views.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Security\\Views.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Security\\Views.cs",
               "RelativeToolTip": "Entity\\Model\\Security\\Views.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -963,11 +953,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 52,
               "Title": "Users.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Security\\Users.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Security\\Users.cs",
               "RelativeDocumentMoniker": "Entity\\Model\\Security\\Users.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Security\\Users.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Security\\Users.cs",
               "RelativeToolTip": "Entity\\Model\\Security\\Users.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -975,11 +965,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 55,
               "Title": "ModuloController.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Web\\Controllers\\Security\\Implementation\\ModuloController.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Web\\Controllers\\Security\\Implementation\\ModuloController.cs",
               "RelativeDocumentMoniker": "Web\\Controllers\\Security\\Implementation\\ModuloController.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Web\\Controllers\\Security\\Implementation\\ModuloController.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Web\\Controllers\\Security\\Implementation\\ModuloController.cs",
               "RelativeToolTip": "Web\\Controllers\\Security\\Implementation\\ModuloController.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAFUAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -987,11 +977,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 56,
               "Title": "Role.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Security\\Role.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Security\\Role.cs",
               "RelativeDocumentMoniker": "Entity\\Model\\Security\\Role.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Model\\Security\\Role.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Model\\Security\\Role.cs",
               "RelativeToolTip": "Entity\\Model\\Security\\Role.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAA5wAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -999,11 +989,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 57,
               "Title": "ModuleData.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\Security\\Implementation\\ModuleData.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Security\\Implementation\\ModuleData.cs",
               "RelativeDocumentMoniker": "Data\\Security\\Implementation\\ModuleData.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\Security\\Implementation\\ModuleData.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Security\\Implementation\\ModuleData.cs",
               "RelativeToolTip": "Data\\Security\\Implementation\\ModuleData.cs",
               "ViewState": "AQIAADwAAAAAAAAAAAAowEIAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -1011,19 +1001,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 58,
               "Title": "ViewBusiness.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Business\\Security\\Implementation\\ViewBusiness.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Business\\Security\\Implementation\\ViewBusiness.cs",
               "RelativeDocumentMoniker": "Business\\Security\\Implementation\\ViewBusiness.cs",
-              "ToolTip": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Business\\Security\\Implementation\\ViewBusiness.cs",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Business\\Security\\Implementation\\ViewBusiness.cs",
               "RelativeToolTip": "Business\\Security\\Implementation\\ViewBusiness.cs",
               "ViewState": "AQIAAFkAAAAAAAAAAAAuwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-31T19:31:55.679Z"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "packages.config",
+              "DocumentMoniker": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\DbDiagramAgro\\packages.config",
+              "RelativeDocumentMoniker": "DbDiagramAgro\\packages.config",
+              "ToolTip": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\DbDiagramAgro\\packages.config",
+              "RelativeToolTip": "DbDiagramAgro\\packages.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-09-12T08:43:07.593Z"
             }
           ]
         }

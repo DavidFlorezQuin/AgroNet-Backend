@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utilities", "Utilities\Util
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "Web\Web.csproj", "{518A3F36-37F3-417F-A789-BF7BCB67BD41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbDiagramAgro", "DbDiagramAgro\DbDiagramAgro.csproj", "{4CC25322-7081-4F06-B17B-A45158CF442D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diagram", "Diagrammm\Diagram.csproj", "{F4E49BC8-488F-4610-B211-C051E2885E94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{518A3F36-37F3-417F-A789-BF7BCB67BD41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{518A3F36-37F3-417F-A789-BF7BCB67BD41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{518A3F36-37F3-417F-A789-BF7BCB67BD41}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4CC25322-7081-4F06-B17B-A45158CF442D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4CC25322-7081-4F06-B17B-A45158CF442D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4CC25322-7081-4F06-B17B-A45158CF442D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4CC25322-7081-4F06-B17B-A45158CF442D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4E49BC8-488F-4610-B211-C051E2885E94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4E49BC8-488F-4610-B211-C051E2885E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4E49BC8-488F-4610-B211-C051E2885E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4E49BC8-488F-4610-B211-C051E2885E94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

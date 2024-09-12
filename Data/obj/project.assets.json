@@ -3238,11 +3238,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\Data.csproj",
+      "projectUniqueName": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Data.csproj",
       "projectName": "Data",
-      "projectPath": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\Data.csproj",
+      "projectPath": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Data.csproj",
       "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Data\\obj\\",
+      "outputPath": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3260,8 +3260,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Entity.csproj": {
-              "projectPath": "C:\\Users\\david\\Source\\Repos\\SecurityApp\\SecurityApp\\Entity\\Entity.csproj"
+            "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Entity.csproj": {
+              "projectPath": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Entity.csproj"
             }
           }
         }
