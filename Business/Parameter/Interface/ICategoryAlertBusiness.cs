@@ -10,11 +10,10 @@ namespace Business.Parameter.Interface
 {
     public interface ICategoryAlertBusiness
     {
-        Task Delete(int id);
         Task<CategoryAlert> Save(CategoryAlertDto entity);
-        Task<CategoryAlertDto> GetById(int id);
+        Task Delete(int id);
         Task Update(int id, CategoryAlertDto entity);
         Task<IEnumerable<CategoryAlertDto>> GetAll();
-
+        Task<CategoryAlertDto> GetById(int id);
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entity.Dto.Parameter
 {
-    public class CategorySuppliesDto
+    public class CategorySuppliesDto : BaseDto
     {
         public string Name { get; set; }
         public string Description { get; set; }

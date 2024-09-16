@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entity.Dto.Parameter
 {
-    public class RaceDto
+    public class RaceDto : BaseDto
     {
         public string Name { get; set; }
         public string Description { get; set; }

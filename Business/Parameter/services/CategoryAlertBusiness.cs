@@ -1,8 +1,7 @@
 ﻿using Business.Parameter.Interface;
-using Entity.Context;
+using Data.Parameter.Interface;
 using Entity.Dto.Parameter;
 using Entity.Model.Parameter;
-using Entity.Model.Security;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -15,40 +14,83 @@ namespace Business.Parameter.services
     public class CategoryAlertBusiness : ICategoryAlertBusiness
     {
 
-        private readonly AplicationDbContext context;
-        protected readonly IConfiguration configuration;
+        private readonly ICategoryAlertData data; 
 
-
- 
-
-        private readonly
-        private mapearDatos(CategoryAlert entity, CategoryAlertDto dto)
+       public CategoryAlertBusiness(ICategoryAlertData data)
         {
-
+            this.data = data; 
         }
-        public Task Delete(int id)
+        public async Task Delete(int id)
         {
-            throw new NotImplementedException();
+            await data.Delete(id); 
         }
 
-        public Task<IEnumerable<CategoryAlertDto>> GetAll()
+        public async Task<IEnumerable<CategoryAlertDto>> GetAll()
         {
-            throw new NotImplementedException();
+            var categories = await data.GetAll();
+            var categoriesDtos = new List<CategoryAlertDto>();
+
+            foreach (var category in categories)
+            {
+                var categoriesDto = new CategoryAlertDto
+                {
+                    Id = category.Id,
+                    Name = category.Name,
+                    Description = category.Description
+                };
+
+                categoriesDtos.Add(categoriesDto);
+            }
+
+            return categoriesDtos;
         }
 
-        public Task<CategoryAlertDto> GetById(int id)
+        public async Task<CategoryAlertDto> GetById(int id)
         {
-            throw new NotImplementedException();
+            CategoryAlert category = await data.GetById(id);
+            CategoryAlertDto categoryAlertDto = new CategoryAlertDto(); 
+
+            categoryAlertDto.Id = category.Id;
+            categoryAlertDto.Name = category.Name;
+            categoryAlertDto.Description = category.Description;
+            categoryAlertDto.Color = category.Color;
+            categoryAlertDto.state = category.state; 
+
+            
+            return categoryAlertDto;
+
         }
 
-        public Task<CategoryAlert> Save(CategoryAlertDto entity)
+        private CategoryAlert mapearDatos(CategoryAlert entity, CategoryAlertDto dto)
         {
-            throw new NotImplementedException();
+            entity.Id = dto.Id;
+            entity.Name = dto.Name;
+            entity.Description = dto.Description;
+            entity.Color = dto.Color;
+            entity.state = dto.state;
+
+            return entity; 
         }
 
-        public Task Update(int id, CategoryAlertDto entity)
+        public async Task<CategoryAlert> Save(CategoryAlertDto entity)
         {
-            throw new NotImplementedException();
+            CategoryAlert categoryAlert = new CategoryAlert();
+            categoryAlert = mapearDatos(categoryAlert, entity);
+
+            return await data.Save(categoryAlert); 
+        }
+
+        public async Task Update(int id, CategoryAlertDto entity)
+        {
+            CategoryAlert categoryAlert = await data.GetById(id);
+
+            if (categoryAlert == null)
+            {
+                throw new Exception("Registro no encontrado");
+            }
+
+            categoryAlert = mapearDatos(categoryAlert, entity);
+            await data.Update(categoryAlert);
         }
     }
 }

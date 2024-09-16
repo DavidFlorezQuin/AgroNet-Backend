@@ -1,5 +1,6 @@
 ﻿using Business.Localitation.Interface;
 using Business.Security.Interfaces;
+using Entity.Dto.Parameter;
 using Entity.Dto.Security;
 using Entity.Model.Dto.Localitation;
 using Microsoft.AspNetCore.Mvc;
@@ -27,6 +28,13 @@ namespace Web.Controllers.Localitation.Implementation
             {
                 return NotFound();
             }
+            return Ok(result);
+        }
+
+        [HttpGet("list")]
+        public async Task<ActionResult<IEnumerable<CityDto>>> GetAll()
+        {
+            var result = await _cityBusiness.GetAll();
             return Ok(result);
         }
 

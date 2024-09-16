@@ -9,11 +9,11 @@ namespace Entity.Dto.Operation
 {
     public class TreatmentDto : BaseDto
     {
-        public string medicines { get; set; }
-        public string description { get; set; }
-        public DateTime date { get; set; }
-
-        public int HealthHistoryId { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public DateTime Finished_date { get; set; }
+        public DateTime Start_date { get; set; }
+        public int HealthId { get; set; }
 
     }
 }

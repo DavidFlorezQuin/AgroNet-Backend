@@ -8,10 +8,10 @@ namespace Entity.Model.Operational
 {
     public class Supplies : ABaseModel
     {
-        public string name { get; set; }
-        public string description { get; set; }
-        public double amount { get; set; }
-        public string input_type { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public double Amount { get; set; }
+        public string InputType { get; set; }
         public DateTime date { get; set; }
 
     }

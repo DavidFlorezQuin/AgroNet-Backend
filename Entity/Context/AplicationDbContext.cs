@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using Entity.Model.Localitation;
+using Entity.Model.Operational;
 using Entity.Model.Parameter;
 using Entity.Model.Security;
 using Microsoft.EntityFrameworkCore;
@@ -109,7 +110,21 @@ namespace Entity.Context
         public DbSet<Race> Race => Set<Race>();
         public DbSet<Medicines> Medicines => Set<Medicines>();
 
-
+        /*OPERATIONAL*/
+        public DbSet<Animal> Animal => Set<Animal>();
+        public DbSet<Farm> Farm => Set<Farm>();
+        public DbSet<Lot> Lot => Set<Lot>();
+        public DbSet<Health> Healths => Set<Health>();
+        public DbSet<Treatment> Treatments => Set<Treatment>();
+        public DbSet<TreatmentsMedicines> TreatmentsMedicines => Set<TreatmentsMedicines>();
+        public DbSet<Production> Productions => Set<Production>();
+        public DbSet<Sale> Sale => Set<Sale>();
+        public DbSet<Inventory> Inventories => Set<Inventory>();
+        public DbSet<Supplies> Supplies => Set<Supplies>();
+        public DbSet<InventorySupplies> InventorySupplies => Set<InventorySupplies>();
+        public DbSet<Alert> Alert => Set<Alert>();
+        public DbSet<Insemination> Inseminations => Set<Insemination>();
+        public DbSet<Birth> Birth => Set<Birth>(); 
 
     }
 

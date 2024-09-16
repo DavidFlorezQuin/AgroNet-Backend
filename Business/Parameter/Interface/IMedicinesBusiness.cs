@@ -1,4 +1,5 @@
-﻿using Entity.Model.Parameter;
+﻿using Entity.Dto.Parameter;
+using Entity.Model.Parameter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,11 @@ namespace Business.Parameter.Interface
 {
     public interface IMedicinesBusiness
     {
-        Task<Medicines> Save(IMedicinesBusiness entity);
+        Task<Medicines> Save(MedicinesDto entity);
         Task Delete(int id);
-        Task Update(int id, IMedicinesBusiness entity);
-        Task <IEnumerable<IMedicinesBusiness>> GetAll();
-        Task<IMedicinesBusiness> GetById(int id);
+        Task Update(int id, MedicinesDto entity);
+        Task <IEnumerable<MedicinesDto>> GetAll();
+        Task<MedicinesDto> GetById(int id);
 
 
     }

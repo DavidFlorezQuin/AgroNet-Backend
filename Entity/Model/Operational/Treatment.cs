@@ -9,12 +9,12 @@ namespace Entity.Model.Operational
 {
     public class Treatment : ABaseModel
     {
-        public string medicines { get; set; }
+        public string Name { get; set; }
         public string description { get; set; }
-        public DateTime date { get; set;}
-
-        public int HealthHistoryId {get; set;}
-        public HealthHistory HealthHistory { get; set; }
+        public DateTime finished_date { get; set;}
+        public DateTime start_date { get; set;}
+        public int HealthId {get; set;}
+        public Health Health { get; set; }
 
     }
 }

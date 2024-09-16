@@ -11,7 +11,7 @@ namespace Business.Parameter.Interface
     public interface IRaceBusiness
     {
         Task<Race> Save(RaceDto entity);
-        Task Detete(int id);
+        Task Detele(int id);
         Task<RaceDto> GetById(int id); 
         Task Update(int id, RaceDto entity);
         Task<IEnumerable<RaceDto>> GetAll(); 

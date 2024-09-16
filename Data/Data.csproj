@@ -10,9 +10,4 @@
     <ProjectReference Include="..\Entity\Entity.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Operational\services\" />
-    <Folder Include="Operational\Interface\" />
-  </ItemGroup>
-
 </Project>

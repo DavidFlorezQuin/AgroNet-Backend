@@ -8,12 +8,12 @@ namespace Entity.Model.Operational
 {
     public class Inventory : ABaseModel
     {
-        public DateTime admission_date { get; set; }
-        public int stock { get; set; }
+        public DateTime AdmissionDate { get; set; }
+        public string Name { get; set; }
 
         public DateTime expiration_date { get; set; }
 
-        public int SuppliesId { get; set; }
-        public Supplies Supplies { get; set; }
+        public int FarmId { get; set; }
+        public Farm Farm { get; set; }
     }
 }

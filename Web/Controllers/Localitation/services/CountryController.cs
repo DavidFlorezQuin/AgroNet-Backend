@@ -1,4 +1,5 @@
 ﻿using Business.Localitation.Interface;
+using Entity.Dto.Parameter;
 using Entity.Model.Dto.Localitation;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,6 +14,13 @@ namespace Web.Controllers.Localitation.Implementation
         public CountryController(ICountryBusiness countryBusiness)
         {
             _countryBusiness = countryBusiness;
+        }
+
+        [HttpGet("list")]
+        public async Task<ActionResult<IEnumerable<CountryDto>>> GetAll()
+        {
+            var result = await _countryBusiness.GetAll();
+            return Ok(result);
         }
 
 

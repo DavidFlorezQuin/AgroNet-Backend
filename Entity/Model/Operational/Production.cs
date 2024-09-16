@@ -9,10 +9,13 @@ namespace Entity.Model.Operational
     public class Production : ABaseModel
     {
         public DateTime date { get; set; }
-        public string type_production { get; set; }
-        public double quantity { get; set; }
-        public string measurement { get; set; }
-        public string observation { get; set; }
+        public string TypeProduction { get; set; }
+        public double Quantity { get; set; }
+        public string Measurement { get; set; }
+        public string Observation { get; set; }
+        public double QuantityTotal { get; set; }
+
+        public DateTime ExpirateDate { get; set; }
 
         public int AnimalId { get; set; }
         public Animal Animal { get; set; }
