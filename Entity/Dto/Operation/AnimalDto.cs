@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entity.Model.Operational;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,13 +12,10 @@ namespace Entity.Dto.Operation
         public string Name { get; set; }
         public string Gender { get; set; }
         public double Weight { get; set; }
-        public string photo { get; set; }
-        public string race { get; set; }
+        public string Photo { get; set; }
         public string purpose { get; set; }
         public DateTime birthDay { get; set; }
         public DateTime dateRegister { get; set; }
-
         public int LotId { get; set; }
-
     }
 }

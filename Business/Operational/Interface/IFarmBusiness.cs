@@ -1,5 +1,7 @@
 ﻿using Entity.Dto.Operation;
+using Entity.Dto.Security;
 using Entity.Model.Operational;
+using Entity.Model.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,17 +10,8 @@ using System.Threading.Tasks;
 
 namespace Business.Operational.Interface
 {
-    public interface IFarmBusiness
+    public interface IFarmBusiness : IBusiness<FarmDto>
     {
-        Task Delete(int id);
-
-        Task<Farm> Save(FarmDto dto);
-
-        Task<FarmDto> GetById(int id);
-
-        Task Update(int id, FarmDto dto);
-
-        Task<IEnumerable<FarmDto>> GetAll();
 
     }
 }

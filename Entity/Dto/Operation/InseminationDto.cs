@@ -9,11 +9,12 @@ namespace Entity.Dto.Operation
 {
     public class InseminationDto : BaseDto
     {
-        public DateTime date { get; set; }
-        public string observation { get; set; }
+        public string Description { get; set; }
+
         public int SemenId { get; set; }
+
         public int MotherId { get; set; }
-        public string result { get; set; }
+        public string Result { get; set; }
         public string InseminationType { get; set; }
     }
 }

@@ -24,29 +24,57 @@ namespace Entity.Context
         }
 
 
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            // Aplicar configuraciones desde el ensamblado
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-            //DataInicial.Data(modelBuilder)
 
-            base.OnModelCreating(modelBuilder);
+            // Configuración para la entidad Inseminations
+            modelBuilder.Entity<Inseminations>()
+                .HasOne(i => i.Semen)
+                .WithMany()
+                .HasForeignKey(i => i.SemenId)
+                .OnDelete(DeleteBehavior.Restrict); // Evitar cascada para Semen
 
+            modelBuilder.Entity<Inseminations>()
+                .HasOne(i => i.Mother)
+                .WithMany()
+                .HasForeignKey(i => i.MotherId)
+                .OnDelete(DeleteBehavior.Cascade); // Mantener cascada para Mother
+
+            modelBuilder.Entity<Births>()
+            .HasOne(b => b.Animal)
+            .WithMany()
+            .HasForeignKey(b => b.AnimalId)
+            .OnDelete(DeleteBehavior.Cascade); // Mantener cascada con Animal
+
+            modelBuilder.Entity<Births>()
+                .HasOne(b => b.Insemination)
+                .WithMany()
+                .HasForeignKey(b => b.InseminationId)
+                .OnDelete(DeleteBehavior.Restrict); // Restringir cascada con Insemination
+
+            // Configuración para la relación UserRole (Clave compuesta)
             modelBuilder.Entity<UserRole>()
-        .HasKey(ur => new { ur.UserId, ur.RoleId });
+                .HasKey(ur => new { ur.UserId, ur.RoleId });
 
+            // Configuración para Role y RoleViews
             modelBuilder.Entity<Role>()
                 .HasMany(r => r.RoleViews)
                 .WithOne(rv => rv.Role)
                 .HasForeignKey(rv => rv.RoleId);
 
+            // Configuración para Views y Modulo
             modelBuilder.Entity<Views>()
                 .HasOne(v => v.Modulo)
                 .WithMany()
                 .HasForeignKey(v => v.ModuloId);
 
+            // Llamar a la base solo una vez
+            base.OnModelCreating(modelBuilder);
         }
+
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -104,27 +132,33 @@ namespace Entity.Context
         public DbSet<Country> Country => Set<Country>();
 
         /*PARAMETER*/
+
         public DbSet<CategoryAlert> CategoryAlert => Set<CategoryAlert>();
+        public DbSet<CategoryDisieses> CategoryDisieses => Set<CategoryDisieses>();
         public DbSet<CategoryMedicines> CategoryMedicines => Set<CategoryMedicines>();
         public DbSet<CategorySupplies> CategorySupplies => Set<CategorySupplies>();
-        public DbSet<Race> Race => Set<Race>();
+        public DbSet<Vaccines> Vaccines => Set<Vaccines>();
+        public DbSet<Diseases> Diseases => Set<Diseases>();
         public DbSet<Medicines> Medicines => Set<Medicines>();
+        public DbSet<Supplies> Supplies => Set<Supplies>();
+
 
         /*OPERATIONAL*/
-        public DbSet<Animal> Animal => Set<Animal>();
-        public DbSet<Farm> Farm => Set<Farm>();
-        public DbSet<Lot> Lot => Set<Lot>();
-        public DbSet<Health> Healths => Set<Health>();
-        public DbSet<Treatment> Treatments => Set<Treatment>();
-        public DbSet<TreatmentsMedicines> TreatmentsMedicines => Set<TreatmentsMedicines>();
-        public DbSet<Production> Productions => Set<Production>();
-        public DbSet<Sale> Sale => Set<Sale>();
-        public DbSet<Inventory> Inventories => Set<Inventory>();
-        public DbSet<Supplies> Supplies => Set<Supplies>();
+        public DbSet<Alerts> Alerts => Set<Alerts>();
+        public DbSet<Animals> Animals => Set<Animals>();
+        public DbSet<AnimalDiagnostics> AnimalDiagnostics => Set<AnimalDiagnostics>();
+        public DbSet<Births> Births => Set<Births>();
+        public DbSet<Farms> Farms => Set<Farms>();
+        public DbSet<FarmUser> FarmUsers => Set<FarmUser>();
+        public DbSet<Inseminations> Inseminations => Set<Inseminations>();
+        public DbSet<Inventories> Inventories => Set<Inventories>();
         public DbSet<InventorySupplies> InventorySupplies => Set<InventorySupplies>();
-        public DbSet<Alert> Alert => Set<Alert>();
-        public DbSet<Insemination> Inseminations => Set<Insemination>();
-        public DbSet<Birth> Birth => Set<Birth>(); 
+        public DbSet<Lots> Lots => Set<Lots>();
+        public DbSet<Productions> Productions => Set<Productions>();
+        public DbSet<Sales> Sales => Set<Sales>();
+        public DbSet<Treatments> Treatments => Set<Treatments>();
+        public DbSet<TreatmentsMedicines> TreatmentsMedicines => Set<TreatmentsMedicines>();
+        public DbSet<VaccineAnimals> VaccineAnimals => Set<VaccineAnimals>(); 
 
     }
 

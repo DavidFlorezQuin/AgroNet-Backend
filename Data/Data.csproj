@@ -1,10 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Operational\Interface\**" />
+    <EmbeddedResource Remove="Operational\Interface\**" />
+    <None Remove="Operational\Interface\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Entity\Entity.csproj" />

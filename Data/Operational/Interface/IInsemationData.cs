@@ -10,10 +10,10 @@ namespace Data.Operational.Interface
     public interface IInsemationData
     {
         Task Delete(int id);
-        Task<Insemination> Save(Insemination entity);
-        Task Update(Insemination entity);
-        Task<IEnumerable<Insemination>> GetAll();
+        Task<Inseminations> Save(Inseminations entity);
+        Task Update(Inseminations entity);
+        Task<IEnumerable<Inseminations>> GetAll();
 
-        Task<Insemination> GetById(int id);
+        Task<Inseminations> GetById(int id);
     }
 }

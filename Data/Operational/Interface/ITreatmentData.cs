@@ -10,10 +10,10 @@ namespace Data.Operational.Interface
     public interface ITreatmentData
     {
         Task Delete(int id);
-        Task<Treatment> Save(Treatment entity);
-        Task Update(Treatment entity);
-        Task<IEnumerable<Treatment>> GetAll();
+        Task<Treatments> Save(Treatments entity);
+        Task Update(Treatments entity);
+        Task<IEnumerable<Treatments>> GetAll();
 
-        Task<Treatment> GetById(int id);
+        Task<Treatments> GetById(int id);
     }
 }

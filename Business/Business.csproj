@@ -7,12 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Data\Data.csproj" />
-    <ProjectReference Include="..\Entity\Entity.csproj" />
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Operational\services\" />
+    <ProjectReference Include="..\Data\Data.csproj" />
+    <ProjectReference Include="..\Entity\Entity.csproj" />
   </ItemGroup>
 
 </Project>

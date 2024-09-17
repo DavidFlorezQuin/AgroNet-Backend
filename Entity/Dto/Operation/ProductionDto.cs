@@ -9,11 +9,10 @@ namespace Entity.Dto.Operation
 {
     public class ProductionDto : BaseDto
     {
-        public DateTime date { get; set; }
         public string TypeProduction { get; set; }
-        public double Quantity { get; set; }
+        public double Stock { get; set; }
         public string Measurement { get; set; }
-        public string Observation { get; set; }
+        public string Description { get; set; }
         public double QuantityTotal { get; set; }
         public DateTime ExpirateDate { get; set; }
         public int AnimalId { get; set; }

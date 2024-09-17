@@ -11,11 +11,11 @@ namespace Data.Operational.Interface
     public interface IAletData
     {
         Task Delete(int id);
-        Task<Alert> Save(Alert entity);
-        Task Update(Alert entity);
-        Task<IEnumerable<Alert>> GetAll();
+        Task<Alerts> Save(Alerts entity);
+        Task Update(Alerts entity);
+        Task<IEnumerable<Alerts>> GetAll();
 
-        Task<Alert> GetById(int id);
+        Task<Alerts> GetById(int id);
 
     }
 }

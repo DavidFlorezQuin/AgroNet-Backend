@@ -1,4 +1,5 @@
-﻿using Entity.Model.Parameter;
+﻿using Data.Operational.Inferface;
+using Entity.Model.Parameter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,13 +8,7 @@ using System.Threading.Tasks;
 
 namespace Data.Parameter.Interface
 {
-    public interface ICategoryAlertData
+    public interface ICategoryAlertData : IData<CategoryAlert>
     {
-        Task Delete(int id);
-        Task<CategoryAlert> Save(CategoryAlert entity);
-        Task Update(CategoryAlert entity);
-        Task<IEnumerable<CategoryAlert>> GetAll();
-
-        Task<CategoryAlert> GetById(int id);
     }
 }

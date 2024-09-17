@@ -10,10 +10,10 @@ namespace Data.Operational.Interface
     public interface IFarmData
     {
         Task Delete(int id);
-        Task<Farm> Save(Farm entity);
-        Task Update(Farm entity);
-        Task<IEnumerable<Farm>> GetAll();
+        Task<Farms> Save(Farms entity);
+        Task Update(Farms entity);
+        Task<IEnumerable<Farms>> GetAll();
 
-        Task<Farm> GetById(int id);
+        Task<Farms> GetById(int id);
     }
 }

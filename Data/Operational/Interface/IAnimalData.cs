@@ -10,10 +10,10 @@ namespace Data.Operational.Interface
     public interface IAnimalData
     {
         Task Delete(int id);
-        Task<Animal> Save(Animal entity);
-        Task Update(Animal entity);
-        Task<IEnumerable<Animal>> GetAll();
+        Task<Animals> Save(Animals entity);
+        Task Update(Animals entity);
+        Task<IEnumerable<Animals>> GetAll();
 
-        Task<Animal> GetById(int id);
+        Task<Animals> GetById(int id);
     }
 }

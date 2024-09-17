@@ -1,5 +1,5 @@
-﻿using Entity.Model.Parameter;
-using Entity.Model.Security;
+﻿using Data.Operational.Inferface;
+using Entity.Model.Parameter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +8,7 @@ using System.Threading.Tasks;
 
 namespace Data.Parameter.Interface
 {
-    public interface IMedicinesData
+    public interface IMedicinesData : IData<Medicines>
     {
-        Task Delete(int id);
-        Task<Medicines> Save(Medicines entity);
-        Task Update(Medicines entity);
-        Task<IEnumerable<Medicines>> GetAll();
-
-        Task<Medicines> GetById(int id);
     }
 }

@@ -10,10 +10,10 @@ namespace Data.Operational.Interface
     public interface IProductionData
     {
         Task Delete(int id);
-        Task<Production> Save(Production entity);
-        Task Update(Production entity);
-        Task<IEnumerable<Production>> GetAll();
+        Task<Productions> Save(Productions entity);
+        Task Update(Productions entity);
+        Task<IEnumerable<Productions>> GetAll();
 
-        Task<Production> GetById(int id);
+        Task<Productions> GetById(int id);
     }
 }

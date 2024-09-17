@@ -1,5 +1,5 @@
-﻿using Entity.Model.Parameter;
-using Entity.Model.Security;
+﻿using Data.Operational.Inferface;
+using Entity.Model.Parameter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +8,7 @@ using System.Threading.Tasks;
 
 namespace Data.Parameter.Interface
 {
-    public interface ICategorySuppliesData
+    public interface ICategorySuppliesData : IData<CategorySupplies>
     {
-        Task Delete(int id);
-        Task<CategorySupplies> Save(CategorySupplies entity);
-        Task Update(CategorySupplies entity);
-        Task<IEnumerable<CategorySupplies>> GetAll();
-
-        Task<CategorySupplies> GetById(int id);
     }
 }

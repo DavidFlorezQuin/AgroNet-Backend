@@ -10,10 +10,10 @@ namespace Data.Operational.Interface
     public interface IBirthData
     {
         Task Delete(int id);
-        Task<Birth> Save(Birth entity);
-        Task Update(Birth entity);
-        Task<IEnumerable<Birth>> GetAll();
+        Task<Births> Save(Births entity);
+        Task Update(Births entity);
+        Task<IEnumerable<Births>> GetAll();
 
-        Task<Birth> GetById(int id);
+        Task<Births> GetById(int id);
     }
 }

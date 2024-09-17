@@ -8,16 +8,7 @@ using System.Threading.Tasks;
 
 namespace Business.Operational.Interface
 {
-    public interface ITreatmentsMedicinesBusiness
+    public interface ITreatmentsMedicinesBusiness : IBusiness<TreatmentMedicineDto>
     {
-        Task Delete(int id);
-
-        Task<TreatmentsMedicines> Save(TreatmentMedicineDto dto);
-
-        Task<TreatmentMedicineDto> GetById(int id);
-
-        Task Update(int id, TreatmentMedicineDto dto);
-
-        Task<IEnumerable<TreatmentMedicineDto>> GetAll();
     }
 }

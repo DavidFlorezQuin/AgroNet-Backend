@@ -11,9 +11,9 @@ namespace Entity.Dto.Operation
     public class FarmDto : BaseDto
     {
         public string Name { get; set; }
-        public int Dimension { get; set; }
+        public int Hectare { get; set; }
         public string Description { get; set; }
+        public string Photo { get; set; }
         public int CityId { get; set; }
-        public int UserId { get; set; }
     }
 }

@@ -9,9 +9,7 @@ namespace Entity.Model.Parameter
     public class Medicines : ABaseModel
     {
         public string Name { get; set; }
-        public string MedicationAdministration { get; set; }
-        public string UnitMeasure { get; set; }
-
+        public string Administration { get; set; }
         public int CategoryMedicinesId { get; set; }
         public CategoryMedicines CategoryMedicines { get; set; }
 

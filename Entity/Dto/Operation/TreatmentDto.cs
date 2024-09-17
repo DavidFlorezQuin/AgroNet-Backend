@@ -9,11 +9,10 @@ namespace Entity.Dto.Operation
 {
     public class TreatmentDto : BaseDto
     {
-        public string Name { get; set; }
         public string Description { get; set; }
-        public DateTime Finished_date { get; set; }
-        public DateTime Start_date { get; set; }
-        public int HealthId { get; set; }
+        public DateTime FinishiedDate { get; set; }
+        public DateTime StartDate { get; set; }
+        public int AnimalDiagnosticsId { get; set; }
 
     }
 }

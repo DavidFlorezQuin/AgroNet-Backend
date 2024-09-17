@@ -10,10 +10,10 @@ namespace Data.Operational.Interface
     public interface ILotData
     {
         Task Delete(int id);
-        Task<Lot> Save(Lot entity);
-        Task Update(Lot entity);
-        Task<IEnumerable<Lot>> GetAll();
+        Task<Lots> Save(Lots entity);
+        Task Update(Lots entity);
+        Task<IEnumerable<Lots>> GetAll();
 
-        Task<Lot> GetById(int id);
+        Task<Lots> GetById(int id);
     }
 }

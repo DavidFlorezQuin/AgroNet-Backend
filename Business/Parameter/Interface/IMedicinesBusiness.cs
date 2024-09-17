@@ -1,5 +1,5 @@
-﻿using Entity.Dto.Parameter;
-using Entity.Model.Parameter;
+﻿using Business.Operational.Interface;
+using Entity.Dto.Parameter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,14 +8,7 @@ using System.Threading.Tasks;
 
 namespace Business.Parameter.Interface
 {
-    public interface IMedicinesBusiness
+    public interface IMedicinesBusiness : IBusiness<MedicinesDto>
     {
-        Task<Medicines> Save(MedicinesDto entity);
-        Task Delete(int id);
-        Task Update(int id, MedicinesDto entity);
-        Task <IEnumerable<MedicinesDto>> GetAll();
-        Task<MedicinesDto> GetById(int id);
-
-
     }
 }

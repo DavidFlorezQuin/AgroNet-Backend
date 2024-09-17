@@ -10,10 +10,10 @@ namespace Data.Operational.Interface
     public interface ISaleData
     {
         Task Delete(int id);
-        Task<Sale> Save(Sale entity);
-        Task Update(Sale entity);
-        Task<IEnumerable<Sale>> GetAll();
+        Task<Sales> Save(Sales entity);
+        Task Update(Sales entity);
+        Task<IEnumerable<Sales>> GetAll();
 
-        Task<Sale> GetById(int id);
+        Task<Sales> GetById(int id);
     }
 }
