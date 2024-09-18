@@ -15,7 +15,7 @@ namespace Entity.Model.Operational
         public string Description { get; set; }
         public DateTime Date { get; set; }
         public Boolean IsRead { get; set; }
-        public int AnimalId { get; set; }
+        public int? AnimalId { get; set; }
         public Animals Animal { get; set; }
         public int CategoryAlertId { get; set; } 
         public CategoryAlert CategoryAlert {  get; set; }

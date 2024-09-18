@@ -45,7 +45,9 @@ namespace Data.Security.Implementation
                 .Select(u => new Users
                 {
                     UserName = u.UserName,
-                    Id = u.Id
+                    Id = u.Id,
+                    state = u.state,
+                    PersonId = u.PersonId
                 })
                 .FirstOrDefaultAsync();
 

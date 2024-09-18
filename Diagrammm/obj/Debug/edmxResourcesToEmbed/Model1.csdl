@@ -42,14 +42,14 @@
     <EntitySet Name="AnimalDiagnosticSet" EntityType="Model1.AnimalDiagnostic" />
     <EntitySet Name="LotSet" EntityType="Model1.Lot" />
     <EntitySet Name="DepartmentSet" EntityType="Model1.Department" />
-    <EntitySet Name="ContinentSet" EntityType="Model1.Continent" />
+    <EntitySet Name="ContinentsSet" EntityType="Model1.Continents" />
     <EntitySet Name="CountrySet" EntityType="Model1.Country" />
     <EntitySet Name="CitySet" EntityType="Model1.City" />
     <EntitySet Name="SuppliesSet" EntityType="Model1.Supplies" />
     <EntitySet Name="inventory_supliesSet" EntityType="Model1.inventory_suplies" />
     <AssociationSet Name="CountryContinent" Association="Model1.CountryContinent">
       <End Role="Country" EntitySet="CountrySet" />
-      <End Role="Continent" EntitySet="ContinentSet" />
+      <End Role="Continent" EntitySet="ContinentsSet" />
     </AssociationSet>
     <AssociationSet Name="inventory_supliesSupplies" Association="Model1.inventory_supliesSupplies">
       <End Role="inventory_suplies" EntitySet="inventory_supliesSet" />
@@ -116,18 +116,18 @@
       <End Role="race" EntitySet="raceSet" />
       <End Role="Animal" EntitySet="AnimalsSet" />
     </AssociationSet>
-    <EntitySet Name="birthSet" EntityType="Model1.birth" />
+    <EntitySet Name="BirthsSet" EntityType="Model1.Births" />
     <AssociationSet Name="birthInsemination" Association="Model1.birthInsemination">
-      <End Role="birth" EntitySet="birthSet" />
+      <End Role="birth" EntitySet="BirthsSet" />
       <End Role="Insemination" EntitySet="InseminationSet" />
     </AssociationSet>
     <AssociationSet Name="CityFarm" Association="Model1.CityFarm">
       <End Role="City" EntitySet="CitySet" />
       <End Role="Farm" EntitySet="FarmSet" />
     </AssociationSet>
-    <EntitySet Name="category_alertSet" EntityType="Model1.category_alert" />
+    <EntitySet Name="CategoryAlertSet" EntityType="Model1.CategoryAlert" />
     <AssociationSet Name="category_alertAlert" Association="Model1.category_alertAlert">
-      <End Role="category_alert" EntitySet="category_alertSet" />
+      <End Role="category_alert" EntitySet="CategoryAlertSet" />
       <End Role="Alert" EntitySet="AlertSet" />
     </AssociationSet>
     <AssociationSet Name="Alertusuario" Association="Model1.Alertusuario">
@@ -140,7 +140,7 @@
     </AssociationSet>
     <AssociationSet Name="Inseminationbirth" Association="Model1.Inseminationbirth">
       <End Role="Insemination" EntitySet="InseminationSet" />
-      <End Role="birth" EntitySet="birthSet" />
+      <End Role="birth" EntitySet="BirthsSet" />
     </AssociationSet>
     <AssociationSet Name="DepartmentCity" Association="Model1.DepartmentCity">
       <End Role="Department" EntitySet="DepartmentSet" />
@@ -150,9 +150,9 @@
       <End Role="usuario" EntitySet="usuarioSet" />
       <End Role="Health" EntitySet="AnimalDiagnosticSet" />
     </AssociationSet>
-    <EntitySet Name="category_medicinesSet1" EntityType="Model1.category_medicines" />
+    <EntitySet Name="CategoryMedicinesSet" EntityType="Model1.CategoryMedicines" />
     <AssociationSet Name="category_medicinesMedicines" Association="Model1.category_medicinesMedicines">
-      <End Role="category_medicines" EntitySet="category_medicinesSet1" />
+      <End Role="category_medicines" EntitySet="CategoryMedicinesSet" />
       <End Role="Medicines" EntitySet="MedicinesSet" />
     </AssociationSet>
     <AssociationSet Name="LotAnimal" Association="Model1.LotAnimal">
@@ -179,9 +179,9 @@
       <End Role="vaccine_animal" EntitySet="vaccine_animalSet" />
     </AssociationSet>
     <EntitySet Name="DiseaseSet" EntityType="Model1.Disease" />
-    <EntitySet Name="category_disieseSet" EntityType="Model1.category_disiese" />
+    <EntitySet Name="CategoryDiseaseSet" EntityType="Model1.CategoryDisease" />
     <AssociationSet Name="category_disieseDisease" Association="Model1.category_disieseDisease">
-      <End Role="category_disiese" EntitySet="category_disieseSet" />
+      <End Role="category_disiese" EntitySet="CategoryDiseaseSet" />
       <End Role="Disease" EntitySet="DiseaseSet" />
     </AssociationSet>
     <AssociationSet Name="Diseaseanimal_diagnostic" Association="Model1.Diseaseanimal_diagnostic">
@@ -194,7 +194,7 @@
     </AssociationSet>
     <AssociationSet Name="Animalbirth" Association="Model1.Animalbirth">
       <End Role="Animal" EntitySet="AnimalsSet" />
-      <End Role="birth" EntitySet="birthSet" />
+      <End Role="birth" EntitySet="BirthsSet" />
     </AssociationSet>
     <EntitySet Name="InventoryRecordSet" EntityType="Model1.InventoryRecord" />
     <AssociationSet Name="usuarioInventoryRecord" Association="Model1.usuarioInventoryRecord">
@@ -223,7 +223,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="nome" Type="String" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" />
     <Property Name="description" Type="String" Nullable="false" />
     <Property Name="ruta" Type="String" Nullable="false" />
     <NavigationProperty Name="modulo_id" Relationship="Model1.vistamodulo" FromRole="vista" ToRole="modulo" />
@@ -450,7 +450,7 @@
     <NavigationProperty Name="Country_id" Relationship="Model1.DepartmentCountry" FromRole="Department" ToRole="Country" />
     <Property Name="CountryId" Type="String" Nullable="false" />
   </EntityType>
-  <EntityType Name="Continent">
+  <EntityType Name="Continents">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -506,7 +506,7 @@
   </EntityType>
   <Association Name="CountryContinent">
     <End Type="Model1.Country" Role="Country" Multiplicity="*" />
-    <End Type="Model1.Continent" Role="Continent" Multiplicity="1" />
+    <End Type="Model1.Continents" Role="Continent" Multiplicity="1" />
   </Association>
   <Association Name="inventory_supliesSupplies">
     <End Type="Model1.inventory_suplies" Role="inventory_suplies" Multiplicity="*" />
@@ -679,7 +679,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityType Name="birth">
+  <EntityType Name="Births">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -694,7 +694,7 @@
     <NavigationProperty Name="Animal_id" Relationship="Model1.Animalbirth" FromRole="birth" ToRole="Animal" />
   </EntityType>
   <Association Name="birthInsemination">
-    <End Type="Model1.birth" Role="birth" Multiplicity="1" />
+    <End Type="Model1.Births" Role="birth" Multiplicity="1" />
     <End Type="Model1.Insemination" Role="Insemination" Multiplicity="1" />
   </Association>
   <Association Name="CityFarm">
@@ -709,7 +709,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityType Name="category_alert">
+  <EntityType Name="CategoryAlert">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -719,7 +719,7 @@
     <Property Name="color" Type="String" Nullable="false" />
   </EntityType>
   <Association Name="category_alertAlert">
-    <End Type="Model1.category_alert" Role="category_alert" Multiplicity="1" />
+    <End Type="Model1.CategoryAlert" Role="category_alert" Multiplicity="1" />
     <End Type="Model1.Alert" Role="Alert" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="category_alert">
@@ -748,7 +748,7 @@
   </Association>
   <Association Name="Inseminationbirth">
     <End Type="Model1.Insemination" Role="Insemination" Multiplicity="1" />
-    <End Type="Model1.birth" Role="birth" Multiplicity="*" />
+    <End Type="Model1.Births" Role="birth" Multiplicity="*" />
   </Association>
   <Association Name="DepartmentCity">
     <End Type="Model1.Department" Role="Department" Multiplicity="1" />
@@ -758,7 +758,7 @@
     <End Type="Model1.usuario" Role="usuario" Multiplicity="1" />
     <End Type="Model1.AnimalDiagnostic" Role="Health" Multiplicity="*" />
   </Association>
-  <EntityType Name="category_medicines">
+  <EntityType Name="CategoryMedicines">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -767,7 +767,7 @@
     <Property Name="Description" Type="String" Nullable="false" />
   </EntityType>
   <Association Name="category_medicinesMedicines">
-    <End Type="Model1.category_medicines" Role="category_medicines" Multiplicity="1" />
+    <End Type="Model1.CategoryMedicines" Role="category_medicines" Multiplicity="1" />
     <End Type="Model1.Medicines" Role="Medicines" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="category_medicines">
@@ -870,7 +870,7 @@
     <NavigationProperty Name="category_disiese_id" Relationship="Model1.category_disieseDisease" FromRole="Disease" ToRole="category_disiese" />
     <Property Name="CategoryDisieseId" Type="String" Nullable="false" />
   </EntityType>
-  <EntityType Name="category_disiese">
+  <EntityType Name="CategoryDisease">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -878,7 +878,7 @@
     <Property Name="name" Type="String" Nullable="false" />
   </EntityType>
   <Association Name="category_disieseDisease">
-    <End Type="Model1.category_disiese" Role="category_disiese" Multiplicity="1" />
+    <End Type="Model1.CategoryDisease" Role="category_disiese" Multiplicity="1" />
     <End Type="Model1.Disease" Role="Disease" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="category_disiese">
@@ -915,7 +915,7 @@
   </Association>
   <Association Name="Animalbirth">
     <End Type="Model1.Animals" Role="Animal" Multiplicity="0..1" />
-    <End Type="Model1.birth" Role="birth" Multiplicity="1" />
+    <End Type="Model1.Births" Role="birth" Multiplicity="1" />
   </Association>
   <EnumType Name="enum">
     <Member Name="asd" />

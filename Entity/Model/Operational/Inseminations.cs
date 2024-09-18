@@ -10,7 +10,7 @@ namespace Entity.Model.Operational
     {
         public string Description { get; set; }
 
-        public int SemenId { get; set; }
+        public int? SemenId { get; set; }
         public Animals Semen { get; set; }
 
         public int MotherId { get; set; }

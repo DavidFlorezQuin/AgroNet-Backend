@@ -19,6 +19,7 @@ using Entity.Context;
 using Microsoft.EntityFrameworkCore;
 
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -43,6 +44,11 @@ builder.Services.AddSwaggerGen();
 
 // Agregar los servicios antes de construir la aplicación
 
+/*
+builder.Services.AddScoped<AlertService>();
+builder.Services.AddSingleton<INotificationService, EmailNotificationService>();
+builder.Services.AddHostedService<AlertBackgroundService>();
+*/
 //SECURITY
 
 builder.Services.AddScoped<IPersonBusiness, PersonBusiness>();

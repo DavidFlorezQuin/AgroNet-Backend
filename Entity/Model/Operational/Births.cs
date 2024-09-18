@@ -17,7 +17,7 @@ namespace Entity.Model.Operational
         public int InseminationId { get; set; }
         public Inseminations Insemination { get; set; }
 
-        public int AnimalId { get; set; }
+        public int? AnimalId { get; set; }
         public Animals Animal { get; set; }
     }
 }

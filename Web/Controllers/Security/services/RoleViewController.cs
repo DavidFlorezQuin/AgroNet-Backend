@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Web.Controllers.Implements.Security
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class RoleViewController : ControllerBase
     {
 
