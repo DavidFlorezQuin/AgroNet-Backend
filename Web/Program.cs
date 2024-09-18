@@ -17,6 +17,9 @@ using Data.Security.Implementation;
 using Data.Security.Interfaces;
 using Entity.Context;
 using Microsoft.EntityFrameworkCore;
+using Utilities.AlertsService;
+using Utilities.AlertsService.Interface;
+using Utilities.AlertsService.Service;
 
 
 
@@ -42,13 +45,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Agregar los servicios antes de construir la aplicación
+builder.Logging.AddConsole(); // Asegura que el logging de consola esté habilitado
 
-/*
+//ALERTS
 builder.Services.AddScoped<AlertService>();
 builder.Services.AddSingleton<INotificationService, EmailNotificationService>();
 builder.Services.AddHostedService<AlertBackgroundService>();
-*/
+
 //SECURITY
 
 builder.Services.AddScoped<IPersonBusiness, PersonBusiness>();

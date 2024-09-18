@@ -22,7 +22,8 @@ namespace Utilities.AlertsService
         public void CheckAlerts()
         {
             var alerts = _context.Alerts
-                .Where(a => a.Date <= DateTime.Now && !a.IsRead)
+                //.Where(a => a.Date <= DateTime.Now && !a.IsRead)
+                .Where(a => a.Date <= DateTime.Now)
                 .ToList();
 
             foreach (var alert in alerts)
