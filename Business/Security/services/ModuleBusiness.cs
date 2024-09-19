@@ -41,7 +41,7 @@ namespace Business.Security.Implementation
             moduloDto.Id = module.Id;
             moduloDto.Name = module.Name;
             moduloDto.Description = module.Description;
-            moduloDto.Order = module.Order;
+            moduloDto.Orders = module.Orders;
 
             return moduloDto;
         }
@@ -51,7 +51,7 @@ namespace Business.Security.Implementation
             module.Id = dto.Id;
             module.Name = dto.Name;
             module.Description = dto.Description;
-            module.Order = dto.Order;
+            module.Orders = dto.Orders;
 
             return module;
         }
@@ -67,7 +67,7 @@ namespace Business.Security.Implementation
                     Id = modul.Id,
                     Name = modul.Name,
                     Description = modul.Description,
-                    Order = modul.Order
+                    Orders = modul.Orders
                 };
 
                 modulDtos.Add(modulDto);

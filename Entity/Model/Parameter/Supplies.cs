@@ -10,8 +10,9 @@ namespace Entity.Model.Parameter
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public double Amount { get; set; }
-        public string InputType { get; set; }
+        
+        public int CategorySuppliesId { get; set; }
+        public CategorySupplies CategorySupplies { get; set; }
 
     }
 }

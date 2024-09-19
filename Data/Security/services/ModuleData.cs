@@ -31,9 +31,9 @@ namespace Data.Security.Implementation
             }
 
             // Intercambiar los valores de la propiedad Order
-            int tempOrder = modulo1.Order;
-            modulo1.Order = modulo2.Order;
-            modulo2.Order = tempOrder;
+            int tempOrder = modulo1.Orders;
+            modulo1.Orders = modulo2.Orders;
+            modulo2.Orders = tempOrder;
 
             context.Modulo.Update(modulo1);
             context.Modulo.Update(modulo2);
