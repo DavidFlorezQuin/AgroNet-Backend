@@ -37,7 +37,7 @@ namespace Business.Security.Implementation
             return new UserDto
             {
                 Id = user.Id,
-                UserName = user.UserName
+                username = user.username
             };
         }
 
@@ -56,8 +56,8 @@ namespace Business.Security.Implementation
         private Users MapearDatos(Users user, UserDto entity)
         {
             user.Id = entity.Id;
-            user.UserName = entity.UserName;
-            user.passsword = entity.passsword;
+            user.username = entity.username;
+            user.password = entity.password;
             user.PersonId = entity.PersonId;
             user.state = entity.state;
 
@@ -74,7 +74,7 @@ namespace Business.Security.Implementation
                 var userDto = new UserDto
                 {
                     Id = user.Id,
-                    UserName = user.UserName,
+                    username = user.username,
                     PersonId = user.PersonId,
                     state = user.state
                 };
@@ -145,7 +145,7 @@ namespace Business.Security.Implementation
             return new UserDto
             {
                 Id = user.Id,
-                UserName = user.UserName,
+                username = user.username,
                 state = user.state,
                 PersonId = user.PersonId
             };

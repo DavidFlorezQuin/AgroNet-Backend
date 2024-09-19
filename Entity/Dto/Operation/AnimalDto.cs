@@ -15,7 +15,6 @@ namespace Entity.Dto.Operation
         public string Photo { get; set; }
         public string purpose { get; set; }
         public DateTime birthDay { get; set; }
-        public DateTime dateRegister { get; set; }
         public int LotId { get; set; }
     }
 }

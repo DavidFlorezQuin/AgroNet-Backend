@@ -8,8 +8,8 @@ namespace Entity.Dto.Security
 {
     public class UserDto : BaseDto
     {
-        public string UserName { get; set; }
-        public string passsword { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
 
         public int PersonId { get; set; }
     }

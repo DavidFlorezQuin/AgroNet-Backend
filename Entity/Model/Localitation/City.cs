@@ -10,7 +10,7 @@ namespace Entity.Model.Localitation
     {
         public String Name { get; set; }
         public String Description { get; set; }
-        public int CountryId {  get; set; }
-        public Country Country { get; set; }
+        public int DepartamentId {  get; set; }
+        public Departament Departament { get; set; }
     }
 }

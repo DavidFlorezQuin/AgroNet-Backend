@@ -31,7 +31,7 @@ namespace Business.Localitation.Implementation
             city.state = entity.state;
             city.Name = entity.Name;
             city.Description = entity.Description;
-            city.CountryId = entity.CountryId;
+            city.DepartamentId = entity.DepartamentId;
 
             return city; 
 
@@ -50,7 +50,7 @@ namespace Business.Localitation.Implementation
                     Id = city.Id,
                     Name = city.Name,
                     Description = city.Description,
-                    CountryId = city.CountryId
+                    DepartamentId = city.DepartamentId
 
                 };
 
@@ -74,7 +74,7 @@ namespace Business.Localitation.Implementation
             cityDto.state = city.state;
             cityDto.Name = city.Name;
             cityDto.Description = city.Description;
-            cityDto.CountryId = city.CountryId;
+            cityDto.DepartamentId = city.DepartamentId;
 
             return cityDto; 
 

@@ -41,10 +41,10 @@ namespace Data.Security.Implementation
         public async Task<Users> GetUserAsync(string username, string password)
         {
             var user = await context.Users
-                .Where(u => u.UserName == username && u.passsword == password)
+                .Where(u => u.username == username && u.password == password)
                 .Select(u => new Users
                 {
-                    UserName = u.UserName,
+                    username = u.username,
                     Id = u.Id,
                     state = u.state,
                     PersonId = u.PersonId

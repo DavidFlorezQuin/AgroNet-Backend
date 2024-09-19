@@ -8,12 +8,11 @@ namespace Entity.Model.Security
 {
     public class Users : ABaseModel
     {
-        public string UserName { get; set; }
+        public string username { get; set; }
 
         public int PersonId { get; set; }
-        public string passsword { get; set;  }
-
         public Person Person { get; set; }
+        public string password { get; set;  }
 
         public ICollection<UserRole> UserRoles { get; set; }
 

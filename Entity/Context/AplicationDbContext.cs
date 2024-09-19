@@ -130,6 +130,7 @@ namespace Entity.Context
         public DbSet<City> City => Set<City>();
         public DbSet<Continent> Continent => Set<Continent>();
         public DbSet<Country> Country => Set<Country>();
+        public DbSet<Departament> Departament => Set<Departament>();
 
         /*PARAMETER*/
 

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Entity.Migrations
 {
     /// <inheritdoc />
-    public partial class sipe : Migration
+    public partial class ppo : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -355,9 +355,9 @@ namespace Entity.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    username = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PersonId = table.Column<int>(type: "int", nullable: false),
-                    passsword = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    password = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     created_by = table.Column<int>(type: "int", nullable: true),
                     updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -378,13 +378,13 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "City",
+                name: "Departament",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    code = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CountryId = table.Column<int>(type: "int", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     created_by = table.Column<int>(type: "int", nullable: true),
@@ -396,9 +396,9 @@ namespace Entity.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_City", x => x.Id);
+                    table.PrimaryKey("PK_Departament", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_City_Country_CountryId",
+                        name: "FK_Departament_Country_CountryId",
                         column: x => x.CountryId,
                         principalTable: "Country",
                         principalColumn: "Id",
@@ -467,6 +467,34 @@ namespace Entity.Migrations
                         name: "FK_UserRole_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "City",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DepartamentId = table.Column<int>(type: "int", nullable: false),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    created_by = table.Column<int>(type: "int", nullable: true),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    updated_by = table.Column<int>(type: "int", nullable: true),
+                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    deleted_by = table.Column<int>(type: "int", nullable: true),
+                    state = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_City", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_City_Departament_DepartamentId",
+                        column: x => x.DepartamentId,
+                        principalTable: "Departament",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -637,7 +665,6 @@ namespace Entity.Migrations
                     Photo = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     purpose = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     birthDay = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    dateRegister = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LotId = table.Column<int>(type: "int", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     created_by = table.Column<int>(type: "int", nullable: true),
@@ -668,7 +695,7 @@ namespace Entity.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsRead = table.Column<bool>(type: "bit", nullable: false),
-                    AnimalId = table.Column<int>(type: "int", nullable: false),
+                    AnimalId = table.Column<int>(type: "int", nullable: true),
                     CategoryAlertId = table.Column<int>(type: "int", nullable: false),
                     UsersId = table.Column<int>(type: "int", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -686,8 +713,7 @@ namespace Entity.Migrations
                         name: "FK_Alerts_Animals_AnimalId",
                         column: x => x.AnimalId,
                         principalTable: "Animals",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Alerts_CategoryAlert_CategoryAlertId",
                         column: x => x.CategoryAlertId,
@@ -1012,14 +1038,19 @@ namespace Entity.Migrations
                 column: "InseminationId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_City_CountryId",
+                name: "IX_City_DepartamentId",
                 table: "City",
-                column: "CountryId");
+                column: "DepartamentId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Country_ContinentId",
                 table: "Country",
                 column: "ContinentId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Departament_CountryId",
+                table: "Departament",
+                column: "CountryId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Diseases_CategoryDisiesesId",
@@ -1232,6 +1263,9 @@ namespace Entity.Migrations
 
             migrationBuilder.DropTable(
                 name: "City");
+
+            migrationBuilder.DropTable(
+                name: "Departament");
 
             migrationBuilder.DropTable(
                 name: "Country");

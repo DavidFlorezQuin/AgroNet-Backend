@@ -1,5 +1,6 @@
 using Business.Localitation.Implementation;
 using Business.Localitation.Interface;
+using Business.Localitation.services;
 using Business.Mapper;
 using Business.Operational.Interface;
 using Business.Operational.services;
@@ -9,6 +10,7 @@ using Business.Security.Implementation;
 using Business.Security.Interfaces;
 using Data.Localitation.Implementation;
 using Data.Localitation.Interface;
+using Data.Localitation.services;
 using Data.Operational.Inferface;
 using Data.Operational.services;
 using Data.Parameter.Interface;
@@ -75,6 +77,9 @@ builder.Services.AddScoped<IUserRoleData, UserRoleData>();
 builder.Services.AddScoped<IViewBusiness, ViewBusiness>();
 builder.Services.AddScoped<IViewData, ViewData>();
 
+
+//LOCALITATION
+
 builder.Services.AddScoped<IContinentBusiness, ContinentBusiness>();
 builder.Services.AddScoped<IContinentData, ContinentData>();
 
@@ -83,6 +88,9 @@ builder.Services.AddScoped<ICountryData, CountryData>();
 
 builder.Services.AddScoped<ICityBusiness, CityBusiness>();
 builder.Services.AddScoped<ICityData, CityData>();
+
+builder.Services.AddScoped<IDepartamentBusiness, DepartamentBusiness>();
+builder.Services.AddScoped<IDepartamentData, DepartamentData>();
  
 
 //PARAMETER
@@ -138,6 +146,9 @@ builder.Services.AddScoped<IInventoryData, InventoryData>();
 
 builder.Services.AddScoped<IInventorySuppliesBusiness, InventoriesSuppliesBusiness>();
 builder.Services.AddScoped<IInventoySuppliesData, InventorySuppliesData>();
+
+builder.Services.AddScoped<IInventoryRecordsBusiness, InventoryRecordsBusiness>();
+builder.Services.AddScoped<IInventoryRecordsData, InventoryRecordsData>();
 
 builder.Services.AddScoped<ILotBusiness, LotsBusiness>();
 builder.Services.AddScoped<ILotData, LotsData>();

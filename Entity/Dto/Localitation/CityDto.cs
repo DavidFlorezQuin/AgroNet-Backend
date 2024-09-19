@@ -11,7 +11,7 @@ namespace Entity.Model.Dto.Localitation
     {
         public String Name { get; set; }
         public String Description { get; set; }
-        public int CountryId { get; set; }
+        public int DepartamentId { get; set; }
 
     }
 }

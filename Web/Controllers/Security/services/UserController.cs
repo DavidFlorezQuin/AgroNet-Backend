@@ -53,8 +53,6 @@ namespace Web.Controllers.Implements.Security
             }
 
             return Ok(userDto);
-
-
         }
 
 

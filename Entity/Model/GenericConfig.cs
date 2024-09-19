@@ -12,7 +12,7 @@ namespace Entity.Model
     {
         public void ConfigureUser(EntityTypeBuilder<Users> builder)
         {
-            builder.HasIndex(i => i.UserName).IsUnique();
+            builder.HasIndex(i => i.username).IsUnique();
         }
         public void ConfigurePerson(EntityTypeBuilder<Person> builder)
         {

@@ -24,12 +24,13 @@ namespace Business.Mapper
             CreateMap<InseminationDto, Inseminations>().ReverseMap();
             CreateMap<InventoriesDto, Inventories>().ReverseMap();
             CreateMap<InventorySuppliesDto, InventorySupplies>().ReverseMap();
-            CreateMap<LotsDto, Inseminations>().ReverseMap();
+            CreateMap<LotsDto, Lots>().ReverseMap();
             CreateMap<ProductionDto, Productions>().ReverseMap();
             CreateMap<SaleDto, Sales>().ReverseMap();
             CreateMap<TreatmentDto, Treatments>().ReverseMap();
             CreateMap<TreatmentMedicineDto, TreatmentsMedicines>().ReverseMap();
             CreateMap<VaccineAnimalDto, VaccineAnimals>().ReverseMap();
+            CreateMap<InventoryRecords, InventoryRecordsDto>().ReverseMap();
           
             CreateMap<CategoryAlertDto, CategoryAlert>().ReverseMap();
             CreateMap<CategoryDiseaseDto, CategoryDisieses>().ReverseMap();
