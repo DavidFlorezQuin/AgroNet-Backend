@@ -17,19 +17,36 @@ namespace Data.Operational.services
 
         public virtual async Task<Inseminations> Save(Inseminations entity)
         {
-            bool hasPendingInsemination = await context.Set<Inseminations>()
-                .AnyAsync(i => i.MotherId == entity.MotherId && (i.state == true || i.Result != "PENDIENTE"));
 
-            if (hasPendingInsemination)
-            {
-                throw new InvalidOperationException("El animal tiene una inseminación activa"); 
-            }
-
-
+            await ValidateInsamination(entity);
+            await ValidateGenderAnimal(entity); 
 
             context.Set<Inseminations>().Add(entity);
             await context.SaveChangesAsync();
             return entity;
+        }
+
+        private async Task ValidateGenderAnimal(Inseminations entity)
+        {
+            var AnimalId = entity.MotherId; 
+
+            bool isMale = await context.Set<Animals>().AnyAsync(a => a.Id  == AnimalId && a.Gender == "Male");
+
+            if (isMale)
+            {
+                throw new InvalidOperationException("El animal seleccionado para la inseminación no puede ser macho.");
+            }
+        }
+
+        private async Task ValidateInsamination(Inseminations entity)
+        {
+            bool hasPendingInsemination = await context.Set<Inseminations>()
+        .AnyAsync(i => i.MotherId == entity.MotherId && (i.state == true && i.Result != "PENDIENTE"));
+
+            if (hasPendingInsemination)
+            {
+                throw new InvalidOperationException("El animal tiene una inseminación activa pendiente");
+            }
         }
     }
 }
