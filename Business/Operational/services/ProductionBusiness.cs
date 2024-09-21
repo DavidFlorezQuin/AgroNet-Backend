@@ -32,7 +32,7 @@ namespace Business.Operational.services
 
             if (isMale)
             {
-                throw new InvalidOperationException("Al animal no se le puede registrar esta producción.");
+                throw new InvalidOperationException("Al animal no se le puede registrar esta producción");
             }
 
             await _data.Save(entity);
