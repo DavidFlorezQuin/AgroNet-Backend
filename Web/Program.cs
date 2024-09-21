@@ -42,6 +42,7 @@ builder.Services.AddCors(options =>
 // Configura DbContext con SQL Server
 builder.Services.AddDbContext<AplicationDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DbfaultConnection")));
+//options.UseSqlServer(builder.Configuration.GetConnectionString("DbfaultJhoan")));
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
