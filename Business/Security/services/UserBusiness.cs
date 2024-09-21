@@ -84,8 +84,6 @@ namespace Business.Security.Implementation
 
             return usersDtos;
         }
-
-
         public async Task<Users> Save(UserDto entity)
         {
             var user = new Users();

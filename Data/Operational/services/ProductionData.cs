@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Dapper.SqlMapper;
 
 namespace Data.Operational.services
 {
@@ -14,27 +15,31 @@ namespace Data.Operational.services
     {
         public ProductionData(AplicationDbContext context) : base(context) { }
 
-        public virtual async Task<Productions> Save(Productions entity)
-        {
-            await ValidProduction(entity);
 
-            context.Set<Productions>().Add(entity);
-            await context.SaveChangesAsync();
-            return entity;
-        }
-
-        public async Task ValidProduction(Productions entity)
+        public async Task<bool> ValidProduction(Productions entity)
         {
+
             var AnimalProductionId = entity.AnimalId;
-            var production = entity.TypeProduction; 
+            var production = entity.TypeProduction;
 
             bool IsValid = await context.Set<Animals>()
-                .AnyAsync(a => a.Id == AnimalProductionId && 
+                .AnyAsync(a => a.Id == AnimalProductionId &&
                 (a.Gender != "Male" && production != "Leche"));
 
-            if (!IsValid)
+            return IsValid;
+
+        }
+
+        public async Task UpdateState(Productions entity)
+        {
             {
-                throw new InvalidOperationException("Al animal no se le puede registrar esta producción.");
+                var animal = await context.Animals.FirstOrDefaultAsync(a => a.Id == entity.Id);
+
+                if (animal != null)
+                {
+                    animal.state = false;
+                    await context.SaveChangesAsync(); 
+                }
             }
         }
     }

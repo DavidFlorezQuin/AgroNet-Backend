@@ -9,5 +9,6 @@ namespace Business.Operational.Interface
 {
     public interface IProductionsBusiness : IBusiness<ProductionDto>
     {
+        Task<ProductionDto> Save(ProductionDto dto);
     }
 }

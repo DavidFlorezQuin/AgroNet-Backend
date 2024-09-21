@@ -9,5 +9,7 @@ namespace Data.Operational.Inferface
 {
     public interface IInseminationData : IData<Inseminations>
     {
+         Task<bool> ValidateGenderAnimal(Inseminations entity);
+         Task<bool> ValidateInsamination(Inseminations entity);
     }
 }

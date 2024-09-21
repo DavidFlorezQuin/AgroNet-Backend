@@ -14,7 +14,7 @@ namespace Utilities.AlertsService
     {
         private readonly IServiceScopeFactory _serviceScopeFactory;
         private readonly ILogger<AlertBackgroundService> _logger; // Agregar un logger
-        private readonly TimeSpan _interval = TimeSpan.FromMinutes(1); // Intervalo de ejecución
+        private readonly TimeSpan _interval = TimeSpan.FromDays(1); // Intervalo de ejecución
 
         public AlertBackgroundService(IServiceScopeFactory serviceScopeFactory, ILogger<AlertBackgroundService> logger)
         {

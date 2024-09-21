@@ -5,7 +5,6 @@ namespace Web.Controllers.Operational.services
 {
     [ApiController]
     [Route("api/[controller]")]
-
     public abstract class BaseController<TEntityDto, TBusiness> : ControllerBase
         where TEntityDto : class
         where TBusiness : IBusiness<TEntityDto>
@@ -28,51 +27,106 @@ namespace Web.Controllers.Operational.services
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<TEntityDto>> GetById(int id)
+        public async Task<ActionResult<ApiResponse<TEntityDto>>> GetById(int id)
         {
-            var result = await _business.GetById(id);
-            if (result == null)
+            try
             {
-                return NotFound();
+                var result = await _business.GetById(id);
+                if (result == null)
+                {
+                    return NotFound(new ApiResponse<TEntityDto>(false, "Entity not found"));
+                }
+                return Ok(new ApiResponse<TEntityDto>(true, "Entity retrieved successfully", result));
             }
-            return Ok(result);
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new ApiResponse<TEntityDto>(false, "An error occurred while retrieving the entity: " + e.Message));
+            }
         }
 
         [HttpGet("list")]
-        public async Task<ActionResult<IEnumerable<TEntityDto>>> GetAll()
+        public async Task<ActionResult<ApiResponse<IEnumerable<TEntityDto>>>> GetAll()
         {
-            var result = await _business.GetAll();
-            return Ok(result);
+            try
+            {
+                var result = await _business.GetAll();
+                return Ok(new ApiResponse<IEnumerable<TEntityDto>>(true, "Entities retrieved successfully", result));
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new ApiResponse<IEnumerable<TEntityDto>>(false, "An error occurred while retrieving the list: " + e.Message));
+            }
         }
 
         [HttpPost]
         [Route("save")]
-        public async Task<ActionResult<TEntityDto>> Save([FromBody] TEntityDto entity)
+        public async Task<ActionResult<ApiResponse<TEntityDto>>> Save([FromBody] TEntityDto entity)
         {
-            if (entity == null)
+            try
             {
-                return BadRequest("Entity is null");
+                if (entity == null)
+                {
+                    return BadRequest(new ApiResponse<TEntityDto>(false, "Entity is null"));
+                }
+
+                var result = await _business.Save(entity);
+                return CreatedAtAction(nameof(GetById), new { id = GetEntityId(result) },
+                    new ApiResponse<TEntityDto>(true, "Entity created successfully", result));
             }
-            var result = await _business.Save(entity);
-            return CreatedAtAction(nameof(GetById), new { id = GetEntityId(result) }, result);
+            catch (InvalidOperationException e)
+            {
+                return BadRequest(new ApiResponse<TEntityDto>(false, e.Message));
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new ApiResponse<TEntityDto>(false, "An unexpected error occurred: " + e.Message));
+            }
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] TEntityDto entity)
+        public async Task<ActionResult<ApiResponse<TEntityDto>>> Update(int id, [FromBody] TEntityDto entity)
         {
-            if (entity == null || id != GetEntityId(entity))
+            try
             {
-                return BadRequest();
+                if (entity == null || id != GetEntityId(entity))
+                {
+                    return BadRequest(new ApiResponse<TEntityDto>(false, "Invalid entity or ID mismatch"));
+                }
+
+                await _business.Update(id, entity);
+                return Ok(new ApiResponse<TEntityDto>(true, "Entity updated successfully"));
             }
-            await _business.Update(id, entity);
-            return NoContent();
+            catch (InvalidOperationException e)
+            {
+                return BadRequest(new ApiResponse<TEntityDto>(false, "Update operation failed: " + e.Message));
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new ApiResponse<TEntityDto>(false, "An error occurred while updating the entity: " + e.Message));
+            }
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<ActionResult<ApiResponse<TEntityDto>>> Delete(int id)
         {
-            await _business.Delete(id);
-            return NoContent();
+            try
+            {
+                await _business.Delete(id);
+                return Ok(new ApiResponse<TEntityDto>(true, "Entity deleted successfully"));
+            }
+            catch (InvalidOperationException e)
+            {
+                return BadRequest(new ApiResponse<TEntityDto>(false, "Delete operation failed: " + e.Message));
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new ApiResponse<TEntityDto>(false, "An error occurred while deleting the entity: " + e.Message));
+            }
         }
     }
 }

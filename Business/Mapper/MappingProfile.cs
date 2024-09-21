@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using Entity.Dto.Localitation;
 using Entity.Dto.Operation;
 using Entity.Dto.Parameter;
+using Entity.Model.Localitation;
 using Entity.Model.Operational;
 using Entity.Model.Parameter;
 using System;
@@ -15,6 +17,7 @@ namespace Business.Mapper
     {
         public MappingProfile()
         {
+            //OPERATIONAL
             CreateMap<AlertDto , Alerts>().ReverseMap();
             CreateMap<AnimalDto, Animals>().ReverseMap();
             CreateMap<AnimalDiagnosticDto, AnimalDiagnostics>().ReverseMap();
@@ -30,8 +33,7 @@ namespace Business.Mapper
             CreateMap<TreatmentDto, Treatments>().ReverseMap();
             CreateMap<TreatmentMedicineDto, TreatmentsMedicines>().ReverseMap();
             CreateMap<VaccineAnimalDto, VaccineAnimals>().ReverseMap();
-            CreateMap<InventoryRecords, InventoryRecordsDto>().ReverseMap();
-          
+            CreateMap<InventoryRecordsDto, InventoryRecords>().ReverseMap();
             CreateMap<CategoryAlertDto, CategoryAlert>().ReverseMap();
             CreateMap<CategoryDiseaseDto, CategoryDisieses>().ReverseMap();
             CreateMap<CategoryMedicinesDto, CategoryMedicines>().ReverseMap();
@@ -40,7 +42,9 @@ namespace Business.Mapper
             CreateMap<DiseaseDto, Diseases>().ReverseMap();
             CreateMap<MedicinesDto, Medicines>().ReverseMap();
             CreateMap<SuppliesDto, Supplies>().ReverseMap();
-            // Añade más mapeos si tienes otras entidades
+            
+            //LOCALITATION
+            CreateMap<DepartamentDto, Departament>().ReverseMap();
         }
 
     }

@@ -13,6 +13,29 @@ namespace Business.Operational.services
 {
     public class ProductionBusiness : BaseBusiness<Productions, ProductionDto>, IProductionsBusiness
     {
-        public ProductionBusiness(IMapper mapper, IProductionsData data ) : base (mapper, data) { }
+        private readonly IProductionsData _dataProduction;
+        public ProductionBusiness(IMapper mapper, IProductionsData data) : base(mapper, data)
+        {
+            _dataProduction = data;
+        }
+
+        public override async Task<ProductionDto> Save(ProductionDto dto)
+        {
+            var entity = _mapper.Map<Productions>(dto);
+
+
+            bool validado = await _dataProduction.ValidProduction(entity);
+
+            if (validado)
+            {
+                throw new InvalidOperationException("Al animal no se le puede registrar esta producción.");
+            }
+
+            await _data.Save(entity);
+
+            return _mapper.Map<ProductionDto>(entity);
+        }
+
     }
+
 }

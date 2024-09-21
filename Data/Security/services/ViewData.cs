@@ -24,6 +24,7 @@ namespace Data.Security.Implementation
         public async Task Delete(int id)
         {
             var entity = await GetById(id);
+
             if (entity == null)
             {
                 throw new Exception("Registro no encontrado");

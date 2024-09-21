@@ -1,4 +1,5 @@
 ﻿using Entity.Model.Operational;
+using Entity.Model.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,7 @@ namespace Data.Operational.Inferface
 {
     public interface ILotData : IData<Lots>
     {
+        public Task<HectareValidate> ValidateHectareas(Lots entity); 
+
     }
 }

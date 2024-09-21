@@ -1,6 +1,7 @@
 ﻿    using Data.Operational.Inferface;
 using Entity.Context;
 using Entity.Model.Operational;
+using Entity.Model.Utilities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,7 @@ namespace Data.Operational.services
             return entity;
         }
 
-        private async Task ValidateHectareas(Lots entity)
+        public async Task<HectareValidate> ValidateHectareas(Lots entity)
         {
             var FarmId = entity.FarmId;
             var Hectareas = entity.Hectare;
@@ -39,10 +40,11 @@ namespace Data.Operational.services
                 .Select(f => f.Hectare)
                 .FirstOrDefaultAsync();
 
-            if (totalSend > FarmHectare)
+            return new HectareValidate
             {
-                throw new InvalidOperationException("La cantidad total de hectáreas supera el límite permitido por la finca.");
-            }
+                TotalHectareas = totalSend,
+                FarmMaxHectareareas = FarmHectare
+            }; 
         }
 
     }

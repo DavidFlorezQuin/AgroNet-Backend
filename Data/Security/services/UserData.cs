@@ -1,6 +1,7 @@
 ﻿using Data.Security.Interfaces;
 using Entity.Context;
 using Entity.Dto.Security;
+using Entity.Dto.Utilities;
 using Entity.Model.Security;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -87,5 +88,19 @@ namespace Data.Security.Implementation
 
         }
 
+        public async Task<IEnumerable<UserPersonNameDto>> GetDataTable()
+        {
+            return await context.Users.Join(context.Person,
+                user => user.PersonId,
+                person => person.Id,
+                (users, person) => new UserPersonNameDto
+                {
+                    Id = users.Id,
+                    UserName = users.username,
+                    PersonName = person.first_name + " " + person.last_name,
+                    PersonEmail = person.email
+
+                }).ToListAsync();
+        }
     }
 }

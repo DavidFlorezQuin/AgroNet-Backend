@@ -34,7 +34,7 @@ namespace Business.Operational.services
             return _mapper.Map<IEnumerable<TEntityDto>>(entities);
         }
 
-        public async Task<TEntityDto> Save(TEntityDto dto)
+        public virtual async Task<TEntityDto> Save(TEntityDto dto)
         {
             var entity = _mapper.Map<TEntity>(dto);
             await _data.Save(entity);
