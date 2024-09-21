@@ -58,7 +58,7 @@
                 return NoContent();
             }
 
-            [HttpGet]
+            [HttpGet("list")]
             public async Task<ActionResult<IEnumerable<ViewDto>>> GetAll()
             {
                 var result = await _viewBusiness.GetAll();

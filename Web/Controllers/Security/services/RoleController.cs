@@ -59,7 +59,7 @@ namespace Web.Controllers.Implements.Security
         }
 
 
-        [HttpGet("select")]
+        [HttpGet("list")]
         public async Task<ActionResult<IEnumerable<RoleDto>>> GetAll()
         {
             var result = await _roleBusiness.GetAll();

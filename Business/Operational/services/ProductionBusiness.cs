@@ -23,8 +23,12 @@ namespace Business.Operational.services
         {
             var entity = _mapper.Map<Productions>(dto);
 
+
             if(entity.TypeProduction == "Venta")
             {
+                entity.QuantityTotal = 1;
+                entity.Stock = 1; 
+                entity.Measurement = "UND"; 
                 await _dataProduction.isSale(entity); 
             }
 

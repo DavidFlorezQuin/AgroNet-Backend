@@ -14,7 +14,7 @@ namespace Entity.Dto.Operation
         public string Measurement { get; set; }
         public string Description { get; set; }
         public double QuantityTotal { get; set; }
-        public DateTime ExpirateDate { get; set; }
+        public DateTime? ExpirateDate { get; set; }
         public int AnimalId { get; set; }
     }
 }

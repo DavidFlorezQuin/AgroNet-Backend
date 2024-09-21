@@ -77,7 +77,7 @@ namespace Web.Controllers.Implements.Security
             return NoContent();
         }
 
-        [HttpGet]
+        [HttpGet("list")]
         public async Task<ActionResult<IEnumerable<ModuloDto>>> GetAll()
         {
             var result = await _modulesBusiness.GetAll();

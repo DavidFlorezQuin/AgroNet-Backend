@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entity.Migrations
 {
     [DbContext(typeof(AplicationDbContext))]
-    [Migration("20240919060227_ppo")]
-    partial class ppo
+    [Migration("20240921220822_data")]
+    partial class data
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -753,7 +753,7 @@ namespace Entity.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("ExpirateDate")
+                    b.Property<DateTime?>("ExpirateDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Measurement")
@@ -1278,14 +1278,10 @@ namespace Entity.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<double>("Amount")
-                        .HasColumnType("float");
+                    b.Property<int>("CategorySuppliesId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("InputType")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -1315,6 +1311,8 @@ namespace Entity.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CategorySuppliesId");
 
                     b.ToTable("Supplies");
                 });
@@ -1391,7 +1389,7 @@ namespace Entity.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Order")
+                    b.Property<int>("Orders")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("created_at")
@@ -2003,6 +2001,17 @@ namespace Entity.Migrations
                         .IsRequired();
 
                     b.Navigation("CategoryMedicines");
+                });
+
+            modelBuilder.Entity("Entity.Model.Parameter.Supplies", b =>
+                {
+                    b.HasOne("Entity.Model.Parameter.CategorySupplies", "CategorySupplies")
+                        .WithMany()
+                        .HasForeignKey("CategorySuppliesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CategorySupplies");
                 });
 
             modelBuilder.Entity("Entity.Model.Security.RoleView", b =>

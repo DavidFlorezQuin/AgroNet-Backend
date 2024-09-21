@@ -20,8 +20,6 @@ namespace Data.Operational.services
             var AnimalId = entity.MotherId; 
 
             return await context.Set<Animals>().AnyAsync(a => a.Id  == AnimalId && a.Gender == "Male");
-
-
         }
 
         public async Task<bool> ValidateInsamination(Inseminations entity)

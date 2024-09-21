@@ -29,7 +29,7 @@ namespace Web.Controllers.Implements.Security
             return Ok(result);
         }
 
-        [HttpGet]
+        [HttpGet("list")]
         public async Task<ActionResult<IEnumerable<RoleViewDto>>> GetAll()
         {
             var result = await _roleViewBusiness.GetAll();

@@ -23,7 +23,7 @@ namespace Business.Operational.services
 
             var entity = _mapper.Map<Inseminations>(dto);
 
-            bool isActive = await _inseminationData.ValidateGenderAnimal(entity); 
+            bool isActive = await _inseminationData.ValidateInsamination(entity); 
             bool isMale = await _inseminationData.ValidateGenderAnimal(entity);
 
             if (isActive)

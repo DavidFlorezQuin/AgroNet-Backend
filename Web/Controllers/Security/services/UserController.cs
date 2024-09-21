@@ -84,7 +84,7 @@ namespace Web.Controllers.Implements.Security
             await _userBusiness.Delete(id);
             return NoContent();
         }
-        [HttpGet]
+        [HttpGet("list")]
         public async Task<ActionResult<IEnumerable<UserDto>>> GetAll()
         {
             var result = await _userBusiness.GetAll();

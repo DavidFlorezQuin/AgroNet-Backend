@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Entity.Migrations
 {
     /// <inheritdoc />
-    public partial class ppo : Migration
+    public partial class data : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -125,7 +125,7 @@ namespace Entity.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Order = table.Column<int>(type: "int", nullable: false),
+                    Orders = table.Column<int>(type: "int", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     created_by = table.Column<int>(type: "int", nullable: true),
                     updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -186,29 +186,6 @@ namespace Entity.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Roles", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Supplies",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Amount = table.Column<double>(type: "float", nullable: false),
-                    InputType = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    created_by = table.Column<int>(type: "int", nullable: true),
-                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    updated_by = table.Column<int>(type: "int", nullable: true),
-                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    deleted_by = table.Column<int>(type: "int", nullable: true),
-                    state = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Supplies", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -288,6 +265,34 @@ namespace Entity.Migrations
                         name: "FK_Medicines_CategoryMedicines_CategoryMedicinesId",
                         column: x => x.CategoryMedicinesId,
                         principalTable: "CategoryMedicines",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Supplies",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CategorySuppliesId = table.Column<int>(type: "int", nullable: false),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    created_by = table.Column<int>(type: "int", nullable: true),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    updated_by = table.Column<int>(type: "int", nullable: true),
+                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    deleted_by = table.Column<int>(type: "int", nullable: true),
+                    state = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Supplies", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Supplies_CategorySupplies_CategorySuppliesId",
+                        column: x => x.CategorySuppliesId,
+                        principalTable: "CategorySupplies",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -809,7 +814,7 @@ namespace Entity.Migrations
                     Measurement = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     QuantityTotal = table.Column<double>(type: "float", nullable: false),
-                    ExpirateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ExpirateDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     AnimalId = table.Column<int>(type: "int", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     created_by = table.Column<int>(type: "int", nullable: true),
@@ -1128,6 +1133,11 @@ namespace Entity.Migrations
                 column: "ProductionId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Supplies_CategorySuppliesId",
+                table: "Supplies",
+                column: "CategorySuppliesId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Treatments_AnimalDiagnosticsId",
                 table: "Treatments",
                 column: "AnimalDiagnosticsId");
@@ -1176,9 +1186,6 @@ namespace Entity.Migrations
 
             migrationBuilder.DropTable(
                 name: "Births");
-
-            migrationBuilder.DropTable(
-                name: "CategorySupplies");
 
             migrationBuilder.DropTable(
                 name: "Diseases");
@@ -1236,6 +1243,9 @@ namespace Entity.Migrations
 
             migrationBuilder.DropTable(
                 name: "Vaccines");
+
+            migrationBuilder.DropTable(
+                name: "CategorySupplies");
 
             migrationBuilder.DropTable(
                 name: "Modulo");

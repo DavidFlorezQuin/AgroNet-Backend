@@ -50,7 +50,7 @@ namespace Web.Controllers.Implements.Security
             return NoContent();
         }
 
-        [HttpGet]
+        [HttpGet("list")]
         public async Task<ActionResult<IEnumerable<PersonDto>>> GetAll()
         {
             var result = await _personBusiness.GetAll();
