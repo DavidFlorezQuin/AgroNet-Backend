@@ -27,6 +27,8 @@ namespace Data.Operational.services
         }
         public virtual async Task<TEntity> Save(TEntity entity)
         {
+            typeof(TEntity).GetProperty("state")?.SetValue(entity, true);
+
             context.Set<TEntity>().Add(entity);
             await context.SaveChangesAsync();
             return entity;

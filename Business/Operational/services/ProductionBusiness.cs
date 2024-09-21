@@ -23,10 +23,14 @@ namespace Business.Operational.services
         {
             var entity = _mapper.Map<Productions>(dto);
 
+            if(entity.TypeProduction == "Venta")
+            {
+                await _dataProduction.isSale(entity); 
+            }
 
-            bool validado = await _dataProduction.ValidProduction(entity);
+            bool isMale = await _dataProduction.ValidProduction(entity);
 
-            if (validado)
+            if (isMale)
             {
                 throw new InvalidOperationException("Al animal no se le puede registrar esta producción.");
             }

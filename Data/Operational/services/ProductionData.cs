@@ -22,15 +22,14 @@ namespace Data.Operational.services
             var AnimalProductionId = entity.AnimalId;
             var production = entity.TypeProduction;
 
-            bool IsValid = await context.Set<Animals>()
+            bool IsMale = await context.Set<Animals>()
                 .AnyAsync(a => a.Id == AnimalProductionId &&
-                (a.Gender != "Male" && production != "Leche"));
+                (a.Gender == "Male" && production == "Leche"));
 
-            return IsValid;
-
+            return IsMale; 
         }
 
-        public async Task UpdateState(Productions entity)
+        public async Task isSale(Productions entity)
         {
             {
                 var animal = await context.Animals.FirstOrDefaultAsync(a => a.Id == entity.Id);

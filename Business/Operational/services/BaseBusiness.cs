@@ -14,7 +14,7 @@ namespace Business.Operational.services
 
     {
         protected readonly IMapper _mapper;
-        protected readonly IData<TEntity> _data; // Interfaz genérica para acceso a datos
+        protected readonly IData<TEntity> _data; // interfaz genérica para acceso a datos
 
         protected BaseBusiness(IMapper mapper, IData<TEntity> data)
         {
