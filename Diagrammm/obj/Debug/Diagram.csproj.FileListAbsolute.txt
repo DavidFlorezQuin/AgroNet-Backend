@@ -5,3 +5,10 @@ C:\Users\david\Source\Repos\AgroNetBackend\Diagrammm\obj\Debug\Diagram.csproj.As
 C:\Users\david\Source\Repos\AgroNetBackend\Diagrammm\obj\Debug\Diagram.csproj.CoreCompileInputs.cache
 C:\Users\david\Source\Repos\AgroNetBackend\Diagrammm\obj\Debug\Diagrammm.dll
 C:\Users\david\Source\Repos\AgroNetBackend\Diagrammm\obj\Debug\Diagrammm.pdb
+C:\Users\ASUS\OneDrive\Documentos\Repositorios\Agronet-Proyecto\AgroNet-Backend\Diagrammm\bin\Debug\Diagrammm.dll.config
+C:\Users\ASUS\OneDrive\Documentos\Repositorios\Agronet-Proyecto\AgroNet-Backend\Diagrammm\bin\Debug\Diagrammm.dll
+C:\Users\ASUS\OneDrive\Documentos\Repositorios\Agronet-Proyecto\AgroNet-Backend\Diagrammm\bin\Debug\Diagrammm.pdb
+C:\Users\ASUS\OneDrive\Documentos\Repositorios\Agronet-Proyecto\AgroNet-Backend\Diagrammm\obj\Debug\Diagram.csproj.AssemblyReference.cache
+C:\Users\ASUS\OneDrive\Documentos\Repositorios\Agronet-Proyecto\AgroNet-Backend\Diagrammm\obj\Debug\Diagram.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\OneDrive\Documentos\Repositorios\Agronet-Proyecto\AgroNet-Backend\Diagrammm\obj\Debug\Diagrammm.dll
+C:\Users\ASUS\OneDrive\Documentos\Repositorios\Agronet-Proyecto\AgroNet-Backend\Diagrammm\obj\Debug\Diagrammm.pdb

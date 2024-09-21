@@ -1,0 +1,7 @@
+C:\Users\ASUS\OneDrive\Documentos\Repositorios\Agronet-Proyecto\AgroNet-Backend\Diagrammm\bin\Release\Diagrammm.dll.config
+C:\Users\ASUS\OneDrive\Documentos\Repositorios\Agronet-Proyecto\AgroNet-Backend\Diagrammm\bin\Release\Diagrammm.dll
+C:\Users\ASUS\OneDrive\Documentos\Repositorios\Agronet-Proyecto\AgroNet-Backend\Diagrammm\bin\Release\Diagrammm.pdb
+C:\Users\ASUS\OneDrive\Documentos\Repositorios\Agronet-Proyecto\AgroNet-Backend\Diagrammm\obj\Release\Diagram.csproj.AssemblyReference.cache
+C:\Users\ASUS\OneDrive\Documentos\Repositorios\Agronet-Proyecto\AgroNet-Backend\Diagrammm\obj\Release\Diagram.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\OneDrive\Documentos\Repositorios\Agronet-Proyecto\AgroNet-Backend\Diagrammm\obj\Release\Diagrammm.dll
+C:\Users\ASUS\OneDrive\Documentos\Repositorios\Agronet-Proyecto\AgroNet-Backend\Diagrammm\obj\Release\Diagrammm.pdb

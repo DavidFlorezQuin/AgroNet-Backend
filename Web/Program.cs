@@ -47,7 +47,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Logging.AddConsole(); // Asegura que el logging de consola esté habilitado
+builder.Logging.AddConsole(); // Asegura que el logging de consola estï¿½ habilitado
 
 //ALERTS
 builder.Services.AddScoped<AlertService>();
@@ -175,10 +175,10 @@ builder.Services.AddScoped<IVaccineData, VaccineData>();
 
 builder.Services.AddAutoMapper(cfg =>
 {
-    cfg.AddProfile<MappingProfile>(); // Añade el perfil de mapeo
+    cfg.AddProfile<MappingProfile>(); // Aï¿½ade el perfil de mapeo
 });
 
-builder.Services.AddAutoMapper(typeof(MappingProfile)); // O el ensamblado donde está definido MappingProfile
+builder.Services.AddAutoMapper(typeof(MappingProfile)); // O el ensamblado donde estï¿½ definido MappingProfile
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddControllers();
 
@@ -192,7 +192,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// Asegúrate de usar CORS antes de Authorization y otros middlewares
+// Asegï¿½rate de usar CORS antes de Authorization y otros middlewares
 app.UseCors("AllowSpecificOrigin");
 
 app.UseHttpsRedirection();

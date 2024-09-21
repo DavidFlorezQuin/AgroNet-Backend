@@ -3284,19 +3284,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\david\\.nuget\\packages\\": {}
+    "C:\\Users\\ASUS\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Business\\Business.csproj",
+      "projectUniqueName": "C:\\Users\\ASUS\\OneDrive\\Documentos\\Repositorios\\Agronet-Proyecto\\AgroNet-Backend\\Business\\Business.csproj",
       "projectName": "Business",
-      "projectPath": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Business\\Business.csproj",
-      "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Business\\obj\\",
+      "projectPath": "C:\\Users\\ASUS\\OneDrive\\Documentos\\Repositorios\\Agronet-Proyecto\\AgroNet-Backend\\Business\\Business.csproj",
+      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ASUS\\OneDrive\\Documentos\\Repositorios\\Agronet-Proyecto\\AgroNet-Backend\\Business\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3311,11 +3311,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Data.csproj": {
-              "projectPath": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Data\\Data.csproj"
+            "C:\\Users\\ASUS\\OneDrive\\Documentos\\Repositorios\\Agronet-Proyecto\\AgroNet-Backend\\Data\\Data.csproj": {
+              "projectPath": "C:\\Users\\ASUS\\OneDrive\\Documentos\\Repositorios\\Agronet-Proyecto\\AgroNet-Backend\\Data\\Data.csproj"
             },
-            "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Entity.csproj": {
-              "projectPath": "C:\\Users\\david\\Source\\Repos\\AgroNetBackend\\Entity\\Entity.csproj"
+            "C:\\Users\\ASUS\\OneDrive\\Documentos\\Repositorios\\Agronet-Proyecto\\AgroNet-Backend\\Entity\\Entity.csproj": {
+              "projectPath": "C:\\Users\\ASUS\\OneDrive\\Documentos\\Repositorios\\Agronet-Proyecto\\AgroNet-Backend\\Entity\\Entity.csproj"
             }
           }
         }
@@ -3356,7 +3356,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

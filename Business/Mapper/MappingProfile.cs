@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using Entity.Dto.Localitation;
 using Entity.Dto.Operation;
 using Entity.Dto.Parameter;
+using Entity.Model.Localitation;
 using Entity.Model.Operational;
 using Entity.Model.Parameter;
 using System;
@@ -31,6 +33,7 @@ namespace Business.Mapper
             CreateMap<TreatmentMedicineDto, TreatmentsMedicines>().ReverseMap();
             CreateMap<VaccineAnimalDto, VaccineAnimals>().ReverseMap();
             CreateMap<InventoryRecords, InventoryRecordsDto>().ReverseMap();
+            CreateMap<Departament, DepartamentDto>().ReverseMap();
           
             CreateMap<CategoryAlertDto, CategoryAlert>().ReverseMap();
             CreateMap<CategoryDiseaseDto, CategoryDisieses>().ReverseMap();
