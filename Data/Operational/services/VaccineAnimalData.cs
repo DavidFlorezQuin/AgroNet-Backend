@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Data.Operational.services
 {
-    internal class VaccineAnimalData : ABaseData<VaccineAnimals>, IVaccineAnimalData
+    public class VaccineAnimalData : ABaseData<VaccineAnimals>, IVaccineAnimalData
     {
         public VaccineAnimalData(AplicationDbContext context) : base(context) { }
 

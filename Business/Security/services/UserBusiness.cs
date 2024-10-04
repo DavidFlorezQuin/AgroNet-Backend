@@ -108,7 +108,7 @@ namespace Business.Security.Implementation
                     Id = rv.View.Modulo.Id,
                     Name = rv.View.Modulo.Name,
                     Views = r.RoleViews
-                        .Where(rv2 => rv2.View.ModuloId == rv.View.ModuloId)
+                        .Where(rv2 => rv2.View.ModuloId == rv.View.ModuloId && rv2.deleted_at == null)
                         .Select(rv2 => new ViewDto
                         {
                             Id = rv2.View.Id,

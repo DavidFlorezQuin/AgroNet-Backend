@@ -22,7 +22,7 @@ namespace Business.Security.Implementation
 
         public async Task Delete(int id)
         {
-            await data.GetById(id);
+            await data.Delete(id);
         }
 
         public async Task<RoleViewDto> GetById(int id)

@@ -9,5 +9,8 @@ namespace Data.Operational.Inferface
 {
     public interface IFarmData : IData<Farms>
     {
+
+        Task<IEnumerable<Farms>> GetFarmUser(int UserId);
+
     }
 }

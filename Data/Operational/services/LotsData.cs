@@ -1,5 +1,6 @@
-﻿    using Data.Operational.Inferface;
+﻿using Data.Operational.Inferface;
 using Entity.Context;
+using Entity.Dto.Operation;
 using Entity.Model.Operational;
 using Entity.Model.Utilities;
 using Microsoft.EntityFrameworkCore;
@@ -44,7 +45,7 @@ namespace Data.Operational.services
             {
                 TotalHectareas = totalSend,
                 FarmMaxHectareareas = FarmHectare
-            }; 
+            };
         }
 
     }

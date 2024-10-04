@@ -65,7 +65,7 @@
                 return Ok(result);
             }
 
-            [HttpGet("/byRole/{id}")]
+            [HttpGet("byRole/{id}")]
             public async Task<ActionResult<IEnumerable<ViewDto>>> ViewsByRole(int id)
             {
                 var result = await _viewBusiness.ViewsByRole(id);

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Business.Operational.services
 {
-    internal class VaccineAnimalBusiness : BaseBusiness<VaccineAnimals, VaccineAnimalDto>, IVaccineAnimalBusiness
+    public class VaccineAnimalBusiness : BaseBusiness<VaccineAnimals, VaccineAnimalDto>, IVaccineAnimalBusiness
     {
         public VaccineAnimalBusiness(IMapper mapper, IVaccineAnimalData data) : base(mapper, data) { }
     }

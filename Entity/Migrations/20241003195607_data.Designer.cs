@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entity.Migrations
 {
     [DbContext(typeof(AplicationDbContext))]
-    [Migration("20240921220822_data")]
+    [Migration("20241003195607_data")]
     partial class data
     {
         /// <inheritdoc />
@@ -967,9 +967,6 @@ namespace Entity.Migrations
 
                     b.Property<DateTime>("NextDose")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("VaccineId")
-                        .HasColumnType("int");
 
                     b.Property<int>("VaccinesId")
                         .HasColumnType("int");

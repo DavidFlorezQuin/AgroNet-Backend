@@ -11,8 +11,7 @@ namespace Entity.Model.Operational
     {
         public int AnimalId { get; set; }
         public Animals Animal { get; set; }
-
-        public int VaccineId { get; set; }
+        public int VaccinesId { get; set; }
         public Vaccines Vaccines { get; set; }
         public DateTime DateApplied { get; set; }
         public DateTime NextDose { get; set; }

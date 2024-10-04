@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Web.Controllers.Localitation.Implementation
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class ContinentController : ControllerBase
     {
 

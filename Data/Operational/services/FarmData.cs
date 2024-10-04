@@ -15,5 +15,17 @@ namespace Data.Operational.services
     {
         public FarmData(AplicationDbContext context) : base(context) { }
 
+
+        public async Task<IEnumerable<Farms>> GetFarmUser(int UserId)
+        {
+            var query = from farm in context.Farms
+                        join farmUser in context.FarmUsers
+                        on farm.Id equals farmUser.UsersId
+                        where farmUser.UsersId == UserId
+                        select farm; 
+            return await query.ToListAsync();
+        }
+
+
     }
 }

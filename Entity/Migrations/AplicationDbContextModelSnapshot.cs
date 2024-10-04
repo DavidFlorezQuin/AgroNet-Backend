@@ -965,9 +965,6 @@ namespace Entity.Migrations
                     b.Property<DateTime>("NextDose")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("VaccineId")
-                        .HasColumnType("int");
-
                     b.Property<int>("VaccinesId")
                         .HasColumnType("int");
 

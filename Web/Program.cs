@@ -97,6 +97,9 @@ builder.Services.AddScoped<IDepartamentData, DepartamentData>();
 builder.Services.AddScoped<ICategoryAlertBusiness, CategoryAlertBusiness>();
 builder.Services.AddScoped<ICategoryAlertData, CategoryAlertData>();
 
+builder.Services.AddScoped<IVaccineAnimalBusiness, VaccineAnimalBusiness>();
+builder.Services.AddScoped<IVaccineAnimalData, VaccineAnimalData>();
+
 builder.Services.AddScoped<ICategoryDiseaseBusiness, CategoryDiseaseBusiness>();
 builder.Services.AddScoped<ICategoryDiseaseData, CategoryDiseaseData>();
 
@@ -126,7 +129,7 @@ builder.Services.AddScoped<IAlertData, AlertData>();
 builder.Services.AddScoped<IAnimalBusiness, AnimalBusiness>();
 builder.Services.AddScoped<IAnimalData, AnimalData>();
 
-builder.Services.AddScoped<AnimalDiagnosticBusiness, AnimalDiagnosticBusiness>();
+builder.Services.AddScoped<IAnimalDiagnosticBusiness, AnimalDiagnosticBusiness>();
 builder.Services.AddScoped<IAnimalDiagnosticData, AnimalDiagnosticData>();
 
 builder.Services.AddScoped<IBirthBusiness, BirthBusiness>();

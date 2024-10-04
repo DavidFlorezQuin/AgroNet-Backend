@@ -10,7 +10,6 @@ namespace Web.Controllers.Implements.Security
     public class RoleController : ControllerBase
     {
 
-
         private readonly IRoleBusiness _roleBusiness;
 
         public RoleController(IRoleBusiness roleBusiness)

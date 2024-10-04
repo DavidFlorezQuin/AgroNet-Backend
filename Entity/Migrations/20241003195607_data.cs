@@ -842,7 +842,6 @@ namespace Entity.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     AnimalId = table.Column<int>(type: "int", nullable: false),
-                    VaccineId = table.Column<int>(type: "int", nullable: false),
                     VaccinesId = table.Column<int>(type: "int", nullable: false),
                     DateApplied = table.Column<DateTime>(type: "datetime2", nullable: false),
                     NextDose = table.Column<DateTime>(type: "datetime2", nullable: false),
