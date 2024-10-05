@@ -8,6 +8,8 @@ using Business.Parameter.Interface;
 using Business.Parameter.services;
 using Business.Security.Implementation;
 using Business.Security.Interfaces;
+using Business.Utilities.Interface;
+using Business.Utilities.Services;
 using Data.Localitation.Implementation;
 using Data.Localitation.Interface;
 using Data.Localitation.services;
@@ -76,6 +78,10 @@ builder.Services.AddScoped<IUserRoleData, UserRoleData>();
 
 builder.Services.AddScoped<IViewBusiness, ViewBusiness>();
 builder.Services.AddScoped<IViewData, ViewData>();
+
+builder.Services.AddScoped<ISentEmailPassword, SendEmailPassword>();
+
+
 
 
 //LOCALITATION

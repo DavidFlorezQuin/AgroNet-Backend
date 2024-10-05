@@ -18,7 +18,9 @@ namespace Data.Security.Interfaces
         Task<IEnumerable<Users>> GetAll();
         Task<Users> GetUserAsync(string username, string password);
         Task<List<Role>> GetRolesForUser(int userId);
-        Task<IEnumerable<UserPersonNameDto>> GetDataTable(); 
+        Task<IEnumerable<UserPersonNameDto>> GetDataTable();
+
+        Task SendPasswordResetLink(string email);
 
 
     }

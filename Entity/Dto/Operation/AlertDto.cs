@@ -16,9 +16,13 @@ namespace Entity.Dto.Operation
         public DateTime Date { get; set; }
         public Boolean IsRead { get; set; }
         public int AnimalId { get; set; }
-        public Animals Animal { get; set; }
+        public string Animal { get; set; }
         public int CategoryAlertId { get; set; }
+        public string CategoryAlert { get; set; }
+
         public int UsersId { get; set; }
+        public string Users { get; set; }
+
 
     }
 }
