@@ -28,5 +28,19 @@ namespace Data.Operational.services
         .AnyAsync(i => i.MotherId == entity.MotherId && (i.state == true && i.Result != "PENDIENTE"));
 
         }
+
+        public async Task<IEnumerable<Animals>> GetAnimalsInsemination(int farmId)
+        {
+            var query = from animals in context.Animals
+                        join lots in context.Lots
+                        on animals.LotId equals lots.Id
+                        join farm in context.Farms
+                        on lots.FarmId equals farm.Id
+                        join insemination in context.Inseminations
+                        on animals.Id equals insemination.MotherId
+                        where farm.Id == farmId && farm.state == true
+                        select animals; 
+                        return await query.ToListAsync();
+        }
     }
 }

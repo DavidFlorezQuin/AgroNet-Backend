@@ -40,7 +40,7 @@ namespace Business.Utilities.Services
             user.ResetPasswordTokenExpiration = DateTime.UtcNow.AddHours(1);
 
             var resetLink = $"https://yourapp.com/reset-password?token={token}";
-            SendEmail(person.email, "Password Reset", $"Click here to reset your password: {resetLink}");
+            SendEmail(person.email, "Actualizar contraseña", $"Ingresa a este link para resetaurar la contraseña: {resetLink}");
 
         }
 

@@ -6,6 +6,7 @@ namespace Data.Operational.Inferface
     {
          Task<bool> ValidProduction(Productions entity);
          Task isSale(Productions entity);
+         Task <IEnumerable<Productions>> GetProductionAnimal(int IdAnimal);
 
     }
 }

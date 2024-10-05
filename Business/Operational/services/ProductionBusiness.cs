@@ -24,12 +24,12 @@ namespace Business.Operational.services
             var entity = _mapper.Map<Productions>(dto);
 
 
-            if(entity.TypeProduction == "Venta")
+            if (entity.TypeProduction == "Venta")
             {
                 entity.QuantityTotal = 1;
-                entity.Stock = 1; 
-                entity.Measurement = "UND"; 
-                await _dataProduction.isSale(entity); 
+                entity.Stock = 1;
+                entity.Measurement = "UND";
+                await _dataProduction.isSale(entity);
             }
 
             bool isMale = await _dataProduction.ValidProduction(entity);
@@ -42,6 +42,25 @@ namespace Business.Operational.services
             await _data.Save(entity);
 
             return _mapper.Map<ProductionDto>(entity);
+        }
+
+
+        public async Task<IEnumerable<ProductionDto>> GetProductionAnimal(int IdAnimal)
+        {
+            var production = await _dataProduction.GetProductionAnimal(IdAnimal);
+
+            var productionDto = production.Select(pro => new ProductionDto
+            {
+                Id = pro.Id,
+                TypeProduction = pro.TypeProduction,
+                QuantityTotal = pro.QuantityTotal,
+                Stock = pro.Stock,
+                Measurement = pro.Measurement,
+                Description = pro.Description,
+                ExpirateDate = pro.ExpirateDate
+            }).ToList();
+
+            return productionDto;
         }
 
     }

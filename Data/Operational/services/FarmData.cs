@@ -1,4 +1,4 @@
-﻿using Data.Operational.Inferface;
+﻿    using Data.Operational.Inferface;
 using Entity.Context;
 using Entity.Model.Operational;
 using Microsoft.EntityFrameworkCore;

@@ -12,9 +12,9 @@ using static Dapper.SqlMapper;
 namespace Data.Operational.services
 {
     public class ProductionData : ABaseData<Productions>, IProductionsData
-    {
+    {       
         public ProductionData(AplicationDbContext context) : base(context) { }
-
+                                                                                                                                                                    
 
         public async Task<bool> ValidProduction(Productions entity)
         {
@@ -27,6 +27,16 @@ namespace Data.Operational.services
                 (a.Gender == "Male" && production == "Leche"));
 
             return IsMale; 
+        }
+
+        public async Task<IEnumerable<Productions>> GetProductionAnimal(int IdAnimal)
+        {
+            var query = from producion in context.Productions
+                        join animals in context.Animals
+                        on producion.AnimalId equals animals.Id
+                        where animals.Id == IdAnimal
+                        select producion;
+            return await query.ToListAsync();
         }
 
         public async Task isSale(Productions entity)

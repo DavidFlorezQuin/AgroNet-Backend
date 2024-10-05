@@ -1,4 +1,5 @@
 ﻿using Entity.Dto.Operation;
+using Entity.Model.Operational;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace Business.Operational.Interface
 {
     public interface IAnimalBusiness : IBusiness<AnimalDto>
     {
+        Task<IEnumerable<AnimalDto>> GetAnimalsFarm(int farmId); 
     }
 }

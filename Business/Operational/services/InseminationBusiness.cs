@@ -15,7 +15,10 @@ namespace Business.Operational.services
     {
 
         private IInseminationData _inseminationData;
-        public InseminationBusiness(IMapper mapper, IInseminationData data) : base(mapper, data) { }
+        public InseminationBusiness(IMapper mapper, IInseminationData data) : base(mapper, data)
+        {
+            _inseminationData = data;
+        }
 
 
         public override async Task<InseminationDto> Save(InseminationDto dto)
@@ -23,7 +26,7 @@ namespace Business.Operational.services
 
             var entity = _mapper.Map<Inseminations>(dto);
 
-            bool isActive = await _inseminationData.ValidateInsamination(entity); 
+            bool isActive = await _inseminationData.ValidateInsamination(entity);
             bool isMale = await _inseminationData.ValidateGenderAnimal(entity);
 
             if (isActive)
@@ -44,6 +47,24 @@ namespace Business.Operational.services
 
         }
 
+        public async Task<IEnumerable<AnimalDto>> GetAnimalsInsemination(int farmId)
+        {
+            var insemination = await _inseminationData.GetAnimalsInsemination(farmId);
 
+
+            var inseminationDto = insemination.Select(n => new AnimalDto
+            {
+                Id = n.Id,
+                Name = n.Name,
+                Gender = n.Gender,
+                purpose = n.purpose,
+                birthDay = n.birthDay,
+                Weight = n.Weight,
+                Photo = n.Photo,
+                LotId = n.LotId
+            }).ToList();
+
+            return inseminationDto; 
+        }
     }
 }
