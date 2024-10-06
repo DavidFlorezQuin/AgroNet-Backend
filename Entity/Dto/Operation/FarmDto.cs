@@ -15,5 +15,7 @@ namespace Entity.Dto.Operation
         public string Description { get; set; }
         public string Photo { get; set; }
         public int CityId { get; set; }
+
+        public string City { get; set; }
     }
 }

@@ -27,6 +27,7 @@ namespace Data.Operational.services
                 .Select(a => new AnimalDiagnosticDto
                 {
                     Id = a.Id,
+                    Name = a.Name,
                     Diagnosis = a.Diagnosis,
                     AnimalId = a.AnimalId,
                     Animal = a.Animal.Name,

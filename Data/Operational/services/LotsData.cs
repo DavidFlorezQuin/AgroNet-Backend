@@ -48,5 +48,22 @@ namespace Data.Operational.services
             };
         }
 
+        public async Task<List<LotsDto>> GetLotsAsync(int farmId)
+        {
+            var lots = await context.Lots
+                .Include(i => i.Farm)
+                .Where(i => i.FarmId == farmId)
+                .Select(i => new LotsDto
+                {
+                    Id = i.Id,
+                    Name = i.Name,
+                    Farm = i.Farm.Name,
+                    FarmId = i.FarmId,
+                    Hectare = i.Hectare
+                }).ToListAsync();
+            return lots; 
+        }
+
+
     }
 }

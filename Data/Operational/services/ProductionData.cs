@@ -1,5 +1,6 @@
 ﻿using Data.Operational.Inferface;
 using Entity.Context;
+using Entity.Dto.Operation;
 using Entity.Model.Operational;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -52,5 +53,26 @@ namespace Data.Operational.services
                 }
             }
         }
+
+        public async Task<List<ProductionDto>> GetProductionAnimals(int farmId)
+        {
+            var production = await context.Productions
+                .Include(b => b.Animal)
+                .Where(b => b.Animal.Lot.Farm.Id == farmId && b.Animal.Lot.Farm.state == true)
+                .Select(b => new ProductionDto
+                {
+                    Id = b.Id,
+                    state = b.state,
+                    Animal = b.Animal.Name,
+                    TypeProduction = b.TypeProduction,
+                    Stock = b.Stock,
+                    Measurement = b.Measurement,
+                    Description = b.Description,
+                    QuantityTotal = b.QuantityTotal,
+                }).ToListAsync();
+
+            return production; 
+        }
+
     }
 }

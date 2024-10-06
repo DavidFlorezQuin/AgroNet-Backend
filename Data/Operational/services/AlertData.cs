@@ -27,6 +27,7 @@ namespace Data.Operational.services
                 .Include(a => a.Users)            
                 .Select(a => new AlertDto
                 {
+                    Id = a.Id,
                     Name = a.Name,
                     Description = a.Description,
                     Date = a.Date,

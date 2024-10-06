@@ -13,6 +13,9 @@ namespace Entity.Dto.Operation
         public DateTime FinishiedDate { get; set; }
         public DateTime StartDate { get; set; }
         public int AnimalDiagnosticsId { get; set; }
+        public string Name { get; set; }
+
+        public string AnimalDiagnostics { get; set; }
 
     }
 }

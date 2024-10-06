@@ -14,6 +14,7 @@ namespace Entity.Model.Operational
         public DateTime StartDate { get; set;}
         public int AnimalDiagnosticsId { get; set;}
         public AnimalDiagnostics AnimalDiagnostics { get; set; }
+        public string Name { get; set; }
 
     }
 }

@@ -13,7 +13,7 @@ namespace Data.Operational.Inferface
 
         Task<IEnumerable<Farms>> GetFarmUser(int UserId);
 
-        Task<List<FarmDto>> GetInseminationAsync(int farmId);
+        Task<List<FarmDto>> GetFarmAsync(int farmId);
 
     }
 }

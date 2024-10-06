@@ -13,6 +13,8 @@ namespace Entity.Dto.Operation
         public double Quantity { get; set; }
         public string Measurement { get; set; }
         public int ProductionId { get; set; }
+
+        public string Production { get; set; }  
         public string Currency { get; set; }
 
     }

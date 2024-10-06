@@ -1,4 +1,5 @@
-﻿using Entity.Model.Operational;
+﻿using Entity.Dto.Operation;
+using Entity.Model.Operational;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace Data.Operational.Inferface
 {
     public interface ITreatmentsMedicinesData : IData<TreatmentsMedicines>
     {
+        Task<List<TreatmentMedicineDto>> GetTreatmentMedicineAsync(int farmId);
     }
 }

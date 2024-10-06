@@ -1,4 +1,5 @@
-﻿using Entity.Model.Operational;
+﻿using Entity.Dto.Operation;
+using Entity.Model.Operational;
 
 namespace Data.Operational.Inferface
 {
@@ -7,6 +8,7 @@ namespace Data.Operational.Inferface
          Task<bool> ValidProduction(Productions entity);
          Task isSale(Productions entity);
          Task <IEnumerable<Productions>> GetProductionAnimal(int IdAnimal);
+         Task<List<ProductionDto>> GetProductionAnimals(int farmId); 
 
     }
 }

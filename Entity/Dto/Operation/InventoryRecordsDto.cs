@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entity.Dto.Operation
 {
-    public class InventoryRecordsDto
+    public class InventoryRecordsDto : BaseDto
     {
         public double Amount { get; set; }
         public double Measure { get; set; }

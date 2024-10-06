@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Entity.Dto.Operation
 {
-    public class BirthDto
+    public class BirthDto : BaseDto
     {
         public string Assistence { get; set; }
         public double Result { get; set; }
         public string Description { get; set; }
-
         public double BirthWeight { get; set; }
         public int InseminationId { get; set; }
-        public int AnimalId { get; set; }
+        public int? AnimalId { get; set; }
+        public string Animal { get; set; }
     }
 }

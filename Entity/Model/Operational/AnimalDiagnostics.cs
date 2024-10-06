@@ -9,6 +9,7 @@ namespace Entity.Model.Operational
 {
     public class AnimalDiagnostics : ABaseModel
     {
+        public string Name { get; set; }
         public string Diagnosis { get; set; }
         public int AnimalId { get; set; }
         public Animals Animal { get; set; }

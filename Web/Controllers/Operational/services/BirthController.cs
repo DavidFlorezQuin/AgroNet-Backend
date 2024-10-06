@@ -1,6 +1,7 @@
 ﻿using Business.Operational.Interface;
+using Data.Operational.Inferface;
 using Entity.Dto.Operation;
-using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers.Operational.services
 {
@@ -8,7 +9,33 @@ namespace Web.Controllers.Operational.services
 
     public class BirthController : BaseController<BirthDto, IBirthBusiness>
     {
-        public BirthController(IBirthBusiness birthBusiness) : base(birthBusiness) { }
+        private readonly IBirthData _data; 
+        public BirthController(IBirthBusiness birthBusiness, IBirthData data) : base(birthBusiness) {
+            _data = data; 
+        }
+        [HttpGet("datatable/{farmId}")]
+        public async Task<ActionResult<List<BirthDto>>> GetAlerts(int farmId)
+        {
+            try
+            {
+                var birth = await _data.GetBirthAsync(farmId);
+
+                // Verificar si la lista está vacía
+                if (birth == null || birth.Count == 0)
+                {
+                    return StatusCode(StatusCodes.Status500InternalServerError,
+                                        new ApiResponse<List<BirthDto>>(false, "Lista sin datos"));
+                }
+
+                // Devolver la lista de alertas
+                return Ok(new ApiResponse<List<BirthDto>>(true, "Entities retrieved successfully", birth));
+            }
+            catch (Exception ex)
+            {
+                // Manejo de excepciones
+                return StatusCode(500, $"Error al obtener las alertas: {ex.Message}");
+            }
+        }
 
     }
 }
