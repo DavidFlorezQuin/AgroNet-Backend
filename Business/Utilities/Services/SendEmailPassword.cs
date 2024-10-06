@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Entity.Context;
 using Microsoft.EntityFrameworkCore;
 using Business.Utilities.Interface;
+using static Dapper.SqlMapper;
 
 namespace Business.Utilities.Services
 {
@@ -32,14 +33,22 @@ namespace Business.Utilities.Services
             var personId = person.Id;
 
             var user = await context.Users.FirstOrDefaultAsync(u => u.Id == personId);
-
+            
+            if (person == null)
+            {
+                throw new Exception("User not found");
+            }
 
             var token = Guid.NewGuid().ToString();
 
             user.ResetPasswordToken = token;
             user.ResetPasswordTokenExpiration = DateTime.UtcNow.AddHours(1);
 
-            var resetLink = $"https://yourapp.com/reset-password?token={token}";
+            context.Users.Update(user);
+            await context.SaveChangesAsync(); 
+
+
+            var resetLink = $"http://localhost:4200//reset-password?token={token}";
             SendEmail(person.email, "Actualizar contraseña", $"Ingresa a este link para resetaurar la contraseña: {resetLink}");
 
         }

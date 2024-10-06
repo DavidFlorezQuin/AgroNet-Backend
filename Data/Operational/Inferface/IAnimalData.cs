@@ -1,4 +1,5 @@
-﻿using Entity.Model.Operational;
+﻿using Entity.Dto.Operation;
+using Entity.Model.Operational;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,7 @@ namespace Data.Operational.Inferface
     {
 
         Task<IEnumerable<Animals>> GetAnimalsFarm (int farmId);
+
+        Task<List<AnimalDto>> GetAnimalAsync();
     }
 }

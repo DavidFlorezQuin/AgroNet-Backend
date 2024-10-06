@@ -11,9 +11,13 @@ namespace Entity.Dto.Operation
     {
         public string Description { get; set; }
 
-        public int SemenId { get; set; }
+        public int? SemenId { get; set; }
+
+        public string Semen { get; set; }
 
         public int MotherId { get; set; }
+
+        public string Mother { get; set; }
         public string Result { get; set; }
         public string InseminationType { get; set; }
     }

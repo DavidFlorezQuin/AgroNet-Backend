@@ -20,7 +20,7 @@ namespace Data.Operational.services
         {
             var query = from farm in context.Farms
                         join farmUser in context.FarmUsers
-                        on farm.Id equals farmUser.UsersId
+                        on farm.Id equals farmUser.FarmsId // Cambié de farmUser.UsersId a farmUser.FarmId para corregir la relación
                         where farmUser.UsersId == UserId
                         select farm; 
             return await query.ToListAsync();

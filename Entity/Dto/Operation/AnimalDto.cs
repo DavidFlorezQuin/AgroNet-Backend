@@ -16,5 +16,6 @@ namespace Entity.Dto.Operation
         public string purpose { get; set; }
         public DateTime birthDay { get; set; }
         public int LotId { get; set; }
+        public string Lot {  get; set; }
     }
 }

@@ -8,10 +8,12 @@ using System.Threading.Tasks;
 
 namespace Entity.Dto.Operation
 {
-    public class AnimalDiagnosticDto
+    public class AnimalDiagnosticDto : BaseDto
     {
         public string Diagnosis { get; set; }
         public int AnimalId { get; set; }
+        public string Animal {  get; set; }
         public int UsersId { get; set; }
+        public string Users { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Data.Operational.Inferface;
 using Entity.Context;
+using Entity.Dto.Operation;
 using Entity.Model.Operational;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -26,7 +27,28 @@ namespace Data.Operational.services
                         select animals; 
             return await query.ToListAsync(); 
         }
-    
-    
+
+        public async Task<List<AnimalDto>> GetAnimalAsync() {
+
+            var animal = await context.Animals
+                    .Include(a => a.Lot)
+                    .Select(a => new AnimalDto
+                    {
+                        Id = a.Id,
+                        Name = a.Name,
+                        Gender = a.Gender,
+                        purpose = a.purpose,
+                        birthDay = a.birthDay,
+                        Lot = a.Lot.Name,
+                        Weight = a.Weight,
+                        Photo = a.Photo
+                    }
+
+                ).ToListAsync();
+            return animal; 
+        }
+
+
+
     }
 }

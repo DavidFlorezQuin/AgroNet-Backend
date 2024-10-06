@@ -1,5 +1,6 @@
 ﻿using Data.Operational.Inferface;
 using Entity.Context;
+using Entity.Dto.Operation;
 using Entity.Model.Operational;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -41,6 +42,28 @@ namespace Data.Operational.services
                         where farm.Id == farmId && farm.state == true
                         select animals; 
                         return await query.ToListAsync();
+        }
+
+        public async Task<List<InseminationDto>> GetInseminationAsync(int farmId)
+        {
+            var Insemination = await context.Inseminations
+                .Include(i => i.Semen)
+                .Include(i => i.Mother)
+                .Where(i => i.Mother.Lot.Farm.Id == farmId && i.Mother.Lot.Farm.state == true) // Filtra por farmId y estado activo de la finca
+                .Select(i => new InseminationDto
+                {
+                    Id = i.Id,
+                    Mother = i.Mother.Name,
+                    Description = i.Description,
+                    SemenId = i.SemenId,
+                    MotherId = i.MotherId,
+                    Semen = i.Semen.Name,
+                    Result = i.Result,
+                    InseminationType = i.InseminationType,
+                    state = i.state
+                }).ToListAsync();
+
+            return Insemination; 
         }
     }
 }
