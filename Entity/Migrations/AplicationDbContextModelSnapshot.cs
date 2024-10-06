@@ -283,6 +283,10 @@ namespace Entity.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("UsersId")
                         .HasColumnType("int");
 
@@ -336,6 +340,10 @@ namespace Entity.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Photo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Race")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -865,6 +873,10 @@ namespace Entity.Migrations
 
                     b.Property<DateTime>("FinishiedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");

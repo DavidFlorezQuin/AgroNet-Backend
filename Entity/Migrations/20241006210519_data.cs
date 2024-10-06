@@ -670,6 +670,7 @@ namespace Entity.Migrations
                     Gender = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Weight = table.Column<double>(type: "float", nullable: false),
                     Photo = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Race = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     purpose = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     birthDay = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LotId = table.Column<int>(type: "int", nullable: false),
@@ -741,6 +742,7 @@ namespace Entity.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Diagnosis = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     AnimalId = table.Column<int>(type: "int", nullable: false),
                     UsersId = table.Column<int>(type: "int", nullable: false),
@@ -882,6 +884,7 @@ namespace Entity.Migrations
                     FinishiedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     AnimalDiagnosticsId = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     created_by = table.Column<int>(type: "int", nullable: true),
                     updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),

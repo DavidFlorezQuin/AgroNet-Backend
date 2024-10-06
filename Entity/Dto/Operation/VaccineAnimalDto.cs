@@ -10,7 +10,7 @@ namespace Entity.Dto.Operation
 {
     public class VaccineAnimalDto : BaseDto
     {
-        public int AnimalId { get; set; 
+        public int AnimalId { get; set; } 
         public string Animal { get; set; }
         public int VaccineId { get; set; }
         public string Vaccine { get; set; }
