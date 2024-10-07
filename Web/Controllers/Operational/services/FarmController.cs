@@ -36,7 +36,7 @@ namespace Web.Controllers.Operational.services
 
         }
 
-        [HttpGet("datatable")]
+        [HttpGet("datatable/{userId}")]
         public async Task<ActionResult<List<FarmDto>>> GetAlerts(int userId)
         {
             try

@@ -7,11 +7,18 @@ namespace Web.Controllers.Utilities
     [ApiController]
     public class EnumController : ControllerBase
     {
-        [HttpGet]
+        [HttpGet("TypeDocument")]
         public IActionResult GetDocumentTypes()
         {
             // Obtiene los nombres de los valores del enum y los devuelve en una lista
             var enumValues = Enum.GetNames(typeof(ETypeDocument)).ToList();
+            return Ok(enumValues);
+        }        
+        [HttpGet("Race")]
+        public IActionResult GetRace()
+        {
+            // Obtiene los nombres de los valores del enum y los devuelve en una lista
+            var enumValues = Enum.GetNames(typeof(ERace)).ToList();
             return Ok(enumValues);
         }
     }

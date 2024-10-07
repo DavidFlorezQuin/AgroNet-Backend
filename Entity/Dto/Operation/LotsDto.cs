@@ -12,7 +12,7 @@ namespace Entity.Dto.Operation
         public string Name { get; set; }
         public double Hectare { get; set; }
         public int FarmId { get; set; }
-        public string Farm { get; set; }
+        public string? Farm { get; set; }
 
     }
 }

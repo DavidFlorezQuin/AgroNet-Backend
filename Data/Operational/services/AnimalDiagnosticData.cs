@@ -19,11 +19,12 @@ namespace Data.Operational.services
         public AnimalDiagnosticData(AplicationDbContext context) : base(context) {
             _context = context; 
         }
-        public async Task<List<AnimalDiagnosticDto>> GetAnimalDiagAsync() {
+        public async Task<List<AnimalDiagnosticDto>> GetAnimalDiagAsync(int IdFarm) {
 
             var animalDiagnostic = await _context.AnimalDiagnostics
                 .Include(a => a.Animal)
                 .Include(a => a.Users)
+                .Where(b => b.Animal.Lot.Farm.Id == IdFarm && b.Animal.Lot.Farm.state == true)
                 .Select(a => new AnimalDiagnosticDto
                 {
                     Id = a.Id,

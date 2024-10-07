@@ -15,7 +15,7 @@ namespace Entity.Dto.Operation
         public int AnimalDiagnosticsId { get; set; }
         public string Name { get; set; }
 
-        public string AnimalDiagnostics { get; set; }
+        public string? AnimalDiagnostics { get; set; }
 
     }
 }

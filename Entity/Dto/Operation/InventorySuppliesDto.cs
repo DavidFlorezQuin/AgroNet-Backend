@@ -11,8 +11,8 @@ namespace Entity.Dto.Operation
     {
         public int Amount { get; set; }
         public string Measure { get; set; }
-        public string Inventory { get; set; }
-        public string Supplies { get; set; }
+        public string? Inventory { get; set; }
+        public string? Supplies { get; set; }
         public int InventoryId { get; set; }
         public int SuppliesId { get; set; }
 

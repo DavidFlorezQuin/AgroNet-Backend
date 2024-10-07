@@ -11,5 +11,7 @@ namespace Entity.Dto.Operation
     {
         public int FarmsId { get; set; }
         public int UsersId { get; set; }
+        public string? Farm { get; set; }
+        public string? Users { get; set; }
     }
 }

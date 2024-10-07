@@ -15,6 +15,6 @@ namespace Entity.Dto.Operation
         public double BirthWeight { get; set; }
         public int InseminationId { get; set; }
         public int? AnimalId { get; set; }
-        public string Animal { get; set; }
+        public string? Animal { get; set; }
     }
 }

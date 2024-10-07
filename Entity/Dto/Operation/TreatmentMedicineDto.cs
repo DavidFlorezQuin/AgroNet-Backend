@@ -13,8 +13,8 @@ namespace Entity.Dto.Operation
         public string Description { get; set; }
         public int PeriocityDay { get; set; }
         public int MedicinesId { get; set; }
-        public string Medicines { get; set; }
+        public string? Medicines { get; set; }
         public int TreatmentId { get; set; }
-        public string Treatment { get; set; }
+        public string? Treatment { get; set; }
     }
 }

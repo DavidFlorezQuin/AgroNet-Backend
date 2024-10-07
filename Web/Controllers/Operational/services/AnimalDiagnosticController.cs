@@ -14,12 +14,12 @@ namespace Web.Controllers.Operational.services
         public AnimalDiagnosticController(IAnimalDiagnosticBusiness animalDiagnosticBusiness, IAnimalDiagnosticData data ) : base(animalDiagnosticBusiness) {
             _Data = data; 
         }
-        [HttpGet("datatable")]
-        public async Task<ActionResult<List<AnimalDiagnosticDto>>> GetAnimalDiag()
+        [HttpGet("datatable/{IdFarm}")]
+        public async Task<ActionResult<List<AnimalDiagnosticDto>>> GetAnimalDiag(int IdFarm)
         {
             try
             {
-                var animals = await _Data.GetAnimalDiagAsync();
+                var animals = await _Data.GetAnimalDiagAsync(IdFarm);
 
                 // Verificar si la lista está vacía
                 if (animals == null || animals.Count == 0)

@@ -24,6 +24,8 @@ namespace Data.Operational.services
                 {
                     Id = b.Id,
                     Farm = b.Farm.Name,
+                    Name = b.Name,
+                    state = b.state,
                     Description = b.Description,
 
                 }).ToListAsync();

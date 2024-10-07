@@ -13,6 +13,7 @@ namespace Entity.Dto.Operation
         public double Measure { get; set; }
         public string TransactionType { get; set; }
         public int UsersId { get; set; }
+        public string? Users { get; set; }
         public int InventorySuppliesId { get; set; }
     }
 }

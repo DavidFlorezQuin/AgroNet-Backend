@@ -16,6 +16,6 @@ namespace Entity.Dto.Operation
         public double QuantityTotal { get; set; }
         public DateTime? ExpirateDate { get; set; }
         public int AnimalId { get; set; }
-        public string Animal { get; set; }
+        public string? Animal { get; set; }
     }
 }
