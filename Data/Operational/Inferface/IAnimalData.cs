@@ -13,6 +13,6 @@ namespace Data.Operational.Inferface
 
         Task<IEnumerable<Animals>> GetAnimalsFarm (int farmId);
 
-        Task<List<AnimalDto>> GetAnimalAsync();
+        Task<List<AnimalDto>> GetAnimalAsync(int farmId);
     }
 }
