@@ -46,8 +46,8 @@ namespace Web.Controllers.Operational.services
                 // Verificar si la lista está vacía
                 if (farm == null || farm.Count == 0)
                 {
-                    return StatusCode(StatusCodes.Status500InternalServerError,
-                                        new ApiResponse<List<FarmDto>>(false, "An error occurred while retrieving the list: "));
+                    return Ok(new ApiResponse<List<FarmDto>>(true, "No alerts found for the specified farm.", new List<FarmDto>()));
+
                 }
 
                 // Devolver la lista de alertas

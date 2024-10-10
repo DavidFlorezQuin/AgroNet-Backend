@@ -48,8 +48,8 @@ namespace Web.Controllers.Operational.services
                 // Verificar si la lista está vacía
                 if (insemination == null || insemination.Count == 0)
                 {
-                    return StatusCode(StatusCodes.Status500InternalServerError,
-                                        new ApiResponse<List<InseminationDto>>(false, "An error occurred while retrieving the list: "));
+                    return Ok(new ApiResponse<List<InseminationDto>>(true, "No alerts found for the specified farm.", new List<InseminationDto>()));
+
                 }
 
                 // Devolver la lista de alertas

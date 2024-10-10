@@ -25,8 +25,8 @@ namespace Web.Controllers.Operational.services
                 // Verificar si la lista está vacía
                 if (treatments == null || treatments.Count == 0)
                 {
-                    return StatusCode(StatusCodes.Status500InternalServerError,
-                                        new ApiResponse<List<TreatmentDto>>(false, "An error occurred while retrieving the list: "));
+                    return Ok(new ApiResponse<List<TreatmentDto>>(true, "No alerts found for the specified farm.", new List<TreatmentDto>()));
+
                 }
 
                 // Devolver la lista de alertas

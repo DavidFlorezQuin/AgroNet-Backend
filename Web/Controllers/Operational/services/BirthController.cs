@@ -23,8 +23,8 @@ namespace Web.Controllers.Operational.services
                 // Verificar si la lista está vacía
                 if (birth == null || birth.Count == 0)
                 {
-                    return StatusCode(StatusCodes.Status500InternalServerError,
-                                        new ApiResponse<List<BirthDto>>(false, "Lista sin datos"));
+                    return Ok(new ApiResponse<List<BirthDto>>(true, "No alerts found for the specified farm.", new List<BirthDto>()));
+
                 }
 
                 // Devolver la lista de alertas

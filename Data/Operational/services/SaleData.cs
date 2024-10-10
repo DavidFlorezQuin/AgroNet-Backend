@@ -26,7 +26,7 @@ namespace Data.Operational.services
                     Id = b.Id,
                     state = b.state,
                     Currency = b.Currency,
-                    Production = b.Production.Animal.Name,
+                    Production = b.Production.TypeProduction,
                     Measurement = b.Measurement,
                     Price = b.Price,
                     Quantity = b.Quantity,

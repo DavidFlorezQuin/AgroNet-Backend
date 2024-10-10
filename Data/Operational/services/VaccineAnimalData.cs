@@ -30,12 +30,36 @@ namespace Data.Operational.services
                     DateApplied = b.DateApplied,
                     NextDose = b.NextDose,
                     Vaccine = b.Vaccines.Name,
-                    VaccineId = b.VaccinesId
+                    VaccinesId = b.VaccinesId
 
                 }).ToListAsync();
 
             return vaccineAnim; 
         }
+
+        public virtual async Task<VaccineAnimals> Save(VaccineAnimals entity)
+        {
+            var dateApplied = entity.DateApplied = DateTime.Parse(DateTime.Today.ToString());
+
+            var refuercePeriod = context.Vaccines.Where(v => v.Id == entity.VaccinesId)
+                                                  .Select(v => v.RefuerzoPeriod)
+                                                  .FirstOrDefault(); 
+
+            if(refuercePeriod != null)
+            {
+                entity.NextDose = dateApplied.AddMonths(refuercePeriod); 
+            }
+
+            context.Set<VaccineAnimals>().Add(entity);
+            await context.SaveChangesAsync();
+            return entity; 
+
+
+
+
+
+        }
+  
 
     }
 }

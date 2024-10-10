@@ -1,5 +1,6 @@
 ﻿using Business.Operational.Interface;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Web.Controllers.Operational.services
 {
@@ -71,20 +72,39 @@ namespace Web.Controllers.Operational.services
                     return BadRequest(new ApiResponse<TEntityDto>(false, "Entity is null"));
                 }
 
+                // Guardar la entidad usando el servicio de negocio
                 var result = await _business.Save(entity);
-                return CreatedAtAction(nameof(GetById), new { id = GetEntityId(result) },
+
+                // Verificar si el resultado es nulo o no tiene un ID válido
+                var entityId = GetEntityId(result);
+                if (entityId == null)
+                {
+                    return BadRequest(new ApiResponse<TEntityDto>(false, "Failed to retrieve entity ID"));
+                }
+
+                // Retornar respuesta CreatedAtAction con el ID de la entidad
+                return CreatedAtAction(nameof(GetById), new { id = entityId },
                     new ApiResponse<TEntityDto>(true, "Entity created successfully", result));
             }
             catch (InvalidOperationException e)
             {
+                // Excepción específica para operaciones inválidas
                 return BadRequest(new ApiResponse<TEntityDto>(false, e.Message));
+            }
+            catch (DbUpdateException e)
+            {
+                // Manejo de errores relacionados con la base de datos
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new ApiResponse<TEntityDto>(false, "Database error: " + e.InnerException?.Message ?? e.Message));
             }
             catch (Exception e)
             {
+                // Manejo de errores generales
                 return StatusCode(StatusCodes.Status500InternalServerError,
                     new ApiResponse<TEntityDto>(false, "An unexpected error occurred: " + e.Message));
             }
         }
+
 
         [HttpPut("{id}")]
         public async Task<ActionResult<ApiResponse<TEntityDto>>> Update(int id, [FromBody] TEntityDto entity)

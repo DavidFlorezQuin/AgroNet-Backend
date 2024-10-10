@@ -13,7 +13,7 @@ namespace Entity.Model.Enums
         Lb,
         L,
         mL,
-        gal, // 3.785 litros.
-        Und, 
+        gal, 
+        Und
     }
 }

@@ -64,6 +64,8 @@ namespace Data.Operational.services
                     Id = b.Id,
                     state = b.state,
                     Animal = b.Animal.Name,
+                    AnimalId = b.AnimalId,
+                    ExpirateDate = b.ExpirateDate,
                     TypeProduction = b.TypeProduction,
                     Stock = b.Stock,
                     Measurement = b.Measurement,

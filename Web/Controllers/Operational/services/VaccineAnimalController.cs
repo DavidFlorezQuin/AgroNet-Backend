@@ -25,8 +25,8 @@ namespace Web.Controllers.Operational.services
                 // Verificar si la lista está vacía
                 if (vaccineAnimal == null || vaccineAnimal.Count == 0)
                 {
-                    return StatusCode(StatusCodes.Status500InternalServerError,
-                                        new ApiResponse<List<VaccineAnimalDto>>(false, "An error occurred while retrieving the list: "));
+                    return Ok(new ApiResponse<List<VaccineAnimalDto>>(true, "No alerts found for the specified farm.", new List<VaccineAnimalDto>()));
+
                 }
 
                 // Devolver la lista de alertas

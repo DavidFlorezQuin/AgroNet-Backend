@@ -21,6 +21,7 @@ using Data.Security.Implementation;
 using Data.Security.Interfaces;
 using Entity.Context;
 using Microsoft.EntityFrameworkCore;
+using Utilities;
 
 
 
@@ -184,6 +185,7 @@ builder.Services.AddAutoMapper(typeof(MappingProfile)); // O el ensamblado donde
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddControllers();
 
+builder.Services.AddHostedService<AlertBackgroundService>();
 
 var app = builder.Build();
 

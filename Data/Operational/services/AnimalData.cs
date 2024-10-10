@@ -50,6 +50,53 @@ namespace Data.Operational.services
             return animal; 
         }
 
+        public async Task<List<AnimalDto>> GetAnimaMalelAsync(int farmId)
+        {
+
+            var animal = await context.Animals
+                    .Include(a => a.Lot)
+                    .Where(a => a.Lot.Farm.Id == farmId && a.Lot.Farm.state == true && a.Gender == "Male")
+                    .Select(a => new AnimalDto
+                    {
+                        Id = a.Id,
+                        Race = a.Race,
+                        Name = a.Name,
+                        Gender = a.Gender,
+                        purpose = a.purpose,
+                        birthDay = a.birthDay,
+                        Lot = a.Lot.Name,
+                        Weight = a.Weight,
+                        Photo = a.Photo
+                    }
+
+                ).ToListAsync();
+            return animal;
+        }
+
+        public async Task<List<AnimalDto>> GetAnimalFemaleAsync(int farmId)
+        {
+
+            var animal = await context.Animals
+                    .Include(a => a.Lot)
+                    .Where(a => a.Lot.Farm.Id == farmId && a.Lot.Farm.state == true && a.Gender == "Female")
+                    .Select(a => new AnimalDto
+                    {
+                        Id = a.Id,
+                        Race = a.Race,
+                        Name = a.Name,
+                        Gender = a.Gender,
+                        purpose = a.purpose,
+                        birthDay = a.birthDay,
+                        Lot = a.Lot.Name,
+                        Weight = a.Weight,
+                        Photo = a.Photo
+                    }
+
+                ).ToListAsync();
+            return animal;
+        }
+
+
 
 
     }

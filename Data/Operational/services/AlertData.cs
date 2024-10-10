@@ -19,12 +19,13 @@ namespace Data.Operational.services
             _context = context;
         }
 
-        public async Task<List<AlertDto>> GetAlertsAsync()
+        public async Task<List<AlertDto>> GetAlertsAsync(int farmId)
         {
             var alerts = await _context.Alerts
                 .Include(a => a.Animal)           
                 .Include(a => a.CategoryAlert)    
-                .Include(a => a.Users)            
+                .Include(a => a.Users)       
+                .Where(a => a.Animal.Lot.Farm.Id == farmId && a.Animal.Lot.Farm.state == true)
                 .Select(a => new AlertDto
                 {
                     Id = a.Id,

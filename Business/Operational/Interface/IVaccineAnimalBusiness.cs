@@ -9,5 +9,7 @@ namespace Business.Operational.Interface
 {
     public interface IVaccineAnimalBusiness : IBusiness<VaccineAnimalDto>
     {
+        Task<VaccineAnimalDto> Save(VaccineAnimalDto dto);
+
     }
 }

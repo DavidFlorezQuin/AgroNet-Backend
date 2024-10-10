@@ -8,12 +8,11 @@ using System.Threading.Tasks;
 
 namespace Entity.Dto.Security
 {
-    public class UserRoleDto 
+    public class UserRoleDto : BaseDto
     {
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] 
-        public int Id { get; set; } 
 
         public int RoleId { get; set; }
 

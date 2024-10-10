@@ -15,21 +15,20 @@ namespace Web.Controllers.Operational.services
         _alertData = alertData;
         }
 
-        [HttpGet("datatable")]
-        public async Task<ActionResult<List<AlertDto>>> GetAlerts()
+        [HttpGet("datatable/{farmId}")]
+        public async Task<ActionResult<List<AlertDto>>> GetAlerts(int farmId)
         {
             try
             {
-                var alerts = await _alertData.GetAlertsAsync();
+                var alerts = await _alertData.GetAlertsAsync(farmId);
 
-                // Verificar si la lista está vacía
+                // Devolver una respuesta exitosa aunque la lista esté vacía
                 if (alerts == null || alerts.Count == 0)
                 {
-                    return StatusCode(StatusCodes.Status500InternalServerError,
-                                        new ApiResponse<List<AlertDto>>(false, "An error occurred while retrieving the list: "));
+                    return Ok(new ApiResponse<List<AlertDto>>(true, "No alerts found for the specified farm.", new List<AlertDto>()));
                 }
 
-                // Devolver la lista de alertas
+                // Devolver la lista de alertas si no está vacía
                 return Ok(new ApiResponse<List<AlertDto>>(true, "Entities retrieved successfully", alerts));
             }
             catch (Exception ex)
@@ -38,6 +37,7 @@ namespace Web.Controllers.Operational.services
                 return StatusCode(500, $"Error al obtener las alertas: {ex.Message}");
             }
         }
+
 
     }
 }

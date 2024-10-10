@@ -10,6 +10,6 @@ namespace Data.Operational.Inferface
 {
     public interface IAlertData : IData<Alerts>
     {
-        Task<List<AlertDto>> GetAlertsAsync();
+        Task<List<AlertDto>> GetAlertsAsync(int farmId);
     }
 }

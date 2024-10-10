@@ -60,8 +60,20 @@ namespace Data.Security.Implementation
 
         public async Task<Users> Save(Users entity)
         {
-            entity.state = true; 
+            entity.state = true;
+
             context.Users.Add(entity);
+            await context.SaveChangesAsync();
+
+            var defaultRole = 2;
+
+            var userRole = new UserRole
+            {
+                RoleId = defaultRole,
+                UserId = entity.Id,
+                state = true
+            };
+            context.UserRole.Add(userRole);
             await context.SaveChangesAsync();
             return entity;
         }

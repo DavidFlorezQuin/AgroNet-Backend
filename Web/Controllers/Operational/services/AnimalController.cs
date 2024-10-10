@@ -12,45 +12,76 @@ namespace Web.Controllers.Operational.services
     {
 
         private readonly IAnimalBusiness _animalBusiness;
-        private readonly IAnimalData _data; 
+        private readonly IAnimalData _data;
 
         public AnimalController(IAnimalBusiness animalBusiness, IAnimalData data) : base(animalBusiness)
         {
             _animalBusiness = animalBusiness;
-            _data = data; 
+            _data = data;
         }
 
-        [HttpGet("farm/{farmId}")]
-        public async Task<ActionResult<ApiResponse<IEnumerable<AnimalDto>>>> GetAnimalsFarm(int farmId)
-        {
-
-            var animals = await _animalBusiness.GetAnimalsFarm(farmId);
-
-            if (animals == null)
-            {
-                    return StatusCode(StatusCodes.Status500InternalServerError,
-                         new ApiResponse<IEnumerable<AnimalDto>>(false, "An error occurred while retrieving the list: "));
-            }
-
-            return Ok(new ApiResponse<IEnumerable<AnimalDto>>(true, "Entities retrieved successfully", animals));
-
-        }
         [HttpGet("datatable/{farmId}")]
-        public async Task<ActionResult<List<AnimalDto>>> GetAlerts(int farmId)
+        public async Task<ActionResult<List<AnimalDto>>> GetAnimals(int farmId)
         {
             try
             {
-                var birth = await _data.GetAnimalAsync(farmId);
+                var animal = await _data.GetAnimalAsync(farmId);
 
                 // Verificar si la lista está vacía
-                if (birth == null || birth.Count == 0)
+                if (animal == null || animal.Count == 0)
                 {
-                    return StatusCode(StatusCodes.Status500InternalServerError,
-                                        new ApiResponse<List<AnimalDto>>(false, "Lista sin datos"));
+                    return Ok(new ApiResponse<List<AnimalDto>>(true, "No alerts found for the specified farm.", new List<AnimalDto>()));
+
                 }
 
                 // Devolver la lista de alertas
-                return Ok(new ApiResponse<List<AnimalDto>>(true, "Entities retrieved successfully", birth));
+                return Ok(new ApiResponse<List<AnimalDto>>(true, "Entities retrieved successfully", animal));
+            }
+            catch (Exception ex)
+            {
+                // Manejo de excepciones
+                return StatusCode(500, $"Error al obtener las alertas: {ex.Message}");
+            }
+        }
+        [HttpGet("datatable/cows/{farmId}")]
+        public async Task<ActionResult<List<AnimalDto>>> GetAnimalsCows(int farmId)
+        {
+            try
+            {
+                var animal = await _data.GetAnimalFemaleAsync(farmId);
+
+                // Verificar si la lista está vacía
+                if (animal == null || animal.Count == 0)
+                {
+                    return Ok(new ApiResponse<List<AnimalDto>>(true, "No alerts found for the specified farm.", new List<AnimalDto>()));
+
+                }
+
+                // Devolver la lista de alertas
+                return Ok(new ApiResponse<List<AnimalDto>>(true, "Entities retrieved successfully", animal));
+            }
+            catch (Exception ex)
+            {
+                // Manejo de excepciones
+                return StatusCode(500, $"Error al obtener las alertas: {ex.Message}");
+            }
+        }
+        [HttpGet("datatable/bulls/{farmId}")]
+        public async Task<ActionResult<List<AnimalDto>>> GetAnimalsBulls(int farmId)
+        {
+            try
+            {
+                var animal = await _data.GetAnimaMalelAsync(farmId);
+
+                // Verificar si la lista está vacía
+                if (animal == null || animal.Count == 0)
+                {
+                    return Ok(new ApiResponse<List<AnimalDto>>(true, "No alerts found for the specified farm.", new List<AnimalDto>()));
+
+                }
+
+                // Devolver la lista de alertas
+                return Ok(new ApiResponse<List<AnimalDto>>(true, "Entities retrieved successfully", animal));
             }
             catch (Exception ex)
             {

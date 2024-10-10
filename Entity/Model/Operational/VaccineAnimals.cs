@@ -10,10 +10,10 @@ namespace Entity.Model.Operational
     public class VaccineAnimals : ABaseModel
     {
         public int AnimalId { get; set; }
-        public Animals Animal { get; set; }
+        public Animals? Animal { get; set; }
         public int VaccinesId { get; set; }
-        public Vaccines Vaccines { get; set; }
+        public Vaccines? Vaccines { get; set; }
         public DateTime DateApplied { get; set; }
-        public DateTime NextDose { get; set; }
+        public DateTime? NextDose { get; set; }
     }
 }

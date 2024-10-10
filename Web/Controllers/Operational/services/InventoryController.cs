@@ -25,8 +25,8 @@ namespace Web.Controllers.Operational.services
                 // Verificar si la lista está vacía
                 if (inventory == null || inventory.Count == 0)
                 {
-                    return StatusCode(StatusCodes.Status500InternalServerError,
-                                        new ApiResponse<List<InventoriesDto>>(false, "Lista vacía: "));
+                    return Ok(new ApiResponse<List<InventoriesDto>>(true, "No alerts found for the specified farm.", new List<InventoriesDto>()));
+
                 }
 
                 // Devolver la lista de alertas
