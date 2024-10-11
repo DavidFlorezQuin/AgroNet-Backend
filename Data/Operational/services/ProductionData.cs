@@ -25,7 +25,7 @@ namespace Data.Operational.services
 
             bool IsMale = await context.Set<Animals>()
                 .AnyAsync(a => a.Id == AnimalProductionId &&
-                (a.Gender == "Male" && production == "Leche"));
+                (a.Gender == "Male" && production == "LECHE"));
 
             return IsMale; 
         }
