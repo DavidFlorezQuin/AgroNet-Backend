@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Entity.Migrations
 {
     /// <inheritdoc />
-    public partial class data : Migration
+    public partial class updatedata : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -848,7 +848,7 @@ namespace Entity.Migrations
                     AnimalId = table.Column<int>(type: "int", nullable: false),
                     VaccinesId = table.Column<int>(type: "int", nullable: false),
                     DateApplied = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    NextDose = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    NextDose = table.Column<DateTime>(type: "datetime2", nullable: true),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     created_by = table.Column<int>(type: "int", nullable: true),
                     updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -915,7 +915,7 @@ namespace Entity.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     BirthWeight = table.Column<double>(type: "float", nullable: false),
                     InseminationId = table.Column<int>(type: "int", nullable: false),
-                    AnimalId = table.Column<int>(type: "int", nullable: false),
+                    AnimalId = table.Column<int>(type: "int", nullable: true),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     created_by = table.Column<int>(type: "int", nullable: true),
                     updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),

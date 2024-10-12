@@ -37,6 +37,25 @@ namespace Data.Operational.services
             return births; 
 
         }
+        public virtual async Task<Births> Save(Births entity)
+        {
+            var insemination = await context.Inseminations
+                .FirstOrDefaultAsync(i => i.Id == entity.InseminationId);
+
+            if (insemination == null)
+                throw new Exception("Inseminación no encontrada.");
+
+            insemination.state = false;
+
+            context.Inseminations.Update(insemination);
+            await context.SaveChangesAsync();
+
+            context.Births.Add(entity);
+            await context.SaveChangesAsync();
+
+            return entity;
+        }
+
 
     }
 }

@@ -24,7 +24,7 @@ namespace Business.Operational.services
             var entity = _mapper.Map<Productions>(dto);
 
 
-            if (entity.TypeProduction == "Venta")
+            if (entity.TypeProduction == "VENTA")
             {
                 entity.QuantityTotal = 1;
                 entity.Stock = 1;

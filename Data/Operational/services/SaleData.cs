@@ -34,5 +34,45 @@ namespace Data.Operational.services
                 }).ToListAsync();
             return sale; 
         }
+
+        public virtual async Task<Sales> Save(Sales entity)
+        {
+            var production = await context.Productions
+                .Include(p => p.Animal) 
+                .FirstOrDefaultAsync(p => p.Id == entity.ProductionId);
+
+            if (production == null)
+                throw new Exception("Producción no encontrada.");
+
+            if (production.Stock < entity.Quantity)
+                throw new Exception("Stock insuficiente.");
+
+            if (production.TypeProduction == "VENTA")
+            {
+                if (production.Animal != null)
+                    production.Animal.state = false;
+            }
+            else if (production.TypeProduction == "LECHE")
+            {
+                production.Stock -= entity.Quantity;
+
+                if (production.Stock == 0 && production.Animal != null)
+                    production.Animal.state = false;
+            }
+            else
+            {
+                throw new Exception("Tipo de producción no válido.");
+            }
+
+            context.Productions.Update(production);
+            await context.SaveChangesAsync();
+
+            context.Sales.Add(entity);
+            await context.SaveChangesAsync();
+
+            return entity;
+        }
+
+
     }
 }

@@ -18,6 +18,6 @@ namespace Entity.Model.Operational
         public Inseminations Insemination { get; set; }
 
         public int? AnimalId { get; set; }
-        public Animals Animal { get; set; }
+        public Animals? Animal { get; set; }
     }
 }

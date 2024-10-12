@@ -394,7 +394,6 @@ namespace Entity.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("AnimalId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Assistence")
@@ -1818,8 +1817,7 @@ namespace Entity.Migrations
                     b.HasOne("Entity.Model.Operational.Animals", "Animal")
                         .WithMany()
                         .HasForeignKey("AnimalId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Entity.Model.Operational.Inseminations", "Insemination")
                         .WithMany()

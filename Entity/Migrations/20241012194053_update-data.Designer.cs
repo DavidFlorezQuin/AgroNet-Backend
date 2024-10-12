@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entity.Migrations
 {
     [DbContext(typeof(AplicationDbContext))]
-    [Migration("20241008182244_data-up")]
-    partial class dataup
+    [Migration("20241012194053_update-data")]
+    partial class updatedata
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -397,7 +397,6 @@ namespace Entity.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("AnimalId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Assistence")
@@ -1821,8 +1820,7 @@ namespace Entity.Migrations
                     b.HasOne("Entity.Model.Operational.Animals", "Animal")
                         .WithMany()
                         .HasForeignKey("AnimalId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Entity.Model.Operational.Inseminations", "Insemination")
                         .WithMany()
