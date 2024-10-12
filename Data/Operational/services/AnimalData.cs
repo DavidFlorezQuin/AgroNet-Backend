@@ -78,7 +78,7 @@ namespace Data.Operational.services
 
             var animal = await context.Animals
                     .Include(a => a.Lot)
-                    .Where(a => a.Lot.Farm.Id == farmId && a.Lot.Farm.state == true && a.Gender == "Female" && !context.Inseminations.Any(i => i.MotherId == a.Id) // Asegúrate de que no esté en Insemination
+                    .Where(a => a.deleted_at == null && a.Lot.Farm.Id == farmId && a.Lot.Farm.state == true && a.Gender == "Female" && !context.Inseminations.Any(i => i.MotherId == a.Id) // Asegúrate de que no esté en Insemination
 )
 
                     .Select(a => new AnimalDto

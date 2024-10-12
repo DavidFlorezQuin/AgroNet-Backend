@@ -85,25 +85,95 @@ namespace Utilities
 
 
         private async Task SendEmailAsync(Alerts alert, string email)
-            {
-              var smtpClient = new SmtpClient("smtp.gmail.com")
+        {
+            var smtpClient = new SmtpClient("smtp.gmail.com")
             {
                 Port = 587,
                 Credentials = new NetworkCredential("davidmauricioflorez@gmail.com", "jzcq fywe otbw twgt"),
                 EnableSsl = true,
             };
 
-                var mailMessage = new MailMessage
-                {
-                    From = new MailAddress("davidmauricioflorez@gmail.com"),
-                    Subject = $"{alert.Name}, AGRONET",
-                    Body = $"{alert.Description}.",
-                    IsBodyHtml = true,
-                };
-                mailMessage.To.Add(email);
+            string htmlBody = $@"
+    <!DOCTYPE html>
+    <html lang='es'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <title>Notificación de Alerta - AGRONET</title>
+        <style>
+            body {{
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+            }}
+            .container {{
+                max-width: 600px;
+                margin: 40px auto;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            }}
+            h1 {{
+                font-size: 24px;
+                color: #333;
+            }}
+            p {{
+                font-size: 16px;
+                color: #666;
+                line-height: 1.6;
+            }}
+            .alert-info {{
+                background-color: #007bff;
+                color: white;
+                padding: 10px;
+                text-align: center;
+                border-radius: 5px;
+                font-weight: bold;
+            }}
+            .footer {{
+                margin-top: 20px;
+                text-align: center;
+                font-size: 12px;
+                color: #999;
+            }}
+            .footer a {{
+                color: #007bff;
+                text-decoration: none;
+            }}
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <h1>Notificación de Alerta - AGRONET</h1>
+            <p>Hola,</p>
+            <p>Queremos informarte sobre una nueva alerta registrada:</p>
+            <div class='alert-info'>
+                <strong>{alert.Name}</strong>
+            </div>
+            <p>{alert.Description}</p>
+            <p>Por favor, revisa esta alerta lo antes posible.</p>
+            <div class='footer'>
+                <p>&copy; 2024 AGRONET - Todos los derechos reservados.</p>
+                <p><a href='#'>Política de Privacidad</a> | <a href='#'>Términos de Uso</a></p>
+            </div>
+        </div>
+    </body>
+    </html>";
 
-                await smtpClient.SendMailAsync(mailMessage);
-            }
-        
+            var mailMessage = new MailMessage
+            {
+                From = new MailAddress("davidmauricioflorez@gmail.com"),
+                Subject = $"{alert.Name}, AGRONET",
+                Body = htmlBody,
+                IsBodyHtml = true, // Habilitar HTML
+            };
+            mailMessage.To.Add(email);
+
+            await smtpClient.SendMailAsync(mailMessage);
+        }
+
+
     }
 }

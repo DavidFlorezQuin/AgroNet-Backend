@@ -19,7 +19,7 @@ namespace Data.Operational.services
         {
             var treatment = await context.Treatments
                 .Include(b => b.AnimalDiagnostics)
-                .Where(b => b.AnimalDiagnostics.Animal.Lot.Farm.Id == farmId && b.AnimalDiagnostics.Animal.Lot.Farm.state == true)
+                .Where(b => b.AnimalDiagnostics.Animal.Lot.Farm.Id == farmId && b.AnimalDiagnostics.Animal.Lot.Farm.state == true && b.deleted_at == null)
                 .Select(b => new TreatmentDto
                 {
                     Id = b.Id,

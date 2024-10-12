@@ -58,7 +58,7 @@ namespace Data.Operational.services
         {
             var production = await context.Productions
                 .Include(b => b.Animal)
-                .Where(b => b.Animal.Lot.Farm.Id == farmId && b.Animal.Lot.Farm.state == true)
+                .Where(b => b.Animal.Lot.Farm.Id == farmId && b.Animal.Lot.Farm.state == true && b.deleted_at == null)
                 .Select(b => new ProductionDto
                 {
                     Id = b.Id,

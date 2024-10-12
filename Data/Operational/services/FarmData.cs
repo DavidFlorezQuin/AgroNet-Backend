@@ -22,7 +22,7 @@ namespace Data.Operational.services
         {
             var query = from farm in context.Farms
                         join farmUser in context.FarmUsers
-                        on farm.Id equals farmUser.FarmsId // Cambié de farmUser.UsersId a farmUser.FarmId para corregir la relación
+                        on farm.Id equals farmUser.FarmsId 
                         where farmUser.UsersId == UserId
                         select farm; 
             return await query.ToListAsync();
@@ -32,7 +32,7 @@ namespace Data.Operational.services
         {
             var farm = await context.Farms
                 .Include(a => a.City)
-                .Where(a => context.FarmUsers.Any(fu => fu.FarmsId == a.Id && fu.UsersId == userId))
+                .Where(a => context.FarmUsers.Any(fu => fu.FarmsId == a.Id && fu.UsersId == userId) && a.deleted_at == null)
                 .Select(a => new FarmDto
                 {
                     Id = a.Id,

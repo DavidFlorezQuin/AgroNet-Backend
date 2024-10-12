@@ -20,49 +20,124 @@ namespace Business.Utilities.Services
         {
             this.context = context;
         }
+
         public async Task SendPasswordResetLink(string email)
         {
+            // Verifica si existe la persona asociada al email
             var person = await context.Person.FirstOrDefaultAsync(p => p.email == email);
-
-
-
             if (person == null)
-            {
-                throw new Exception("Email not found");
-            }
-            var personId = person.Id;
+                throw new Exception("Email no encontrado.");
 
-            var user = await context.Users.FirstOrDefaultAsync(u => u.Id == personId);
-            
-            if (person == null)
-            {
-                throw new Exception("User not found");
-            }
+            var user = await context.Users.FirstOrDefaultAsync(u => u.Id == person.Id);
+            if (user == null)
+                throw new Exception("Usuario no encontrado.");
 
+            // Generar token y establecer expiración
             var token = Guid.NewGuid().ToString();
-
             user.ResetPasswordToken = token;
             user.ResetPasswordTokenExpiration = DateTime.UtcNow.AddHours(1);
 
+            // Guardar los cambios en la base de datos
             context.Users.Update(user);
-            await context.SaveChangesAsync(); 
+            await context.SaveChangesAsync();
 
+            // Crear el enlace de restablecimiento
+            var resetLink = $"http://localhost:4200/reset-password?token={token}";
 
-            var resetLink = $"http://localhost:4200//reset-password?token={token}";
-            SendEmail(person.email, "Actualizar contraseña", $"Ingresa a este link para resetaurar la contraseña: {resetLink}");
-
+            // Enviar el correo asíncrono
+            await SendEmailAsync(
+                person.email,
+                "Restablecimiento de Contraseña",
+                resetLink
+            );
         }
 
-        public void SendEmail(string toEmail, string subject, string body)
+        private async Task SendEmailAsync(string toEmail, string subject, string resetLink)
         {
-            var smtpClient = new SmtpClient("smtp.gmail.com")
-            {
-                Port = 587,
-                Credentials = new NetworkCredential("davidmauricioflorez@gmail.com", "jzcq fywe otbw twgt"),
-                EnableSsl = true,
-            };
+            // Construcción del cuerpo del correo
+            string body = $@"
+    <!DOCTYPE html>
+    <html lang='es'>
+    <head>
+      <meta charset='UTF-8'>
+      <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+      <title>Restablecimiento de Contraseña</title>
+      <style>
+        body {{
+          font-family: Arial, sans-serif;
+          background-color: #f4f4f4;
+          margin: 0;
+          padding: 0;
+        }}
+        .container {{
+          max-width: 600px;
+          margin: 50px auto;
+          background-color: #ffffff;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }}
+        h1 {{
+          color: #333;
+        }}
+        p {{
+          font-size: 16px;
+          color: #666;
+          line-height: 1.5;
+        }}
+        .link-btn {{
+          display: block;
+          width: fit-content;
+          margin: 20px auto;
+          padding: 10px 20px;
+          background-color: #007bff;
+          color: #ffffff;
+          text-decoration: none;
+          border-radius: 5px;
+          font-weight: bold;
+          text-align: center;
+        }}
+        .footer {{
+          margin-top: 20px;
+          text-align: center;
+          font-size: 12px;
+          color: #999;
+        }}
+      </style>
+    </head>
+    <body>
+      <div class='container'>
+        <h1>Restablecimiento de Contraseña</h1>
+        <p>Hola,</p>
+        <p>Hemos recibido una solicitud para restablecer tu contraseña. Si fuiste tú quien solicitó esto, por favor haz clic en el enlace a continuación:</p>
+        <a href='{resetLink}' class='link-btn'>Restablecer Contraseña</a>
+        <p>Si no realizaste esta solicitud, simplemente ignora este mensaje.</p>
+        <div class='footer'>
+          <p>&copy; 2024 - Todos los derechos reservados</p>
+        </div>
+      </div>
+    </body>
+    </html>";
 
-            smtpClient.Send("davidmauricioflorez@gmail.com", toEmail, subject, body);
+            // Crear el mensaje de correo
+            var mailMessage = new MailMessage
+            {
+                From = new MailAddress("davidmauricioflorez@gmail.com"),
+                Subject = subject,
+                Body = body,
+                IsBodyHtml = true // Permitir contenido HTML
+            };
+            mailMessage.To.Add(toEmail);
+
+            // Configuración del cliente SMTP
+            using (var smtpClient = new SmtpClient("smtp.gmail.com", 587))
+            {
+                smtpClient.Credentials = new NetworkCredential("davidmauricioflorez@gmail.com", "jzcq fywe otbw twgt");
+                smtpClient.EnableSsl = true;
+
+                // Enviar el correo de forma asíncrona
+                await smtpClient.SendMailAsync(mailMessage);
+            }
         }
 
         public async Task ResetPassword(string token, string newPassword)
@@ -70,13 +145,11 @@ namespace Business.Utilities.Services
             var user = await context.Users.FirstOrDefaultAsync(u => u.ResetPasswordToken == token);
 
             if (user == null || user.ResetPasswordTokenExpiration < DateTime.UtcNow)
-            {
-                throw new Exception("Invalid or expired token");
-            }
+                throw new Exception("Token inválido o expirado.");
 
-            // Aquí debes encriptar la nueva contraseña antes de guardarla
+            // Encriptar la contraseña antes de guardarla (agrega tu lógica de encriptación aquí)
             user.password = newPassword;
-            user.ResetPasswordToken = null; // Eliminar el token después de usarlo
+            user.ResetPasswordToken = null;
             user.ResetPasswordTokenExpiration = null;
 
             await context.SaveChangesAsync();

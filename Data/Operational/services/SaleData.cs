@@ -20,7 +20,7 @@ namespace Data.Operational.services
         {
             var sale = await context.Sales
                 .Include(b => b.Production)
-                .Where(b => b.Production.Animal.Lot.Farm.Id == farmId && b.Production.Animal.Lot.Farm.state == true)
+                .Where(b => b.Production.Animal.Lot.Farm.Id == farmId && b.Production.Animal.Lot.Farm.state == true && b.deleted_at == null)
                 .Select(b => new SaleDto
                 {
                     Id = b.Id,

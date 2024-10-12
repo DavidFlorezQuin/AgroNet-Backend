@@ -49,7 +49,7 @@ namespace Data.Operational.services
             var Insemination = await context.Inseminations
                 .Include(i => i.Semen)
                 .Include(i => i.Mother)
-                .Where(i => i.Mother.Lot.Farm.Id == farmId && i.Mother.Lot.Farm.state == true) // Filtra por farmId y estado activo de la finca
+                .Where(i => i.deleted_at == null && i.Mother.Lot.Farm.Id == farmId && i.Mother.Lot.Farm.state == true) // Filtra por farmId y estado activo de la finca
                 .Select(i => new InseminationDto
                 {
                     Id = i.Id,

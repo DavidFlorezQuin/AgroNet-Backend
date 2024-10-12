@@ -52,7 +52,7 @@ namespace Data.Operational.services
         {
             var lots = await context.Lots
                 .Include(i => i.Farm)
-                .Where(i => i.FarmId == farmId)
+                .Where(i => i.FarmId == farmId && i.deleted_at == null)
                 .Select(i => new LotsDto
                 {
                     Id = i.Id,

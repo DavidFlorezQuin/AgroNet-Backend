@@ -20,7 +20,7 @@ namespace Data.Operational.services
         {
             var births = await context.Births
                 .Include(b => b.Animal)
-                .Where(b => b.Insemination.Mother.Lot.Farm.Id == i && b.Insemination.Mother.Lot.Farm.state == true)
+                .Where(b => b.deleted_at == null && b.Insemination.Mother.Lot.Farm.Id == i && b.Insemination.Mother.Lot.Farm.state == true)
                 .Select( b => new BirthDto
                 {
                     Id = b.Id,

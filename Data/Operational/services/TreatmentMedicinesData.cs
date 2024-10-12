@@ -21,7 +21,7 @@ namespace Data.Operational.services
             var treatmentMedicine = await context.TreatmentsMedicines
                 .Include(b => b.Treatment)
                 .Include(b => b.Medicines)
-                .Where(b => b.Treatment.AnimalDiagnostics.Animal.Lot.Farm.Id == farmId && b.Treatment.AnimalDiagnostics.Animal.Lot.Farm.state == true)
+                .Where(b => b.Treatment.AnimalDiagnostics.Animal.Lot.Farm.Id == farmId && b.Treatment.AnimalDiagnostics.Animal.Lot.Farm.state == true && b.deleted_at == null)
                 .Select(b => new TreatmentMedicineDto
                 {
                     Id = b.Id,

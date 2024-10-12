@@ -25,7 +25,7 @@ namespace Data.Operational.services
                 .Include(a => a.Animal)           
                 .Include(a => a.CategoryAlert)    
                 .Include(a => a.Users)       
-                .Where(a => a.Animal.Lot.Farm.Id == farmId && a.Animal.Lot.Farm.state == true)
+                .Where(a => a.Animal.Lot.Farm.Id == farmId && a.Animal.Lot.Farm.state == true && a.deleted_at == null)
                 .Select(a => new AlertDto
                 {
                     Id = a.Id,

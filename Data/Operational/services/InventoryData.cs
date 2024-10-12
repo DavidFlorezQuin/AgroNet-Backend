@@ -19,7 +19,7 @@ namespace Data.Operational.services
         {
             var inventory = await context.Inventories
                 .Include(b => b.Farm)
-                .Where(b => b.Farm.Id == farmId && b.Farm.state == true)
+                .Where(b => b.deleted_at == null && b.Farm.Id == farmId && b.Farm.state == true)
                 .Select(b => new InventoriesDto
                 {
                     Id = b.Id,
