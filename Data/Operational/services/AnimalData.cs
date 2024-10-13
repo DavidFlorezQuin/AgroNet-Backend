@@ -32,7 +32,7 @@ namespace Data.Operational.services
 
             var animal = await context.Animals
                     .Include(a => a.Lot)
-                    .Where(a => a.Lot.Farm.Id == farmId && a.Lot.Farm.state == true)
+                    .Where(a => a.deleted_at == null && a.Lot.Farm.Id == farmId && a.Lot.Farm.state == true)
                     .Select(a => new AnimalDto
                     {
                         Id = a.Id,

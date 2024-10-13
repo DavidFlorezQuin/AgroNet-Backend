@@ -89,7 +89,7 @@ namespace Utilities
             var smtpClient = new SmtpClient("smtp.gmail.com")
             {
                 Port = 587,
-                Credentials = new NetworkCredential("davidmauricioflorez@gmail.com", "jzcq fywe otbw twgt"),
+                Credentials = new NetworkCredential("agronet77@gmail.com", "j d c i h h q v m c m z p e a w"),
                 EnableSsl = true,
             };
 
@@ -164,8 +164,8 @@ namespace Utilities
 
             var mailMessage = new MailMessage
             {
-                From = new MailAddress("davidmauricioflorez@gmail.com"),
-                Subject = $"{alert.Name}, AGRONET",
+                From = new MailAddress("agronet77@gmail.com"),
+                Subject = $"AGRONET, {alert.Name}",
                 Body = htmlBody,
                 IsBodyHtml = true, // Habilitar HTML
             };

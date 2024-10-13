@@ -22,10 +22,13 @@ namespace Data.Operational.services
         public async Task<List<AlertDto>> GetAlertsAsync(int farmId)
         {
             var alerts = await _context.Alerts
-                .Include(a => a.Animal)           
-                .Include(a => a.CategoryAlert)    
-                .Include(a => a.Users)       
-                .Where(a => a.Animal.Lot.Farm.Id == farmId && a.Animal.Lot.Farm.state == true && a.deleted_at == null)
+                .Include(a => a.Animal)
+                .Include(a => a.CategoryAlert)
+                .Include(a => a.Users)
+                .Where(a =>
+                    (a.Animal == null || a.Animal.Lot.Farm.Id == farmId) &&  // Permite registros sin animal
+                    (a.Animal == null || a.Animal.Lot.Farm.state == true) && // Valida estado si tiene animal
+                    a.deleted_at == null)
                 .Select(a => new AlertDto
                 {
                     Id = a.Id,
@@ -34,16 +37,15 @@ namespace Data.Operational.services
                     Date = a.Date,
                     IsRead = a.IsRead,
                     AnimalId = a.AnimalId,
-                    Animal = a.Animal.Name,       
+                    Animal = a.Animal != null ? a.Animal.Name : "Sin animal", // Maneja caso nulo
                     CategoryAlertId = a.CategoryAlertId,
-                    CategoryAlert = a.CategoryAlert.Name, 
+                    CategoryAlert = a.CategoryAlert.Name,
                     UsersId = a.UsersId,
-                    Users = a.Users.username      
+                    Users = a.Users.username
                 }).ToListAsync();
 
             return alerts;
-
-
         }
+
     }
 }

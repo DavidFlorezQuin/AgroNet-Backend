@@ -122,7 +122,7 @@ namespace Business.Utilities.Services
             // Crear el mensaje de correo
             var mailMessage = new MailMessage
             {
-                From = new MailAddress("davidmauricioflorez@gmail.com"),
+                From = new MailAddress("agronet77@gmail.com"),
                 Subject = subject,
                 Body = body,
                 IsBodyHtml = true // Permitir contenido HTML
@@ -132,7 +132,7 @@ namespace Business.Utilities.Services
             // Configuración del cliente SMTP
             using (var smtpClient = new SmtpClient("smtp.gmail.com", 587))
             {
-                smtpClient.Credentials = new NetworkCredential("davidmauricioflorez@gmail.com", "jzcq fywe otbw twgt");
+                smtpClient.Credentials = new NetworkCredential("agronet77@gmail.com", "j d c i h h q v m c m z p e a w");
                 smtpClient.EnableSsl = true;
 
                 // Enviar el correo de forma asíncrona
