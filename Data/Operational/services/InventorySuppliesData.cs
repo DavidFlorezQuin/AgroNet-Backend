@@ -29,7 +29,8 @@ namespace Data.Operational.services
                     Amount = b.Amount,
                     Measure = b.Measure,
                     InventoryId = b.InventoryId,
-                    SuppliesId = b.SuppliesId
+                    SuppliesId = b.SuppliesId,
+                    state = b.state
                 }).ToListAsync();
 
             return supplies;

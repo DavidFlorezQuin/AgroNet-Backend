@@ -33,6 +33,7 @@ namespace Data.Operational.services
             await context.SaveChangesAsync();
             return entity;
         }
+            
         public virtual async Task Update(int id, TEntity entity)
         {
             context.Set<TEntity>().Update(entity);

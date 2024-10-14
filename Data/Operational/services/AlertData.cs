@@ -41,7 +41,8 @@ namespace Data.Operational.services
                     CategoryAlertId = a.CategoryAlertId,
                     CategoryAlert = a.CategoryAlert.Name,
                     UsersId = a.UsersId,
-                    Users = a.Users.username
+                    Users = a.Users.username,
+                    state = a.state
                 }).ToListAsync();
 
             return alerts;

@@ -59,7 +59,8 @@ namespace Data.Operational.services
                     Name = i.Name,
                     Farm = i.Farm.Name,
                     FarmId = i.FarmId,
-                    Hectare = i.Hectare
+                    Hectare = i.Hectare,
+                    state = i.state
                 }).ToListAsync();
             return lots; 
         }

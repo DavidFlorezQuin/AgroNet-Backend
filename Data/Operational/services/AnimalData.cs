@@ -24,11 +24,12 @@ namespace Data.Operational.services
                         join farm in context.Farms
                         on lots.FarmId equals farm.Id
                         where farm.Id == farmId
-                        select animals; 
-            return await query.ToListAsync(); 
+                        select animals;
+            return await query.ToListAsync();
         }
 
-        public async Task<List<AnimalDto>> GetAnimalAsync(int farmId) {
+        public async Task<List<AnimalDto>> GetAnimalAsync(int farmId)
+        {
 
             var animal = await context.Animals
                     .Include(a => a.Lot)
@@ -43,11 +44,12 @@ namespace Data.Operational.services
                         birthDay = a.birthDay,
                         Lot = a.Lot.Name,
                         Weight = a.Weight,
-                        Photo = a.Photo
+                        Photo = a.Photo,
+                        state = a.state
                     }
 
                 ).ToListAsync();
-            return animal; 
+            return animal;
         }
 
         public async Task<List<AnimalDto>> GetAnimaMalelAsync(int farmId)
@@ -66,21 +68,25 @@ namespace Data.Operational.services
                         birthDay = a.birthDay,
                         Lot = a.Lot.Name,
                         Weight = a.Weight,
-                        Photo = a.Photo
+                        Photo = a.Photo,
+                        state = a.state
                     }
 
                 ).ToListAsync();
             return animal;
         }
 
-        public async Task<List<AnimalDto>> GetAnimalFemaleAsync(int farmId)
-        {
-
-            var animal = await context.Animals
+  
+            public async Task<List<AnimalDto>> GetAnimalFemaleAsync(int farmId)
+            {
+                var animals = await context.Animals
                     .Include(a => a.Lot)
-                    .Where(a => a.deleted_at == null && a.Lot.Farm.Id == farmId && a.Lot.Farm.state == true && a.Gender == "Female" && !context.Inseminations.Any(i => i.MotherId == a.Id) // Asegúrate de que no esté en Insemination
-)
-
+                    .Where(a => a.deleted_at == null
+                                && a.Lot.Farm.Id == farmId
+                                && a.Lot.Farm.state == true
+                                && a.Gender == "Female"
+                                && !context.Inseminations.Any(i => i.MotherId == a.Id | i.deleted_at != null | i.state == true) 
+                               )
                     .Select(a => new AnimalDto
                     {
                         Id = a.Id,
@@ -91,15 +97,18 @@ namespace Data.Operational.services
                         birthDay = a.birthDay,
                         Lot = a.Lot.Name,
                         Weight = a.Weight,
-                        Photo = a.Photo
-                    }
+                        Photo = a.Photo,
+                        state = a.state
+                    })
+                    .ToListAsync();
 
-                ).ToListAsync();
-            return animal;
+                return animals;
+            }
+
         }
 
 
 
 
     }
-}
+

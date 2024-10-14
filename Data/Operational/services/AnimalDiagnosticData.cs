@@ -33,7 +33,8 @@ namespace Data.Operational.services
                     AnimalId = a.AnimalId,
                     Animal = a.Animal.Name,
                     UsersId = a.UsersId,
-                    Users = a.Users.username
+                    Users = a.Users.username,
+                    state = a.state
                 }).ToListAsync();
 
             return animalDiagnostic; 
