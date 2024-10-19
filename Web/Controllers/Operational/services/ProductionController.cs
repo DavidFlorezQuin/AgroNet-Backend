@@ -18,19 +18,6 @@ namespace Web.Controllers.Operational.services
         }
 
 
-        [HttpGet("production-animal/{idAnimal}")]
-        public async Task<ActionResult<ApiResponse<IEnumerable<ProductionDto>>>> GetProductionAnimal(int idAnimal) {
-
-            var production = await _productionsBusiness.GetProductionAnimal(idAnimal);
-
-            if(production == null)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError,
-                     new ApiResponse<IEnumerable<ProductionDto>>(false, "An error occurred while retrieving the list: "));
-            }
-            return Ok(new ApiResponse<IEnumerable<ProductionDto>>(true, "Entities retrieved successfully", production));
-
-        }
 
         [HttpGet("datatable/{farmId}")]
         public async Task<ActionResult<List<ProductionDto>>> GetAlerts(int farmId)

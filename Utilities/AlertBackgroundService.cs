@@ -39,13 +39,12 @@ namespace Utilities
             {
                 _logger.LogInformation("Checking alerts at: {time}", DateTimeOffset.Now);
 
-                // Crea un nuevo scope para obtener el DbContext
                 using (var scope = _scopeFactory.CreateScope())
                 {
                     var context = scope.ServiceProvider.GetRequiredService<AplicationDbContext>();
 
                     var alerts = context.Alerts
-                                        .Where(a => a.Date <= DateTime.Now && a.IsRead == false)
+                                        .Where(a => a.Date <= DateTime.Now && a.IsRead == false && a.state == true)
                                         .Include(a => a.Users)         
                                         .ThenInclude(u => u.Person)   
                                         .ToList();
@@ -58,8 +57,6 @@ namespace Utilities
                             if (alert.Users != null && alert.Users.Person != null && !string.IsNullOrEmpty(alert.Users.Person.email)) { 
                             
                             await SendEmailAsync(alert, alert.Users.Person.email);
-
-                            alert.IsRead = true;
 
                             alert.state = false; 
 
@@ -84,7 +81,6 @@ namespace Utilities
                 await Task.Delay(TimeSpan.FromHours(1), stoppingToken);
             }
         }
-
 
         private async Task SendEmailAsync(Alerts alert, string email)
         {

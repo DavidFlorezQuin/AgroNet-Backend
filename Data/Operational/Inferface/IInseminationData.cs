@@ -12,8 +12,7 @@ namespace Data.Operational.Inferface
     {
          Task<bool> ValidateGenderAnimal(Inseminations entity);
          Task<bool> ValidateInsamination(Inseminations entity);
-
         Task<List<InseminationDto>> GetInseminationAsync(int farmId); 
-        Task<IEnumerable<Animals>> GetAnimalsInsemination(int farmId); 
+        public void RegisterAbortion(int inseminationId, DateTime abortionDate);
     }
 }

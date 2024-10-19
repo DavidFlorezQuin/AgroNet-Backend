@@ -10,6 +10,5 @@ namespace Business.Operational.Interface
 {
     public interface IAnimalBusiness : IBusiness<AnimalDto>
     {
-        Task<IEnumerable<AnimalDto>> GetAnimalsFarm(int farmId); 
     }
 }

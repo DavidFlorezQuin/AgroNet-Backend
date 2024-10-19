@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entity.Migrations
 {
     [DbContext(typeof(AplicationDbContext))]
-    [Migration("20241012194053_update-data")]
-    partial class updatedata
+    [Migration("20241017135230_datas")]
+    partial class datas
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -229,6 +229,9 @@ namespace Entity.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("FarmsId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsRead")
                         .HasColumnType("bit");
 
@@ -265,6 +268,8 @@ namespace Entity.Migrations
                     b.HasIndex("AnimalId");
 
                     b.HasIndex("CategoryAlertId");
+
+                    b.HasIndex("FarmsId");
 
                     b.HasIndex("UsersId");
 
@@ -1772,6 +1777,12 @@ namespace Entity.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Entity.Model.Operational.Farms", "Farms")
+                        .WithMany()
+                        .HasForeignKey("FarmsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Entity.Model.Security.Users", "Users")
                         .WithMany()
                         .HasForeignKey("UsersId")
@@ -1781,6 +1792,8 @@ namespace Entity.Migrations
                     b.Navigation("Animal");
 
                     b.Navigation("CategoryAlert");
+
+                    b.Navigation("Farms");
 
                     b.Navigation("Users");
                 });

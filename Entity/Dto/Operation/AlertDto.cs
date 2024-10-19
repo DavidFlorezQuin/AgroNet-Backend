@@ -20,6 +20,8 @@ namespace Entity.Dto.Operation
         public int CategoryAlertId { get; set; }
         public string? CategoryAlert { get; set; }
 
+        public int FarmsId { get; set; }
+
         public int UsersId { get; set; }
         public string? Users { get; set; }
 

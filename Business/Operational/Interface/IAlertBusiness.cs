@@ -9,5 +9,7 @@ namespace Business.Operational.Interface
 {
     public interface IAlertBusiness : IBusiness<AlertDto>
     {
+        Task<List<AlertDto>> GetAlertsNotReads(int farmId);
+        Task AlertIsRead(int alertId); 
     }
 }

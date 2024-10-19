@@ -45,23 +45,7 @@ namespace Business.Operational.services
         }
 
 
-        public async Task<IEnumerable<ProductionDto>> GetProductionAnimal(int IdAnimal)
-        {
-            var production = await _dataProduction.GetProductionAnimal(IdAnimal);
 
-            var productionDto = production.Select(pro => new ProductionDto
-            {
-                Id = pro.Id,
-                TypeProduction = pro.TypeProduction,
-                QuantityTotal = pro.QuantityTotal,
-                Stock = pro.Stock,
-                Measurement = pro.Measurement,
-                Description = pro.Description,
-                ExpirateDate = pro.ExpirateDate
-            }).ToList();
-
-            return productionDto;
-        }
 
     }
 

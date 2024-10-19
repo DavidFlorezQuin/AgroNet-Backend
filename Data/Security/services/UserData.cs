@@ -41,39 +41,20 @@ namespace Data.Security.Implementation
             return await context.QueryFirstOrDefaultAsync<Users>(sql, new { Id = id });
         }
 
-        public async Task<Users> GetUserAsync(string username, string password)
+        public async Task<Users> GetUserByUsernameOrEmailAsync(string usernameOrEmail)
         {
-            var user = await context.Users
-                .Where(u => u.username == username && u.password == password)
-                .Select(u => new Users
-                {
-                    username = u.username,
-                    Id = u.Id,
-                    state = u.state,
-                    PersonId = u.PersonId
-                })
-                .FirstOrDefaultAsync();
-
-            return user;
+            return await context.Users
+         .Include(u => u.Person)
+         .FirstOrDefaultAsync(u =>
+             u.username == usernameOrEmail ||
+             u.Person.email == usernameOrEmail);
         }
 
 
         public async Task<Users> Save(Users entity)
         {
-            entity.state = true;
 
             context.Users.Add(entity);
-            await context.SaveChangesAsync();
-
-            var defaultRole = 2;
-
-            var userRole = new UserRole
-            {
-                RoleId = defaultRole,
-                UserId = entity.Id,
-                state = true
-            };
-            context.UserRole.Add(userRole);
             await context.SaveChangesAsync();
             return entity;
         }
@@ -88,7 +69,7 @@ namespace Data.Security.Implementation
         public async Task SendPasswordResetLink(string email)
         {
             var person = await context.Person.FirstOrDefaultAsync(p => p.email == email);
-            var personId = person.Id; 
+            var personId = person.Id;
 
             var user = await context.Users.FirstOrDefaultAsync(u => u.Id == personId);
 

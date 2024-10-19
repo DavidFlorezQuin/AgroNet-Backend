@@ -16,6 +16,5 @@ namespace Entity.Model.Operational
         public DateTime? ExpirateDate { get; set; }
         public int AnimalId { get; set; }
         public Animals Animal { get; set; }
-
     }
 }

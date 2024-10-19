@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Business.Operational.Interface;
 using Data.Operational.Inferface;
-using Data.Operational.services;
 using Entity.Dto.Operation;
 using Entity.Model.Operational;
 using System;
@@ -12,13 +11,8 @@ using System.Threading.Tasks;
 
 namespace Business.Operational.services
 {
-    public class FarmBusiness : BaseBusiness<Farms, FarmDto>, IFarmBusiness
+    public class AnimalSalesBusiness : BaseBusiness<AnimalSales, AnimalSaleDto>, IAnimalSaleBusiness
     {
-        private readonly IFarmData _farmData; 
-        public FarmBusiness(IMapper mapper, IFarmData data) : base(mapper, data)
-        {
-            _farmData = data; 
-        }
-
+        public AnimalSalesBusiness(IMapper mapper, IAnimalSaleData animalData) : base(mapper, animalData) { }
     }
 }

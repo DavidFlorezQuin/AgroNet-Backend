@@ -18,24 +18,6 @@ namespace Web.Controllers.Operational.services
             _farmData = data; 
         }
 
-
-
-        [HttpGet("user/{userId}")]
-        public async Task<ActionResult<ApiResponse<IEnumerable<FarmDto>>>> GetFarmsByUser(int userId)
-        {
-
-            var farms = await _farmBusiness.MapFarmDto(userId);
-
-            if (farms == null)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError,
-                     new ApiResponse<IEnumerable<FarmDto>>(false, "An error occurred while retrieving the list: "));
-            }
-
-            return Ok(new ApiResponse<IEnumerable<FarmDto>>(true, "Entities retrieved successfully", farms));
-
-        }
-
         [HttpGet("datatable/{userId}")]
         public async Task<ActionResult<List<FarmDto>>> GetAlerts(int userId)
         {

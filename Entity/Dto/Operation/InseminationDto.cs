@@ -20,5 +20,8 @@ namespace Entity.Dto.Operation
         public string? Mother { get; set; }
         public string Result { get; set; }
         public string InseminationType { get; set; }
+        public DateTime? EstimatedBirthDate { get; set; }
+        public bool IsAborted { get; set; } = false;
+    
     }
 }

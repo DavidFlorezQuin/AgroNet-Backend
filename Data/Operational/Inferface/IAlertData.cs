@@ -11,5 +11,7 @@ namespace Data.Operational.Inferface
     public interface IAlertData : IData<Alerts>
     {
         Task<List<AlertDto>> GetAlertsAsync(int farmId);
+        Task<List<Alerts>> GetAlertsNotReads(int farmId);
+        Task AlertIsRead(int alertId); 
     }
 }

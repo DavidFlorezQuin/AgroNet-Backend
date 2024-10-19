@@ -30,16 +30,6 @@ namespace Data.Operational.services
             return IsMale; 
         }
 
-        public async Task<IEnumerable<Productions>> GetProductionAnimal(int IdAnimal)
-        {
-            var query = from producion in context.Productions
-                        join animals in context.Animals
-                        on producion.AnimalId equals animals.Id
-                        where animals.Id == IdAnimal
-                        select producion;
-            return await query.ToListAsync();
-        }
-
         public async Task isSale(Productions entity)
         {
             {

@@ -20,24 +20,6 @@ namespace Web.Controllers.Operational.services
             _inseminationBusiness = inseminationBusiness;
         }
 
-
-        [HttpGet("animalInsemination/{farmId}")]
-
-        public async Task<ActionResult<ApiResponse<IEnumerable<AnimalDto>>>> GetAnimalInsemination(int farmId)
-        {
-            var animals = await _inseminationBusiness.GetAnimalsInsemination(farmId);
-
-            if (animals == null)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError,
-                     new ApiResponse<IEnumerable<AnimalDto>>(false, "An error occurred while retrieving the list: "));
-            }
-
-            return Ok(new ApiResponse<IEnumerable<AnimalDto>>(true, "Entities retrieved successfully", animals));
-
-        }
-
-
         [HttpGet("datatable/{farmId}")]
         public async Task<ActionResult<List<InseminationDto>>> GetAlerts(int farmId)
         {
@@ -61,5 +43,20 @@ namespace Web.Controllers.Operational.services
                 return StatusCode(500, $"Error al obtener las alertas: {ex.Message}");
             }
         }
+
+        [HttpPost("{inseminationId}/abortion")]
+        public IActionResult RegisterAbortion(int inseminationId, [FromBody] DateTime abortionDate)
+        {
+            try
+            {
+                _inseminationBusiness.RegisterAbortion(inseminationId, abortionDate);
+                return Ok(new ApiResponse<bool>(true, "Aborto registrado exitosamente."));
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new ApiResponse<bool>(false, ex.Message));
+            }
+        }
+
     }
 }

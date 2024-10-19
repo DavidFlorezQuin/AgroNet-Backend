@@ -12,7 +12,7 @@ namespace Business.Operational.Interface
 {
     public interface IFarmBusiness : IBusiness<FarmDto>
     {
-        Task<IEnumerable<FarmDto>> MapFarmDto(int UserId); 
-        }
+
     }
+}
 

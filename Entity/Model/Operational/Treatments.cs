@@ -13,6 +13,7 @@ namespace Entity.Model.Operational
         public DateTime FinishiedDate { get; set;}
         public DateTime StartDate { get; set;}
         public int AnimalDiagnosticsId { get; set;}
+        public string Result { get; set; }
         public AnimalDiagnostics AnimalDiagnostics { get; set; }
         public string Name { get; set; }
 

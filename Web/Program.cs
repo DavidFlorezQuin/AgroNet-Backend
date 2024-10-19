@@ -144,6 +144,9 @@ builder.Services.AddScoped<IFarmUserData, FarmUserData>();
 builder.Services.AddScoped<IInseminationBusiness, InseminationBusiness>();
 builder.Services.AddScoped<IInseminationData, InseminationData>();
 
+builder.Services.AddScoped<IAnimalSaleBusiness, AnimalSalesBusiness>();
+builder.Services.AddScoped<IAnimalSaleData, AnimalSalesData>();
+
 builder.Services.AddScoped<IInventoriesBusiness, InventoriesBusiness>();
 builder.Services.AddScoped<IInventoryData, InventoryData>();
 
@@ -170,10 +173,6 @@ builder.Services.AddScoped<ITreatmentsMedicinesData, TreatmentMedicinesData>();
 
 builder.Services.AddScoped<IVaccineBusiness, VaccineBusiness>();
 builder.Services.AddScoped<IVaccineData, VaccineData>();
-
-
-
-
 
 
 builder.Services.AddAutoMapper(cfg =>

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Entity.Migrations
 {
     /// <inheritdoc />
-    public partial class updatedata : Migration
+    public partial class datas : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -706,6 +706,7 @@ namespace Entity.Migrations
                     AnimalId = table.Column<int>(type: "int", nullable: true),
                     CategoryAlertId = table.Column<int>(type: "int", nullable: false),
                     UsersId = table.Column<int>(type: "int", nullable: false),
+                    FarmsId = table.Column<int>(type: "int", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     created_by = table.Column<int>(type: "int", nullable: true),
                     updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -726,6 +727,12 @@ namespace Entity.Migrations
                         name: "FK_Alerts_CategoryAlert_CategoryAlertId",
                         column: x => x.CategoryAlertId,
                         principalTable: "CategoryAlert",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Alerts_Farms_FarmsId",
+                        column: x => x.FarmsId,
+                        principalTable: "Farms",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -1015,6 +1022,11 @@ namespace Entity.Migrations
                 name: "IX_Alerts_CategoryAlertId",
                 table: "Alerts",
                 column: "CategoryAlertId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Alerts_FarmsId",
+                table: "Alerts",
+                column: "FarmsId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Alerts_UsersId",

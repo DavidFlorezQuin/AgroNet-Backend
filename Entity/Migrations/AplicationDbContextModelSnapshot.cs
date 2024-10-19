@@ -226,6 +226,9 @@ namespace Entity.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("FarmsId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsRead")
                         .HasColumnType("bit");
 
@@ -262,6 +265,8 @@ namespace Entity.Migrations
                     b.HasIndex("AnimalId");
 
                     b.HasIndex("CategoryAlertId");
+
+                    b.HasIndex("FarmsId");
 
                     b.HasIndex("UsersId");
 
@@ -1769,6 +1774,12 @@ namespace Entity.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Entity.Model.Operational.Farms", "Farms")
+                        .WithMany()
+                        .HasForeignKey("FarmsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Entity.Model.Security.Users", "Users")
                         .WithMany()
                         .HasForeignKey("UsersId")
@@ -1778,6 +1789,8 @@ namespace Entity.Migrations
                     b.Navigation("Animal");
 
                     b.Navigation("CategoryAlert");
+
+                    b.Navigation("Farms");
 
                     b.Navigation("Users");
                 });

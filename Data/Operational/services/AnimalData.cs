@@ -15,19 +15,6 @@ namespace Data.Operational.services
     {
         public AnimalData(AplicationDbContext context) : base(context) { }
 
-
-        public async Task<IEnumerable<Animals>> GetAnimalsFarm(int farmId)
-        {
-            var query = from animals in context.Animals
-                        join lots in context.Lots
-                        on animals.LotId equals lots.Id
-                        join farm in context.Farms
-                        on lots.FarmId equals farm.Id
-                        where farm.Id == farmId
-                        select animals;
-            return await query.ToListAsync();
-        }
-
         public async Task<List<AnimalDto>> GetAnimalAsync(int farmId)
         {
 
@@ -76,39 +63,38 @@ namespace Data.Operational.services
             return animal;
         }
 
-  
-            public async Task<List<AnimalDto>> GetAnimalFemaleAsync(int farmId)
-            {
-                var animals = await context.Animals
-                    .Include(a => a.Lot)
-                    .Where(a => a.deleted_at == null
-                                && a.Lot.Farm.Id == farmId
-                                && a.Lot.Farm.state == true
-                                && a.Gender == "Female"
-                                && !context.Inseminations.Any(i => i.MotherId == a.Id | i.deleted_at != null | i.state == true) 
-                               )
-                    .Select(a => new AnimalDto
-                    {
-                        Id = a.Id,
-                        Race = a.Race,
-                        Name = a.Name,
-                        Gender = a.Gender,
-                        purpose = a.purpose,
-                        birthDay = a.birthDay,
-                        Lot = a.Lot.Name,
-                        Weight = a.Weight,
-                        Photo = a.Photo,
-                        state = a.state
-                    })
-                    .ToListAsync();
+        public async Task<List<AnimalDto>> GetAnimalFemaleAsync(int farmId)
+        {
+            var animals = await context.Animals
+                .Include(a => a.Lot)
+                .Where(a => a.deleted_at == null
+                            && a.Lot.Farm.Id == farmId
+                            && a.Lot.Farm.state == true
+                            && a.Gender == "Female"
+                            && !context.Inseminations.Any(i => i.MotherId == a.Id && i.state == true)
+                           )
+                .Select(a => new AnimalDto
+                {
+                    Id = a.Id,
+                    Race = a.Race,
+                    Name = a.Name,
+                    Gender = a.Gender,
+                    purpose = a.purpose,
+                    birthDay = a.birthDay,
+                    Lot = a.Lot.Name,
+                    Weight = a.Weight,
+                    Photo = a.Photo,
+                    state = a.state
+                })
+                .ToListAsync();
 
-                return animals;
-            }
-
+            return animals;
         }
 
-
-
-
     }
+
+
+
+
+}
 

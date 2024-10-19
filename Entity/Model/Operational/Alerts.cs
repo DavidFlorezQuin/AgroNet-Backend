@@ -21,5 +21,7 @@ namespace Entity.Model.Operational
         public CategoryAlert CategoryAlert {  get; set; }
         public int UsersId { get; set; }    
         public Users Users { get; set; }
+        public int FarmsId { get; set; }
+        public Farms Farms { get; set; }
     }
 }

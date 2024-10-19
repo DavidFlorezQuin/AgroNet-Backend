@@ -40,19 +40,23 @@ namespace Web.Controllers.Implements.Security
         public async Task<ActionResult> Login([FromBody] LoginDto loginDto)
 
         {
-            if (loginDto == null)
+            try
             {
-                return BadRequest("Invalid client request");
-            }
-
             var userDto = await _userBusiness.LoginAsync(loginDto);
+            return Ok(new ApiResponse<UserDto>(true, "Login succesful", userDto));
 
-            if (userDto == null)
+            }
+            catch(UnauthorizedAccessException ex)
             {
-                return Unauthorized("Invalid credentials");
+                return Unauthorized(new ApiResponse<UserDto>(false, ex.Message));
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new ApiResponse<UserDto>(false, "An error occurred during login: " + ex.Message));
             }
 
-            return Ok(userDto);
         }
 
 

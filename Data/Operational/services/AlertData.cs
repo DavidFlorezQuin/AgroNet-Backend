@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Dapper.SqlMapper;
 
 namespace Data.Operational.services
 {
@@ -26,8 +27,7 @@ namespace Data.Operational.services
                 .Include(a => a.CategoryAlert)
                 .Include(a => a.Users)
                 .Where(a =>
-                    (a.Animal == null || a.Animal.Lot.Farm.Id == farmId) &&  // Permite registros sin animal
-                    (a.Animal == null || a.Animal.Lot.Farm.state == true) && // Valida estado si tiene animal
+                    (a.FarmsId == farmId) &&
                     a.deleted_at == null)
                 .Select(a => new AlertDto
                 {
@@ -37,7 +37,7 @@ namespace Data.Operational.services
                     Date = a.Date,
                     IsRead = a.IsRead,
                     AnimalId = a.AnimalId,
-                    Animal = a.Animal != null ? a.Animal.Name : "Sin animal", // Maneja caso nulo
+                    Animal = a.Animal != null ? a.Animal.Name : "Sin animal",
                     CategoryAlertId = a.CategoryAlertId,
                     CategoryAlert = a.CategoryAlert.Name,
                     UsersId = a.UsersId,
@@ -48,5 +48,26 @@ namespace Data.Operational.services
             return alerts;
         }
 
+
+        public async Task<List<Alerts>> GetAlertsNotReads(int farmId)
+        {
+            var alerts = await _context.Alerts
+                .Where(a => a.Date <= DateTime.Now && a.IsRead == false && a.state == true && a.FarmsId == farmId).ToListAsync();
+
+            return alerts;
+
+        }
+
+        public async Task AlertIsRead(int alertId)
+        {
+            var entity = await _context.Alerts.FindAsync(alertId); 
+
+            if(entity != null)
+            {
+                entity.IsRead = true;
+
+                await _context.SaveChangesAsync();
+            }
+        }
     }
 }

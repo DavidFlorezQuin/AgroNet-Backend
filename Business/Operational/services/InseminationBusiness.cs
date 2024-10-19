@@ -47,24 +47,15 @@ namespace Business.Operational.services
 
         }
 
-        public async Task<IEnumerable<AnimalDto>> GetAnimalsInsemination(int farmId)
+        public void RegisterAbortion(int inseminationId, DateTime abortionDate)
         {
-            var insemination = await _inseminationData.GetAnimalsInsemination(farmId);
-
-
-            var inseminationDto = insemination.Select(n => new AnimalDto
+            if(inseminationId == 0)
             {
-                Id = n.Id,
-                Name = n.Name,
-                Gender = n.Gender,
-                purpose = n.purpose,
-                birthDay = n.birthDay,
-                Weight = n.Weight,
-                Photo = n.Photo,
-                LotId = n.LotId
-            }).ToList();
+                throw new ArgumentException("Inseminación no encontrada");
 
-            return inseminationDto; 
+            }
+            _inseminationData.RegisterAbortion(inseminationId, abortionDate); 
         }
+
     }
 }

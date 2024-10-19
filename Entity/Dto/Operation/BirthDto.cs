@@ -9,10 +9,10 @@ namespace Entity.Dto.Operation
 {
     public class BirthDto : BaseDto
     {
-        public string Assistence { get; set; }
-        public double Result { get; set; }
+        public bool Assistence { get; set; }
+        public string Result { get; set; }
         public string Description { get; set; }
-        public double BirthWeight { get; set; }
+        public double? BirthWeight { get; set; }
         public int InseminationId { get; set; }
         public int? AnimalId { get; set; }
         public string? Animal { get; set; }

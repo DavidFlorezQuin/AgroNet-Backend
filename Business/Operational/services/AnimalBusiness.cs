@@ -21,24 +21,5 @@ namespace Business.Operational.services
 
         }
 
-        public async Task<IEnumerable<AnimalDto>> GetAnimalsFarm(int farmId)
-        {
-            var animal = await _animalData.GetAnimalsFarm(farmId);
-
-            var animalDto = animal.Select(n => new AnimalDto
-            {
-                Id = n.Id,
-                Name = n.Name,
-                Gender = n.Gender,
-                purpose = n.purpose,
-                birthDay = n.birthDay,
-                Weight = n.Weight,
-                Photo = n.Photo,
-                LotId = n.LotId
-            }).ToList();
-
-            return animalDto;           
-        }
-
     }
 }

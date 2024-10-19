@@ -18,11 +18,14 @@ namespace Business.Security.Implementation
     {
 
         private readonly IUserData data;
+        private readonly IUserRoleData dataRole;
 
 
-        public UserBusiness(IUserData data)
+        public UserBusiness(IUserData data, IUserRoleData dataRole)
         {
             this.data = data;
+            this.dataRole = dataRole;
+
         }
 
         public async Task Delete(int id)
@@ -84,14 +87,29 @@ namespace Business.Security.Implementation
 
             return usersDtos;
         }
-        public async Task<Users> Save(UserDto entity)
+        public async Task<Users> Save(UserDto dto)
         {
-            var user = new Users();
-            user = MapearDatos(user, entity);
-            user.Person = null;
 
-            return await data.Save(user);
+            var user = new Users();
+            user = MapearDatos(user, dto);
+
+            user.password = BCrypt.Net.BCrypt.HashPassword(dto.password);
+            user.state = true;
+
+            var savedUser = await data.Save(user);
+
+            var userRole = new UserRole
+            {
+                RoleId = 2,
+                UserId = savedUser.Id,
+                state = true
+            };
+
+            await dataRole.Save(userRole);
+
+            return savedUser;
         }
+
 
         public async Task<List<RoleMenuDto>> MapRolesToMenu(int userId)
         {
@@ -126,18 +144,18 @@ namespace Business.Security.Implementation
         }
 
         public async Task<UserDto> LoginAsync(LoginDto login)
-        {
-            var user = await data.GetUserAsync(login.username, login.password);
+        {   
+            var user = await data.GetUserByUsernameOrEmailAsync(login.username);
 
-            if (user == null)
+            if (user == null || !BCrypt.Net.BCrypt.Verify(login.password, user.password))
             {
-                return null;
+                throw new UnauthorizedAccessException("Credenciales inválidas");
 
             }
             var userDto = MapToUserDto(user);
             return userDto;
-
         }
+
         private UserDto MapToUserDto(Users user)
         {
             return new UserDto

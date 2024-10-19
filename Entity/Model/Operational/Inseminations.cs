@@ -16,9 +16,13 @@ namespace Entity.Model.Operational
         public int MotherId { get; set; }
         public Animals Mother { get; set; }
 
+        // Pendiente, Confirmada, Fallida, Aborto
         public string Result { get; set; }
+        public DateTime? EstimatedBirthDate { get; set; }
+
         public string InseminationType {get; set;}
 
+        public bool IsAborted { get; set; }
 
     }
 }

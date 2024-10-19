@@ -283,3 +283,4 @@ C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\refint\Web.dll
 C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\Web.pdb
 C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\Web.genruntimeconfig.cache
 C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\ref\Web.dll
+C:\Users\david\Source\Repos\AgroNetBackend\Web\bin\Debug\net7.0\BCrypt.Net-Next.dll

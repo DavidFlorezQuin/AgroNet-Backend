@@ -16,7 +16,7 @@ namespace Data.Security.Interfaces
         Task Update(Users entity);
         Task<Users> GetById(int id);
         Task<IEnumerable<Users>> GetAll();
-        Task<Users> GetUserAsync(string username, string password);
+        Task<Users> GetUserByUsernameOrEmailAsync(string usernameOrEmail);
         Task<List<Role>> GetRolesForUser(int userId);
         Task<IEnumerable<UserPersonNameDto>> GetDataTable();
 

@@ -30,19 +30,6 @@ namespace Data.Operational.services
 
         }
 
-        public async Task<IEnumerable<Animals>> GetAnimalsInsemination(int farmId)
-        {
-            var query = from animals in context.Animals
-                        join lots in context.Lots
-                        on animals.LotId equals lots.Id
-                        join farm in context.Farms
-                        on lots.FarmId equals farm.Id
-                        join insemination in context.Inseminations
-                        on animals.Id equals insemination.MotherId
-                        where farm.Id == farmId && farm.state == true
-                        select animals; 
-                        return await query.ToListAsync();
-        }
 
         public async Task<List<InseminationDto>> GetInseminationAsync(int farmId)
         {
@@ -64,6 +51,28 @@ namespace Data.Operational.services
                 }).ToListAsync();
 
             return Insemination; 
+        }
+
+        public void RegisterAbortion(int inseminationId, DateTime abortionDate)
+        {
+            var insemination = context.Inseminations.Find(inseminationId);
+            if (insemination == null)
+            {
+                throw new Exception("Inseminación no encontrada"); 
+            }
+            insemination.state = false;
+            insemination.Result = "ABORTO";
+            insemination.IsAborted = true;
+
+            context.Births.Add(new Births
+            {
+                InseminationId = inseminationId,
+                Result = "ABORTO",
+                AbortionDate = abortionDate,
+                Description = "Aborto registrado."
+
+            });
+            context.SaveChanges(); 
         }
     }
 }

@@ -105,7 +105,7 @@ namespace Business.Utilities.Services
                     <h1>Restablecimiento de Contraseña</h1>
                     <p>Hola,</p>
                     <p>Hemos recibido una solicitud para restablecer tu contraseña. Si fuiste tú quien solicitó esto, por favor haz clic en el enlace a continuación:</p>
-                    <a href='{resetLink}' class='link-btn'>Restablecer Contraseña</a>
+                    <p>{resetLink}</p>
                     <p>Si no realizaste esta solicitud, simplemente ignora este mensaje.</p>
                     <div class='footer'>
                       <p>&copy; 2024 - Todos los derechos reservados</p>
