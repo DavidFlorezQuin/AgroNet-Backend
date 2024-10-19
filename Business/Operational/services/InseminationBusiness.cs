@@ -47,14 +47,14 @@ namespace Business.Operational.services
 
         }
 
-        public void RegisterAbortion(int inseminationId, DateTime abortionDate)
+        public void RegisterAbortion(int inseminationId)
         {
             if(inseminationId == 0)
             {
                 throw new ArgumentException("Inseminación no encontrada");
 
             }
-            _inseminationData.RegisterAbortion(inseminationId, abortionDate); 
+            _inseminationData.RegisterAbortion(inseminationId); 
         }
 
     }

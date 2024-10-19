@@ -15,5 +15,9 @@ namespace Entity.Model.Operational
         public Animals Animal { get; set; }
         public int UsersId { get; set; }
         public Users Users { get; set; }
+        //Si la enfermedad está siendo tratada
+        public bool IsBeingTreated { get; set; }
+        public string DiseaseStatus { get; set; } // "Curado", "Fallecido", "En Proceso"
+
     }
 }

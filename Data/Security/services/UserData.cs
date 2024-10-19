@@ -110,7 +110,6 @@ namespace Data.Security.Implementation
                 throw new Exception("Invalid or expired token");
             }
 
-            // Aquí debes encriptar la nueva contraseña antes de guardarla
             user.password = (newPassword);
             user.ResetPasswordToken = null; // Eliminar el token después de usarlo
             user.ResetPasswordTokenExpiration = null;

@@ -10,7 +10,7 @@ namespace Business.Operational.Interface
     public interface IInseminationBusiness : IBusiness<InseminationDto>
     {
         Task<InseminationDto> Save(InseminationDto dto);
-        public void RegisterAbortion(int inseminationId, DateTime abortionDate);
+        public void RegisterAbortion(int inseminationId);
 
     }
 }

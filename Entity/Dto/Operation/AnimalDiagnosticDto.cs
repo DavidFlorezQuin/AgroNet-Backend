@@ -16,5 +16,7 @@ namespace Entity.Dto.Operation
         public string? Animal {  get; set; }
         public int UsersId { get; set; }
         public string? Users { get; set; }
+        public bool IsBeingTreated { get; set; }
+        public string DiseaseStatus { get; set; }
     }
 }

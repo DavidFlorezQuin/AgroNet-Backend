@@ -14,6 +14,19 @@ namespace Data.Operational.services
 {
     public class InseminationData : ABaseData<Inseminations>, IInseminationData
     {
+
+        public override async Task<Inseminations> Save(Inseminations entity)
+        {
+            entity.created_at = DateTime.Now;
+            entity.Result = "PENDIENTE";
+            entity.IsAborted = false;
+            entity.EstimatedBirthDate = entity.created_at.AddMonths(9);
+            
+            context.Inseminations.Add(entity); 
+            await context.SaveChangesAsync();
+            return entity; 
+        }
+        
         public InseminationData(AplicationDbContext context) : base(context) { }
 
         public async Task<bool> ValidateGenderAnimal(Inseminations entity)
@@ -31,6 +44,7 @@ namespace Data.Operational.services
         }
 
 
+
         public async Task<List<InseminationDto>> GetInseminationAsync(int farmId)
         {
             var Insemination = await context.Inseminations
@@ -40,11 +54,13 @@ namespace Data.Operational.services
                 .Select(i => new InseminationDto
                 {
                     Id = i.Id,
+                    EstimatedBirthDate = i.EstimatedBirthDate,
                     Mother = i.Mother.Name,
                     Description = i.Description,
                     SemenId = i.SemenId,
                     MotherId = i.MotherId,
                     Semen = i.Semen.Name,
+                    IsAborted = i.IsAborted,
                     Result = i.Result,
                     InseminationType = i.InseminationType,
                     state = i.state
@@ -53,25 +69,23 @@ namespace Data.Operational.services
             return Insemination; 
         }
 
-        public void RegisterAbortion(int inseminationId, DateTime abortionDate)
+        public void RegisterAbortion(int inseminationId)
         {
             var insemination = context.Inseminations.Find(inseminationId);
             if (insemination == null)
             {
                 throw new Exception("Inseminación no encontrada"); 
             }
+
+            if(insemination.state == false)
+            {
+                throw new Exception("Inseminación inactiva"); 
+            }
             insemination.state = false;
             insemination.Result = "ABORTO";
-            insemination.IsAborted = true;
+            insemination.IsAborted = true
 
-            context.Births.Add(new Births
-            {
-                InseminationId = inseminationId,
-                Result = "ABORTO",
-                AbortionDate = abortionDate,
-                Description = "Aborto registrado."
-
-            });
+            context.Inseminations.Update(insemination); 
             context.SaveChanges(); 
         }
     }

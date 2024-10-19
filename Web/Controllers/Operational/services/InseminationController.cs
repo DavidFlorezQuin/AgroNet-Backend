@@ -44,12 +44,12 @@ namespace Web.Controllers.Operational.services
             }
         }
 
-        [HttpPost("{inseminationId}/abortion")]
-        public IActionResult RegisterAbortion(int inseminationId, [FromBody] DateTime abortionDate)
+        [HttpPut("{inseminationId}/abortion")]
+        public IActionResult RegisterAbortion(int inseminationId)
         {
             try
             {
-                _inseminationBusiness.RegisterAbortion(inseminationId, abortionDate);
+                _inseminationBusiness.RegisterAbortion(inseminationId);
                 return Ok(new ApiResponse<bool>(true, "Aborto registrado exitosamente."));
             }
             catch (ArgumentException ex)

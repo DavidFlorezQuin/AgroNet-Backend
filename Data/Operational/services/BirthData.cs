@@ -37,7 +37,7 @@ namespace Data.Operational.services
             return births; 
 
         }
-        public virtual async Task<Births> Save(Births entity)
+        public override async Task<Births> Save(Births entity)
         {
             var insemination = await context.Inseminations
                 .FirstOrDefaultAsync(i => i.Id == entity.InseminationId);

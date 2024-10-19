@@ -11,13 +11,13 @@ namespace Entity.Model.Operational
         public string Description { get; set; }
 
         public int? SemenId { get; set; }
-        public Animals Semen { get; set; }
+        public Animals? Semen { get; set; }
 
         public int MotherId { get; set; }
         public Animals Mother { get; set; }
 
         // Pendiente, Confirmada, Fallida, Aborto
-        public string Result { get; set; }
+        public string Result { get; set; } 
         public DateTime? EstimatedBirthDate { get; set; }
 
         public string InseminationType {get; set;}

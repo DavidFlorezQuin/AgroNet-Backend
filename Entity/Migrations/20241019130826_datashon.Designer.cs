@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entity.Migrations
 {
     [DbContext(typeof(AplicationDbContext))]
-    [Migration("20241017135230_datas")]
-    partial class datas
+    [Migration("20241019130826_datashon")]
+    partial class datashon
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -401,14 +401,16 @@ namespace Entity.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime?>("AbortionDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int?>("AnimalId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Assistence")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("Assistence")
+                        .HasColumnType("bit");
 
-                    b.Property<double>("BirthWeight")
+                    b.Property<double?>("BirthWeight")
                         .HasColumnType("float");
 
                     b.Property<string>("Description")
@@ -418,8 +420,9 @@ namespace Entity.Migrations
                     b.Property<int>("InseminationId")
                         .HasColumnType("int");
 
-                    b.Property<double>("Result")
-                        .HasColumnType("float");
+                    b.Property<string>("Result")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("created_at")
                         .HasColumnType("datetime2");
@@ -561,9 +564,15 @@ namespace Entity.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime?>("EstimatedBirthDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("InseminationType")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsAborted")
+                        .HasColumnType("bit");
 
                     b.Property<int>("MotherId")
                         .HasColumnType("int");
@@ -573,7 +582,6 @@ namespace Entity.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("SemenId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<DateTime>("created_at")
@@ -882,6 +890,10 @@ namespace Entity.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Result")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -1887,8 +1899,7 @@ namespace Entity.Migrations
                     b.HasOne("Entity.Model.Operational.Animals", "Semen")
                         .WithMany()
                         .HasForeignKey("SemenId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Mother");
 

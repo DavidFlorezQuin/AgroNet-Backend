@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Entity.Migrations
 {
     /// <inheritdoc />
-    public partial class datas : Migration
+    public partial class datashon : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -785,10 +785,12 @@ namespace Entity.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SemenId = table.Column<int>(type: "int", nullable: false),
+                    SemenId = table.Column<int>(type: "int", nullable: true),
                     MotherId = table.Column<int>(type: "int", nullable: false),
                     Result = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    EstimatedBirthDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     InseminationType = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsAborted = table.Column<bool>(type: "bit", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     created_by = table.Column<int>(type: "int", nullable: true),
                     updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -891,6 +893,7 @@ namespace Entity.Migrations
                     FinishiedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     AnimalDiagnosticsId = table.Column<int>(type: "int", nullable: false),
+                    Result = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     created_by = table.Column<int>(type: "int", nullable: true),
@@ -917,12 +920,13 @@ namespace Entity.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Assistence = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Result = table.Column<double>(type: "float", nullable: false),
+                    Assistence = table.Column<bool>(type: "bit", nullable: false),
+                    Result = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    BirthWeight = table.Column<double>(type: "float", nullable: false),
+                    BirthWeight = table.Column<double>(type: "float", nullable: true),
                     InseminationId = table.Column<int>(type: "int", nullable: false),
                     AnimalId = table.Column<int>(type: "int", nullable: true),
+                    AbortionDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     created_by = table.Column<int>(type: "int", nullable: true),
                     updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
