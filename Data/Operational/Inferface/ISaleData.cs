@@ -11,6 +11,10 @@ namespace Data.Operational.Inferface
     public interface ISaleData : IData<Sales>
     {
 
-        Task<List<SaleDto>> GetProductionAsync(int farmId); 
+        Task<List<SaleDto>> GetSaleAsync(int farmId);
+        Task<Sales> SaveAsync(Sales entity);
+        Task UpdateProductionAsync(Productions productions);
+        Task<Productions> GetProductionsAsync(int productionId);
+
     }
 }

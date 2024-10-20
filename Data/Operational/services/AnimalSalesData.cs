@@ -1,6 +1,8 @@
 ﻿using Data.Operational.Inferface;
 using Entity.Context;
+using Entity.Dto.Operation;
 using Entity.Model.Operational;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,5 +36,24 @@ namespace Data.Operational.services
             await context.SaveChangesAsync();
             return entity; 
         }
+
+        public async Task<List<AnimalSaleDto>> GetAnimalSaleAsync(int farmId)
+        {
+            var AnimalSale = await context.AnimalSales
+                .Include(a => a.Animals)
+                .Where(a => a.Animals.Lot.Farm.Id == farmId && a.Animals.Lot.Farm.state == true)
+                .Select(a => new AnimalSaleDto
+                {
+                    Price = a.Price,
+                    Currency = a.Currency,
+                    SaleDate = a.SaleDate,
+                    AnimalsId = a.AnimalsId,
+                    Weight = a.Weight,
+                    Animals = a.Animals.Name
+                }).ToListAsync(); 
+
+            return AnimalSale;
+        }
+
     }
 }

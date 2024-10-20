@@ -27,9 +27,13 @@ namespace Business.Utilities.Services
             if (person == null)
                 throw new Exception("Email no encontrado.");
 
-            var user = await context.Users.FirstOrDefaultAsync(u => u.Id == person.Id);
+            var user = await context.Users.FirstOrDefaultAsync(u => u.PersonId == person.Id);
+
             if (user == null)
+            {
                 throw new Exception("Usuario no encontrado.");
+
+            }
 
             var token = Guid.NewGuid().ToString();
             user.ResetPasswordToken = token;
@@ -142,8 +146,7 @@ namespace Business.Utilities.Services
             if (user == null || user.ResetPasswordTokenExpiration < DateTime.UtcNow)
                 throw new Exception("Token inválido o expirado.");
 
-            // Encriptar la contraseña antes de guardarla (agrega tu lógica de encriptación aquí)
-            user.password = newPassword;
+            user.password = BCrypt.Net.BCrypt.HashPassword(user.password);
             user.ResetPasswordToken = null;
             user.ResetPasswordTokenExpiration = null;
 

@@ -24,14 +24,6 @@ namespace Business.Operational.services
             var entity = _mapper.Map<Productions>(dto);
 
 
-            if (entity.TypeProduction == "VENTA")
-            {
-                entity.QuantityTotal = 1;
-                entity.Stock = 1;
-                entity.Measurement = "UND";
-                await _dataProduction.isSale(entity);
-            }
-
             bool isMale = await _dataProduction.ValidProduction(entity);
 
             if (isMale)

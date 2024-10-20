@@ -9,5 +9,6 @@ namespace Business.Operational.Interface
 {
     public interface IAnimalSaleBusiness : IBusiness<AnimalSaleDto>
     {
+        Task<List<AnimalSaleDto>> GetAnimalSaleAsync(int farmId);
     }
 }

@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Dapper.SqlMapper;
 
 namespace Data.Operational.services
 {
@@ -16,7 +17,7 @@ namespace Data.Operational.services
         public SaleData(AplicationDbContext context) : base(context) { }
 
 
-        public async Task<List<SaleDto>> GetProductionAsync(int farmId)
+        public async Task<List<SaleDto>> GetSaleAsync(int farmId)
         {
             var sale = await context.Sales
                 .Include(b => b.Production)
@@ -32,40 +33,27 @@ namespace Data.Operational.services
                     Quantity = b.Quantity,
                     ProductionId = b.ProductionId
                 }).ToListAsync();
-            return sale; 
+            return sale;
         }
-
-        public virtual async Task<Sales> Save(Sales entity)
+        public async Task<Productions> GetProductionsAsync(int productionId)
         {
-            var production = await context.Productions
-                .Include(p => p.Animal) 
-                .FirstOrDefaultAsync(p => p.Id == entity.ProductionId);
-
-            if (production == null)
-                throw new Exception("Producción no encontrada.");
-
-            if (production.Stock < entity.Quantity)
-                throw new Exception("Stock insuficiente.");
-
-        
-             if (production.TypeProduction == "LECHE")
-            {
-                production.Stock -= entity.Quantity;
-
-                if (production.Stock == 0 && production.Animal != null)
-                    production.Animal.state = false;
-            }
-
-
-            context.Productions.Update(production);
-            await context.SaveChangesAsync();
-
-            context.Sales.Add(entity);
-            await context.SaveChangesAsync();
-
-            return entity;
+            return await context.Productions
+            .Include(p => p.Animal)
+            .FirstOrDefaultAsync(p => p.Id == productionId);
         }
 
+        public async Task UpdateProductionAsync(Productions productions)
+        {
+            context.Productions.Update(productions);
+            await context.SaveChangesAsync();
+        }
+
+        public async Task<Sales> SaveAsync(Sales sales)
+        {
+            context.Sales.Add(sales);
+            await context.SaveChangesAsync();
+            return sales; 
+        }
 
     }
 }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Entity.Migrations
 {
     /// <inheritdoc />
-    public partial class datasur : Migration
+    public partial class datas : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -694,6 +694,42 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "InventoryRecords",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Amount = table.Column<int>(type: "int", nullable: false),
+                    Measure = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TransactionType = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UsersId = table.Column<int>(type: "int", nullable: false),
+                    InventorySuppliesId = table.Column<int>(type: "int", nullable: false),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    created_by = table.Column<int>(type: "int", nullable: true),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    updated_by = table.Column<int>(type: "int", nullable: true),
+                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    deleted_by = table.Column<int>(type: "int", nullable: true),
+                    state = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_InventoryRecords", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_InventoryRecords_InventorySupplies_InventorySuppliesId",
+                        column: x => x.InventorySuppliesId,
+                        principalTable: "InventorySupplies",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_InventoryRecords_Users_UsersId",
+                        column: x => x.UsersId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Alerts",
                 columns: table => new
                 {
@@ -776,6 +812,36 @@ namespace Entity.Migrations
                         name: "FK_AnimalDiagnostics_Users_UsersId",
                         column: x => x.UsersId,
                         principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AnimalSales",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Price = table.Column<double>(type: "float", nullable: false),
+                    Currency = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SaleDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    AnimalsId = table.Column<int>(type: "int", nullable: false),
+                    Weight = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    created_by = table.Column<int>(type: "int", nullable: true),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    updated_by = table.Column<int>(type: "int", nullable: true),
+                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    deleted_by = table.Column<int>(type: "int", nullable: true),
+                    state = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AnimalSales", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AnimalSales_Animals_AnimalsId",
+                        column: x => x.AnimalsId,
+                        principalTable: "Animals",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -1054,6 +1120,11 @@ namespace Entity.Migrations
                 column: "LotId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_AnimalSales_AnimalsId",
+                table: "AnimalSales",
+                column: "AnimalsId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Births_AnimalId",
                 table: "Births",
                 column: "AnimalId");
@@ -1112,6 +1183,16 @@ namespace Entity.Migrations
                 name: "IX_Inventories_FarmId",
                 table: "Inventories",
                 column: "FarmId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_InventoryRecords_InventorySuppliesId",
+                table: "InventoryRecords",
+                column: "InventorySuppliesId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_InventoryRecords_UsersId",
+                table: "InventoryRecords",
+                column: "UsersId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_InventorySupplies_InventoryId",
@@ -1206,6 +1287,9 @@ namespace Entity.Migrations
                 name: "Alerts");
 
             migrationBuilder.DropTable(
+                name: "AnimalSales");
+
+            migrationBuilder.DropTable(
                 name: "Births");
 
             migrationBuilder.DropTable(
@@ -1215,7 +1299,7 @@ namespace Entity.Migrations
                 name: "FarmUsers");
 
             migrationBuilder.DropTable(
-                name: "InventorySupplies");
+                name: "InventoryRecords");
 
             migrationBuilder.DropTable(
                 name: "RoleView");
@@ -1242,10 +1326,7 @@ namespace Entity.Migrations
                 name: "CategoryDisieses");
 
             migrationBuilder.DropTable(
-                name: "Inventories");
-
-            migrationBuilder.DropTable(
-                name: "Supplies");
+                name: "InventorySupplies");
 
             migrationBuilder.DropTable(
                 name: "Views");
@@ -1266,7 +1347,10 @@ namespace Entity.Migrations
                 name: "Vaccines");
 
             migrationBuilder.DropTable(
-                name: "CategorySupplies");
+                name: "Inventories");
+
+            migrationBuilder.DropTable(
+                name: "Supplies");
 
             migrationBuilder.DropTable(
                 name: "Modulo");
@@ -1276,6 +1360,9 @@ namespace Entity.Migrations
 
             migrationBuilder.DropTable(
                 name: "AnimalDiagnostics");
+
+            migrationBuilder.DropTable(
+                name: "CategorySupplies");
 
             migrationBuilder.DropTable(
                 name: "Animals");

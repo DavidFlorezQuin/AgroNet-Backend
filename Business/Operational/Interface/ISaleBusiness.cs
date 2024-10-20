@@ -9,5 +9,6 @@ namespace Business.Operational.Interface
 {
     public interface ISaleBusiness : IBusiness<SaleDto>
     {
+        Task<SaleDto> SaveAsync(SaleDto saleDto); 
     }
 }

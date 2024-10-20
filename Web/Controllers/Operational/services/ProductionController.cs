@@ -29,7 +29,7 @@ namespace Web.Controllers.Operational.services
                 // Verificar si la lista está vacía
                 if (produc == null || produc.Count == 0)
                 {
-                    return Ok(new ApiResponse<List<ProductionDto>>(true, "No alerts found for the specified farm.", new List<ProductionDto>()));
+                    return Ok(new ApiResponse<List<ProductionDto>>(true, "No producciones found for the specified farm.", new List<ProductionDto>()));
 
                 }
 
@@ -39,7 +39,7 @@ namespace Web.Controllers.Operational.services
             catch (Exception ex)
             {
                 // Manejo de excepciones
-                return StatusCode(500, $"Error al obtener las alertas: {ex.Message}");
+                return StatusCode(500, $"Error al obtener las producciones: {ex.Message}");
             }
         }
 

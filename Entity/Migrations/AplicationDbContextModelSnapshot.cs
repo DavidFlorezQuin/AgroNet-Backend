@@ -332,6 +332,59 @@ namespace Entity.Migrations
                     b.ToTable("AnimalDiagnostics");
                 });
 
+            modelBuilder.Entity("Entity.Model.Operational.AnimalSales", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AnimalsId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Currency")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime>("SaleDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Weight")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("created_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("created_by")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("deleted_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("deleted_by")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("state")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("updated_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("updated_by")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AnimalsId");
+
+                    b.ToTable("AnimalSales");
+                });
+
             modelBuilder.Entity("Entity.Model.Operational.Animals", b =>
                 {
                     b.Property<int>("Id")
@@ -660,6 +713,61 @@ namespace Entity.Migrations
                     b.HasIndex("FarmId");
 
                     b.ToTable("Inventories");
+                });
+
+            modelBuilder.Entity("Entity.Model.Operational.InventoryRecords", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("InventorySuppliesId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Measure")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TransactionType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UsersId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("created_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("created_by")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("deleted_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("deleted_by")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("state")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("updated_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("updated_by")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InventorySuppliesId");
+
+                    b.HasIndex("UsersId");
+
+                    b.ToTable("InventoryRecords");
                 });
 
             modelBuilder.Entity("Entity.Model.Operational.InventorySupplies", b =>
@@ -1830,6 +1938,17 @@ namespace Entity.Migrations
                     b.Navigation("Users");
                 });
 
+            modelBuilder.Entity("Entity.Model.Operational.AnimalSales", b =>
+                {
+                    b.HasOne("Entity.Model.Operational.Animals", "Animals")
+                        .WithMany()
+                        .HasForeignKey("AnimalsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Animals");
+                });
+
             modelBuilder.Entity("Entity.Model.Operational.Animals", b =>
                 {
                     b.HasOne("Entity.Model.Operational.Lots", "Lot")
@@ -1916,6 +2035,25 @@ namespace Entity.Migrations
                         .IsRequired();
 
                     b.Navigation("Farm");
+                });
+
+            modelBuilder.Entity("Entity.Model.Operational.InventoryRecords", b =>
+                {
+                    b.HasOne("Entity.Model.Operational.InventorySupplies", "InventorySupplies")
+                        .WithMany()
+                        .HasForeignKey("InventorySuppliesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Entity.Model.Security.Users", "Users")
+                        .WithMany()
+                        .HasForeignKey("UsersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("InventorySupplies");
+
+                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("Entity.Model.Operational.InventorySupplies", b =>

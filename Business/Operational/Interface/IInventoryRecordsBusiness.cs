@@ -9,5 +9,6 @@ namespace Business.Operational.Interface
 {
     public interface IInventoryRecordsBusiness : IBusiness<InventoryRecordsDto>
     {
+        Task<List<InventoryRecordsDto>> GetRecordsAsync(int inventoryId); 
     }
 }

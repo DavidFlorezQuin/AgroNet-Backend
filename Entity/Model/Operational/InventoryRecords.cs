@@ -10,7 +10,7 @@ namespace Entity.Model.Operational
     public class InventoryRecords  : ABaseModel
     {
         public int Amount {  get; set; }
-        public double Measure { get; set; }
+        public string Measure { get; set; }
         public string TransactionType { get; set; }
         public int UsersId { get; set; }
         public Users Users { get; set; }

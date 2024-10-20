@@ -10,8 +10,6 @@ namespace Data.Operational.Inferface
 {
     public interface IFarmData : IData<Farms>
     {
-
-
         Task<List<FarmDto>> GetFarmAsync(int farmId);
 
     }

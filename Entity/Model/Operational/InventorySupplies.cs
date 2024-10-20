@@ -15,6 +15,5 @@ namespace Entity.Model.Operational
         public Inventories Inventory { get; set; }
         public int SuppliesId { get; set; }
         public Supplies Supplies { get; set; }
-
     }
 }

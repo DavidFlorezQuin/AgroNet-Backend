@@ -75,9 +75,6 @@ builder.Services.AddScoped<IViewData, ViewData>();
 
 builder.Services.AddScoped<ISentEmailPassword, SendEmailPassword>();
 
-
-
-
 //LOCALITATION
 
 builder.Services.AddScoped<IContinentBusiness, ContinentBusiness>();

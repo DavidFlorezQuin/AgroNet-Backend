@@ -30,20 +30,6 @@ namespace Data.Operational.services
             return IsMale; 
         }
 
-        public async Task isSale(Productions entity)
-        {
-            {
-                var animal = await context.Animals.FirstOrDefaultAsync(a => a.Id == entity.AnimalId);
-
-                if (animal != null)
-                {
-                    animal.state = false;
-                    context.Set<Animals>().Update(animal);
-                    await context.SaveChangesAsync(); 
-                }
-            }
-        }
-
         public async Task<List<ProductionDto>> GetProductionAnimals(int farmId)
         {
             var production = await context.Productions

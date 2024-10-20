@@ -13,6 +13,20 @@ namespace Business.Operational.services
 {
     public class AnimalSalesBusiness : BaseBusiness<AnimalSales, AnimalSaleDto>, IAnimalSaleBusiness
     {
-        public AnimalSalesBusiness(IMapper mapper, IAnimalSaleData animalData) : base(mapper, animalData) { }
+        private readonly IAnimalSaleData _data;
+        public AnimalSalesBusiness(IMapper mapper, IAnimalSaleData animalData) : base(mapper, animalData)
+        {
+            _data = animalData;
+        }
+
+
+        public async Task<List<AnimalSaleDto>> GetAnimalSaleAsync(int farmId)
+        {
+            if (farmId == 0)
+            {
+                throw new Exception("Finca no asociada");
+            }
+            return await _data.GetAnimalSaleAsync(farmId);
+        }
     }
 }

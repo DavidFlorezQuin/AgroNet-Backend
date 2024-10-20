@@ -41,6 +41,7 @@ namespace Business.Mapper
             CreateMap<VaccineDto, Vaccines>().ReverseMap();
             CreateMap<DiseaseDto, Diseases>().ReverseMap();
             CreateMap<MedicinesDto, Medicines>().ReverseMap();
+            CreateMap<AnimalSaleDto, AnimalSales>().ReverseMap(); 
             CreateMap<SuppliesDto, Supplies>().ReverseMap();
             
             //LOCALITATION
