@@ -30,7 +30,7 @@ namespace Web.Controllers.Operational.services
                 // Verificar si la lista está vacía
                 if (animal == null || animal.Count == 0)
                 {
-                    return Ok(new ApiResponse<List<AnimalDto>>(true, "No alerts found for the specified farm.", new List<AnimalDto>()));
+                    return Ok(new ApiResponse<List<AnimalDto>>(true, "No animals found for the specified farm.", new List<AnimalDto>()));
 
                 }
 
@@ -50,22 +50,19 @@ namespace Web.Controllers.Operational.services
             {
                 var animal = await _data.GetAnimalFemaleAsync(farmId);
 
-                // Verificar si la lista está vacía
                 if (animal == null || animal.Count == 0)
                 {
                     return Ok(new ApiResponse<List<AnimalDto>>(true, "No alerts found for the specified farm.", new List<AnimalDto>()));
-
                 }
 
-                // Devolver la lista de alertas
                 return Ok(new ApiResponse<List<AnimalDto>>(true, "Entities retrieved successfully", animal));
             }
             catch (Exception ex)
             {
-                // Manejo de excepciones
                 return StatusCode(500, $"Error al obtener las alertas: {ex.Message}");
             }
         }
+
         [HttpGet("datatable/bulls/{farmId}")]
         public async Task<ActionResult<List<AnimalDto>>> GetAnimalsBulls(int farmId)
         {

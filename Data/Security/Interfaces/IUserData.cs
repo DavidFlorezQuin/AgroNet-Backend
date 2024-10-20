@@ -21,6 +21,7 @@ namespace Data.Security.Interfaces
         Task<IEnumerable<UserPersonNameDto>> GetDataTable();
 
         Task SendPasswordResetLink(string email);
+        Task<string> GetEmailUser(int personId); 
 
 
     }

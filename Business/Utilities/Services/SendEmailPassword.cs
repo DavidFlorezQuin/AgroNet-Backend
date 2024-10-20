@@ -106,8 +106,8 @@ namespace Business.Utilities.Services
                 </head>
                 <body>
                   <div class='container'>
-                    <h1>Restablecimiento de Contraseña</h1>
-                    <p>Hola,</p>
+                    <h1>Restablecimiento de Contraseña AGRONET</h1>
+                    <p>Hola querido usuario,</p>
                     <p>Hemos recibido una solicitud para restablecer tu contraseña. Si fuiste tú quien solicitó esto, por favor haz clic en el enlace a continuación:</p>
                     <p>{resetLink}</p>
                     <p>Si no realizaste esta solicitud, simplemente ignora este mensaje.</p>
@@ -131,7 +131,7 @@ namespace Business.Utilities.Services
             // Configuración del cliente SMTP
             using (var smtpClient = new SmtpClient("smtp.gmail.com", 587))
             {
-                smtpClient.Credentials = new NetworkCredential("agronet77@gmail.com", "j d c i h h q v m c m z p e a w");
+                smtpClient.Credentials = new NetworkCredential("agronet77@gmail.com", "jmqb bxuv cpec bezk");
                 smtpClient.EnableSsl = true;
 
                 // Enviar el correo de forma asíncrona

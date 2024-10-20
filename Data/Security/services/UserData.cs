@@ -50,6 +50,15 @@ namespace Data.Security.Implementation
              u.Person.email == usernameOrEmail);
         }
 
+        public async Task<string> GetEmailUser(int personId)
+        {
+            return await context.Users
+                .Include(u => u.Person)
+                .Where(u => u.PersonId == personId)
+                .Select(u => u.Person.email)
+                .FirstOrDefaultAsync();
+        }
+
 
         public async Task<Users> Save(Users entity)
         {
