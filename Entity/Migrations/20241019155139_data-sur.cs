@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Entity.Migrations
 {
     /// <inheritdoc />
-    public partial class datashon : Migration
+    public partial class datasur : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -753,6 +753,8 @@ namespace Entity.Migrations
                     Diagnosis = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     AnimalId = table.Column<int>(type: "int", nullable: false),
                     UsersId = table.Column<int>(type: "int", nullable: false),
+                    IsBeingTreated = table.Column<bool>(type: "bit", nullable: false),
+                    DiseaseStatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     created_by = table.Column<int>(type: "int", nullable: true),
                     updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -926,7 +928,6 @@ namespace Entity.Migrations
                     BirthWeight = table.Column<double>(type: "float", nullable: true),
                     InseminationId = table.Column<int>(type: "int", nullable: false),
                     AnimalId = table.Column<int>(type: "int", nullable: true),
-                    AbortionDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     created_by = table.Column<int>(type: "int", nullable: true),
                     updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),

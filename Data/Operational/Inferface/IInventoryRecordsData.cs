@@ -9,5 +9,6 @@ namespace Data.Operational.Inferface
 {
     public interface IInventoryRecordsData : IData<InventoryRecords>
     {
+
     }
 }

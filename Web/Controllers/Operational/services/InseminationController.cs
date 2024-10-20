@@ -11,12 +11,12 @@ namespace Web.Controllers.Operational.services
 
     public class InseminationController : BaseController<InseminationDto, IInseminationBusiness>
     {
-        private readonly IInseminationData _data; 
+        private readonly IInseminationData _data;
 
         private readonly IInseminationBusiness _inseminationBusiness;
         public InseminationController(IInseminationBusiness inseminationBusiness, IInseminationData data) : base(inseminationBusiness)
         {
-            _data = data; 
+            _data = data;
             _inseminationBusiness = inseminationBusiness;
         }
 
@@ -42,21 +42,23 @@ namespace Web.Controllers.Operational.services
                 // Manejo de excepciones
                 return StatusCode(500, $"Error al obtener las alertas: {ex.Message}");
             }
-        }
 
+
+        }
         [HttpPut("{inseminationId}/abortion")]
         public IActionResult RegisterAbortion(int inseminationId)
         {
             try
             {
-                _inseminationBusiness.RegisterAbortion(inseminationId);
+                _data.RegisterAbortion(inseminationId);
                 return Ok(new ApiResponse<bool>(true, "Aborto registrado exitosamente."));
             }
             catch (ArgumentException ex)
             {
                 return BadRequest(new ApiResponse<bool>(false, ex.Message));
             }
-        }
 
+        }
     }
 }
+

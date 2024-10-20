@@ -146,6 +146,7 @@ namespace Entity.Context
 
         /*OPERATIONAL*/
         public DbSet<Alerts> Alerts => Set<Alerts>();
+        public DbSet<AnimalSales> AnimalSales => Set<AnimalSales>();
         public DbSet<Animals> Animals => Set<Animals>();
         public DbSet<AnimalDiagnostics> AnimalDiagnostics => Set<AnimalDiagnostics>();
         public DbSet<Births> Births => Set<Births>();
@@ -154,6 +155,8 @@ namespace Entity.Context
         public DbSet<Inseminations> Inseminations => Set<Inseminations>();
         public DbSet<Inventories> Inventories => Set<Inventories>();
         public DbSet<InventorySupplies> InventorySupplies => Set<InventorySupplies>();
+
+        public DbSet<InventoryRecords> InventoryRecords => Set<InventoryRecords>(); 
         public DbSet<Lots> Lots => Set<Lots>();
         public DbSet<Productions> Productions => Set<Productions>();
         public DbSet<Sales> Sales => Set<Sales>();

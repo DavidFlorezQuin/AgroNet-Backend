@@ -83,7 +83,7 @@ namespace Data.Operational.services
             }
             insemination.state = false;
             insemination.Result = "ABORTO";
-            insemination.IsAborted = true
+            insemination.IsAborted = true; 
 
             context.Inseminations.Update(insemination); 
             context.SaveChanges(); 

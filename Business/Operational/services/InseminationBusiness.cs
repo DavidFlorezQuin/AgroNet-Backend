@@ -47,14 +47,14 @@ namespace Business.Operational.services
 
         }
 
-        public void RegisterAbortion(int inseminationId)
+        public void RegisterAbortion(int animalDiagnosticId)
         {
-            if(inseminationId == 0)
+            if(animalDiagnosticId == 0)
             {
                 throw new ArgumentException("Inseminación no encontrada");
 
             }
-            _inseminationData.RegisterAbortion(inseminationId); 
+            _inseminationData.RegisterAbortion(animalDiagnosticId); 
         }
 
     }

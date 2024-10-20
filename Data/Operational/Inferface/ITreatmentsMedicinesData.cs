@@ -11,5 +11,6 @@ namespace Data.Operational.Inferface
     public interface ITreatmentsMedicinesData : IData<TreatmentsMedicines>
     {
         Task<List<TreatmentMedicineDto>> GetTreatmentMedicineAsync(int farmId);
+        Task<List<TreatmentMedicineDto>> GetMedicineForTreatments(int treatmentId); 
     }
 }

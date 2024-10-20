@@ -1,4 +1,5 @@
 ﻿using Business.Operational.Interface;
+using Business.Operational.services;
 using Data.Operational.Inferface;
 using Entity.Dto.Operation;
 using Microsoft.AspNetCore.Mvc;
@@ -10,9 +11,11 @@ namespace Web.Controllers.Operational.services
     public class AnimalDiagnosticController : BaseController<AnimalDiagnosticDto, IAnimalDiagnosticBusiness>
     {
         private readonly IAnimalDiagnosticData _Data;
+        private readonly IAnimalDiagnosticBusiness _business; 
 
         public AnimalDiagnosticController(IAnimalDiagnosticBusiness animalDiagnosticBusiness, IAnimalDiagnosticData data ) : base(animalDiagnosticBusiness) {
-            _Data = data; 
+            _Data = data;
+            _business = animalDiagnosticBusiness; 
         }
         [HttpGet("datatable/{IdFarm}")]
         public async Task<ActionResult<List<AnimalDiagnosticDto>>> GetAnimalDiag(int IdFarm)
@@ -35,6 +38,36 @@ namespace Web.Controllers.Operational.services
             {
                 // Manejo de excepciones
                 return StatusCode(500, $"Error al obtener las alertas: {ex.Message}");
+            }
+        
+        }
+
+        [HttpPut("{animalDiagnosticId}/animal-dead")]
+        public async Task<IActionResult> RegisterDead(int animalDiagnosticId)
+        {
+            try
+            {
+                await _business.RegisterDead(animalDiagnosticId); 
+                return Ok(new ApiResponse<bool>(true, "Muerte registrada."));
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new ApiResponse<bool>(false, ex.Message));
+            }
+        }
+
+        [HttpPut("{animalDiagnosticId}/animal-health")]
+        public async Task<IActionResult> RegisterAlive(int animalDiagnosticId)
+        {
+            try
+            {
+                await _business.RegisterAlive(animalDiagnosticId);
+                return Ok(new ApiResponse<bool>(true, "Salud registrada."));
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new ApiResponse<bool>(false, ex.Message));
+
             }
         }
     }

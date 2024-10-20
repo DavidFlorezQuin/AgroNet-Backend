@@ -36,5 +36,26 @@ namespace Data.Operational.services
             return treatmentMedicine; 
         }
 
+        public async Task<List<TreatmentMedicineDto>> GetMedicineForTreatments(int treatmentId)
+        {
+            var medicine = await context.TreatmentsMedicines
+                .Include(b => b.Treatment)
+                .Include(b => b.Medicines)
+                .Where(b => b.TreatmentId == treatmentId)
+                .Select(b => new TreatmentMedicineDto
+                {
+                    Id = b.Id,
+                    Description = b.Description,
+                    state = b.state,
+                    Medicines = b.Medicines.Name,
+                    PeriocityDay = b.PeriocityDay,
+                    Treatment = b.Treatment.Name,
+                    MedicinesId = b.TreatmentId,
+                    TreatmentId = b.TreatmentId
+                }).ToListAsync();
+
+            return medicine; 
+        }
+
     }
 }

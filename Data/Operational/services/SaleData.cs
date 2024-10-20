@@ -47,22 +47,15 @@ namespace Data.Operational.services
             if (production.Stock < entity.Quantity)
                 throw new Exception("Stock insuficiente.");
 
-            if (production.TypeProduction == "VENTA")
-            {
-                if (production.Animal != null)
-                    production.Animal.state = false;
-            }
-            else if (production.TypeProduction == "LECHE")
+        
+             if (production.TypeProduction == "LECHE")
             {
                 production.Stock -= entity.Quantity;
 
                 if (production.Stock == 0 && production.Animal != null)
                     production.Animal.state = false;
             }
-            else
-            {
-                throw new Exception("Tipo de producción no válido.");
-            }
+
 
             context.Productions.Update(production);
             await context.SaveChangesAsync();

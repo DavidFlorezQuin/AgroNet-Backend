@@ -15,6 +15,34 @@ namespace Data.Operational.services
     {
         public TreatmentData(AplicationDbContext context) : base(context) { }
 
+        public override async Task<Treatments> Save(Treatments entity){
+
+            entity.state = true;
+            entity.created_at = DateTime.Now;
+            entity.Result = "ENPROCESO";
+
+            var diagnostic = await context.AnimalDiagnostics.FindAsync(entity.AnimalDiagnosticsId);
+
+            if (diagnostic == null)
+            {
+                throw new Exception("Diagnóstico no encontrado");
+            }
+
+            if (!diagnostic.state)
+            {
+                throw new Exception("Diagnóstico inactivo");
+            }
+
+            diagnostic.IsBeingTreated = true;
+
+            context.AnimalDiagnostics.Update(diagnostic);
+            context.Treatments.Add(entity);
+
+            await context.SaveChangesAsync();
+            return entity; 
+        }
+
+
         public async Task<List<TreatmentDto>> GetTreatmentAsync(int farmId)
         {
             var treatment = await context.Treatments

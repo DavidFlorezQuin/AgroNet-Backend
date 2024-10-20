@@ -9,5 +9,7 @@ namespace Business.Operational.Interface
 {
     public interface IAnimalDiagnosticBusiness : IBusiness<AnimalDiagnosticDto>
     {
+        Task RegisterDead(int animalDiagnosticId);
+        Task RegisterAlive(int animalDiagnosticId);
     }
 }

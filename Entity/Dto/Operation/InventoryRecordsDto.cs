@@ -9,7 +9,7 @@ namespace Entity.Dto.Operation
 {
     public class InventoryRecordsDto : BaseDto
     {
-        public double Amount { get; set; }
+        public int Amount { get; set; }
         public double Measure { get; set; }
         public string TransactionType { get; set; }
         public int UsersId { get; set; }

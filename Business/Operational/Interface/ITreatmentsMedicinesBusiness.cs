@@ -10,5 +10,6 @@ namespace Business.Operational.Interface
 {
     public interface ITreatmentsMedicinesBusiness : IBusiness<TreatmentMedicineDto>
     {
+        Task<List<TreatmentMedicineDto>> GetMedicineForTreatments(int treatmentId); 
     }
 }

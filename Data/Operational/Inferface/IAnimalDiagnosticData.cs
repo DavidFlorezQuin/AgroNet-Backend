@@ -10,6 +10,8 @@ namespace Data.Operational.Inferface
 {
     public  interface IAnimalDiagnosticData : IData<AnimalDiagnostics>
     {
+        Task RegisterDead(int animalDiagnosticId); 
         Task<List<AnimalDiagnosticDto>> GetAnimalDiagAsync(int IdFarm);
+        Task RegisterAlive(int animalDiagnosticId); 
     }
 }
