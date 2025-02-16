@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entity.Migrations
 {
     [DbContext(typeof(AplicationDbContext))]
-    [Migration("20241020035459_datas")]
-    partial class datas
+    [Migration("20250123192041_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -72,48 +72,6 @@ namespace Entity.Migrations
                     b.ToTable("City");
                 });
 
-            modelBuilder.Entity("Entity.Model.Localitation.Continent", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("created_at")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("created_by")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("deleted_at")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("deleted_by")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("state")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("updated_at")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("updated_by")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Continent");
-                });
-
             modelBuilder.Entity("Entity.Model.Localitation.Country", b =>
                 {
                     b.Property<int>("Id")
@@ -156,8 +114,6 @@ namespace Entity.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ContinentId");
-
                     b.ToTable("Country");
                 });
 
@@ -171,10 +127,6 @@ namespace Entity.Migrations
 
                     b.Property<int>("CountryId")
                         .HasColumnType("int");
-
-                    b.Property<string>("code")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("created_at")
                         .HasColumnType("datetime2");
@@ -353,9 +305,6 @@ namespace Entity.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<DateTime>("SaleDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Weight")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -396,9 +345,15 @@ namespace Entity.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime?>("DurationProduction")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Gender")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("InProduction")
+                        .HasColumnType("bit");
 
                     b.Property<int>("LotId")
                         .HasColumnType("int");
@@ -461,9 +416,6 @@ namespace Entity.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("AnimalId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("Assistence")
                         .HasColumnType("bit");
 
@@ -477,9 +429,8 @@ namespace Entity.Migrations
                     b.Property<int>("InseminationId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Result")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("Result")
+                        .HasColumnType("bit");
 
                     b.Property<DateTime>("created_at")
                         .HasColumnType("datetime2");
@@ -504,8 +455,6 @@ namespace Entity.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AnimalId");
-
                     b.HasIndex("InseminationId");
 
                     b.ToTable("Births");
@@ -521,6 +470,9 @@ namespace Entity.Migrations
 
                     b.Property<int>("FarmsId")
                         .HasColumnType("int");
+
+                    b.Property<bool>("IsOwner")
+                        .HasColumnType("bit");
 
                     b.Property<int>("UsersId")
                         .HasColumnType("int");
@@ -565,6 +517,10 @@ namespace Entity.Migrations
 
                     b.Property<int>("CityId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -882,14 +838,12 @@ namespace Entity.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("ExpirateDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Measurement")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("QuantityTotal")
@@ -938,6 +892,9 @@ namespace Entity.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int?>("AnimalId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Currency")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -977,6 +934,8 @@ namespace Entity.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AnimalId");
 
                     b.HasIndex("ProductionId");
 
@@ -1055,8 +1014,12 @@ namespace Entity.Migrations
                     b.Property<int>("MedicinesId")
                         .HasColumnType("int");
 
-                    b.Property<int>("PeriocityDay")
+                    b.Property<int>("Number")
                         .HasColumnType("int");
+
+                    b.Property<string>("Periocity")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TreatmentId")
                         .HasColumnType("int");
@@ -1157,6 +1120,9 @@ namespace Entity.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("FarmsId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -1184,10 +1150,12 @@ namespace Entity.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("FarmsId");
+
                     b.ToTable("CategoryAlert");
                 });
 
-            modelBuilder.Entity("Entity.Model.Parameter.CategoryDisieses", b =>
+            modelBuilder.Entity("Entity.Model.Parameter.CategoryDiseases", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -1199,6 +1167,9 @@ namespace Entity.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("FarmsId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -1226,7 +1197,9 @@ namespace Entity.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CategoryDisieses");
+                    b.HasIndex("FarmsId");
+
+                    b.ToTable("CategoryDiseases");
                 });
 
             modelBuilder.Entity("Entity.Model.Parameter.CategoryMedicines", b =>
@@ -1241,6 +1214,9 @@ namespace Entity.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("FarmsId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -1267,6 +1243,8 @@ namespace Entity.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("FarmsId");
 
                     b.ToTable("CategoryMedicines");
                 });
@@ -1283,6 +1261,9 @@ namespace Entity.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("FarmsId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -1309,6 +1290,8 @@ namespace Entity.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("FarmsId");
 
                     b.ToTable("CategorySupplies");
                 });
@@ -1321,12 +1304,15 @@ namespace Entity.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CategoryDisiesesId")
+                    b.Property<int>("CategoryDiseasesId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("FarmsId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -1355,7 +1341,9 @@ namespace Entity.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryDisiesesId");
+                    b.HasIndex("CategoryDiseasesId");
+
+                    b.HasIndex("FarmsId");
 
                     b.ToTable("Diseases");
                 });
@@ -1374,6 +1362,10 @@ namespace Entity.Migrations
 
                     b.Property<int>("CategoryMedicinesId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -1422,6 +1414,9 @@ namespace Entity.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("FarmsId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -1451,6 +1446,8 @@ namespace Entity.Migrations
 
                     b.HasIndex("CategorySuppliesId");
 
+                    b.HasIndex("FarmsId");
+
                     b.ToTable("Supplies");
                 });
 
@@ -1471,6 +1468,9 @@ namespace Entity.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("DosesRequired")
+                        .HasColumnType("int");
+
+                    b.Property<int>("FarmsId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -1507,6 +1507,8 @@ namespace Entity.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("FarmsId");
+
                     b.ToTable("Vaccines");
                 });
 
@@ -1520,6 +1522,9 @@ namespace Entity.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Icon")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -1867,17 +1872,6 @@ namespace Entity.Migrations
                     b.Navigation("Departament");
                 });
 
-            modelBuilder.Entity("Entity.Model.Localitation.Country", b =>
-                {
-                    b.HasOne("Entity.Model.Localitation.Continent", "Continent")
-                        .WithMany()
-                        .HasForeignKey("ContinentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Continent");
-                });
-
             modelBuilder.Entity("Entity.Model.Localitation.Departament", b =>
                 {
                     b.HasOne("Entity.Model.Localitation.Country", "Country")
@@ -1904,13 +1898,13 @@ namespace Entity.Migrations
                     b.HasOne("Entity.Model.Operational.Farms", "Farms")
                         .WithMany()
                         .HasForeignKey("FarmsId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Entity.Model.Security.Users", "Users")
                         .WithMany()
                         .HasForeignKey("UsersId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Animal");
@@ -1965,18 +1959,11 @@ namespace Entity.Migrations
 
             modelBuilder.Entity("Entity.Model.Operational.Births", b =>
                 {
-                    b.HasOne("Entity.Model.Operational.Animals", "Animal")
-                        .WithMany()
-                        .HasForeignKey("AnimalId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
                     b.HasOne("Entity.Model.Operational.Inseminations", "Insemination")
                         .WithMany()
                         .HasForeignKey("InseminationId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.Navigation("Animal");
 
                     b.Navigation("Insemination");
                 });
@@ -2102,11 +2089,17 @@ namespace Entity.Migrations
 
             modelBuilder.Entity("Entity.Model.Operational.Sales", b =>
                 {
+                    b.HasOne("Entity.Model.Operational.Animals", "Animal")
+                        .WithMany()
+                        .HasForeignKey("AnimalId");
+
                     b.HasOne("Entity.Model.Operational.Productions", "Production")
                         .WithMany()
                         .HasForeignKey("ProductionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Animal");
 
                     b.Navigation("Production");
                 });
@@ -2146,13 +2139,13 @@ namespace Entity.Migrations
                     b.HasOne("Entity.Model.Operational.Animals", "Animal")
                         .WithMany()
                         .HasForeignKey("AnimalId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Entity.Model.Parameter.Vaccines", "Vaccines")
                         .WithMany()
                         .HasForeignKey("VaccinesId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Animal");
@@ -2160,15 +2153,67 @@ namespace Entity.Migrations
                     b.Navigation("Vaccines");
                 });
 
-            modelBuilder.Entity("Entity.Model.Parameter.Diseases", b =>
+            modelBuilder.Entity("Entity.Model.Parameter.CategoryAlert", b =>
                 {
-                    b.HasOne("Entity.Model.Parameter.CategoryDisieses", "CategoryDisieses")
+                    b.HasOne("Entity.Model.Operational.Farms", "Farms")
                         .WithMany()
-                        .HasForeignKey("CategoryDisiesesId")
+                        .HasForeignKey("FarmsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("CategoryDisieses");
+                    b.Navigation("Farms");
+                });
+
+            modelBuilder.Entity("Entity.Model.Parameter.CategoryDiseases", b =>
+                {
+                    b.HasOne("Entity.Model.Operational.Farms", "Farms")
+                        .WithMany()
+                        .HasForeignKey("FarmsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Farms");
+                });
+
+            modelBuilder.Entity("Entity.Model.Parameter.CategoryMedicines", b =>
+                {
+                    b.HasOne("Entity.Model.Operational.Farms", "Farms")
+                        .WithMany()
+                        .HasForeignKey("FarmsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Farms");
+                });
+
+            modelBuilder.Entity("Entity.Model.Parameter.CategorySupplies", b =>
+                {
+                    b.HasOne("Entity.Model.Operational.Farms", "Farms")
+                        .WithMany()
+                        .HasForeignKey("FarmsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Farms");
+                });
+
+            modelBuilder.Entity("Entity.Model.Parameter.Diseases", b =>
+                {
+                    b.HasOne("Entity.Model.Parameter.CategoryDiseases", "CategoryDiseases")
+                        .WithMany()
+                        .HasForeignKey("CategoryDiseasesId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("Entity.Model.Operational.Farms", "Farms")
+                        .WithMany()
+                        .HasForeignKey("FarmsId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("CategoryDiseases");
+
+                    b.Navigation("Farms");
                 });
 
             modelBuilder.Entity("Entity.Model.Parameter.Medicines", b =>
@@ -2176,7 +2221,7 @@ namespace Entity.Migrations
                     b.HasOne("Entity.Model.Parameter.CategoryMedicines", "CategoryMedicines")
                         .WithMany()
                         .HasForeignKey("CategoryMedicinesId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("CategoryMedicines");
@@ -2187,10 +2232,29 @@ namespace Entity.Migrations
                     b.HasOne("Entity.Model.Parameter.CategorySupplies", "CategorySupplies")
                         .WithMany()
                         .HasForeignKey("CategorySuppliesId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("Entity.Model.Operational.Farms", "Farms")
+                        .WithMany()
+                        .HasForeignKey("FarmsId")
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("CategorySupplies");
+
+                    b.Navigation("Farms");
+                });
+
+            modelBuilder.Entity("Entity.Model.Parameter.Vaccines", b =>
+                {
+                    b.HasOne("Entity.Model.Operational.Farms", "Farms")
+                        .WithMany()
+                        .HasForeignKey("FarmsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Farms");
                 });
 
             modelBuilder.Entity("Entity.Model.Security.RoleView", b =>

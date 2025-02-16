@@ -50,6 +50,12 @@ C:\Users\david\Source\Repos\SecurityApp\SecurityApp\Business\obj\Debug\net7.0\Bu
 C:\Users\david\Source\Repos\SecurityApp\SecurityApp\Business\obj\Debug\net7.0\refint\Business.dll
 C:\Users\david\Source\Repos\SecurityApp\SecurityApp\Business\obj\Debug\net7.0\Business.pdb
 C:\Users\david\Source\Repos\SecurityApp\SecurityApp\Business\obj\Debug\net7.0\ref\Business.dll
+C:\Users\david\Source\Repos\AgroNetBackend\Business\obj\Debug\net7.0\Business.csproj.AssemblyReference.cache
+C:\Users\david\Source\Repos\AgroNetBackend\Business\obj\Debug\net7.0\Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\david\Source\Repos\AgroNetBackend\Business\obj\Debug\net7.0\Business.AssemblyInfoInputs.cache
+C:\Users\david\Source\Repos\AgroNetBackend\Business\obj\Debug\net7.0\Business.AssemblyInfo.cs
+C:\Users\david\Source\Repos\AgroNetBackend\Business\obj\Debug\net7.0\Business.csproj.CoreCompileInputs.cache
+C:\Users\david\Source\Repos\AgroNetBackend\Business\obj\Debug\net7.0\Business.sourcelink.json
 C:\Users\david\Source\Repos\AgroNetBackend\Business\bin\Debug\net7.0\Business.deps.json
 C:\Users\david\Source\Repos\AgroNetBackend\Business\bin\Debug\net7.0\Business.dll
 C:\Users\david\Source\Repos\AgroNetBackend\Business\bin\Debug\net7.0\Business.pdb
@@ -57,12 +63,6 @@ C:\Users\david\Source\Repos\AgroNetBackend\Business\bin\Debug\net7.0\Data.dll
 C:\Users\david\Source\Repos\AgroNetBackend\Business\bin\Debug\net7.0\Entity.dll
 C:\Users\david\Source\Repos\AgroNetBackend\Business\bin\Debug\net7.0\Data.pdb
 C:\Users\david\Source\Repos\AgroNetBackend\Business\bin\Debug\net7.0\Entity.pdb
-C:\Users\david\Source\Repos\AgroNetBackend\Business\obj\Debug\net7.0\Business.csproj.AssemblyReference.cache
-C:\Users\david\Source\Repos\AgroNetBackend\Business\obj\Debug\net7.0\Business.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\david\Source\Repos\AgroNetBackend\Business\obj\Debug\net7.0\Business.AssemblyInfoInputs.cache
-C:\Users\david\Source\Repos\AgroNetBackend\Business\obj\Debug\net7.0\Business.AssemblyInfo.cs
-C:\Users\david\Source\Repos\AgroNetBackend\Business\obj\Debug\net7.0\Business.csproj.CoreCompileInputs.cache
-C:\Users\david\Source\Repos\AgroNetBackend\Business\obj\Debug\net7.0\Business.sourcelink.json
 C:\Users\david\Source\Repos\AgroNetBackend\Business\obj\Debug\net7.0\Business.csproj.Up2Date
 C:\Users\david\Source\Repos\AgroNetBackend\Business\obj\Debug\net7.0\Business.dll
 C:\Users\david\Source\Repos\AgroNetBackend\Business\obj\Debug\net7.0\refint\Business.dll

@@ -10,7 +10,7 @@ namespace Entity.Dto.Security
     {
         public string username { get; set; }
         public string password { get; set; }
-
+        public string? photo { get; set; }
         public int PersonId { get; set; }
     }
 

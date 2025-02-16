@@ -9,11 +9,5 @@ namespace Business.Exceptions
     public class ProductionNotFoundException : Exception
     {
         public ProductionNotFoundException() : base("Producción no encontrada.") { }
-
-    }
-
-    public class InsufficientStockException : Exception
-    {
-        public InsufficientStockException() : base("Stock insuficiente.") { }
     }
 }

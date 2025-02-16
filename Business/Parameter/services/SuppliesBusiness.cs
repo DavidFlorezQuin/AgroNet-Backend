@@ -14,6 +14,23 @@ namespace Business.Parameter.services
 {
     public class SuppliesBusiness : BaseBusiness<Supplies, SuppliesDto>, ISuppliesBusiness
     {
-        public SuppliesBusiness(IMapper mapper, ISuppliesData data) : base(mapper, data) { }
+        private readonly ISuppliesData _data;
+        public SuppliesBusiness(IMapper mapper, ISuppliesData data) : base(mapper, data)
+        {
+            _data = data;
+        }
+
+        public async Task<List<SuppliesDto>> GetSuppliesAsync(int userId)
+        {
+            var supplies = await _data.GetSuppliesAsync(userId);
+
+            if (supplies == null)
+            {
+                throw new InvalidOperationException("No se encontró ningun registro para el usuario proporcionado."); 
+            }
+
+            return supplies;
+        }
     }
 }
+

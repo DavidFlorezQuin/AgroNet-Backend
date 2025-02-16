@@ -21,7 +21,7 @@ namespace Data.Operational.services
         {
             var farm = await context.Farms
                 .Include(a => a.City)
-                .Where(a => context.FarmUsers.Any(fu => fu.FarmsId == a.Id && fu.UsersId == userId) && a.deleted_at == null)
+        .Where(a => context.FarmUsers.Any(fu => fu.UsersId == userId && fu.IsOwner == true && fu.FarmsId == a.Id) && a.deleted_at == null)
                 .Select(a => new FarmDto
                 {
                     Id = a.Id,
@@ -30,14 +30,30 @@ namespace Data.Operational.services
                     Hectare = a.Hectare,
                     Description = a.Description,
                     Name = a.Name,
+                    Code = a.Code,
                     Photo = a.Photo,
                     state = a.state
                 }).ToListAsync();
             return farm; 
         }
 
+        public async Task<Farms> SaveAsync(Farms farms, int userId) {
 
+            farms.state = true;
+            farms.created_at = DateTime.Now;
 
+            context.Farms.Add(farms);
+            await context.SaveChangesAsync();
+            return farms;
+
+        }
+
+        public async Task<Farms> SearchFarmByCode(string codeFarm)
+        {
+            var farm = await context.Farms.
+                FirstOrDefaultAsync(f => f.Code == codeFarm);
+            return farm;
+        }
 
     }
 }

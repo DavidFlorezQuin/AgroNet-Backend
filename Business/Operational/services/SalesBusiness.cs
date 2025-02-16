@@ -3,6 +3,7 @@ using Business.Exceptions;
 using Business.Operational.Interface;
 using Data.Operational.Inferface;
 using Entity.Dto.Operation;
+using Entity.Dto.Utilities;
 using Entity.Model.Operational;
 using System;
 using System.Collections.Generic;
@@ -44,7 +45,7 @@ namespace Business.Operational.services
 
         }
 
-        private async Task AjustProductionStock(Productions  productions, double quantity)
+        private void AjustProductionStock(Productions  productions, double quantity)
         {
             if(productions.TypeProduction == "LECHE")
             {
@@ -55,5 +56,10 @@ namespace Business.Operational.services
             }
 
         }
+
+        public async Task<List<DataProductionDto>> GetSaleAsync(int farmId){
+            return await _saleData.GetMonthlySale(farmId);
+        }
+
     }
 }

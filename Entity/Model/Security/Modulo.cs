@@ -6,6 +6,8 @@
         public string Description { get; set; }
         public int Orders {  get; set; }
 
+        public string? Icon { get; set; } 
+
 
     }
 }

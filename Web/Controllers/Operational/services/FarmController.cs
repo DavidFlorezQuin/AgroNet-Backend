@@ -15,7 +15,7 @@ namespace Web.Controllers.Operational.services
         public FarmController(IFarmBusiness farmBusiness, IFarmData data) : base(farmBusiness)
         {
             _farmBusiness = farmBusiness;
-            _farmData = data; 
+            _farmData = data;
         }
 
         [HttpGet("datatable/{userId}")]
@@ -42,5 +42,25 @@ namespace Web.Controllers.Operational.services
             }
         }
 
+        [HttpPost("saveAsync")]
+        public async Task<ActionResult<FarmDto>> SaveAsync([FromBody] FarmUserBodyDto farmUserBodyDto)
+        {
+            try
+            {
+                if (farmUserBodyDto == null)
+                {
+                    return BadRequest(new ApiResponse<FarmDto>(false, "Entity is null"));
+
+                }
+                var farms = await _farmBusiness.SaveAsync(farmUserBodyDto);
+                return Ok(new ApiResponse<FarmDto>(true, "Entity created successfully", farms));
+
+            }catch(Exception ex) {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                  new ApiResponse<FarmDto>(false, "An unexpected error occurred: " + ex.Message));
+            
+        }
     }
+
+}
 }

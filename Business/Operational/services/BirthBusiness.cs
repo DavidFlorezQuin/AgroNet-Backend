@@ -14,5 +14,7 @@ namespace Business.Operational.services
     public class BirthBusiness : BaseBusiness<Births, BirthDto>, IBirthBusiness
     {
         public BirthBusiness(IMapper mapper, IBirthData data) : base(mapper, data) { }
+
+
     }
 }

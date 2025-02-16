@@ -10,5 +10,6 @@ namespace Business.Parameter.Interface
 {
     public interface ICategoryDiseaseBusiness : IBusiness<CategoryDiseaseDto>
     {
+        Task<List<CategoryDiseaseDto>> GetCategoryDiseaseAsync(int UsersId);
     }
 }

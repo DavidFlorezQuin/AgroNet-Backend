@@ -11,7 +11,6 @@ namespace Entity.Dto.Operation
     {
         public double Price { get; set; }
         public string Currency { get; set; }
-        public DateTime SaleDate { get; set; }
         public int AnimalsId { get; set; }
         public string Weight { get; set; }
         public string? Animals { get; set; }

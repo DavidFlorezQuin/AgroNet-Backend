@@ -11,6 +11,7 @@ namespace Data.Operational.Inferface
     public interface IFarmData : IData<Farms>
     {
         Task<List<FarmDto>> GetFarmAsync(int farmId);
-
+        Task<Farms> SaveAsync(Farms farms, int userId);
+        Task<Farms> SearchFarmByCode(string codeFarm);
     }
 }

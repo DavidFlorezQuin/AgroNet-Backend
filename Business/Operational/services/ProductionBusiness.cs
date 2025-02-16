@@ -2,6 +2,7 @@
 using Business.Operational.Interface;
 using Data.Operational.Inferface;
 using Entity.Dto.Operation;
+using Entity.Dto.Utilities;
 using Entity.Model.Operational;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business.Operational.services
+namespace Business.Operational.services 
 {
     public class ProductionBusiness : BaseBusiness<Productions, ProductionDto>, IProductionsBusiness
     {
@@ -22,7 +23,7 @@ namespace Business.Operational.services
         public override async Task<ProductionDto> Save(ProductionDto dto)
         {
             var entity = _mapper.Map<Productions>(dto);
-
+            entity.created_at = DateTime.UtcNow;
 
             bool isMale = await _dataProduction.ValidProduction(entity);
 
@@ -36,6 +37,10 @@ namespace Business.Operational.services
             return _mapper.Map<ProductionDto>(entity);
         }
 
+        public async Task<List<DataProductionDto>> GetMonthlyMilkProductionAsync(int farmId) 
+        {
+            return await _dataProduction.GetMonthlyMilkProductionAsync(farmId); 
+        }
 
 
 

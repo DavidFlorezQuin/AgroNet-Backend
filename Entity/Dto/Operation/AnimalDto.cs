@@ -18,5 +18,7 @@ namespace Entity.Dto.Operation
         public DateTime birthDay { get; set; }
         public int LotId { get; set; }
         public string? Lot {  get; set; }
+        public bool? InProduction { get; set; }
+        public DateTime? DurationProduction { get; set; }
     }
 }

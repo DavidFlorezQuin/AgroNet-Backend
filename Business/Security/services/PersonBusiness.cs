@@ -29,20 +29,21 @@ namespace Business.Security.Implementation
         {
             Person person = await data.GetById(id);
 
-            PersonDto personDto = new PersonDto();
+            return new PersonDto
+            {
 
-            personDto.Id = person.Id;
-            personDto.Gender = person.gender;
-            personDto.Birthday = person.birthday;
-            personDto.Phone = person.phone;
-            personDto.Email = person.email;
-            personDto.TypeDocument = person.type_document;
-            personDto.Direction = person.direction;
-            personDto.Document = person.document;
-            personDto.FirstName = person.first_name;
-            personDto.LastName = person.last_name;
+            Id = person.Id,
+            Gender = person.gender,
+            Birthday = person.birthday,
+            Phone = person.phone,
+            Email = person.email,
+            TypeDocument = person.type_document,
+            Direction = person.direction,
+            Document = person.document,
+            FirstName = person.first_name,
+            LastName = person.last_name
 
-            return personDto;
+            };
 
         }
 

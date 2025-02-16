@@ -1,4 +1,5 @@
 ﻿using Entity.Dto.Operation;
+using Entity.Dto.Utilities;
 using Entity.Model.Operational;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ namespace Data.Operational.Inferface
         Task<Sales> SaveAsync(Sales entity);
         Task UpdateProductionAsync(Productions productions);
         Task<Productions> GetProductionsAsync(int productionId);
+        Task<List<DataProductionDto>> GetMonthlySale(int farmId);
+
 
     }
 }

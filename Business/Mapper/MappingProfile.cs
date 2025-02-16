@@ -35,7 +35,7 @@ namespace Business.Mapper
             CreateMap<VaccineAnimalDto, VaccineAnimals>().ReverseMap();
             CreateMap<InventoryRecordsDto, InventoryRecords>().ReverseMap();
             CreateMap<CategoryAlertDto, CategoryAlert>().ReverseMap();
-            CreateMap<CategoryDiseaseDto, CategoryDisieses>().ReverseMap();
+            CreateMap<CategoryDiseaseDto, CategoryDiseases>().ReverseMap();
             CreateMap<CategoryMedicinesDto, CategoryMedicines>().ReverseMap();
             CreateMap<CategorySuppliesDto, CategorySupplies>().ReverseMap();
             CreateMap<VaccineDto, Vaccines>().ReverseMap();

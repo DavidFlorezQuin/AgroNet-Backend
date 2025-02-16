@@ -33,8 +33,7 @@ namespace Data.Security.Implementation
             context.Users.Update(entity);
             await context.SaveChangesAsync();
         }
-
-
+            
         public async Task<Users> GetById(int id)
         {
             var sql = @"SELECT * FROM Users WHERE Id = @Id ORDER BY Id ASC";
@@ -59,10 +58,8 @@ namespace Data.Security.Implementation
                 .FirstOrDefaultAsync();
         }
 
-
         public async Task<Users> Save(Users entity)
         {
-
             context.Users.Add(entity);
             await context.SaveChangesAsync();
             return entity;
@@ -87,7 +84,6 @@ namespace Data.Security.Implementation
                 throw new Exception("Email not found");
             }
 
-
             var token = Guid.NewGuid().ToString();
 
             user.ResetPasswordToken = token;
@@ -95,7 +91,6 @@ namespace Data.Security.Implementation
 
             var resetLink = $"https://yourapp.com/reset-password?token={token}";
             SendEmail(person.email, "Password Reset", $"Click here to reset your password: {resetLink}");
-
         }
 
         public void SendEmail(string toEmail, string subject, string body)
@@ -134,14 +129,13 @@ namespace Data.Security.Implementation
         public async Task<List<Role>> GetRolesForUser(int userId)
         {
             return await context.UserRole
-         .Where(ur => ur.UserId == userId)
+         .Where(ur => ur.UserId == userId)  
         .Include(ur => ur.Role)
             .ThenInclude(r => r.RoleViews)
                 .ThenInclude(rv => rv.View)
                     .ThenInclude(v => v.Modulo)
         .Select(ur => ur.Role)
         .ToListAsync();
-
         }
 
         public async Task<IEnumerable<UserPersonNameDto>> GetDataTable()

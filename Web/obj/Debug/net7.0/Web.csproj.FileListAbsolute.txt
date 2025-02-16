@@ -161,6 +161,13 @@ C:\Users\david\Source\Repos\SecurityApp\SecurityApp\Web\obj\Debug\net7.0\refint\
 C:\Users\david\Source\Repos\SecurityApp\SecurityApp\Web\obj\Debug\net7.0\Web.pdb
 C:\Users\david\Source\Repos\SecurityApp\SecurityApp\Web\obj\Debug\net7.0\Web.genruntimeconfig.cache
 C:\Users\david\Source\Repos\SecurityApp\SecurityApp\Web\obj\Debug\net7.0\ref\Web.dll
+C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\Web.csproj.AssemblyReference.cache
+C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\Web.AssemblyInfoInputs.cache
+C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\Web.AssemblyInfo.cs
+C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\Web.csproj.CoreCompileInputs.cache
+C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\Web.sourcelink.json
 C:\Users\david\Source\Repos\AgroNetBackend\Web\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\david\Source\Repos\AgroNetBackend\Web\bin\Debug\net7.0\appsettings.json
 C:\Users\david\Source\Repos\AgroNetBackend\Web\bin\Debug\net7.0\Web.exe
@@ -171,6 +178,7 @@ C:\Users\david\Source\Repos\AgroNetBackend\Web\bin\Debug\net7.0\Web.pdb
 C:\Users\david\Source\Repos\AgroNetBackend\Web\bin\Debug\net7.0\AutoMapper.dll
 C:\Users\david\Source\Repos\AgroNetBackend\Web\bin\Debug\net7.0\Azure.Core.dll
 C:\Users\david\Source\Repos\AgroNetBackend\Web\bin\Debug\net7.0\Azure.Identity.dll
+C:\Users\david\Source\Repos\AgroNetBackend\Web\bin\Debug\net7.0\BCrypt.Net-Next.dll
 C:\Users\david\Source\Repos\AgroNetBackend\Web\bin\Debug\net7.0\Dapper.dll
 C:\Users\david\Source\Repos\AgroNetBackend\Web\bin\Debug\net7.0\Humanizer.dll
 C:\Users\david\Source\Repos\AgroNetBackend\Web\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
@@ -261,14 +269,6 @@ C:\Users\david\Source\Repos\AgroNetBackend\Web\bin\Debug\net7.0\Business.pdb
 C:\Users\david\Source\Repos\AgroNetBackend\Web\bin\Debug\net7.0\Utilities.pdb
 C:\Users\david\Source\Repos\AgroNetBackend\Web\bin\Debug\net7.0\Data.pdb
 C:\Users\david\Source\Repos\AgroNetBackend\Web\bin\Debug\net7.0\Entity.pdb
-C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\Web.csproj.AssemblyReference.cache
-C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\Web.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\Web.AssemblyInfoInputs.cache
-C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\Web.AssemblyInfo.cs
-C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\Web.csproj.CoreCompileInputs.cache
-C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\Web.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\Web.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\Web.sourcelink.json
 C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\staticwebassets.development.json
 C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\staticwebassets\msbuild.Web.Microsoft.AspNetCore.StaticWebAssets.props
@@ -283,4 +283,3 @@ C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\refint\Web.dll
 C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\Web.pdb
 C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\Web.genruntimeconfig.cache
 C:\Users\david\Source\Repos\AgroNetBackend\Web\obj\Debug\net7.0\ref\Web.dll
-C:\Users\david\Source\Repos\AgroNetBackend\Web\bin\Debug\net7.0\BCrypt.Net-Next.dll

@@ -14,5 +14,8 @@ namespace Data.Operational.Inferface
          Task<bool> ValidateInsamination(Inseminations entity);
         Task<List<InseminationDto>> GetInseminationAsync(int farmId); 
         public void RegisterAbortion(int inseminationId);
+        public void RegisterBorn(int inseminationId);
+
+        Task<List<InseminationDto>> GetInseminationActive(int farmId);
     }
 }

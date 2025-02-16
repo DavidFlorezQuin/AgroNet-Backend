@@ -12,8 +12,21 @@ using System.Threading.Tasks;
 
 namespace Business.Parameter.services
 {
-    public class CategoryDiseaseBusiness : BaseBusiness<CategoryDisieses, CategoryDiseaseDto>, ICategoryDiseaseBusiness
+    public class CategoryDiseaseBusiness : BaseBusiness<CategoryDiseases, CategoryDiseaseDto>, ICategoryDiseaseBusiness
     {
-        public CategoryDiseaseBusiness(IMapper mapper, ICategoryDiseaseData data) : base(mapper, data) { }
+        private readonly ICategoryDiseaseData _data; 
+        public CategoryDiseaseBusiness(IMapper mapper, ICategoryDiseaseData data) : base(mapper, data) { _data = data; }
+
+        public async Task<List<CategoryDiseaseDto>> GetCategoryDiseaseAsync(int UsersId)
+        {
+            var obj = await _data.GetCategoryDiseaseAsync(UsersId);
+
+            if (obj == null)
+            {
+                throw new InvalidOperationException("No se encontró ningun registro de categoría para el usuario proporcionado.");
+            }
+
+            return obj;
+        }
     }
 }

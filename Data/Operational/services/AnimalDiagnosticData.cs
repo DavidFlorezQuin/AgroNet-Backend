@@ -23,7 +23,7 @@ namespace Data.Operational.services
         public override async Task<AnimalDiagnostics> Save(AnimalDiagnostics entity)
         {
             entity.IsBeingTreated = false;
-            entity.DiseaseStatus = "ENPROCESO";
+            entity.DiseaseStatus = "REGISTRADA";
             entity.state = true;
             entity.created_at = DateTime.Now;
 
@@ -81,7 +81,7 @@ namespace Data.Operational.services
                 throw new Exception("Diagnóstico inactivo");
             }
             diagnostic.state = false;
-            diagnostic.DiseaseStatus = "MUERTA";
+            diagnostic.DiseaseStatus = "FALLECIMIENTO";
 
             if (diagnostic.IsBeingTreated)
             {
@@ -125,7 +125,9 @@ namespace Data.Operational.services
                     Animal = a.Animal.Name,
                     UsersId = a.UsersId,
                     Users = a.Users.username,
-                    state = a.state
+                    state = a.state,
+                    DiseaseStatus = a.DiseaseStatus,
+                    IsBeingTreated = a.IsBeingTreated
                 }).ToListAsync();
 
             return animalDiagnostic; 

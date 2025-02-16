@@ -1,4 +1,5 @@
 ﻿using Data.Operational.Inferface;
+using Entity.Dto.Parameter;
 using Entity.Model.Parameter;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,9 @@ using System.Threading.Tasks;
 
 namespace Data.Parameter.Interface
 {
-    public interface ICategoryDiseaseData : IData<CategoryDisieses>
+    public interface ICategoryDiseaseData : IData<CategoryDiseases>
     {
+        Task<List<CategoryDiseaseDto>> GetCategoryDiseaseAsync(int UsersId);
+
     }
 }

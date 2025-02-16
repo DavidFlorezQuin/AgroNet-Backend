@@ -11,8 +11,9 @@ namespace Entity.Model.Operational
     {
         public int FarmsId { get; set; }
         public Farms Farms { get; set; }
-
         public int UsersId { get; set; }
         public Users Users { get; set; }
+        public bool IsOwner { get; set; }
+        
     }
 }

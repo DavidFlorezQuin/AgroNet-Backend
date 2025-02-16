@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using Business.Exceptions;
 using Business.Operational.Interface;
 using Data.Operational.Inferface;
+using Data.Operational.services;
 using Entity.Dto.Operation;
 using Entity.Model.Operational;
 using System;
@@ -20,6 +22,40 @@ namespace Business.Operational.services
             _inseminationData = data;
         }
 
+
+        public async Task<List<InseminationDto>> GetInseminationActive(int farmId)
+        {
+
+            if (farmId == 0)
+            {
+                throw new FarmNotFoundException();
+            }
+
+            var InseminationAsync = await _inseminationData.GetInseminationActive(farmId);
+
+            if (InseminationAsync == null)
+            {
+                throw new AnimalsNotFoundExceptions();
+            }
+            return InseminationAsync;
+        }        
+        
+        public async Task<List<InseminationDto>> GetInseminationAsync(int farmId)
+        {
+
+            if (farmId == 0)
+            {
+                throw new FarmNotFoundException();
+            }
+
+            var InseminationAsync = await _inseminationData.GetInseminationAsync(farmId);
+
+            if (InseminationAsync == null)
+            {
+                throw new AnimalsNotFoundExceptions();
+            }
+            return InseminationAsync;
+        }
 
         public override async Task<InseminationDto> Save(InseminationDto dto)
         {
@@ -55,6 +91,16 @@ namespace Business.Operational.services
 
             }
             _inseminationData.RegisterAbortion(animalDiagnosticId); 
+        }
+
+        public void RegisterBorn(int animalDiagnosticId)
+        {
+            if (animalDiagnosticId == 0)
+            {
+                throw new ArgumentException("Inseminación no encontrada");
+
+            }
+            _inseminationData.RegisterBorn(animalDiagnosticId);
         }
 
     }

@@ -28,7 +28,7 @@ namespace Data.Operational.services
                     Description = b.Description,
                     state = b.state,
                     Medicines = b.Medicines.Name,
-                    PeriocityDay = b.PeriocityDay,
+                    Periocity = b.Periocity,
                     Treatment = b.Treatment.Name,
                     MedicinesId = b.TreatmentId,
                     TreatmentId = b.TreatmentId
@@ -41,17 +41,18 @@ namespace Data.Operational.services
             var medicine = await context.TreatmentsMedicines
                 .Include(b => b.Treatment)
                 .Include(b => b.Medicines)
-                .Where(b => b.TreatmentId == treatmentId)
+                .Where(b => b.TreatmentId == treatmentId && b.deleted_at == null)
                 .Select(b => new TreatmentMedicineDto
                 {
                     Id = b.Id,
                     Description = b.Description,
                     state = b.state,
                     Medicines = b.Medicines.Name,
-                    PeriocityDay = b.PeriocityDay,
+                    Periocity = b.Periocity,
                     Treatment = b.Treatment.Name,
                     MedicinesId = b.TreatmentId,
-                    TreatmentId = b.TreatmentId
+                    TreatmentId = b.TreatmentId,
+                    Number = b.Number
                 }).ToListAsync();
 
             return medicine; 

@@ -17,7 +17,7 @@ namespace Web.Controllers.Implements.Security
         }
 
 
-        [HttpGet("{id}")]
+        [HttpGet("GetById/{id}")]
         public async Task<ActionResult<PersonDto>> GetById(int id)
         {
             var result = await _personBusiness.GetById(id);

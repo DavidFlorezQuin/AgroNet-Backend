@@ -1,4 +1,5 @@
 ﻿using Entity.Dto.Operation;
+using Entity.Dto.Utilities;
 using Entity.Model.Operational;
 using System;
 using System.Collections.Generic;
@@ -11,5 +12,6 @@ namespace Business.Operational.Interface
     public interface IProductionsBusiness : IBusiness<ProductionDto>
     {
         Task<ProductionDto> Save(ProductionDto dto);
+        Task<List<DataProductionDto>> GetMonthlyMilkProductionAsync(int farmId); 
     }
 }

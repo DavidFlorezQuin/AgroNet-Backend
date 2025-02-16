@@ -10,5 +10,7 @@ namespace Business.Parameter.Interface
 {
     public interface ICategoryAlertBusiness : IBusiness<CategoryAlertDto>
     {
+        Task<List<CategoryAlertDto>> GetCategoryAlertAsync(int UsersId);
+        Task<CategoryAlertDto> SaveAllFarms(CategoryAlertDto dto, int userId);
     }
 }

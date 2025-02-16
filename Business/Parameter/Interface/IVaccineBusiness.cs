@@ -11,5 +11,6 @@ namespace Business.Parameter.Interface
 
     public interface IVaccineBusiness : IBusiness<VaccineDto>
     {
+        Task<List<VaccineDto>> GetVaccineAsync(int UsersId); 
     }
 }

@@ -1,6 +1,7 @@
-﻿using Data.Operational.Inferface;
+﻿    using Data.Operational.Inferface;
 using Entity.Context;
 using Entity.Dto.Operation;
+using Entity.Dto.Utilities;
 using Entity.Model.Operational;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -28,6 +29,7 @@ namespace Data.Operational.services
                     state = b.state,
                     Currency = b.Currency,
                     Production = b.Production.TypeProduction,
+                    Animal = b.Production.Animal.Name,
                     Measurement = b.Measurement,
                     Price = b.Price,
                     Quantity = b.Quantity,
@@ -50,9 +52,53 @@ namespace Data.Operational.services
 
         public async Task<Sales> SaveAsync(Sales sales)
         {
+            var moneda = await context.Productions
+            .Where(a => a.Id == sales.ProductionId)
+            .Select(a => a.Animal.Lot.Farm.City.Departament.Country.Simbolo)
+            .FirstOrDefaultAsync();
+
+            if (moneda == null)
+            {
+                throw new Exception("No se encontró la moneda asociada.");
+            }
+
+            sales.Currency = moneda;
+            sales.created_at = DateTime.UtcNow;
             context.Sales.Add(sales);
             await context.SaveChangesAsync();
             return sales; 
+        }
+
+        public async Task<List<DataProductionDto>> GetMonthlySale(int farmId)
+        {
+            var today = DateTime.Today;
+            var startDate = today.AddMonths(-5);
+            var endDate = today.AddDays(1).AddTicks(-1);
+
+            var milkProductions = await context.Sales
+                .Where(
+                p => p.Production.Animal.Lot.Farm.Id == farmId
+                && p.created_at >= startDate &&
+                p.created_at <= endDate
+                )
+                .GroupBy(p => p.created_at.Month)
+                .Select(g => new
+                {
+                    MesNumero = g.Key, // Guardamos el número del mes
+                    Total = g.Sum(p => p.Price)
+                })
+                .OrderBy(g => g.MesNumero)
+                .ToListAsync();
+
+            var result = milkProductions
+                .Select(g => new DataProductionDto
+                {
+                    Mes = new DateTime(1, g.MesNumero, 1).ToString("MMMM"), // Formato de mes en cliente
+                    Litros = g.Total
+                })
+                .ToList();
+
+            return result;
         }
 
     }

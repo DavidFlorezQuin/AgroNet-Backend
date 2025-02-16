@@ -13,7 +13,8 @@ namespace Entity.Model.Operational
         public double Quantity { get; set; }
         public string Measurement { get; set; }
         public int ProductionId { get; set; }
-        public Productions Production { get; set; }
+        public Productions? Production { get; set; }
+        public Animals? Animal { get; set; }
         public string Currency { get; set; }
     }
 }

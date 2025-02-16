@@ -8,7 +8,6 @@ namespace Entity.Dto.Localitation
 {
     public class DepartamentDto : BaseDto
     {
-        public string code { get; set; }
         public string name { get; set; }
         public int CountryId { get; set; }
     }

@@ -23,8 +23,6 @@ using Entity.Context;
 using Microsoft.EntityFrameworkCore;
 using Utilities;
 
-
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -77,8 +75,6 @@ builder.Services.AddScoped<ISentEmailPassword, SendEmailPassword>();
 
 //LOCALITATION
 
-builder.Services.AddScoped<IContinentBusiness, ContinentBusiness>();
-builder.Services.AddScoped<IContinentData, ContinentData>();
 
 builder.Services.AddScoped<ICountryBusiness, CountryBusiness>();
 builder.Services.AddScoped<ICountryData, CountryData>();

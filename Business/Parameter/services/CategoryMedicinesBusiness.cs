@@ -14,6 +14,19 @@ namespace Business.Parameter.services
 {
     public class CategoryMedicinesBusiness : BaseBusiness<CategoryMedicines, CategoryMedicinesDto>, ICategoryMedicinesBusiness
     {
-        public CategoryMedicinesBusiness(IMapper mapper, ICategoryMedicinesData data) : base(mapper, data) { }
+        private readonly ICategoryMedicinesData _data; 
+        public CategoryMedicinesBusiness(IMapper mapper, ICategoryMedicinesData data) : base(mapper, data) { _data = data; }
+
+        public async Task<List<CategoryMedicinesDto>> GetCategoryMedicinesAsync(int UsersId)
+        {
+            var obj = await _data.GetCategoryMedicinesAsync(UsersId);
+
+            if (obj == null)
+            {
+                throw new InvalidOperationException("No se encontró ningun registro de categoría para el usuario proporcionado.");
+            }
+
+            return obj;
+        }
     }
 }

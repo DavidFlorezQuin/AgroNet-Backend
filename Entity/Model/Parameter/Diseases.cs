@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Entity.Model.Operational;
+using Entity.Model.Security;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +12,8 @@ namespace Entity.Model.Parameter
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public int CategoryDisiesesId { get; set; }
-        public CategoryDisieses CategoryDisieses { get; set; }
+        public int CategoryDiseasesId { get; set; }
+        public CategoryDiseases CategoryDiseases { get; set; }
+
     }
 }

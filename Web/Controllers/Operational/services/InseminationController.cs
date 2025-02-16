@@ -11,46 +11,59 @@ namespace Web.Controllers.Operational.services
 
     public class InseminationController : BaseController<InseminationDto, IInseminationBusiness>
     {
-        private readonly IInseminationData _data;
 
         private readonly IInseminationBusiness _inseminationBusiness;
-        public InseminationController(IInseminationBusiness inseminationBusiness, IInseminationData data) : base(inseminationBusiness)
+        public InseminationController(IInseminationBusiness inseminationBusiness) : base(inseminationBusiness)
         {
-            _data = data;
             _inseminationBusiness = inseminationBusiness;
         }
 
         [HttpGet("datatable/{farmId}")]
-        public async Task<ActionResult<List<InseminationDto>>> GetAlerts(int farmId)
+        public async Task<ActionResult<List<InseminationDto>>> GetInseminationAsync(int farmId)
         {
             try
             {
-                var insemination = await _data.GetInseminationAsync(farmId);
+                var insemination = await _inseminationBusiness.GetInseminationAsync(farmId);
 
-                // Verificar si la lista está vacía
                 if (insemination == null || insemination.Count == 0)
                 {
                     return Ok(new ApiResponse<List<InseminationDto>>(true, "No alerts found for the specified farm.", new List<InseminationDto>()));
-
                 }
 
-                // Devolver la lista de alertas
                 return Ok(new ApiResponse<List<InseminationDto>>(true, "Entities retrieved successfully", insemination));
             }
             catch (Exception ex)
             {
-                // Manejo de excepciones
                 return StatusCode(500, $"Error al obtener las alertas: {ex.Message}");
             }
+        }        
 
+            [HttpGet("active/{farmId}")]
+            public async Task<ActionResult<List<InseminationDto>>> GetInseminationActive(int farmId)
+            {
+                try
+                {
+                    var insemination = await _inseminationBusiness.GetInseminationActive(farmId);
 
-        }
+                    if (insemination == null || insemination.Count == 0)
+                    {
+                        return Ok(new ApiResponse<List<InseminationDto>>(true, "No alerts found for the specified farm.", new List<InseminationDto>()));
+                    }
+
+                    return Ok(new ApiResponse<List<InseminationDto>>(true, "Entities retrieved successfully", insemination));
+                }
+                catch (Exception ex)
+                {
+                    return StatusCode(500, $"Error al obtener las alertas: {ex.Message}");
+                }
+            }
+
         [HttpPut("{inseminationId}/abortion")]
         public IActionResult RegisterAbortion(int inseminationId)
         {
             try
             {
-                _data.RegisterAbortion(inseminationId);
+                _inseminationBusiness.RegisterAbortion(inseminationId);
                 return Ok(new ApiResponse<bool>(true, "Aborto registrado exitosamente."));
             }
             catch (ArgumentException ex)
@@ -59,6 +72,21 @@ namespace Web.Controllers.Operational.services
             }
 
         }
+        [HttpPut("{inseminationId}/born")]
+        public IActionResult RegisterBorn(int inseminationId)
+        {
+            try
+            {
+                _inseminationBusiness.RegisterBorn(inseminationId);
+                return Ok(new ApiResponse<bool>(true, "Aborto registrado exitosamente."));
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new ApiResponse<bool>(false, ex.Message));
+            }
+
+        }
+
     }
 }
 

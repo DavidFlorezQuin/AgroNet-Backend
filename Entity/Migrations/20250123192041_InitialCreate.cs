@@ -6,20 +6,20 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Entity.Migrations
 {
     /// <inheritdoc />
-    public partial class datas : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "CategoryAlert",
+                name: "Country",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Color = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CountryCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ContinentId = table.Column<int>(type: "int", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     created_by = table.Column<int>(type: "int", nullable: true),
                     updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -30,91 +30,7 @@ namespace Entity.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CategoryAlert", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CategoryDisieses",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    created_by = table.Column<int>(type: "int", nullable: true),
-                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    updated_by = table.Column<int>(type: "int", nullable: true),
-                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    deleted_by = table.Column<int>(type: "int", nullable: true),
-                    state = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CategoryDisieses", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CategoryMedicines",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    created_by = table.Column<int>(type: "int", nullable: true),
-                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    updated_by = table.Column<int>(type: "int", nullable: true),
-                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    deleted_by = table.Column<int>(type: "int", nullable: true),
-                    state = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CategoryMedicines", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CategorySupplies",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    created_by = table.Column<int>(type: "int", nullable: true),
-                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    updated_by = table.Column<int>(type: "int", nullable: true),
-                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    deleted_by = table.Column<int>(type: "int", nullable: true),
-                    state = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CategorySupplies", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Continent",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    created_by = table.Column<int>(type: "int", nullable: true),
-                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    updated_by = table.Column<int>(type: "int", nullable: true),
-                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    deleted_by = table.Column<int>(type: "int", nullable: true),
-                    state = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Continent", x => x.Id);
+                    table.PrimaryKey("PK_Country", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -126,6 +42,7 @@ namespace Entity.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Orders = table.Column<int>(type: "int", nullable: false),
+                    Icon = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     created_by = table.Column<int>(type: "int", nullable: true),
                     updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -189,17 +106,13 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Vaccines",
+                name: "Departament",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DosesRequired = table.Column<int>(type: "int", nullable: false),
-                    RefuerzoPeriod = table.Column<int>(type: "int", nullable: false),
-                    Contraindications = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TypeVaccine = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CountryId = table.Column<int>(type: "int", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     created_by = table.Column<int>(type: "int", nullable: true),
                     updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -210,117 +123,11 @@ namespace Entity.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Vaccines", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Diseases",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CategoryDisiesesId = table.Column<int>(type: "int", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    created_by = table.Column<int>(type: "int", nullable: true),
-                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    updated_by = table.Column<int>(type: "int", nullable: true),
-                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    deleted_by = table.Column<int>(type: "int", nullable: true),
-                    state = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Diseases", x => x.Id);
+                    table.PrimaryKey("PK_Departament", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Diseases_CategoryDisieses_CategoryDisiesesId",
-                        column: x => x.CategoryDisiesesId,
-                        principalTable: "CategoryDisieses",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Medicines",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Administration = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CategoryMedicinesId = table.Column<int>(type: "int", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    created_by = table.Column<int>(type: "int", nullable: true),
-                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    updated_by = table.Column<int>(type: "int", nullable: true),
-                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    deleted_by = table.Column<int>(type: "int", nullable: true),
-                    state = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Medicines", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Medicines_CategoryMedicines_CategoryMedicinesId",
-                        column: x => x.CategoryMedicinesId,
-                        principalTable: "CategoryMedicines",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Supplies",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CategorySuppliesId = table.Column<int>(type: "int", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    created_by = table.Column<int>(type: "int", nullable: true),
-                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    updated_by = table.Column<int>(type: "int", nullable: true),
-                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    deleted_by = table.Column<int>(type: "int", nullable: true),
-                    state = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Supplies", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Supplies_CategorySupplies_CategorySuppliesId",
-                        column: x => x.CategorySuppliesId,
-                        principalTable: "CategorySupplies",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Country",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CountryCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ContinentId = table.Column<int>(type: "int", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    created_by = table.Column<int>(type: "int", nullable: true),
-                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    updated_by = table.Column<int>(type: "int", nullable: true),
-                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    deleted_by = table.Column<int>(type: "int", nullable: true),
-                    state = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Country", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Country_Continent_ContinentId",
-                        column: x => x.ContinentId,
-                        principalTable: "Continent",
+                        name: "FK_Departament_Country_CountryId",
+                        column: x => x.CountryId,
+                        principalTable: "Country",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -385,14 +192,14 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Departament",
+                name: "City",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    code = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CountryId = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DepartamentId = table.Column<int>(type: "int", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     created_by = table.Column<int>(type: "int", nullable: true),
                     updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -403,11 +210,11 @@ namespace Entity.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Departament", x => x.Id);
+                    table.PrimaryKey("PK_City", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Departament_Country_CountryId",
-                        column: x => x.CountryId,
-                        principalTable: "Country",
+                        name: "FK_City_Departament_DepartamentId",
+                        column: x => x.DepartamentId,
+                        principalTable: "Departament",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -479,34 +286,6 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "City",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DepartamentId = table.Column<int>(type: "int", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    created_by = table.Column<int>(type: "int", nullable: true),
-                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    updated_by = table.Column<int>(type: "int", nullable: true),
-                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    deleted_by = table.Column<int>(type: "int", nullable: true),
-                    state = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_City", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_City_Departament_DepartamentId",
-                        column: x => x.DepartamentId,
-                        principalTable: "Departament",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Farms",
                 columns: table => new
                 {
@@ -515,6 +294,7 @@ namespace Entity.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Hectare = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Code = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Photo = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CityId = table.Column<int>(type: "int", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -537,6 +317,119 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "CategoryAlert",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Color = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FarmsId = table.Column<int>(type: "int", nullable: false),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    created_by = table.Column<int>(type: "int", nullable: true),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    updated_by = table.Column<int>(type: "int", nullable: true),
+                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    deleted_by = table.Column<int>(type: "int", nullable: true),
+                    state = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CategoryAlert", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CategoryAlert_Farms_FarmsId",
+                        column: x => x.FarmsId,
+                        principalTable: "Farms",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CategoryDiseases",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FarmsId = table.Column<int>(type: "int", nullable: false),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    created_by = table.Column<int>(type: "int", nullable: true),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    updated_by = table.Column<int>(type: "int", nullable: true),
+                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    deleted_by = table.Column<int>(type: "int", nullable: true),
+                    state = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CategoryDiseases", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CategoryDiseases_Farms_FarmsId",
+                        column: x => x.FarmsId,
+                        principalTable: "Farms",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CategoryMedicines",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FarmsId = table.Column<int>(type: "int", nullable: false),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    created_by = table.Column<int>(type: "int", nullable: true),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    updated_by = table.Column<int>(type: "int", nullable: true),
+                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    deleted_by = table.Column<int>(type: "int", nullable: true),
+                    state = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CategoryMedicines", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CategoryMedicines_Farms_FarmsId",
+                        column: x => x.FarmsId,
+                        principalTable: "Farms",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CategorySupplies",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FarmsId = table.Column<int>(type: "int", nullable: false),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    created_by = table.Column<int>(type: "int", nullable: true),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    updated_by = table.Column<int>(type: "int", nullable: true),
+                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    deleted_by = table.Column<int>(type: "int", nullable: true),
+                    state = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CategorySupplies", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CategorySupplies_Farms_FarmsId",
+                        column: x => x.FarmsId,
+                        principalTable: "Farms",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "FarmUsers",
                 columns: table => new
                 {
@@ -544,6 +437,7 @@ namespace Entity.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FarmsId = table.Column<int>(type: "int", nullable: false),
                     UsersId = table.Column<int>(type: "int", nullable: false),
+                    IsOwner = table.Column<bool>(type: "bit", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     created_by = table.Column<int>(type: "int", nullable: true),
                     updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -626,6 +520,167 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Vaccines",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DosesRequired = table.Column<int>(type: "int", nullable: false),
+                    RefuerzoPeriod = table.Column<int>(type: "int", nullable: false),
+                    Contraindications = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TypeVaccine = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FarmsId = table.Column<int>(type: "int", nullable: false),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    created_by = table.Column<int>(type: "int", nullable: true),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    updated_by = table.Column<int>(type: "int", nullable: true),
+                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    deleted_by = table.Column<int>(type: "int", nullable: true),
+                    state = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Vaccines", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Vaccines_Farms_FarmsId",
+                        column: x => x.FarmsId,
+                        principalTable: "Farms",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Diseases",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CategoryDiseasesId = table.Column<int>(type: "int", nullable: false),
+                    FarmsId = table.Column<int>(type: "int", nullable: false),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    created_by = table.Column<int>(type: "int", nullable: true),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    updated_by = table.Column<int>(type: "int", nullable: true),
+                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    deleted_by = table.Column<int>(type: "int", nullable: true),
+                    state = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Diseases", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Diseases_CategoryDiseases_CategoryDiseasesId",
+                        column: x => x.CategoryDiseasesId,
+                        principalTable: "CategoryDiseases",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Diseases_Farms_FarmsId",
+                        column: x => x.FarmsId,
+                        principalTable: "Farms",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Medicines",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Administration = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CategoryMedicinesId = table.Column<int>(type: "int", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    created_by = table.Column<int>(type: "int", nullable: true),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    updated_by = table.Column<int>(type: "int", nullable: true),
+                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    deleted_by = table.Column<int>(type: "int", nullable: true),
+                    state = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Medicines", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Medicines_CategoryMedicines_CategoryMedicinesId",
+                        column: x => x.CategoryMedicinesId,
+                        principalTable: "CategoryMedicines",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Supplies",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CategorySuppliesId = table.Column<int>(type: "int", nullable: false),
+                    FarmsId = table.Column<int>(type: "int", nullable: false),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    created_by = table.Column<int>(type: "int", nullable: true),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    updated_by = table.Column<int>(type: "int", nullable: true),
+                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    deleted_by = table.Column<int>(type: "int", nullable: true),
+                    state = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Supplies", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Supplies_CategorySupplies_CategorySuppliesId",
+                        column: x => x.CategorySuppliesId,
+                        principalTable: "CategorySupplies",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Supplies_Farms_FarmsId",
+                        column: x => x.FarmsId,
+                        principalTable: "Farms",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Animals",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Weight = table.Column<double>(type: "float", nullable: false),
+                    Photo = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Race = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    purpose = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    birthDay = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    LotId = table.Column<int>(type: "int", nullable: false),
+                    InProduction = table.Column<bool>(type: "bit", nullable: true),
+                    DurationProduction = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    created_by = table.Column<int>(type: "int", nullable: true),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    updated_by = table.Column<int>(type: "int", nullable: true),
+                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    deleted_by = table.Column<int>(type: "int", nullable: true),
+                    state = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Animals", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Animals_Lots_LotId",
+                        column: x => x.LotId,
+                        principalTable: "Lots",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "InventorySupplies",
                 columns: table => new
                 {
@@ -656,75 +711,6 @@ namespace Entity.Migrations
                         name: "FK_InventorySupplies_Supplies_SuppliesId",
                         column: x => x.SuppliesId,
                         principalTable: "Supplies",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Animals",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Weight = table.Column<double>(type: "float", nullable: false),
-                    Photo = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Race = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    purpose = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    birthDay = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LotId = table.Column<int>(type: "int", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    created_by = table.Column<int>(type: "int", nullable: true),
-                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    updated_by = table.Column<int>(type: "int", nullable: true),
-                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    deleted_by = table.Column<int>(type: "int", nullable: true),
-                    state = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Animals", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Animals_Lots_LotId",
-                        column: x => x.LotId,
-                        principalTable: "Lots",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "InventoryRecords",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Amount = table.Column<int>(type: "int", nullable: false),
-                    Measure = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TransactionType = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UsersId = table.Column<int>(type: "int", nullable: false),
-                    InventorySuppliesId = table.Column<int>(type: "int", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    created_by = table.Column<int>(type: "int", nullable: true),
-                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    updated_by = table.Column<int>(type: "int", nullable: true),
-                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    deleted_by = table.Column<int>(type: "int", nullable: true),
-                    state = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_InventoryRecords", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_InventoryRecords_InventorySupplies_InventorySuppliesId",
-                        column: x => x.InventorySuppliesId,
-                        principalTable: "InventorySupplies",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_InventoryRecords_Users_UsersId",
-                        column: x => x.UsersId,
-                        principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -769,14 +755,12 @@ namespace Entity.Migrations
                         name: "FK_Alerts_Farms_FarmsId",
                         column: x => x.FarmsId,
                         principalTable: "Farms",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Alerts_Users_UsersId",
                         column: x => x.UsersId,
                         principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -824,7 +808,6 @@ namespace Entity.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Price = table.Column<double>(type: "float", nullable: false),
                     Currency = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SaleDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     AnimalsId = table.Column<int>(type: "int", nullable: false),
                     Weight = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -892,8 +875,8 @@ namespace Entity.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TypeProduction = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Stock = table.Column<double>(type: "float", nullable: false),
-                    Measurement = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Measurement = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     QuantityTotal = table.Column<double>(type: "float", nullable: false),
                     ExpirateDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     AnimalId = table.Column<int>(type: "int", nullable: false),
@@ -941,12 +924,46 @@ namespace Entity.Migrations
                         name: "FK_VaccineAnimals_Animals_AnimalId",
                         column: x => x.AnimalId,
                         principalTable: "Animals",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_VaccineAnimals_Vaccines_VaccinesId",
                         column: x => x.VaccinesId,
                         principalTable: "Vaccines",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "InventoryRecords",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Amount = table.Column<int>(type: "int", nullable: false),
+                    Measure = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TransactionType = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UsersId = table.Column<int>(type: "int", nullable: false),
+                    InventorySuppliesId = table.Column<int>(type: "int", nullable: false),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    created_by = table.Column<int>(type: "int", nullable: true),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    updated_by = table.Column<int>(type: "int", nullable: true),
+                    deleted_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    deleted_by = table.Column<int>(type: "int", nullable: true),
+                    state = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_InventoryRecords", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_InventoryRecords_InventorySupplies_InventorySuppliesId",
+                        column: x => x.InventorySuppliesId,
+                        principalTable: "InventorySupplies",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_InventoryRecords_Users_UsersId",
+                        column: x => x.UsersId,
+                        principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -989,11 +1006,10 @@ namespace Entity.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Assistence = table.Column<bool>(type: "bit", nullable: false),
-                    Result = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Result = table.Column<bool>(type: "bit", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     BirthWeight = table.Column<double>(type: "float", nullable: true),
                     InseminationId = table.Column<int>(type: "int", nullable: false),
-                    AnimalId = table.Column<int>(type: "int", nullable: true),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     created_by = table.Column<int>(type: "int", nullable: true),
                     updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -1005,12 +1021,6 @@ namespace Entity.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Births", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Births_Animals_AnimalId",
-                        column: x => x.AnimalId,
-                        principalTable: "Animals",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Births_Inseminations_InseminationId",
                         column: x => x.InseminationId,
@@ -1029,6 +1039,7 @@ namespace Entity.Migrations
                     Quantity = table.Column<double>(type: "float", nullable: false),
                     Measurement = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProductionId = table.Column<int>(type: "int", nullable: false),
+                    AnimalId = table.Column<int>(type: "int", nullable: true),
                     Currency = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     created_by = table.Column<int>(type: "int", nullable: true),
@@ -1041,6 +1052,11 @@ namespace Entity.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Sales", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Sales_Animals_AnimalId",
+                        column: x => x.AnimalId,
+                        principalTable: "Animals",
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Sales_Productions_ProductionId",
                         column: x => x.ProductionId,
@@ -1056,7 +1072,8 @@ namespace Entity.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PeriocityDay = table.Column<int>(type: "int", nullable: false),
+                    Periocity = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Number = table.Column<int>(type: "int", nullable: false),
                     MedicinesId = table.Column<int>(type: "int", nullable: false),
                     TreatmentId = table.Column<int>(type: "int", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -1125,14 +1142,29 @@ namespace Entity.Migrations
                 column: "AnimalsId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Births_AnimalId",
-                table: "Births",
-                column: "AnimalId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Births_InseminationId",
                 table: "Births",
                 column: "InseminationId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CategoryAlert_FarmsId",
+                table: "CategoryAlert",
+                column: "FarmsId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CategoryDiseases_FarmsId",
+                table: "CategoryDiseases",
+                column: "FarmsId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CategoryMedicines_FarmsId",
+                table: "CategoryMedicines",
+                column: "FarmsId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CategorySupplies_FarmsId",
+                table: "CategorySupplies",
+                column: "FarmsId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_City_DepartamentId",
@@ -1140,19 +1172,19 @@ namespace Entity.Migrations
                 column: "DepartamentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Country_ContinentId",
-                table: "Country",
-                column: "ContinentId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Departament_CountryId",
                 table: "Departament",
                 column: "CountryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Diseases_CategoryDisiesesId",
+                name: "IX_Diseases_CategoryDiseasesId",
                 table: "Diseases",
-                column: "CategoryDisiesesId");
+                column: "CategoryDiseasesId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Diseases_FarmsId",
+                table: "Diseases",
+                column: "FarmsId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Farms_CityId",
@@ -1230,6 +1262,11 @@ namespace Entity.Migrations
                 column: "ViewId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Sales_AnimalId",
+                table: "Sales",
+                column: "AnimalId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Sales_ProductionId",
                 table: "Sales",
                 column: "ProductionId");
@@ -1238,6 +1275,11 @@ namespace Entity.Migrations
                 name: "IX_Supplies_CategorySuppliesId",
                 table: "Supplies",
                 column: "CategorySuppliesId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Supplies_FarmsId",
+                table: "Supplies",
+                column: "FarmsId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Treatments_AnimalDiagnosticsId",
@@ -1273,6 +1315,11 @@ namespace Entity.Migrations
                 name: "IX_VaccineAnimals_VaccinesId",
                 table: "VaccineAnimals",
                 column: "VaccinesId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Vaccines_FarmsId",
+                table: "Vaccines",
+                column: "FarmsId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Views_ModuloId",
@@ -1323,7 +1370,7 @@ namespace Entity.Migrations
                 name: "Inseminations");
 
             migrationBuilder.DropTable(
-                name: "CategoryDisieses");
+                name: "CategoryDiseases");
 
             migrationBuilder.DropTable(
                 name: "InventorySupplies");
@@ -1387,9 +1434,6 @@ namespace Entity.Migrations
 
             migrationBuilder.DropTable(
                 name: "Country");
-
-            migrationBuilder.DropTable(
-                name: "Continent");
         }
     }
 }

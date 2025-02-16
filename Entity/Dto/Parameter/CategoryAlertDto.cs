@@ -11,5 +11,7 @@ namespace Entity.Dto.Parameter
         public string Name { get; set; }
         public string Description { get; set; }
         public string Color { get; set; }
+        public int FarmsId { get; set; }
+
     }
 }

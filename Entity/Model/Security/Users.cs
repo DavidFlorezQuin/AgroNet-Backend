@@ -12,8 +12,9 @@ namespace Entity.Model.Security
 
         public int PersonId { get; set; }
         public Person Person { get; set; }
-        public string password { get; set;  }
+        public string password { get; set; }
         public string? ResetPasswordToken { get; set; }
+        public byte[]? photo { get; set; }
         public DateTime? ResetPasswordTokenExpiration { get; set; }
         public ICollection<UserRole> UserRoles { get; set; }
 

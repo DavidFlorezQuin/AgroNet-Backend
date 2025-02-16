@@ -10,5 +10,6 @@ namespace Business.Parameter.Interface
 {
     public interface ISuppliesBusiness : IBusiness<SuppliesDto>
     {
+        public Task<List<SuppliesDto>> GetSuppliesAsync(int userId);
     }
 }

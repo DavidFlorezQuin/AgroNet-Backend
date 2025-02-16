@@ -13,6 +13,7 @@ namespace Entity.Model.Operational
         public string Name { get; set; }
         public int Hectare { get; set; }
         public string Description   { get; set; }
+        public string Code { get; set; }
         public string Photo { get; set; }
         public int CityId { get; set; }
         public City City { get; set; }

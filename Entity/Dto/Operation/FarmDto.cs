@@ -13,6 +13,7 @@ namespace Entity.Dto.Operation
         public string Name { get; set; }
         public int Hectare { get; set; }
         public string Description { get; set; }
+        public string Code { get; set; }
         public string Photo { get; set; }
         public int CityId { get; set; }
 

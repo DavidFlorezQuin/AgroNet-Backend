@@ -12,6 +12,8 @@ namespace Entity.Dto.Security
         public string Name { get; set; }
         public string Description { get; set; }
         public int Orders { get; set; }
+        public string? Icon { get; set; }
+
         public List<ViewDto> Views { get; set; } = new List<ViewDto>();
 
 

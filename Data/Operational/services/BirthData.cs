@@ -19,9 +19,8 @@ namespace Data.Operational.services
         public async Task<List<BirthDto>> GetBirthAsync(int i)
         {
             var births = await context.Births
-                .Include(b => b.Animal)
                 .Where(b => b.deleted_at == null && b.Insemination.Mother.Lot.Farm.Id == i && b.Insemination.Mother.Lot.Farm.state == true)
-                .Select( b => new BirthDto
+                .Select(b => new BirthDto
                 {
                     Id = b.Id,
                     Assistence = b.Assistence,
@@ -29,22 +28,25 @@ namespace Data.Operational.services
                     Description = b.Description,
                     Result = b.Result,
                     InseminationId = b.InseminationId,
-                    AnimalId = b.AnimalId, 
-                    Animal = b.Animal.Name,
-                    state = b.state
+                    state = b.state, 
+                    Created_at = b.created_at,
+                    Insemination = b.Insemination.Mother.Name
                 }).ToListAsync();
 
-            return births; 
+            return births;
 
         }
         public override async Task<Births> Save(Births entity)
         {
+            entity.created_at = DateTime.Now;
+
             var insemination = await context.Inseminations
                 .FirstOrDefaultAsync(i => i.Id == entity.InseminationId);
 
             if (insemination == null)
+            {
                 throw new Exception("Inseminación no encontrada.");
-
+            }
             insemination.state = false;
 
             context.Inseminations.Update(insemination);
@@ -54,8 +56,7 @@ namespace Data.Operational.services
             await context.SaveChangesAsync();
 
             return entity;
+
         }
-
-
     }
 }

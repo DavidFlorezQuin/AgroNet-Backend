@@ -14,6 +14,19 @@ namespace Business.Parameter.services
 {
     public class CategorySuppliesBusiness : BaseBusiness<CategorySupplies, CategorySuppliesDto>, ICategorySuppliesBusiness
     {
-        public CategorySuppliesBusiness(IMapper mapper, ICategorySuppliesData data) : base (mapper, data){ }
+        private readonly ICategorySuppliesData _data;
+        public CategorySuppliesBusiness(IMapper mapper, ICategorySuppliesData data) : base (mapper, data){ _data = data; }
+
+        public async Task<List<CategorySuppliesDto>> GetCategorySuppliesAsync(int UsersId)
+        {
+            var obj = await _data.GetCategorySuppliesAsync(UsersId);
+
+            if (obj == null)
+            {
+                throw new InvalidOperationException("No se encontró ningun registro de categoría para el usuario proporcionado.");
+            }
+
+            return obj;
+        }
     }
 }

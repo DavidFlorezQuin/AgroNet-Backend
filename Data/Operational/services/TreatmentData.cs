@@ -17,6 +17,8 @@ namespace Data.Operational.services
 
         public override async Task<Treatments> Save(Treatments entity){
 
+
+
             entity.state = true;
             entity.created_at = DateTime.Now;
             entity.Result = "ENPROCESO";
@@ -34,6 +36,7 @@ namespace Data.Operational.services
             }
 
             diagnostic.IsBeingTreated = true;
+            diagnostic.DiseaseStatus = "ENPROCESO"; 
 
             context.AnimalDiagnostics.Update(diagnostic);
             context.Treatments.Add(entity);

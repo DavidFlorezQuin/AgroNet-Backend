@@ -14,6 +14,21 @@ namespace Business.Parameter.services
 {
     public class DiseaseBusiness : BaseBusiness<Diseases, DiseaseDto>, IDiseaseBusiness
     {
-        public DiseaseBusiness(IMapper mapper, IDiseaseData data): base(mapper, data) { }
+        private readonly IDiseaseData _data;
+        public DiseaseBusiness(IMapper mapper, IDiseaseData data): base(mapper, data) {
+            _data = data; 
+        }
+
+        public async Task<List<DiseaseDto>> GetDiseaseAsync(int UsersId)
+        {
+            var enfermedad = await _data.GetDiseaseAsync(UsersId);
+
+            if (enfermedad == null)
+            {
+                throw new InvalidOperationException("No se encontró ningun registro de enfermedad para el usuario proporcionado.");
+            }
+
+            return enfermedad;
+        }
     }
 }

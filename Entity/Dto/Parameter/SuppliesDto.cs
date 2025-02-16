@@ -12,5 +12,7 @@ namespace Entity.Dto.Parameter
         public string Description { get; set; }
         public int CategorySuppliesId { get; set; }
         public string? CategorySupplies { get; set; }
+        public int FarmsId { get; set; }
+
     }
 }

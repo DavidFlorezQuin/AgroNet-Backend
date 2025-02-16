@@ -10,9 +10,9 @@ namespace Entity.Model.Dto.Localitation
     public class CountryDto : BaseDto
     {
         public string Name { get; set; }
-
+        public string Moneda { get; set; }
+        public string Simbolo { get; set; }
         public string CountryCode { get; set; }
-
         public int ContinentId { get; set; }
 
     }

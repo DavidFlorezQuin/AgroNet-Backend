@@ -1,6 +1,7 @@
 ﻿using Data.Operational.Inferface;
 using Entity.Context;
 using Entity.Dto.Operation;
+using Entity.Dto.Utilities;
 using Entity.Model.Operational;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -51,6 +52,40 @@ namespace Data.Operational.services
 
             return production; 
         }
+
+        public async Task<List<DataProductionDto>> GetMonthlyMilkProductionAsync(int farmId)
+        {
+            var today = DateTime.Today; 
+            var startDate = today.AddMonths(-5);
+            var endDate = today.AddDays(1).AddTicks(-1);
+
+            var milkProductions = await context.Productions
+                .Where(
+                p => p.Animal.Lot.Farm.Id == farmId
+                && p.TypeProduction == "LECHE"
+                && p.created_at >= startDate && 
+                p.created_at <= endDate
+                )
+                .GroupBy(p => p.created_at.Month)
+                .Select(g => new
+                {
+                    MesNumero = g.Key, // Guardamos el número del mes
+                    Litros = g.Sum(p => p.QuantityTotal)
+                })
+                .OrderBy(g => g.MesNumero)
+                .ToListAsync();
+
+            var result = milkProductions
+                .Select(g => new DataProductionDto
+                {
+                    Mes = new DateTime(1, g.MesNumero, 1).ToString("MMMM"), // Formato de mes en cliente
+                    Litros = g.Litros
+                })
+                .ToList();
+
+            return result;
+        }
+
 
     }
 }

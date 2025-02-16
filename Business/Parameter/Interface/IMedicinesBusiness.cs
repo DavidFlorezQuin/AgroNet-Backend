@@ -10,5 +10,7 @@ namespace Business.Parameter.Interface
 {
     public interface IMedicinesBusiness : IBusiness<MedicinesDto>
     {
+        Task<List<MedicinesDto>> GetMedicineAsync(int UsersId);
+
     }
 }

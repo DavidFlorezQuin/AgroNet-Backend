@@ -11,6 +11,10 @@ namespace Business.Operational.Interface
     {
         Task<InseminationDto> Save(InseminationDto dto);
         public void RegisterAbortion(int inseminationId);
+        public void RegisterBorn(int inseminationId);
+        Task<List<InseminationDto>> GetInseminationAsync(int farmId);
+        Task<List<InseminationDto>> GetInseminationActive(int farmId);
+
 
     }
 }

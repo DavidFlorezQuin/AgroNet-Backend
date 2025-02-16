@@ -14,6 +14,21 @@ namespace Business.Parameter.services
 {
     public class MedicinesBusiness : BaseBusiness<Medicines, MedicinesDto>, IMedicinesBusiness
     {
-        public MedicinesBusiness(IMapper mapper, IMedicinesData data) : base (mapper, data ){ }
+        private readonly IMedicinesData _data;
+
+        public MedicinesBusiness(IMapper mapper, IMedicinesData data) : base (mapper, data ){
+            _data = data; 
+        }
+        public async Task<List<MedicinesDto>> GetMedicineAsync(int UsersId)
+        {
+            var medicine = await _data.GetMedicineAsync(UsersId);
+
+            if (medicine == null)
+            {
+                throw new InvalidOperationException("No se encontró ningun registro de medicina para el usuario proporcionado.");
+            }
+
+            return medicine;
+        }
     }
 }

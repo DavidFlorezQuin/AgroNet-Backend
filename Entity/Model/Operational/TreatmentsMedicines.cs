@@ -10,10 +10,9 @@ namespace Entity.Model.Operational
     public class TreatmentsMedicines : ABaseModel
     {
         public string Description { get; set; }
-        public int PeriocityDay { get; set; }
-
+        public string Periocity { get; set; }
+        public int Number { get; set; }
         public int MedicinesId { get; set; }
-
         public Medicines Medicines { get; set; }
         public int TreatmentId { get; set; }
         public Treatments Treatment { get; set; }

@@ -13,5 +13,7 @@ namespace Entity.Dto.Operation
         public int UsersId { get; set; }
         public string? Farm { get; set; }
         public string? Users { get; set; }
+        public bool IsOwner { get; set; }
+
     }
 }

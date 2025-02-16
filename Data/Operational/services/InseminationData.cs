@@ -50,7 +50,30 @@ namespace Data.Operational.services
             var Insemination = await context.Inseminations
                 .Include(i => i.Semen)
                 .Include(i => i.Mother)
-                .Where(i => i.deleted_at == null && i.Mother.Lot.Farm.Id == farmId && i.Mother.Lot.Farm.state == true) // Filtra por farmId y estado activo de la finca
+                .Where(i => i.deleted_at == null && i.Mother.Lot.Farm.Id == farmId && i.Mother.Lot.Farm.state == true) 
+                .Select(i => new InseminationDto
+                {
+                    Id = i.Id,
+                    EstimatedBirthDate = i.EstimatedBirthDate,
+                    Mother = i.Mother.Name,
+                    Description = i.Description,
+                    SemenId = i.SemenId,
+                    MotherId = i.MotherId,
+                    Semen = i.Semen.Name,
+                    IsAborted = i.IsAborted,
+                    Result = i.Result,
+                    InseminationType = i.InseminationType,
+                    state = i.state
+                }).ToListAsync();
+
+            return Insemination; 
+        }
+        public async Task<List<InseminationDto>> GetInseminationActive(int farmId)
+        {
+            var Insemination = await context.Inseminations
+                .Include(i => i.Semen)
+                .Include(i => i.Mother)
+                .Where(i => i.deleted_at == null && i.Mother.Lot.Farm.Id == farmId && i.state == true && i.Result == "EXITOSO") 
                 .Select(i => new InseminationDto
                 {
                     Id = i.Id,
@@ -81,12 +104,31 @@ namespace Data.Operational.services
             {
                 throw new Exception("Inseminación inactiva"); 
             }
-            insemination.state = false;
             insemination.Result = "ABORTO";
-            insemination.IsAborted = true; 
+            insemination.IsAborted = true;
+            insemination.state = false; 
 
             context.Inseminations.Update(insemination); 
             context.SaveChanges(); 
+        }
+
+        public void RegisterBorn(int inseminationId)
+        {
+            var insemination = context.Inseminations.Find(inseminationId);
+            if (insemination == null)
+            {
+                throw new Exception("Inseminación no encontrada");
+            }
+
+            if (insemination.state == false)
+            {
+                throw new Exception("Inseminación inactiva");
+            }
+            insemination.Result = "EXITOSO";
+            insemination.IsAborted = false;
+
+            context.Inseminations.Update(insemination);
+            context.SaveChanges();
         }
     }
 }

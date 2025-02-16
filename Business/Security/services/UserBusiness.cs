@@ -38,16 +38,22 @@ namespace Business.Security.Implementation
         public async Task<UserDto> GetById(int id)
         {
             var user = await data.GetById(id);
+            string photoBase64 = user.photo != null ? Convert.ToBase64String(user.photo) : null;
 
             return new UserDto
             {
                 Id = user.Id,
-                username = user.username
+                username = user.username,
+                photo = photoBase64, // Envía la imagen como Base64
             };
         }
 
         public async Task Update(int id, UserDto entity)
         {
+
+            entity.password = BCrypt.Net.BCrypt.HashPassword(entity.password);
+            entity.state = true;
+
             var user = await data.GetById(id);
             if (user == null)
             {
@@ -74,6 +80,7 @@ namespace Business.Security.Implementation
             var users = await data.GetAll();
             var usersDtos = new List<UserDto>();
 
+
             foreach (var user in users)
             {
                 var userDto = new UserDto
@@ -94,15 +101,26 @@ namespace Business.Security.Implementation
 
             var user = new Users();
             user = MapearDatos(user, dto);
+            byte[] photoBytes = Convert.FromBase64String(dto.photo);
+
+             user = new Users
+            {
+                username = dto.username,
+                password = dto.password,
+                photo = photoBytes, // Almacena como byte[]
+               PersonId = dto.PersonId
+            };
 
             user.password = BCrypt.Net.BCrypt.HashPassword(dto.password);
             user.state = true;
+            
+
 
             var savedUser = await data.Save(user);
 
             var userRole = new UserRole
             {
-                RoleId = 2,
+                RoleId = 1,
                 UserId = savedUser.Id,
                 state = true
             };
@@ -132,6 +150,7 @@ namespace Business.Security.Implementation
                 {
                     Id = rv.View.Modulo.Id,
                     Name = rv.View.Modulo.Name,
+                    Icon = rv.View.Modulo.Icon,
                     Views = r.RoleViews
                         .Where(rv2 => rv2.View.ModuloId == rv.View.ModuloId && rv2.deleted_at == null)
                         .Select(rv2 => new ViewDto

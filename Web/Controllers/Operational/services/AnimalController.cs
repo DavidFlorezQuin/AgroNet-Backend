@@ -1,4 +1,5 @@
-﻿using Business.Operational.Interface;
+﻿using Business.Exceptions;
+using Business.Operational.Interface;
 using Data.Operational.Inferface;
 using Entity.Dto.Operation;
 using Entity.Model.Operational;
@@ -20,27 +21,22 @@ namespace Web.Controllers.Operational.services
             _data = data;
         }
 
-        [HttpGet("datatable/{farmId}")]
+        [HttpGet("datatable/register/{farmId}")]
         public async Task<ActionResult<List<AnimalDto>>> GetAnimals(int farmId)
         {
             try
             {
                 var animal = await _data.GetAnimalAsync(farmId);
 
-                // Verificar si la lista está vacía
-                if (animal == null || animal.Count == 0)
-                {
-                    return Ok(new ApiResponse<List<AnimalDto>>(true, "No animals found for the specified farm.", new List<AnimalDto>()));
-
-                }
-
-                // Devolver la lista de alertas
                 return Ok(new ApiResponse<List<AnimalDto>>(true, "Entities retrieved successfully", animal));
             }
-            catch (Exception ex)
+            catch (FarmNotFoundException ex)
             {
-                // Manejo de excepciones
-                return StatusCode(500, $"Error al obtener las alertas: {ex.Message}");
+                return StatusCode(500, $"Error al obtener las fincas: {ex.Message}");
+
+            } catch (AnimalsNotFoundExceptions ex)
+            {
+                return StatusCode(500, $"Error al obtener las animales: {ex.Message}");
             }
         }
         [HttpGet("datatable/cows/{farmId}")]
@@ -50,16 +46,16 @@ namespace Web.Controllers.Operational.services
             {
                 var animal = await _data.GetAnimalFemaleAsync(farmId);
 
-                if (animal == null || animal.Count == 0)
-                {
-                    return Ok(new ApiResponse<List<AnimalDto>>(true, "No alerts found for the specified farm.", new List<AnimalDto>()));
-                }
-
-                return Ok(new ApiResponse<List<AnimalDto>>(true, "Entities retrieved successfully", animal));
+               return Ok(new ApiResponse<List<AnimalDto>>(true, "Data cargada.", animal));
             }
-            catch (Exception ex)
+            catch (FarmNotFoundException ex)
             {
-                return StatusCode(500, $"Error al obtener las alertas: {ex.Message}");
+                return StatusCode(500, $"Error al obtener las fincas: {ex.Message}");
+
+            }
+            catch (AnimalsNotFoundExceptions ex)
+            {
+                return StatusCode(500, $"Error al obtener las animales: {ex.Message}");
             }
         }
 
@@ -70,24 +66,78 @@ namespace Web.Controllers.Operational.services
             {
                 var animal = await _data.GetAnimaMalelAsync(farmId);
 
-                // Verificar si la lista está vacía
-                if (animal == null || animal.Count == 0)
-                {
-                    return Ok(new ApiResponse<List<AnimalDto>>(true, "No alerts found for the specified farm.", new List<AnimalDto>()));
-
-                }
-
-                // Devolver la lista de alertas
                 return Ok(new ApiResponse<List<AnimalDto>>(true, "Entities retrieved successfully", animal));
             }
-            catch (Exception ex)
+            catch (FarmNotFoundException ex)
             {
-                // Manejo de excepciones
-                return StatusCode(500, $"Error al obtener las alertas: {ex.Message}");
+                return StatusCode(500, $"Error al obtener las fincas: {ex.Message}");
+
+            }
+            catch (AnimalsNotFoundExceptions ex)
+            {
+                return StatusCode(500, $"Error al obtener las animales: {ex.Message}");
             }
         }
 
+        [HttpGet("datatable/{farmId}")]
+        public async Task<ActionResult<List<AnimalDto>>> GetAnimalAsync(int farmId)
+        {
+            try
+              {
+                var animal = await _data.GetAnimalAsync(farmId);
 
+                return Ok(new ApiResponse<List<AnimalDto>>(true, "Entities retrieved successfully", animal));
+            }
+            catch (FarmNotFoundException ex)
+            {
+                return StatusCode(500, $"Error al obtener las fincas: {ex.Message}");
+
+            }
+            catch (AnimalsNotFoundExceptions ex)
+            {
+                return StatusCode(500, $"Error al obtener las animales: {ex.Message}");
+            }
+        }
+
+        [HttpGet("cows/milk/{farmId}")]
+        public async Task<ActionResult<List<AnimalDto>>> GetCowAvailableMilk(int farmId)
+        {
+            try
+            {
+                var animal = await _data.GetCowAvailableMilk(farmId);
+
+                return Ok(new ApiResponse<List<AnimalDto>>(true, "Entities retrieved successfully", animal));
+            }
+            catch (FarmNotFoundException ex)
+            {
+                return StatusCode(500, $"Error al obtener las fincas: {ex.Message}");
+
+            }
+            catch (AnimalsNotFoundExceptions ex)
+            {
+                return StatusCode(500, $"Error al obtener las animales: {ex.Message}");
+            }
+        }
+
+        [HttpGet("cows/available-insemination/{farmId}")]
+        public async Task<ActionResult<List<AnimalDto>>> GetAnimalAvailableInsemination(int farmId)
+        {
+            try
+            {
+                var animal = await _data.GetAnimalAvailableInsemination(farmId);
+
+                return Ok(new ApiResponse<List<AnimalDto>>(true, "Entities retrieved successfully", animal));
+            }
+            catch (FarmNotFoundException ex)
+            {
+                return StatusCode(500, $"Error al obtener las fincas: {ex.Message}");
+
+            }
+            catch (AnimalsNotFoundExceptions ex)
+            {
+                return StatusCode(500, $"Error al obtener las animales: {ex.Message}");
+            }
+        }
     }
 
 }

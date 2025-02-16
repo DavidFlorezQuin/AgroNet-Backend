@@ -1,4 +1,5 @@
 ﻿using Data.Operational.Inferface;
+using Entity.Dto.Parameter;
 using Entity.Model.Parameter;
 using System;
 using System.Collections.Generic;
@@ -10,5 +11,6 @@ namespace Data.Parameter.Interface
 {
     public interface IVaccineData : IData<Vaccines>
     {
+        Task<List<VaccineDto>> GetVaccineAsync(int UsersId); 
     }
 }
