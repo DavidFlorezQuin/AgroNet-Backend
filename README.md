@@ -25,14 +25,14 @@ Edita la cadena de conexión a tu base de datos SQL Server:
 
 ```json
 "ConnectionStrings": {
-  "Default": "Server=localhost;Database=ShopSuite;User Id=sa;Password=TuPassword123;TrustServerCertificate=True;"
+  "Default": "Server=localhost;Database=TuDatabase ;User Id=sa;Password=TuPassword123;TrustServerCertificate=True;"
 }
 ```
 
 Si usas Azure SQL:
 ```json
 "ConnectionStrings": {
-  "Default": "Server=tcp:mi-servidor.database.windows.net,1433;Initial Catalog=ShopSuite;User ID=usuario;Password=ClaveSegura;"
+  "Default": "Server=tcp:mi-servidor.database.windows.net,1433;Initial Catalog= ;User ID=usuario;Password=ClaveSegura;"
 }
 ```
 
@@ -40,8 +40,8 @@ Si usas Azure SQL:
 ```json
 "Jwt": {
   "Key": "TuClaveSecretaSuperSeguraDeAlMenos32Caracteres",
-  "Issuer": "IndigoBackend",
-  "Audience": "IndigoFrontend"
+  "Issuer": "",
+  "Audience": ""
 }
 ```
 
